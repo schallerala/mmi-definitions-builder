@@ -1,0 +1,21 @@
+\input{../preamble.tex}
+\begin{document}
+\setcounter{section}{3}
+\setcounter{subsection}{5}
+\setcounter{dfn}{10}
+
+\begin{proof}
+Lay $n$ stones in a row.
+To form a composition of the number $n$ we must separate these stones by $k-1$ sticks.
+The numbers of stones between consecutive sticks sum up to $n$, thus form a composition of $n$.
+For example,
+\[
+\bullet\, | \bullet\, \bullet\, \bullet |\, \bullet \quad \longleftrightarrow \quad 5 = 1+3+1
+\]
+In how many ways can we put $k-1$ sticks between $n$ stones?
+There are $n-1$ gaps, and we must choose $k-1$ of them.
+There are $\binom{n-1}{k-1}$ ways to do this. The theorem is proved.
+\end{proof}
+
+
+\end{document}

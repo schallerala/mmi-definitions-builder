@@ -1,0 +1,27 @@
+\input{../preamble.tex}
+\begin{document}
+\setcounter{section}{2}
+\setcounter{subsection}{8}
+\setcounter{dfn}{19}
+
+\begin{proof}
+For a given sequent, consider its closed deduction tree.
+It has leaves of two kinds:
+\begin{itemize}
+\item
+Leaves labeled with axioms $p_1, \ldots, p_k \vdash q_1, \ldots, q_l$ such that $p_i = q_j$ for some $i$, $j$.
+\item
+Leaves with labels $p_1, \ldots, p_k \vdash q_1, \ldots, q_l$ such that $p_i \ne q_j$ for all $i$, $j$.
+These are called counterexample leaves.
+\end{itemize}
+A counterexample leaf is falsifiable: it suffices to set $v(p_i) = 1$ for all $i$ and $v(q_j) = 0$ for all $j$.
+Thus if the closed deduction tree has a counterexample leaf, then the sequent at the root is also falsifiable.
+
+If our sequent is valid, then all of the leaves are of the first kind, and the tree is a proof tree.
+\end{proof}
+
+Note that we get more than just completeness: constructing a closed deduction tree provides a concrete counterexample to a falsifiable sequent.
+
+
+
+\end{document}

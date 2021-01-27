@@ -15,29 +15,30 @@ export abstract class PdfLevel {
     @Column()
     readonly text: string;
 
-    protected constructor(parent: PdfLevel, text: string) {
+    protected constructor(parent: PdfLevel, level: number, text: string) {
         this.parent = parent;
+        this.level = level;
         this.text = text;
     }
 }
 
-@ChildEntity()
+@ChildEntity('chapter')
 export class Chapter extends PdfLevel {
-    constructor(text: string) {
-        super(undefined, text);
+    constructor(level: number, text: string) {
+        super(undefined, level, text);
     }
 }
 
-@ChildEntity()
+@ChildEntity('section')
 export class Section extends PdfLevel {
-    constructor(parent: Chapter, text: string) {
-        super(parent, text);
+    constructor(parent: Chapter, level: number, text: string) {
+        super(parent, level, text);
     }
 }
 
-@ChildEntity()
+@ChildEntity('subsection')
 export class SubSection extends PdfLevel {
-    constructor(parent: Section, text: string) {
-        super(parent, text);
+    constructor(parent: Section, level: number, text: string) {
+        super(parent, level, text);
     }
 }

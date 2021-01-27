@@ -1,0 +1,21 @@
+\input{../preamble.tex}
+\begin{document}
+\setcounter{section}{7}
+\setcounter{subsection}{2}
+\setcounter{dfn}{3}
+
+\begin{thm}
+\label{thm:PumpCFL}
+Let $L$ be a context-free language.
+Then there is a positive integer $n$ such that every $z \in L$ of length $|z| \ge n$ can be split into subwords $z = uvwxy$ in such a way that
+\begin{enumerate}
+\item
+$|vx| \ge 1$, that is the words $v$ and $x$ are not both empty;
+\item
+$|vwx| \le n$;
+\item
+for all $i \ge 0$ we have $uv^iwx^iy \in L$.
+\end{enumerate}
+\end{thm}
+
+\end{document}

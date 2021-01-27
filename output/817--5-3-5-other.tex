@@ -1,0 +1,61 @@
+\input{../preamble.tex}
+\begin{document}
+\setcounter{section}{3}
+\setcounter{subsection}{5}
+\setcounter{dfn}{11}
+
+\begin{proof}[Algebraic proof]
+The generating function for partitions into distinct parts is
+\[
+(1+x)(1+x^2)(1+x^3)\cdots
+\]
+The generating function for partitions into odd parts is
+\[
+(1+x+x^2+\cdots)(1+x^3+x^6+\cdots)(1+x^5+x^{10}+\cdots)\cdots = \frac1{1-x} \frac1{1-x^3} \frac1{1-x^5} \cdots
+\]
+Let us show that the first formal power series is equal to the second one.
+\begin{equation}
+\label{eqn:OddDist}
+(1+x)(1+x^2)(1+x^3)\cdots = \frac{1-x^2}{1-x} \frac{1-x^4}{1-x^2} \frac{1-x^6}{1-x^3} \cdots = \frac1{1-x} \frac1{1-x^3} \frac1{1-x^5} \cdots
+\end{equation}
+This equation is a bit more subtle than it appears.
+We have
+\[
+(1+x) \cdots (1+x^{2k}) = \frac{1-x^2}{1-x} \cdots \frac{1-x^{4k}}{1-x^{2k}} = \frac{(1-x^{2k+2}) \cdots (1-x^{4k})}{(1-x) \cdots (1-x^{2k-1})}
+\]
+The right hand side has the same coefficient at $x^i$ for $i \le 2k$ as the infinite product on the right hand side of \eqref{eqn:OddDist}.
+And the left hand side has the same coefficient at $x^i$ for $i \le 2k$ as the infinite product on the left hand side of \eqref{eqn:OddDist}.
+\end{proof}
+
+\begin{proof}[Bijective proof]
+Take a partition of $n$ into odd parts:
+\[
+n = 1 \cdot m_1 + 3 \cdot m_3 + 5 \cdot m_5 + \cdots
+\]
+It can be transformed into a partition into distinct parts as follows.
+Write $m_{2k+1}$ in the binary system:
+\[
+m_{2k+1} = 2^{d_1} + \cdots + 2^{d_s}, \quad d_i \ne d_j.
+\]
+Then replace $(2k+1) \cdot m_{2k+1}$ by
+\[
+(2k+1)(2^{d_1} + \cdots + 2^{d_s}) = 2^{d_1}(2k+1) + \cdots + 2^{d_s}(2k+1).
+\]
+Being done for all $k$, this gives a new partition of $n$.
+The parts of the new partition are different.
+Indeed, any two parts that come from the same $k$ are distinct: $2^{d_i}(2k+1) \ne 2^{d_j}(2k+1)$ because $d_i \ne d_j$.
+Any two parts that come from different $k$ are also distinct: $2^{d_i(k)}(2k+1) \ne 2^{d_j(l)}(2l+1)$
+because they have different greatest odd divisors $2k+1 \ne 2l+1$.
+
+In the opposite direction, we transform every partition of $n$ into distinct parts as follows:
+\begin{multline*}
+n = k_1 + \cdots + k_t, \quad k_i \ne k_j\\
+= o_1 2^{d_1} + \cdots + o_t 2^{d_t}, \quad o_i \text{ odd}\\
+= 1 \cdot m_1 + 3 \cdot m_3 + \cdots, \quad m_{2k+1} = \sum_{o_i = 2k+1} 2^{d_i}
+\end{multline*}
+It can easily be shown that this transformation is inverse to the first one.
+Thus we have a bijection between partitions into odd and partitions into distinct parts.
+\end{proof}
+
+
+\end{document}

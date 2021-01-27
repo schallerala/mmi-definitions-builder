@@ -1,5 +1,0 @@
-::: {.dfn}
-**Definition 1**. *The number of different full binary rooted trees with
-$n+1$ leaves is called the $n$-th Catalan number and is denoted by
-$c_n$.*
-:::

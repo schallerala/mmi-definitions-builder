@@ -1,0 +1,23 @@
+\input{../preamble.tex}
+\begin{document}
+\setcounter{section}{1}
+\setcounter{subsection}{2}
+\setcounter{dfn}{3}
+
+\begin{exl}
+\label{exl:TruthTable}
+The following table gives the truth values for the formula $((p \vee q) \to \neg q)$ and all of its subformulas
+depending on a valuation $\{p, q\} \to \{0,1\}$.
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$p$ & $q$ & $(p \vee q)$ & $\neg q$ & $((p \vee q) \to \neg q)$\\\hline
+$0$ & $0$ & $0$ & $1$ & $1$\\\hline
+$0$ & $1$ & $1$ & $0$ & $0$\\\hline
+$1$ & $0$ & $1$ & $1$ & $1$\\\hline
+$1$ & $1$ & $1$ & $0$ & $0$\\\hline
+\end{tabular}
+\end{center}
+\end{exl}
+
+\end{document}

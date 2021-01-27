@@ -1,0 +1,23 @@
+\input{../preamble.tex}
+\begin{document}
+\setcounter{section}{2}
+\setcounter{subsection}{2}
+\setcounter{dfn}{1}
+
+\begin{dfn}
+Let $A(x) = \sum_{k=0}^\infty a_k x^k$ and $B(x) = \sum_{k=0}^\infty b_k x^k$ be two formal power series.
+Their \emph{sum} is the formal power series
+\[
+A(x) + B(x) = \sum_{k=0}^\infty (a_k + b_k)x^k,
+\]
+and their \emph{product} is the formal power series
+\[
+A(x)B(x) = \sum_{k=0}^\infty c_k x^k,
+\]
+where
+\[
+c_k = a_0b_k + a_1b_{k-1} + \cdots + a_kb_0 = \sum_{i=0}^k a_i b_{k-i}.
+\]
+\end{dfn}
+
+\end{document}

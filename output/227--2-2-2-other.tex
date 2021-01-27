@@ -1,0 +1,18 @@
+\input{../preamble.tex}
+\begin{document}
+\setcounter{section}{2}
+\setcounter{subsection}{3}
+\setcounter{dfn}{6}
+
+\begin{proof}
+The graph $T - v$ is acyclic, because it is a subgraph of an acyclic graph.
+It remains to prove that $T - v$ is connected.
+Let $x$ and $y$ be two vertices of $T$ different from $v$.
+There is a path in $T$ connecting $x$ and $y$.
+This path does not contain $v$, because otherwise the degree of $v$ would be at least $2$.
+Thus it can be considered as a path in $T - v$, so $x$ and $y$ are connected within $T - v$.
+\end{proof}
+
+
+
+\end{document}

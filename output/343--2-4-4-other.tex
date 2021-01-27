@@ -1,0 +1,67 @@
+\input{../preamble.tex}
+\begin{document}
+\setcounter{section}{4}
+\setcounter{subsection}{4}
+\setcounter{dfn}{7}
+
+In particular, if $|X| = |Y|$, then the above theorem provides a necessary and sufficient condition for the existence of a perfect matching.
+\begin{proof}
+Assume there is a matching that covers all of $X$.
+This defines an injective map $f \colon X \to Y$ associating to every $x \in X$ its matched vertex in $Y$.
+For every subset $S \subset X$ we have $f(S) \subset N(S)$, hence $|N(S)| \ge |f(S)| = |S|$.
+Thus condition \eqref{eqn:Hall} is necessary.
+
+Let us show that it is sufficient.
+Let $M$ be a maximum matching of $G$.
+Suppose that $M$ does not cover $X$; we will prove that \eqref{eqn:Hall} is violated.
+Take a vertex $u \in X$ unmatched by $M$ and consider all alternating paths starting from $u$.
+All these paths start with non-$M$-edges.
+
+There are alternating paths of two sorts.
+Those made of an even number of edges end in $X$.
+Denote the set of their endpoints by $S$.
+(We have $u \in S$, because we also consider the path of zero length starting and ending at $u$.)
+Alternating paths made of an odd number of edges end in $Y$.
+Denote the set of their endpoints by $T$.
+See Figure \ref{fig:HallProof}.
+
+\begin{figure}[ht]
+\begin{center}
+\input{Fig/HallProof.pdf_t}
+\end{center}
+\caption{To the proof of Theorem \ref{thm:Hall}.}
+\label{fig:HallProof}
+\end{figure}
+
+We now prove a series of claims.
+
+\emph{Claim 1.} Every vertex $v \in S$ other than $u$ is matched to a vertex in $T$.
+Indeed, $v$ is the endpoint of a non-trival alternating path $P$ of even length.
+The last edge of $P$ belongs to $M$, thus $v$ is matched to some vertex $w \in Y$.
+We have $w \in T$, because $w$ is the endpoint of an alternating path $P - \{v,w\}$.
+
+\emph{Claim 2.} Every vertex $w \in T$ is matched to a vertex in $S$.
+Assume that some $w \in T$ is not matched.
+Then the alternating path $P$ from $u$ to $w$ is an augmenting path, which contradicts the assumption of maximality of $M$.
+If $w$ is matched to $v \in X$, then the path $P + \{v,w\}$ is also an augmenting path, thus $v \in S$.
+
+\emph{Claim 3.} $|T| = |S| - 1$.
+Indeed, by the previous two claims the matching $M$ establishes a bijection between $S \setminus \{u\}$ and $T$.
+
+\emph{Claim 4.} $N(S) = T$.
+Every edge incident to $u$ is a length $1$ alternating path.
+Thus all neighbors of $u$ belong to $T$.
+Let $e$ be an edge incident to $v \in S$, $v \ne u$.
+If $e$ belongs to $M$, then its other endpoint is in $T$ by Claim 1.
+If $e$ does not belong to $M$, then it extends an alternating path ending in $v$, thus again ends in $T$.
+This proves $N(S) \subset T$.
+We have $T \subset N(S)$ by construction of $S$ and $T$: every vertex $w \in T$ is the endpoint of an alternating path starting at $u$.
+Just before coming to $w$, this path visited a vertex in $S$.
+
+It follows that $|N(S)| = |T| = |S| - 1 < |S|$, which violates \eqref{eqn:Hall}.
+Thus the assumption that a maximum matching does not cover all of $X$ was false, and the theorem is proved.
+\end{proof}
+
+
+
+\end{document}

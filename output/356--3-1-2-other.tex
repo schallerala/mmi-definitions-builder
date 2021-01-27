@@ -1,0 +1,34 @@
+\input{../preamble.tex}
+\begin{document}
+\setcounter{section}{1}
+\setcounter{subsection}{2}
+\setcounter{dfn}{2}
+
+
+Once the truth values of all proposition symbols are known, one can determine the truth value of any propositional formula.
+This is done with the help of the truth tables for logical connectives given below.
+
+\begin{center}
+\begin{tabular}{|c||c|}
+\hline
+$A$ & $\neg A$\\\hline
+$0$ & $1$\\\hline
+$1$ & $0$\\\hline
+\end{tabular}
+\hspace{2cm}
+\begin{tabular}{|c|c||c|c|c|}
+\hline
+$A$ & $B$ & $A \wedge B$ & $A \vee B$ & $A \to B$\\\hline
+$0$ & $0$ & $0$ & $0$ & $1$\\\hline
+$0$ & $1$ & $0$ & $1$ & $1$\\\hline
+$1$ & $0$ & $0$ & $1$ & $0$\\\hline
+$1$ & $1$ & $1$ & $1$ & $1$\\\hline
+\end{tabular}
+\end{center}
+
+Here $A$ and $B$ are arbitrary propositions.
+The tables tell you the truth values of $\neg A$, $A \wedge B$, $A \vee B$, $A \to B$ once the truth values of $A$ and $B$ are known.
+They allow to write the truth table for any propositional formula recursively by ``climbing'' the parse tree.
+
+
+\end{document}

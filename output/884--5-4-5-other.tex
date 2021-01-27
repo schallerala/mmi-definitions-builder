@@ -1,0 +1,63 @@
+\input{../preamble.tex}
+\begin{document}
+\setcounter{section}{4}
+\setcounter{subsection}{5}
+\setcounter{dfn}{8}
+
+\begin{proof}
+Let us show that the sequence $d_n$ of numbers of Dyck paths satisfies the same recurrence relation that the sequence of Catalan numbers.
+Take a path from $(0,0)$ to $(n+1,n+1)$ and let $(k+1,k+1)$ be the first point after $(0,0)$ where it touches the diagonal.
+The number $k$ can take any value between $0$ and $n$.
+The point $(k+1,k+1)$ separates the path into two parts.
+The first part never touches the diagonal except at the endpoints.
+If we remove from it the initial and the terminal segments, then we get a Dyck path from $(1,0)$ to $(k+1,k)$.
+It can be identified by translation with a Dyck path from $(0,0)$ to $(k,k)$.
+The part of the path after the point $(k+1,k+1)$ can be identified with a Dyck path from $(0,0)$ to $(n-k,n-k)$.
+
+\begin{figure}[ht]
+\begin{center}
+\input{Fig/DyckInduction.pdf_t}
+\end{center}
+\caption{Proving the recursive relation for the number of Dyck paths.}
+\label{fig:DyckInduction}
+\end{figure}
+
+Conversely, from any $k$-Dyck path and any $(n-k)$-Dyck path one can build a $(n+1)$-Dyck path
+by ``lifting up'' the $k$-path and concatenating it with the $(n-k)$-path.
+Thus the number of $(n+1)$-Dyck paths whose first contact with the diagonal is at $(k+1, k+1)$ is $d_k d_{n-k}$,
+and the total number of $(n+1)$-Dyck paths is
+\[
+d_{n+1} = \sum_{k=0}^n d_k d_{n-k}.
+\]
+Thus we have for the sequence $d_n$ the same recursive relation, and also the same starting value $d_0 = 1$.
+It follows that $d_n = c_n$ for all $n$.
+\end{proof}
+
+% \begin{proof}[Proof by bijection]
+% Take a full binary tree with $n+1$ leaves.
+% Write its vertices in the depth-first order $v_0v_1\ldots v_{2n}$.
+% Associate to it a sequence $a_1a_2 \ldots a_{2n}$ of brackets in the following way:
+% \[
+% a_i =
+% \begin{cases}
+% (, &\text{if }v_i\text{ is a child of }v_{i-1},\\
+% ), &\text{otherwise}.
+% \end{cases}
+% \]
+% Let us show that this sequence of brackets is balanced.
+% Every vertex except the root is either the left child or the right child of its parent.
+% The definition of the sequence $a_i$ is equivalent to the following:
+% \[
+% a_i =
+% \begin{cases}
+% (, &\text{if }v_i\text{ is the left child of its parent},\\
+% ), &\text{if }v_i\text{ is the right child of its parent}.
+% \end{cases}
+% \]
+% In every pair of siblings, the left one precedes in our ordering the right one.
+% This implies that the number of closing brackets never exceeds the number of opening brackets.
+% \end{proof}
+
+
+
+\end{document}

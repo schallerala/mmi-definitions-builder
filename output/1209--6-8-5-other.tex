@@ -1,0 +1,30 @@
+\input{../preamble.tex}
+\begin{document}
+\setcounter{section}{8}
+\setcounter{subsection}{5}
+\setcounter{dfn}{9}
+
+\begin{proof}
+Assume the contrary.
+Then there is a Turing machine $M_j$ which accepts the language $L_d$.
+By inspection of the word $w_j$ we arrive to a contradiction:
+\begin{itemize}
+\item
+if $w_j \in L_d$, then by definition of $L_d$ the word $w_j$ is not accepted by $M_j$, which by the choice of $M_j$ means that $w_j \notin L_d$;
+\item
+if $w_i \notin L_d$, then by definition of $L_d$ the word $w_j$ is accepted by $M_j$, which by the choice of $M_j$ means that $w_j \in L_d$.
+\end{itemize}
+\end{proof}
+
+
+\begin{proof}[Proof of Theorem \ref{thm:HaltingProblem}]
+If $L_u$ is recursive, then there is a Turing machine $A$ which always halts and accepts only pairs $(M, w)$ from $L_u$.
+Let us show that then $L_d$ is recursive, which contradicts Lemma \ref{lem:LdNotRE}.
+Given a word $w$ determine the integer $i$ such that $w_i = w$.
+Then determine the machine $M_i$.
+Feed $(M_i, w_i)$ into $A$ and accept $w$ if and only if $A$ \emph{does not} accept $(M_i,w_i)$.
+This gives an algorithm which always stops and recognizes the language $L_d$.
+\end{proof}
+
+
+\end{document}

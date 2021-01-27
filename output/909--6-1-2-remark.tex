@@ -1,0 +1,22 @@
+\input{../preamble.tex}
+\begin{document}
+\setcounter{section}{1}
+\setcounter{subsection}{2}
+\setcounter{dfn}{5}
+
+\begin{rem}
+Alternatively to a transition diagram, a DFA can be represented by a table.
+For the DFA from Figure \ref{fig:DFAOdd} this is
+\begin{center}
+\begin{tabular}{c|cc}
+& $0$ & $1$\\
+\hline
+$q_0$ & $q_0$ & $q_1$\\
+$q_1$ & $q_1$ & $q_0$
+\end{tabular}
+\end{center}
+The table contains the information about the transition function, the set of states, and the input alphabet.
+In addition one should specify the set of final states, $F = \{q_1\}$ in our case.
+\end{rem}
+
+\end{document}

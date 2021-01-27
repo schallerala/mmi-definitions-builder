@@ -1,0 +1,35 @@
+\input{../preamble.tex}
+\begin{document}
+\setcounter{section}{2}
+\setcounter{subsection}{3}
+\setcounter{dfn}{10}
+
+
+\begin{proof}
+Exercise.
+% One computes
+% \begin{multline*}
+% \overline{P}(x)A(x) =
+% (1 - r_1 x - r_2 x^2 - \cdots - r_k x^k)(a_0 + a_1x + a_2x^2 + \cdots)\\
+% \sum_{i=0}^{k-1} (a_i - r_1 a_{i-1} - \cdots - r_i a_0) x^i + \sum_{n=k}^\infty x^n(a_n - r_1 a_{n-1} - \cdots - r_k a_{n-k}) = B(x).
+% \end{multline*}
+% Thus we have
+% \[
+% A(x) = \frac{B(x)}{\overline{P}(x)},
+% \]
+% where $B(x)$ is a polynomial of degree at most $k-1$.
+\end{proof}
+
+Note that $\overline{P}(x)$ is related to the characteristic polynomial $P(x)$ through
+\[
+\overline{P}(x) = x^k P\left(\frac1x\right).
+\]
+It follows that the roots of the polynomial $\overline{P}(x)$ are reciprocals of the roots of $P(x)$.
+More exactly, if $P(x) = (x - \lambda_1)^{k_1} \cdots (x - \lambda_m)^{k_m}$, then
+\[
+\overline{P}(x) = (1 - \lambda_1 x)^{k_1} \cdots (1- \lambda_m)^{k_m}.
+\]
+
+The following theorem generalizes our representation of the fraction $\frac{x}{1-x-x^2}$ as a sum of two simpler fractions.
+
+\end{document}

@@ -1,5 +1,5 @@
 import {ILineHunter} from './ILineHunter';
-import {createWriteStream, unlinkSync, WriteStream} from 'fs';
+import {createWriteStream, WriteStream} from 'fs';
 import {Chapter, PdfLevel, Section, SubSection} from '../entities/PdfLevel';
 import {PdfPortion, PortionType} from '../entities/PdfPortion';
 import {EOL} from 'os';
@@ -8,14 +8,14 @@ import {MathEnvironment} from './math/MathEnvironment';
 
 export class LevelPortionHunter implements ILineHunter {
 
-    private readonly levelHunter = new LevelCounter();
+    static readonly labelRegExp = /\\label{([^}]+)}/;
+    static readonly refRegExp = /\\ref{([^}]+)}/;
 
-    private writtenLines = 0;
+    private readonly levelHunter = new LevelCounter();
 
     private portionId: number = 0;
 
-    private currentWriteStream?: WriteStream;
-    private currentFilePath?: string;
+    private currentPortionLines = new Array<string>();
 
     private currentMathEnv?: MathEnvironment;
     private mathEnvs = [
@@ -30,9 +30,15 @@ export class LevelPortionHunter implements ILineHunter {
 
     private definitionCounter = 0;
 
+    readonly levels = new Array<PdfLevel>();
+    readonly pdfPortions = new Array<PdfPortion>();
+
+    private currentOpenPortion?: PdfPortion;
+
     constructor(
         readonly outputFolderPath: string,
         readonly outputRelativePreamblePath: string,
+        readonly continuousMultiStandaloneStream: WriteStream,
         readonly writeStreamOptions?: {
             flags?: string;
             encoding?: BufferEncoding;
@@ -43,89 +49,108 @@ export class LevelPortionHunter implements ILineHunter {
             start?: number;
             highWaterMark?: number;
         },
-        readonly levels: Array<PdfLevel> = [],
-        readonly portions: Array<PdfPortion> = []
     ) {
     }
 
     get levelPath(): string {
-        return `${this.levelHunter.chapterCounter}-${this.levelHunter.sectionCounter}-${this.levelHunter.subSectionCounter}-${this.portionId}`;
+        return `${this.portionId}--${this.levelHunter.chapterCounter}-${this.levelHunter.sectionCounter}-${this.levelHunter.subSectionCounter}`;
+    }
+
+    get currentLevel(): PdfLevel {
+        return this.levels[this.levels.length - 1];
     }
 
     read(line: string): ILineHunter {
         const newLevel = this.levelHunter.read(line);
         if (newLevel) {
             this.levels.push(newLevel);
-            this.closePortion();
+            this.commitPortion();
             if (newLevel instanceof Section)
                 this.definitionCounter = 0;
-
-            return this;
-        } else {
-            if (this.currentMathEnv) {
-                if (this.currentMathEnv.testClosing(line)) {
-                    this.writeLine(line);
-                    this.closePortion();
-                    this.currentMathEnv = undefined;
-                    return this;
-                }
-            } else {
-                this.currentMathEnv = this.mathEnvs.find(env => env.testOpening(line));
-                if (this.currentMathEnv) {
-                    this.closePortion();
-                    this.startNewPortion(this.currentMathEnv.type);
-                    this.definitionCounter++;
-                }
-            }
-
-            if (!this.currentWriteStream) {
-                this.startNewPortion('other')
-            }
-
-            this.writeLine(line);
         }
+
+        if (!this.currentMathEnv) {
+            this.currentMathEnv = this.mathEnvs.find(env => env.testOpening(line));
+            if (this.currentMathEnv) {
+                this.commitPortion();
+                this.startNewPortion(this.currentMathEnv.type);
+                this.definitionCounter++;
+            }
+        } else {
+            if (this.currentMathEnv.testClosing(line)) {
+                this.writeLine(line);
+                this.commitPortion();
+                this.currentMathEnv = undefined;
+                return this;
+            }
+        }
+
+        this.writeLine(line);
 
         return this;
     }
 
-    writeLine (s: string) {
-        if (s.trim().length > 0)
-            this.writtenLines++;
-        this.currentWriteStream.write(s);
-        this.currentWriteStream.write(EOL);
+    writeLine (line: string) {
+        this.currentPortionLines.push(line);
+        let match;
+        if ((match = line.match(LevelPortionHunter.labelRegExp))) {
+            this.currentOpenPortion.addLabel(match[1]);
+        }
+        if ((match = line.match(LevelPortionHunter.refRegExp))) {
+            this.currentOpenPortion.addReference(match[1]);
+        }
     }
-
 
     startNewPortion(type: PortionType) {
         this.portionId++;
-        this.currentFilePath = join(this.outputFolderPath, `${this.levelPath}-${type}.tex`);
-        this.currentWriteStream = createWriteStream(this.currentFilePath, this.writeStreamOptions);
-        this.writeLine(`\\input{${this.outputRelativePreamblePath}}`);
-        this.writeLine(`\\begin{document}`);
-        // this.writeLine(`\\setcounter{chapter}{${this.levelHunter.chapterCounter}}`);
-        this.writeLine(`\\setcounter{section}{${this.levelHunter.sectionCounter}}`);
-        this.writeLine(`\\setcounter{subsection}{${this.levelHunter.subSectionCounter}}`);
-        this.writeLine(`\\setcounter{dfn}{${this.definitionCounter}}`);
-        this.writtenLines = 0;
-        this.currentWriteStream.write(EOL);
+        const texFilePath = join(this.outputFolderPath, `${this.levelPath}-${type}.tex`);
+        this.currentOpenPortion = new PdfPortion(type, this.currentLevel, texFilePath);
+        this.pdfPortions.push(this.currentOpenPortion);
+        this.currentPortionLines = new Array<string>();
     }
 
-    closePortion() {
-        if (this.currentWriteStream) {
-            if (this.writtenLines === 0) {
-                const currentFilePath = this.currentFilePath;
-                this.currentWriteStream.end(() => {
-                    unlinkSync(currentFilePath)
-                });
-                this.currentWriteStream = undefined;
-                return;
-            }
+    commitPortion() {
+        const content = this.currentPortionLines.join(EOL);
 
-            this.currentWriteStream.write(EOL);
-            this.writeLine(`\\end{document}`);
-            this.currentWriteStream.end();
-            this.currentWriteStream = undefined;
+        if (content.trim().length) {
+            const texStream = createWriteStream(this.currentOpenPortion.texPath, this.writeStreamOptions);
+
+            const singleContent = [
+                `\\input{${this.outputRelativePreamblePath}}`,
+                `\\begin{document}`,
+                // `\\setcounter{chapter}{${this.levelHunter.chapterCounter}}`,
+                `\\setcounter{section}{${this.levelHunter.sectionCounter}}`,
+                `\\setcounter{subsection}{${this.levelHunter.subSectionCounter}}`,
+                `\\setcounter{dfn}{${this.definitionCounter}}`,
+                '',
+                content,
+                '',
+                `\\end{document}`,
+            ].join(EOL);
+
+            texStream.write(singleContent);
+            texStream.end();
+
+            const standalonePage = [
+                '',
+                `%%%%%%%%%% ${this.currentOpenPortion.texPath}`,
+                '\\begin{page}',
+                `\\setcounter{section}{${this.levelHunter.sectionCounter}}`,
+                `\\setcounter{subsection}{${this.levelHunter.subSectionCounter}}`,
+                `\\setcounter{dfn}{${this.definitionCounter}}`,
+                `\\label{portion:${this.portionId}}`,
+                '',
+                content,
+                '',
+                '\\end{page}',
+                ''
+            ].join(EOL);
+
+            this.continuousMultiStandaloneStream.write(standalonePage);
         }
+
+        // tmp create an "other" portion
+        this.startNewPortion("other");
     }
 }
 
@@ -167,7 +192,7 @@ export class LevelCounter {
         let match;
         if ((match = line.match(LevelCounter.subSectionLevel))) {
             this._subSectionCounter++;
-            this.currentSubsection = new SubSection(this.currentSection, match[1]);
+            this.currentSubsection = new SubSection(this.currentSection, this._subSectionCounter, match[1]);
             if (this.listener?.onNewSubSection)
                 this.listener.onNewSubSection([this._chapterCounter, this._sectionCounter, this._subSectionCounter], this.currentSubsection);
 
@@ -176,7 +201,7 @@ export class LevelCounter {
             this._sectionCounter++;
             this._subSectionCounter = 0;
             this.currentSubsection = undefined;
-            this.currentSection = new Section(this.currentChapter, match[1]);
+            this.currentSection = new Section(this.currentChapter, this._subSectionCounter, match[1]);
             if (this.listener?.onNewSection)
                 this.listener.onNewSection([this._chapterCounter, this._sectionCounter], this.currentSection);
 
@@ -187,7 +212,7 @@ export class LevelCounter {
             this._subSectionCounter = 0;
             this.currentSection = undefined;
             this.currentSubsection = undefined;
-            this.currentChapter = new Chapter(match[1]);
+            this.currentChapter = new Chapter(this._chapterCounter, match[1]);
             if (this.listener?.onNewChapter)
                 this.listener.onNewChapter([this._chapterCounter], this.currentChapter);
 

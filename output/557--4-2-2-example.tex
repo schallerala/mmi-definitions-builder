@@ -1,0 +1,25 @@
+\input{../preamble.tex}
+\begin{document}
+\setcounter{section}{2}
+\setcounter{subsection}{2}
+\setcounter{dfn}{7}
+
+\begin{exl}
+Let us prove the formula $\exists x(P \to Q(x)) \to (P \to \exists y Q(y))$.
+\begin{prooftree}
+\AxiomC{$P \vdash P, \exists y Q(y)$}
+\AxiomC{$Q(z_1), P \vdash Q(z_1), \exists y Q(y)$}
+\UnaryInfC{$Q(z_1), P \vdash \exists y Q(y)$}
+\BinaryInfC{$P, P \to Q(z_1) \vdash \exists y Q(y)$}
+\UnaryInfC{$P \to Q(z_1) \vdash P \to \exists y Q(y)$}
+\UnaryInfC{$\exists x(P \to Q(x)) \vdash P \to \exists y Q(y)$}
+\UnaryInfC{$\vdash \exists x(P \to Q(x)) \to (P \to \exists y Q(y))$}
+\end{prooftree}
+
+At the second step we are introducing a new variable $z_1$ while applying the left $\exists$ inference rule.
+After application of the branching left $\to$ rule we obtain an axiom on the left (with $P$ on both sides of $\vdash$).
+On the right we are applying the right $\exists$ rule, where we can make a clever choice of a term to substitute for $y$.
+Choosing $z_1/y$ as the substitution, we obtain two equal terms on both sides of $\vdash$, and the proof tree is finished.
+\end{exl}
+
+\end{document}

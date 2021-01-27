@@ -1,0 +1,27 @@
+\input{../preamble.tex}
+\begin{document}
+\setcounter{section}{7}
+\setcounter{subsection}{2}
+\setcounter{dfn}{5}
+
+\begin{exl}
+\label{exl:WW}
+The language $L = \{ww \mid w \in \{0,1\}^*\}$ is not context-free.
+Assume it is, and let $n$ be a pumping bound for this language.
+Take the word $z = 0^n1^n0^n1^n \in L$ and write it as $z = uvwxy$ according to the pumping lemma.
+By the lemma, the word $z' = uwy$ is in $L$, we will however show that this is impossible.
+
+The subword $vwx$ is contained within some two consecutive blocks (inside $0^n1^n$ or $1^n0^n$).
+% If it is contained in the first half, then look at the word $uv^2wx^2y$.
+% It is longer than $z$ by not more than $n$ symbols,
+% therefore its middle ``moved to the left'' by not more than $n/2$ symbols with respect to the middle of $z$.
+% Then the right half of $z'$ begins with $1$ (the pumping changes the structure of the word but does not decrease the length of the block $1^n$).
+% But the left half of $z'$ begins as before with $0$, which is a contradiction.
+% A similar argument works if $vwx$ is contained in the second half of $z$.
+If $vwx$ is contained in the first half, then while transforming $z$ to $z'$ we removed some symbols from the first half.
+It follows that $uwy = 0^k1^l0^n1^n$, where $k, l \le n$ and at least one of them is $<n$.
+This word does not belong to $L$.
+Similarly, for the other situations of $vwx$ the depumped word has the form $0^n1^k0^l1^n$ or $0^n1^n0^k1^l$ and does not belong to $L$ either.
+\end{exl}
+
+\end{document}

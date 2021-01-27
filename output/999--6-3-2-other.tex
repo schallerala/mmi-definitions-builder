@@ -1,0 +1,19 @@
+\input{../preamble.tex}
+\begin{document}
+\setcounter{section}{3}
+\setcounter{subsection}{2}
+\setcounter{dfn}{4}
+
+\begin{proof}
+Since $L$ is a regular language, there is a DFA accepting it.
+Let $n$ be the number of states of such a DFA.
+Then any word $z \in L$ determines a path of length $|z|$ from $q_0$ to one of the final states.
+By Lemma \ref{lem:LongWord}, if $|z| \ge n$, then within the first $n$ edges of this path there is a cycle.
+Let $u$ be the prefix of $z$ before the beginning of this cycle, let $v$ be the subword corresponding to the cycle, and let $w$ be the remaining suffix.
+Then $z = uvw$, and the path determined by the word $uv^kw$ differs from the path determined by $uvw$ in the number of times it runs along the cycle of $v$,
+but has the same endpoint, a final state of the DFA.
+Thus $uv^kw \in L$ for all $k \ge 0$.
+\end{proof}
+
+
+\end{document}

@@ -1,0 +1,20 @@
+\input{../preamble.tex}
+\begin{document}
+\setcounter{section}{2}
+\setcounter{subsection}{2}
+\setcounter{dfn}{4}
+
+\begin{rem}
+The set of all maps $X \to Y$ is sometimes denoted by $Y^X$, so that Theorem \ref{thm:AllMaps} can be formulated as $\left|Y^X\right| = |Y|^{|X|}$.
+This is not the only reason for the notation $Y^X$.
+One can show that $Z^{X \cup Y} = Z^X \times Z^Y$ for disjoint $X$ and $Y$, and $Z^{X \times Y} = (Z^X)^Y$.
+
+Also, the Cartesian power
+\[
+X^n = \underbrace{X \times \cdots \times X}_{n} = \{(x_1, \ldots, x_n) \mid x_i \in X \text{ for all }i\}
+\]
+can be viewed as the set $X^{\{1, \ldots, n\}}$:
+a sequence $(x_1, \ldots, x_n)$ corresponds to a map $f \colon \{1, \ldots, n\} \to X$, $f(i) = x_i$.
+\end{rem}
+
+\end{document}

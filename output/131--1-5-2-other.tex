@@ -1,0 +1,34 @@
+\input{../preamble.tex}
+\begin{document}
+\setcounter{section}{5}
+\setcounter{subsection}{2}
+\setcounter{dfn}{2}
+
+\subsection{De Montmort problem, or counting the derangements}
+The problem was originally posed by Pierre R\'emond de Montmort in 1708, and was solved by him and, independently, Nicholas Bernoulli.
+
+De Montmort stated it in terms of a game of cards, later it became popular in the following formulation:
+
+\begin{quote}
+\emph{The guests leaving a party are taking their hats in the garderobe.
+In the darkness they cannot tell the hats one from the other, so everybody takes a hat by chance.
+What is the probability that nobody will get his own hat?}
+\end{quote}
+
+Here is a formal description of the problem.
+Consider a bijection
+\[
+f \colon \{1, 2, \ldots, n\} \to \{1, 2, \ldots, n\}.
+\]
+Such a bijection is called a permutation.
+An element $x \in \{1, 2, \ldots, n\}$ is called a \emph{fixed point} of $f$ if $f(x) = x$.
+A permutation without fixed points is sometimes called a \emph{derangement}.
+The probability to be computed is equal to
+\[
+\frac{\#\text{derangements}}{\#\text{permutations}}.
+\]
+The number of permutations is known: it is $n!$.
+Thus we have to count the number of derangements.
+
+
+\end{document}

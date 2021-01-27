@@ -1,0 +1,35 @@
+\input{../preamble.tex}
+\begin{document}
+\setcounter{section}{3}
+\setcounter{subsection}{1}
+\setcounter{dfn}{3}
+
+\begin{proof}[Sketch of proof]
+Let $v_1, \ldots, v_5$ be the vertices of $K_5$.
+We denote by the same letters their images in the plane.
+The vertices $v_1, v_2, v_3, v_4$ and the edges between them form a planar embedding of $K_4$.
+Up to relabeling of vertices and isotopy there is a unique embedding of $K_4$ in the plane, see Figure \ref{fig:K4Embedding}, left.
+The graph $K_4$ separates the plane into four regions.
+The fifth vertex $v_5$ must lie in one of these regions.
+In whatever region it lies, it will be separated from one of the first four vertices.
+For example, if it lies in the outer region,
+then the edge $v_5v_1$ must intersect the contour $v_2v_3v_4$ at least once, see Figure \ref{fig:K4Embedding}, right.
+\end{proof}
+
+\begin{figure}[ht]
+\begin{center}
+\input{Fig/K4Embedding.pdf_t}
+\end{center}
+\caption{Proof of the non-planarity of $K_5$.}
+\label{fig:K4Embedding}
+\end{figure}
+
+The above is only a sketch of the proof, because the assertions
+``there is a unique embedding of $K_4$'' and ``the edge must intersect the contour'' require formal proofs.
+They follow from the Jordan curve theorem: any embedded closed curve in the plane separates the plane in two connected components.
+This might seem trivial but you should take into account that there are curves which are neither smooth nor polygonal
+(maybe you have heard about fractals).
+
+On the other hand, there is the following theorem (whose proof relies on the Jordan curve theorem).
+
+\end{document}

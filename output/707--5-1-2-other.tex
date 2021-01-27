@@ -1,0 +1,82 @@
+\input{../preamble.tex}
+\begin{document}
+\setcounter{section}{1}
+\setcounter{subsection}{3}
+\setcounter{dfn}{4}
+
+\begin{proof}
+Part 1. Let us show that each of the two geometric progressions $\lambda_1^n$ and $\lambda_2^n$ satisfies
+the recurrence relation \eqref{eqn:LinRec2}.
+Indeed, one has
+\[
+\lambda_i^n - r \lambda_i^{n-1} - s \lambda_i^{n-2} = \lambda_i^{n-2}(\lambda_i^2 - r \lambda_i - s) = 0,
+\]
+which implies $\lambda_i^n = r \lambda_i^{n-1} + s \lambda_i^{n-2}$.
+It follows that for any constant coefficients $c_1$ and $c_2$ the sequence $c_1\lambda_1^n + c_2\lambda_2^n$
+also satisfies the relation \eqref{eqn:LinRec2}.
+
+Let us show that the coefficients $c_1$ and $c_2$ can be chosen so that
+\begin{gather*}
+c_1  + c_2 = a_0\\
+c_1 \lambda_1 + c_2 \lambda_2 = a_1.
+\end{gather*}
+This is a system of two linear equations for two unknowns $c_1$ and $c_2$,
+which has a (unique) solution because the matrix of the system has a non-zero determinant:
+\[
+\begin{vmatrix}
+1 & 1\\
+\lambda_1 & \lambda_2
+\end{vmatrix}
+= \lambda_2 - \lambda_1 \ne 0.
+\]
+Once the sequences $c_1\lambda_1^n + c_2\lambda_2^n$ and $a_n$ coincide in the first two terms,
+they coincide everywhere. This proves the first part of the Theorem.
+
+
+Part 2. The proof is similar, but as the basis sequences we take $\lambda^n$ and $n\lambda^n$.
+The first of them satisfies the linear recurrence by the same reason as in Part 1.
+To check the recurrence for the second sequence, observe that $\lambda$ being the double root of the characteristic polynomial
+means that
+\[
+x^2 - rx - s = (x-\lambda)^2 \Rightarrow r = 2\lambda,\, s = -\lambda^2.
+\]
+Thus we have
+\begin{multline*}
+n\lambda^n - r(n-1)\lambda^{n-1} - s(n-2)\lambda^{n-2} = \lambda^{n-2}(n\lambda^2 - 2\lambda(n-1)\lambda + \lambda^2(n-2))\\
+= \lambda^n(n - 2(n-1) + (n-2)) = 0.
+\end{multline*}
+As next one has to find the coefficients $c_1$ and $c_2$ which make the linear combination $c_1\lambda^n + c_2 n\lambda^n$
+to coincide with the sequence $a_n$ in the first two terms:
+\begin{gather*}
+c_1 = a_0\\
+c_1 \lambda + c_2 \lambda = a_1.
+\end{gather*}
+Clearly, this linear system has a solution.
+\end{proof}
+
+Let us apply the algorithm from the above proof to find an explicit formula for Fibonacci numbers.
+
+The characteristic polynomial is $\lambda^2 - \lambda - 1$. Its roots are
+\begin{equation}
+\label{eqn:FibRoots}
+\lambda_1 = \frac{1 + \sqrt{5}}2, \quad \lambda_2 = \frac{1 - \sqrt{5}}2.
+\end{equation}
+If we start the Fibonacci sequence from the zeroth term so that the recurrence relation holds between $a_0$, $a_1$, $a_2$ as well, 
+then we must put $a_0 = 0$.
+Thus the coefficients $c_1$ and $c_2$ are found from the system
+\begin{gather*}
+c_1 + c_2 = 0\\
+c_1\lambda_1 + c_2\lambda_2 = 1.
+\end{gather*}
+From the first equation one has $c_2 = -c_1$. Substituting this into the second equation one obtains
+\[
+c_1 = \frac{1}{\lambda_1 - \lambda_2} = \frac{1}{\sqrt{5}}.
+\]
+The result is the formula of Binet:
+\[
+a_n = \frac{1}{\sqrt{5}} \lambda_1^n - \frac{1}{\sqrt{5}} \lambda_2^n.
+\]
+
+
+
+\end{document}

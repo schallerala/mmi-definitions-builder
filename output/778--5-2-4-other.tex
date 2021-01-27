@@ -1,0 +1,47 @@
+\input{../preamble.tex}
+\begin{document}
+\setcounter{section}{3}
+\setcounter{subsection}{0}
+\setcounter{dfn}{17}
+
+
+It follows that one can extract $q$-th root from any formal power series with non-zero constant term.
+
+\begin{proof}[Proof of Theorem \ref{thm:Vandermonde}]
+Step 1. If $\alpha = m$ and $\beta = n$ are positive integers, then
+\[
+\binom{m + n}{k} = \sum_{i=0}^k \binom{m}{i} \binom{n}{k-i}
+\]
+can be proved by a combinatorial argument: $\binom{m+n}{k}$ is the number of different choices of $k$ elements from the set $\{1, \ldots, m+n\}$.
+To choose $k$ elements, one has to choose $i$ elements among $\{1, \ldots, m\}$ and $k-i$ elements among $\{m+1, \ldots, m+n\}$ for some $i$ between $0$ and $k$.
+The number of such choices is $\binom{m}{i} \binom{n}{k-i}$.
+Summing over $i$ we obtain the desired formula.
+
+Step 2. Let us prove
+\[
+\binom{\alpha + n}{k} = \sum_{i=0}^k \binom{\alpha}{i} \binom{n}{k-i}
+\]
+for all $\alpha \in \R$ and all positive integers $n$.
+For fixed $n$ and $k$ the left hand side of the above formula is a polynomial in $\alpha$ of degree $k$;
+the right hand side is also a polynomial in $\alpha$ of degree $k$.
+Both polynomials take equal values at $\alpha = m$ for all positive integers $m$.
+It follows that the polynomials are identical
+(if two polynomials of degree $k$ coincide at $k+1$ points, then their difference is a polynomial of degree $\le k$ with $> k$ roots, hence identically zero).
+
+Step 3. Finally let us prove
+\[
+\binom{\alpha + \beta}{k} = \sum_{i=0}^k \binom{\alpha}{i} \binom{\beta}{k-i}
+\]
+for all $\alpha, \beta \in \R$.
+Fix $\alpha \in \R$ and $k \in \Z_{\ge 0}$. Then the left and the right hand sides are polynomials in $\beta$ of degree $k$.
+By Step 2, the values of these polynomials coincide whenever $\beta$ is a positive integer.
+Thus the polynomials are identically equal.
+(In particular, evaluating the left hand side and the right hand side for any values of $\alpha, k, \beta$ leads to the same results.)
+\end{proof}
+
+
+
+
+
+
+\end{document}

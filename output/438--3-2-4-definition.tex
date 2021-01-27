@@ -1,0 +1,53 @@
+\input{../preamble.tex}
+\begin{document}
+\setcounter{section}{2}
+\setcounter{subsection}{4}
+\setcounter{dfn}{7}
+
+\begin{dfn}
+\label{dfn:GentzenInference}
+The \emph{inference rules} of the sequent calculus are as follows.
+\begin{align*}
+&(\wedge\text{ \rm left}):\
+\AxiomC{$A, B, \Gamma \vdash \Delta$}
+\UnaryInfC{$A \wedge B, \Gamma \vdash \Delta$}
+\DisplayProof
+&&(\wedge\text{ \rm right}):\
+\AxiomC{$\Gamma \vdash A, \Delta$}
+\AxiomC{$\Gamma \vdash B, \Delta$}
+\BinaryInfC{$\Gamma \vdash A \wedge B, \Delta$}
+\DisplayProof
+\\
+&(\vee\text{ \rm left}):\
+\AxiomC{$A, \Gamma \vdash \Delta$}
+\AxiomC{$B, \Gamma \vdash \Delta$}
+\BinaryInfC{$A \vee B, \Gamma \vdash \Delta$}
+\DisplayProof
+&&(\vee\text{ \rm right}):\
+\AxiomC{$\Gamma \vdash A, B, \Delta$}
+\UnaryInfC{$\Gamma \vdash A \vee B, \Delta$}
+\DisplayProof
+\\
+&(\to\text{ \rm left}):\
+\AxiomC{$\Gamma \vdash A, \Delta$}
+\AxiomC{$\Gamma, B \vdash \Delta$}
+\BinaryInfC{$A \to B, \Gamma \vdash \Delta$}
+\DisplayProof
+&&(\to\text{ \rm right}):\
+\AxiomC{$\Gamma, A \vdash B, \Delta$}
+\UnaryInfC{$\Gamma \vdash A \to B, \Delta$}
+\DisplayProof
+\\
+&(\neg\text{ \rm left}):\
+\AxiomC{$\Gamma \vdash A, \Delta$}
+\UnaryInfC{$\neg A, \Gamma \vdash \Delta$}
+\DisplayProof
+&&(\neg\text{ \rm right}):\
+\AxiomC{$A, \Gamma \vdash \Delta$}
+\UnaryInfC{$\Gamma \vdash \neg A, \Delta$}
+\DisplayProof
+\end{align*}
+The sequents above the line are called \emph{premises}, the sequents below the line are called \emph{conclusions}.
+\end{dfn}
+
+\end{document}

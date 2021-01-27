@@ -1,0 +1,64 @@
+\input{../preamble.tex}
+\begin{document}
+\setcounter{section}{2}
+\setcounter{subsection}{2}
+\setcounter{dfn}{7}
+
+\begin{proof}
+We describe a construction algorithm of an $\epsilon$-NFA that accepts the language described by a given regular expression $r$.
+Moreover, the resulting automaton will have a unique accepting state.
+The construction uses the recursive structure of the regular expression.
+
+Let $r$ be any regular expression.
+By definition, $r$ is either basic or is obtained from one or two simpler expressions through sum, concatenation or closure.
+
+If $r$ is basic, then the corresponding language is accepted by one of the automata shown in Figure \ref{fig:AutomBasicRegExpr}.
+
+\begin{figure}[ht]
+\begin{center}
+\input{Fig/AutomBasicRegExpr.pdf_t}
+\end{center}
+\caption{Automata for basic regular expressions.}
+\label{fig:AutomBasicRegExpr}
+\end{figure}
+
+If $r = r_1 + r_2$, then by assumption there are $\epsilon$-NFAs $M_1$ and $M_2$,
+each with a unique final state, for the languages represented by $r_1$ and $r_2$.
+The automaton in Figure \ref{fig:AutomSum} accepts the language of the expression $r_1 + r_2$.
+
+\begin{figure}[ht]
+\begin{center}
+\input{Fig/AutomSum.pdf_t}
+\end{center}
+\caption{Automaton realizing the union of two languages.}
+\label{fig:AutomSum}
+\end{figure}
+
+If $r = r_1r_2$, then we combine the automata for $r_1$ and $r_2$ as shown in Figure \ref{fig:AutomConcat}.
+
+\begin{figure}[ht]
+\begin{center}
+\input{Fig/AutomConcat.pdf_t}
+\end{center}
+\caption{Automaton realizing the concatenation of two languages.}
+\label{fig:AutomConcat}
+\end{figure}
+
+Finally, the automaton in Figure \ref{fig:AutomClosure} accepts the language of $(r_1)^*$.
+
+\begin{figure}[ht]
+\begin{center}
+\input{Fig/AutomClosure.pdf_t}
+\end{center}
+\caption{Automaton realizing the Kleene closure of a language.}
+\label{fig:AutomClosure}
+\end{figure}
+
+In order to show that these automata do what they are meant to do, one has to prove two things:
+first, each word from the language $R_1 + R_2$ (respectively, $R_1R_2$, or $R_1^*$) is accepted by the automaton;
+second, each word accepted by the automaton belongs to the respective language.
+The arguments proving this are rather straightforward, and we omit them.
+\end{proof}
+
+
+\end{document}

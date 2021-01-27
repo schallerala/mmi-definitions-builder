@@ -1,0 +1,31 @@
+\input{../preamble.tex}
+\begin{document}
+\setcounter{section}{1}
+\setcounter{subsection}{2}
+\setcounter{dfn}{1}
+
+
+At the first sight it is not clear at all that this formula produces a rational and even integer number.
+
+A direct consequence of the Binet formula is that the Fibonacci sequence grows as a geometric progression with ratio
+equal to the golden ratio
+\[
+\tau = \frac{1+\sqrt{5}}2 = 1,618\ldots.
+\]
+Indeed, the second summand is
+\[
+\left(\frac{1-\sqrt{5}}2\right)^n = (-0,618\ldots)^n \to 0 \text{ as } n \to \infty,
+\]
+which implies that
+\[
+a_n \sim \frac{\tau^n}{\sqrt{5}},
+\]
+and even more exactly
+\[
+a_n = \left\lfloor \frac{\tau^n}{\sqrt{5}} \right\rceil,
+\]
+where $\lfloor x \rceil$ denotes the closest integer to the number $x$.
+
+
+
+\end{document}

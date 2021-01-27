@@ -1,7 +1,0 @@
-**Example 1**. Draw a convex $n$-gon and all of its diagonals. How many
-segments (sides and diagonals) do we get?
-
-Every point belongs to $n-1$ segments. If we multiply this by the number
-of points, we get $n(n-1)$. But every segment was counted twice, because
-it has two endpoints (two "legs"). Thus the total number of segments is
-$\frac{n(n-1)}2$.

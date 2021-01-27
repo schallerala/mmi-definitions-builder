@@ -1,0 +1,70 @@
+\input{../preamble.tex}
+\begin{document}
+\setcounter{section}{3}
+\setcounter{subsection}{9}
+\setcounter{dfn}{22}
+
+\begin{proof}
+We will construct a matching on the set of partitions into distinct summands
+such that partitions with an even number of summands are matched to partitions with an odd number of summands.
+For $n$ different from $\frac{3k^2 \pm k}2$ this matching will be perfect,
+and for $n = \frac{3k^2 \pm k}2$ exactly one partition will remain unmatched.
+
+For every partition $\lambda$ denote by $i(\lambda)$ the size of its smallest part.
+By $j(\lambda)$ denote the number of consecutive parts of $\lambda$ starting with the largest part.
+On the Ferrers diagram, $i(\lambda)$ is the length of the last row,
+and $j(\lambda)$ is the length of the diagonal starting from the top right dot (let us call it the rightmost diagonal),
+see Figure \ref{fig:IandJ}.
+
+\begin{figure}[ht]
+\begin{center}
+\input{Fig/IandJ.pdf_t}
+\end{center}
+\caption{Definition of $i(\lambda)$ and $j(\lambda)$.}
+\label{fig:IandJ}
+\end{figure}
+
+Take a partition $\lambda$ with $i(\lambda) \le j(\lambda)$ and look at its diagram.
+Construct a new diagram by removing the last row and adding a dot to each of the first $i$ rows.
+(In other words, move the last row so that it becomes a new rightmost diagonal.)
+This yields a new partition $\lambda'$ with $j(\lambda') = i(\lambda)$ (because the new rightmost diagonal is the old last row)
+and $i(\lambda') > i(\lambda)$ (because the new last row is longer than the old one).
+In particular, $i(\lambda') > j(\lambda')$.
+See Figure~\ref{fig:PentaMatching}.
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=.7\textwidth]{PentaMatching}
+\end{center}
+\caption{Transforming a $(i \le j)$-partition into a $(i > j)$-partition.}
+\label{fig:PentaMatching}
+\end{figure}
+
+This is an (almost) perfect matching between partitions with $i \le j$ and partitions with $i > j$.
+Indeed, the above transformation is (almost always) invertible:
+take a partition with $i > j$ and move its rightmost diagonal to the bottom so that it becomes the new last row.
+
+Also, this matching fulfills our needs: when the last row is moved, the number of parts changes by $1$,
+so that partitions with an even number of parts are matched to partitions with an odd number of parts.
+
+Why is it only almost perfect?
+The transformation of a $(i \le j)$-partition into a $(i > j)$-partition is not going to work if $i=j$ and the last row intersects the rightmost diagonal
+(in this case the new rightmost diagonal will ``stick out'').
+A partition with this property looks as shown on Figure \ref{fig:FerrersPenta}, left.
+Thus it is only possible for $n = \frac{3k^2 - k}2$.
+The inverse transformation of a $(i > j)$-partition into a $(i \le j)$-partition will not work
+if $i = j+1$ and the last row intersects the rightmost diagonal
+(in this case after the transformation the two last rows have equal length, so the partition does not have distinct parts).
+Such partitions look as shown on Figure \ref{fig:FerrersPenta}, right, and are only possible for $n = \frac{3k^2 + k}2$.
+
+The ``lonely'' partition has $k$ rows.
+Thus if $k$ is even, then there is one even partition more than odd,
+and if $k$ is odd, then there is one odd partition more than even.
+\end{proof}
+
+
+
+
+
+
+\end{document}

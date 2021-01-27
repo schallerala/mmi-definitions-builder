@@ -1,0 +1,18 @@
+\input{../preamble.tex}
+\begin{document}
+\setcounter{section}{3}
+\setcounter{subsection}{1}
+\setcounter{dfn}{1}
+
+\begin{proof}[First proof]
+This is immediate from \eqref{eqn:NChooseK}: if we replace $k$ by $n-k$, then the factors in the denominator simply interchange.
+\end{proof}
+\begin{proof}[Second proof]
+The theorem can be proved even without knowing a formula for $\binom{n}{k}$, by a bijective argument.
+Associate to every subset of an $n$-element set its complement: $A \mapsto X \setminus A$.
+This is a bijection, and it sends $k$-element subsets to $(n-k)$-element subsets.
+Thus there are as many $k$-element subsets as there are $(n-k)$-element subsets.
+\end{proof}
+
+
+\end{document}

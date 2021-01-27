@@ -1,0 +1,23 @@
+\input{../preamble.tex}
+\begin{document}
+\setcounter{section}{2}
+\setcounter{subsection}{4}
+\setcounter{dfn}{12}
+
+
+We don't give a proof of the above theorem, but there is a simple algorithm that allows to compute the coefficients $c_i$, respectively $c_{ij}$.
+Bring the equation to a common denominator, it becomes an equation between the numerators.
+The numerators are polynomials; they are equal if and only if their corresponding coefficients are equal.
+This yields a system of linear equations on the unknowns $c_i$ (respectively $c_{ij}$).
+
+Because of
+\[
+\frac{1}{1-\lambda_i x} = 1 + \lambda_i x + \lambda_i^2 x^2 + \cdots
+\]
+the first part of the above theorem implies that every linear recursive sequence has the form $a_n = \sum_i c_i \lambda_i^n$,
+if the characteristic polynomial has only simple roots $\lambda_i$.
+In the case of multiple roots we need to represent the quotient $\frac{1}{(1-\lambda x)^j}$ as a formal power series.
+
+
+
+\end{document}

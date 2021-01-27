@@ -1,0 +1,22 @@
+\input{../preamble.tex}
+\begin{document}
+\setcounter{section}{2}
+\setcounter{subsection}{3}
+\setcounter{dfn}{7}
+
+\begin{proof}
+Let $|V| = n$.
+Use induction on $n$.
+For $n=1$, there is only one tree with one vertex.
+It has no edges, which proves the induction base.
+
+Now let us prove the induction step: if every tree with $n$ vertices has $n-1$ edges, then every tree with $n+1$ vertices has $n$ edges.
+Take any tree $T$ with $n+1$ vertices.
+By Lemma \ref{lem:LeafTree} it has a leaf $v$.
+By Lemma \ref{lem:LeafDel} the graph $T - v$ is also a tree.
+The tree $T - v$ has $n$ vertices, therefore by the induction assumption it has $n-1$ edges.
+But then $T$ has $n$ edges, and the induction step is proved.
+\end{proof}
+
+
+\end{document}

@@ -1,0 +1,89 @@
+\input{../preamble.tex}
+\begin{document}
+\setcounter{section}{1}
+\setcounter{subsection}{4}
+\setcounter{dfn}{12}
+
+\begin{proof}
+First let us find a formula that represents a very simple function: a function that takes value $1$ at one point only.
+Take any vector $x \in \{0,1\}^n$ and put
+\[
+f(x) = 1, \quad f(y) = 0 \text{ for all }y \ne x.
+\]
+We need a propositional formula with symbols $p_1, \ldots, p_n$ that evaluates to $1$ only when $v(p_i) = x_i$ for all $i$.
+This is achieved by a conjunction
+\[
+B = C_1 \wedge C_2 \wedge \cdots \wedge C_n,
+\]
+where
+\[
+C_i =
+\begin{cases}
+p_i, &\text{ if } x_1 = 1,\\
+\neg p_i, &\text{ if }x_1 = 0.
+\end{cases}
+\]
+Let us prove that $f_B = f$ in a formal way.
+Take any $y \in \{0,1\}^n$.
+By definition, $f_B(y) = \hat{v}(B)$ for the valuation $v(p_i) = y_i$.
+Apply the recursive definition of $\hat{v}$:
+\[
+f_B(y) = \hat{v}(B) = \hat{v}(C_1) \wedge \hat{v}(C_2) \wedge \cdots \wedge \hat{v}(C_n).
+\]
+The right hand side is equal to $1$ if and only if $\hat{v}(C_i) = 1$ for all $i$.
+By definition of $C_i$ we have
+\begin{align*}
+\text{if }x_i = 1,\ &\text{then }\hat{v}(C_i) = \hat{v}(p_i) = v(p_i) = y_i\\
+\text{if }x_i = 0,\ &\text{then } \hat{v}(C_i) = \hat{v}(\neg p_i) = \neg \hat{v}(p_i) = \neg y_i,
+\end{align*}
+which implies that $\hat{v}(C_i) = 1$ if and only if $y_i = x_i$.
+It follows that $f_B(y) = 1$ if and only if $y_i = x_i$ for all $i$, that is $f_B = f$.
+
+Now let $f$ be an arbitrary Boolean function of $n$ arguments.
+If $f(x) = 0$ for all $x$, then one can represent $f$ by the formula $p_1 \wedge \neg p_1$.
+Assume that there is at least one $x$ such that $f(x) = 1$.
+For every $x \in \{0,1\}^n$ such that $f(x) = 1$ construct a conjunction $B_x$ as above and take the disjunction of all such $B_x$:
+\[
+A = \bigvee_{f(x)=1} B_x.
+\]
+We claim that $f_A = f$.
+Indeed, $A$ evaluates to $1$ if and only if at least one of $B_x$ evaluates to $1$
+and, as we know, $B_x$ evaluates to $1$ only at $x$.
+Thus $A$ evaluates to $1$ exactly at those points where $f(x) = 1$.
+
+Formally, for every $y$ we have
+\[
+f_A(y) = \hat{v}(A) = \bigvee_{f(x)=1} \hat{v}(B_x)
+\]
+(where $v(p_i) = y_i$).
+The right hand side equals $1$ if and only if $\hat{v}(B_x) = 1$ for some $x$.
+But $\hat{v}(B_x) = 1$ if and only if $y=x$.
+Thus $f_A(y) = 1$ if and only if $y=x$ for some $x$ such that $f(x)=1$, which is just a complicated way to say if and only if $f(y) = 1$.
+Hence $f_A = f$, and the theorem is proved.
+\end{proof}
+
+The above argument provides a procedure of writing a formula with a given truth table.
+We will illustrate it on the example of the function given by the table below.
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+$p$ & $q$ & ?\\\hline
+$0$ & $0$ & $0$\\\hline
+$0$ & $1$ & $1$\\\hline
+$1$ & $0$ & $1$\\\hline
+$1$ & $1$ & $0$\\\hline
+\end{tabular}
+\end{center}
+
+Mark the rows with $1$ at the end.
+For each of these rows write a conjunction of all proposition symbols, negated or not depending on whether the value of this symbol in this row is $0$ or $1$.
+In our case these are $\neg p \wedge q$ and $p \wedge \neg q$.
+Then write the disjunction of the obtained conjunctions:
+\[
+(\neg p \wedge q) \vee (p \wedge \neg q).
+\]
+
+Observe that the formula constructed in Theorem \ref{thm:BooleNF} does not use the connective $\to$.
+
+\end{document}

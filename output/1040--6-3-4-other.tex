@@ -1,0 +1,31 @@
+\input{../preamble.tex}
+\begin{document}
+\setcounter{section}{4}
+\setcounter{subsection}{0}
+\setcounter{dfn}{17}
+
+\begin{proof}
+Let $L \subset \Delta^*$ be a regular language, and $h \colon \Sigma^* \to \Delta^*$ a homomorphism.
+Let $M = (Q, \Delta, \delta, q_0, F)$ be a DFA accepting $L$.
+We will construct a DFA accepting $h^{-1}(L)$ thus proving that this language is regular.
+The idea is to use the same set of states and the same set of final states, but interpret each symbol $a \in \Sigma$ as $h(a) \in \Delta$.
+Then a word $w \in \Sigma^*$ will be accepted by the new automaton if and only if $h(w)$ was accepted by the old one.
+Formally, put
+\[
+M' = (Q, \Sigma, \delta', q_0, F), \text{ where }\delta'(q, a) = \widehat{\delta}(q, h(a)).
+\]
+It can be shown by induction on the length of a word $w$ that $\widehat{\delta'}(q, w) = \widehat{\delta}(q, h(w))$.
+Thus we have
+\[
+w \in L(M') \Leftrightarrow \widehat{\delta'}(q, w) \in F \Leftrightarrow \widehat{\delta}(q, h(w)) \in F \Leftrightarrow h(w) \in L
+\Leftrightarrow w \in h^{-1}(L),
+\]
+which means $L(M') = h^{-1}(L)$.
+\end{proof}
+
+
+
+
+
+
+\end{document}

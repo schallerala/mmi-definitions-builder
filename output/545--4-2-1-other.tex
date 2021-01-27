@@ -1,0 +1,26 @@
+\input{../preamble.tex}
+\begin{document}
+\setcounter{section}{2}
+\setcounter{subsection}{2}
+\setcounter{dfn}{3}
+
+
+An example showing that $y$ should not occur freely in $A$:
+\[
+\exists x A = \exists x (P(x) \wedge \neg P(y)).
+\]
+This formula is satisfiable in any structure where the interpretation of predicate $P$ is not constant.
+But after the quantifier removal and substitution of $y$ for $x$ it becomes
+\[
+A[y/x] = P(y) \wedge \neg P(y),
+\]
+which is not satisfiable.
+
+
+
+
+
+
+
+
+\end{document}

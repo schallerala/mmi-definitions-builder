@@ -1,0 +1,50 @@
+\input{../preamble.tex}
+\begin{document}
+\setcounter{section}{1}
+\setcounter{subsection}{3}
+\setcounter{dfn}{10}
+
+\begin{exl}
+Let us construct a DFA equivalent to the NFA in Figure~\ref{fig:NFA}.
+For convenience, write first the table of our NFA.
+\begin{center}
+\begin{tabular}{c|cc}
+$\delta$ & $0$ & $1$\\
+\hline
+$q_0$ & $\{q_0, q_1\}$ & $\{q_0\}$\\
+$q_1$ & $\{q_2\}$ & $\emptyset$\\
+$q_2$ & $\{q_2\}$ & $\{q_2\}$
+\end{tabular}
+\end{center}
+The set $Q = \{q_0, q_1, q_2\}$ has $8$ subsets, so if we follow the construction given in the theorem literally, we must write a table with $8$ rows.
+However, not all of the $8$ states will be accessible from the initial state.
+The inaccessible states can be removed from the automaton without affecting the language.
+Therefore we will introduce new rows in our table for $M'$ only as soon as they are needed.
+Also, for a better distinction we will use in $M'$ the $[\ ]$ brackets instead of the set brackets $\{\ \}$.
+The result is the following table:
+\begin{center}
+\begin{tabular}{c|cc}
+$\delta'$ & $0$ & $1$\\
+\hline
+$[q_0]$ & $[q_0,q_1]$ & $[q_0]$\\
+$[q_0,q_1]$ & $[q_0,q_1,q_2]$ & $[q_0]$\\
+$[q_0, q_1, q_2]$ & $[q_0,q_1,q_2]$ & $[q_0,q_2]$\\
+$[q_0,q_2]$ & $[q_0,q_1,q_2]$ & $[q_0,q_2]$
+\end{tabular}
+\end{center}
+For brevity, rename the states so that the table takes the form
+\begin{center}
+\begin{tabular}{c|cc}
+$\delta'$ & $0$ & $1$\\
+\hline
+$q'_0$ & $q'_1$ & $q'_0$\\
+$q'_1$ & $q'_2$ & $q'_0$\\
+$q'_2$ & $q'_2$ & $q'_3$\\
+$q'_3$ & $q'_2$ & $q'_3$
+\end{tabular}
+\end{center}
+The corresponding transition diagram is shown in Figure \ref{fig:NFAtoDFA}.
+The final states are $q'_2$ and $q'_3$ because they correspond to the sets which contain the final state $q_2$ of $M'$.
+\end{exl}
+
+\end{document}

@@ -1,0 +1,34 @@
+\input{../preamble.tex}
+\begin{document}
+\setcounter{section}{3}
+\setcounter{subsection}{6}
+\setcounter{dfn}{15}
+
+\begin{proof}
+Conjugation defines a self-bijection of the set of all partitions of $n$.
+Diagrams with $k$ rows are conjugate to diagrams with $k$ columns,
+thus the number of diagrams of the first kind is equal to the number of diagrams of the second kind.
+On the other hand, diagrams with $k$ rows correspond to partitions into $k$ parts,
+and diagrams with $k$ columns correspond to partitions whose largest part is equal to $k$.
+Thus we have as many partitions of the first kind as partitions of the second kind.
+
+For partitions into at most $k$ parts and partitions with all parts $\le k$ the argument is similar.
+\end{proof}
+
+
+Let us present another elegant statement about partitions.
+First, call a partition $\lambda$ \emph{self-conjugate} if it is conjugate to itself:
+the Ferrers diagram of $\lambda$ is symmetric with respect to the northwest-southeast diagonal.
+Figure \ref{fig:FerrersSelfConj} shows all self-conjugate partitions of $12$.
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=.8\textwidth]{ConjPart12}
+\end{center}
+\caption{Self-conjugate partitions of $12$.}
+\label{fig:FerrersSelfConj}
+\end{figure}
+
+
+
+\end{document}

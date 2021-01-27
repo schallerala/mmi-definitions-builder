@@ -1,0 +1,36 @@
+\input{../preamble.tex}
+\begin{document}
+\setcounter{section}{2}
+\setcounter{subsection}{5}
+\setcounter{dfn}{11}
+
+\begin{proof}
+Let $X$ be the set of all possible ordered choices of $k$ balls out of $n$,
+and $Y$ be the set of all unordered choices of $k$ balls.
+There is a map $f \colon X \to Y$ (the ``forgetful map'') that associates to
+an ordered collection of $k$ balls the same set of balls, but unordered.
+(The balls lying in a line are put into another bag.)
+
+For $y \in Y$, what is the cardinality of its preimage $f^{-1}(y)$?
+This is the number of ways to order an unordered set of $k$ balls.
+An ordering is a bijection to the set $\{1, 2, \ldots, k\}$, and from Corollary \ref{cor:NumberOfBijections} we know that there are $k!$ of them.
+Therefore by the quotient rule we have
+\[
+|Y| = \frac{|X|}{k!} = \frac{n(n-1)\cdot \ldots \cdot (n-k+1)}{k!}.
+\]
+\end{proof}
+
+As we already said, an unordered choice of $k$ balls out of $n$ is also called a $k$-combination.
+Yet another name of this is a \emph{$k$-element subset} of a given $n$-element set.
+(By definition, a set is an unordered collection of elements.)
+
+\smallskip
+
+\noindent\textbf{Notation.}
+The number of $k$-element subsets of an $n$-element set is denoted by $\binom{n}{k}$
+(pronounced ``$n$ choose $k$'').
+
+
+
+
+\end{document}

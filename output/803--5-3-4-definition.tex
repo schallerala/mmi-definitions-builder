@@ -1,0 +1,22 @@
+\input{../preamble.tex}
+\begin{document}
+\setcounter{section}{3}
+\setcounter{subsection}{4}
+\setcounter{dfn}{7}
+
+\begin{dfn}
+Let $B_1(x), B_2(x), \ldots$ be a sequence of formal power series with
+\[
+B_k(x) = \sum_{n=0}^\infty b_{k,n}(x) x^n
+\]
+One says that the sequence $B_k(x)$ of power series \emph{converges} to the power series $B(x) = \sum_{n=0}^\infty b_n x^n$:
+\[
+\lim_{k \to \infty} B_k(x) = B(x)
+\]
+if the sequence of coefficients at $x^n$ in $B_k(x)$ stabilizes to the coefficient at $x^n$ in $B(x)$:
+\[
+\forall n \exists K_n \text{ such that } b_{k,n} = b_n \forall k > K_n.
+\]
+\end{dfn}
+
+\end{document}

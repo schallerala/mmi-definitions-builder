@@ -1,0 +1,20 @@
+\input{../preamble.tex}
+\begin{document}
+\setcounter{section}{3}
+\setcounter{subsection}{6}
+\setcounter{dfn}{13}
+
+\subsection{Multisets}
+Imagine a bag with $k$ balls numbered by $1, 2, \ldots, k$.
+We are taking out a ball, writing down its number, and then putting the ball back into the bag.
+This is done $n$ times.
+From the product rule we know that $k^n$ different sequences of numbers are possible.
+(One can see such a sequence as a map $f \colon \{1, \ldots, n\} \to \{1, \ldots, k\}$: here $f(i)$ is the number at the $i$-th place.)
+But what if we don't care for the order of the results, but only count how often each ball was taken?
+For example, the sequences $(2, 1, 4, 4)$ and $(4, 1, 4, 2)$ are considered as the same.
+How many different combinations of balls are possible?
+
+One cannot proceed by the quotient rule, because the number of different orderings of a sequence with repetitions depends on how often the repetitions occur.
+
+
+\end{document}

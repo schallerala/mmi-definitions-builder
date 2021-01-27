@@ -1,0 +1,45 @@
+\input{../preamble.tex}
+\begin{document}
+\setcounter{section}{2}
+\setcounter{subsection}{2}
+\setcounter{dfn}{4}
+
+% Note that among the formulas $A_i$, $B_j$ some can be non-closed, so it is necessary to define variable assignments for their free variables.
+% (We are not taking the universal closure of non-closed formulas in this case.)
+
+Axioms of the Gentzen system are, as before, sequents $\Gamma \vdash \Delta$
+with some formula occurring on both sides: $A \in \Gamma \cap \Delta$.
+Axioms are valid (because no structure can at the same time satisfy and falsify $A$).
+Inference rules for the logical connectives $\wedge, \vee, \to, \neg$ are the same.
+There are four new rules involving the quantifiers.
+
+\begin{align*}
+&(\forall\text{ \rm left}):\
+\AxiomC{$A[t/x], \forall x A, \Gamma \vdash \Delta$}
+\UnaryInfC{$\forall x A, \Gamma \vdash \Delta$}
+\DisplayProof
+&&(\forall\text{ \rm right}):\
+\AxiomC{$\Gamma \vdash A[y/x], \Delta$}
+\UnaryInfC{$\Gamma \vdash \forall x A, \Delta$}
+\DisplayProof
+\\
+&(\exists\text{ \rm left}):\
+\AxiomC{$A[y/x], \Gamma \vdash \Delta$}
+\UnaryInfC{$\exists x A, \Gamma \vdash \Delta$}
+\DisplayProof
+&&(\exists\text{ \rm right}):\
+\AxiomC{$\Gamma \vdash A[t/x], \exists x A, \Delta$}
+\UnaryInfC{$\Gamma \vdash \exists x A, \Delta$}
+\DisplayProof
+\end{align*}
+
+Here $t$ is any term free for $x$ in $A$, and $y$ is any variable free for $x$ in $A$ and not occurring freely in the conclusion
+(that is, in the sequent $\Gamma \vdash \forall x A, \Delta$ for the right $\forall$ rule and in the sequent $\exists x A, \Gamma \vdash \Delta$
+for the left $\exists$ rule).
+In particular, one can substitute $x$ for itself if $x$ does not occur freely in $\Gamma$ and~$\Delta$.
+
+As before, a deduction tree is a proof tree if all of its leaves are axioms.
+A sequent is called provable if there is a proof tree with this sequent as a root.
+
+
+\end{document}

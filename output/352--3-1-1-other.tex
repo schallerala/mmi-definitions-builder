@@ -1,0 +1,27 @@
+\input{../preamble.tex}
+\begin{document}
+\setcounter{section}{1}
+\setcounter{subsection}{2}
+\setcounter{dfn}{1}
+
+The last condition can be replaced by the requirement that $\Prop$ is the smallest (in the sense of inclusion) set satisfying the first three conditions.
+
+A propositional formula has a recursive structure that can be represented with a \emph{parse tree}.
+See Figure \ref{fig:ParseTreeProp} for an example.
+
+\begin{figure}[ht]
+\begin{center}
+\input{Fig/ParseTreeProp.pdf_t}
+\end{center}
+\caption{Parse tree for $((p \vee q) \to \neg q)$.}
+\label{fig:ParseTreeProp}
+\end{figure}
+
+Parentheses in a propositional formula ensure that the parse tree is unique.
+If the root of the parsing tree is labeled with $\wedge, \vee$, or $\to$, then the formula starts with $($ and ends with $)$.
+This pair of parentheses is not needed for parsing, and we will often omit it.
+Strictly speaking, this is syntactically wrong, but should not lead to confusion.
+
+
+
+\end{document}

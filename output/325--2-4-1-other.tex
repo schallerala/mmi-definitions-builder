@@ -1,0 +1,24 @@
+\input{../preamble.tex}
+\begin{document}
+\setcounter{section}{4}
+\setcounter{subsection}{2}
+\setcounter{dfn}{2}
+
+
+A maximum matching is obviously inclusion-maximal, but not vice versa.
+See Figure \ref{fig:MaxNotMax} for two examples.
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=.7\textwidth]{MaxNotMax.pdf}
+\end{center}
+\caption{Two inclusion-maximal but not maximum matchings.}
+\label{fig:MaxNotMax}
+\end{figure}
+
+It follows that the greedy algorithm (add edges as long as it is possible) does not always find a maximum matching.
+
+
+
+
+\end{document}

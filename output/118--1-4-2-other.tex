@@ -1,0 +1,18 @@
+\input{../preamble.tex}
+\begin{document}
+\setcounter{section}{4}
+\setcounter{subsection}{3}
+\setcounter{dfn}{2}
+
+\begin{proof}
+Multiply the brackets respecting the order of the factors.
+We obtain the sum of all words of length $n$ from the letters $a_1, \ldots, a_m$.
+When collecting the like terms, we disregard the order of the letters, looking only at the number of occurences of every letter.
+The words with $k_i$ letters $a_i$ (for all $i$ from $1$ to $m$) become the terms $a_1^{k_1} \cdots a_m^{k_m}$.
+The coefficient at this term is the number of the words made of $k_1$ letters $a_1$,... $k_m$ letters $a_m$,
+that is $\binom{n}{k_1, \ldots, k_m}$.
+\end{proof}
+
+
+
+\end{document}

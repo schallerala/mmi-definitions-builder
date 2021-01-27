@@ -1,0 +1,51 @@
+\documentclass[preview, multi=page, margin=5mm, class=report]{standalone}
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx,color}
+\usepackage{hyperref,url}
+\graphicspath{{Fig/}}
+
+\usepackage{mathtools}
+\usepackage{bussproofs}
+\usepackage{stackengine}
+\def\ruleoffset{1pt}
+\newcommand\specialvdash[2]{\mathrel{\ensurestackMath{
+  \mkern2mu\rule[-\dp\strutbox]{.4pt}{\baselineskip}\stackon[\ruleoffset]{
+    \stackunder[\dimexpr\ruleoffset-.5\ht\strutbox+.5\dp\strutbox]{
+      \rule[\dimexpr.5\ht\strutbox-.5\dp\strutbox]{2.5ex}{.4pt}}{
+        \scriptstyle #1}}{\scriptstyle#2}\mkern2mu}}
+}
+
+\usepackage[table]{xcolor}
+
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thefigure{\arabic{figure}}
+\renewcommand\theequation{\arabic{equation}}
+
+\newtheorem{dfn}{Definition}[section]
+\newtheorem{thm}[dfn]{Theorem}
+\newtheorem{lem}[dfn]{Lemma}
+\newtheorem{cor}[dfn]{Corollary}
+
+
+\theoremstyle{definition}
+\newtheorem{exl}[dfn]{Example}
+\newtheorem{rem}[dfn]{Remark}
+\newtheorem{exc}{Exercise}[section]
+
+\def\R{\mathbb{R}}
+\def\N{\mathbb{N}}
+\def\Z{\mathbb{Z}}
+\def\C{\mathbb{C}}
+\def\cP{\mathcal{P}}
+\def\cV{\mathcal{V}}
+\def\cF{\mathcal{F}}
+\def\Th{\mathrm{Th}}
+
+\renewcommand{\emptyset}{\varnothing}
+\renewcommand{\phi}{\varphi}
+\renewcommand{\epsilon}{\varepsilon}
+\def\gcd{\operatorname{gcd}}
+
+\def\Prop{\mathrm{PROP}}

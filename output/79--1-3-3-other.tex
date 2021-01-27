@@ -1,0 +1,52 @@
+\input{../preamble.tex}
+\begin{document}
+\setcounter{section}{3}
+\setcounter{subsection}{4}
+\setcounter{dfn}{6}
+
+\begin{proof}
+We know that $\binom{n}{k}$ is the number of binary words of length $n$ with exactly $k$ digits $1$.
+There are two kinds of words like that: those that start with $1$ and those that start with $0$.
+How many words of each kind are there?
+
+When we delete the first digit, we are left with a word of length $n-1$.
+For the words of the first kind, this word of length $n-1$ must contain $k-1$ digits $1$.
+Thus there are $\binom{n-1}{k-1}$ words of the first kind.
+
+Similarly, for a word of second kind we are left with a word of length $n-1$ that contains $k$ digits $1$.
+Thus there are $\binom{n-1}k$ words of the second kind.
+
+Since every word is either of the first kind or of the second kind but not both,
+identity \eqref{eqn:BinCoeffRec} holds.
+\end{proof}
+
+\begin{proof}[Proof of Theorem \ref{thm:BinPascal}]
+Let us write the numbers $\binom{n}{k}$ in a triangle similar to the Pascal triangle:
+\begin{center}
+\begin{tabular}{ccccccccccc}
+&    &    &    &    &  $\binom{0}{0}$\\\noalign{\smallskip\smallskip}
+&    &    &    &  $\binom{1}{0}$ &    &  $\binom{1}{1}$\\\noalign{\smallskip\smallskip}
+&    &    &  $\binom{2}{0}$ &    &  $\binom{2}{1}$ &    &  $\binom{2}{2}$\\\noalign{\smallskip\smallskip}
+&    &  $\binom{3}{0}$ &    &  $\binom{3}{1}$ &    &  $\binom{3}{2}$ &    &  $\binom{3}{3}$\\\noalign{\smallskip\smallskip}
+&  $\binom{4}{0}$ &    &  $\binom{4}{1}$ &    &  $\binom{4}{2}$ &    &  $\binom{4}{3}$ &    & $\binom{4}{4}$\\\noalign{\smallskip\smallskip}
+$\binom{5}{0}$ &   &  $\binom{5}{1}$ &    & $\binom{5}{2}$ &    & $\binom{5}{3}$ &    &  $\binom{5}{4}$ &   & $\binom{5}{5}$\\\noalign{\smallskip\smallskip}
+\end{tabular}
+\end{center}
+The top-left neighbor of the number $\binom{n}{k}$ is $\binom{n-1}{k-1}$, the top-right neighbor is $\binom{n-1}{k}$.
+By Lemma \ref{lem:BinCoeffRec}, the numbers in the $\binom{n}{k}$-triangle satisfy the same rule that the numbers in the Pascal triangle:
+each number is the sum of its top-left and top-right neighbors.
+The outermost numbers $\binom{n}{0}$ and $\binom{n}{n}$ are also the same as in the Pascal triangle:
+\[
+\binom{n}{0} = \binom{n}{n} = 1.
+\]
+It follows that the $\binom{n}{k}$-triangle coincides with the Pascal triangle.
+(The formal argument here is proof by induction:
+if the $n$-th line of the $\binom{n}{k}$-triangle coincides with the $n$-th line of the Pascal triangle,
+then their $(n+1)$-st lines also coincide.)
+\end{proof}
+
+
+
+
+
+\end{document}

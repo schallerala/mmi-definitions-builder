@@ -1,0 +1,31 @@
+\input{../preamble.tex}
+\begin{document}
+\setcounter{section}{2}
+\setcounter{subsection}{2}
+\setcounter{dfn}{3}
+
+\begin{proof}
+The equation $A(x)B(x) = 1$ consists of an infinite sequence of equations
+\begin{gather*}
+a_0b_0 = 1\\
+a_0b_1 + a_1b_0 = 0\\
+a_0b_2 + a_1b_1 + a_2b_0 = 0\\
+\cdots
+\end{gather*}
+with unknowns $b_0, b_1, \ldots$.
+The first equation implies $b_0 = \frac{1}{a_0}$ (which is defined because $a_0 \ne 0$).
+Knowing $b_0$ we can express $b_1$ from the second equation:
+\[
+b_1 = -\frac{a_1b_0}{a_0}
+\]
+and continue in the same spirit, because $(k+1)$-st equation can be solved for $b_k$:
+\[
+b_k = -\frac{1}{a_0}\sum_{i=1}^k a_ib_{k-i}.
+\]
+This shows that the inverse series $B(x)$ exists and is unique.
+\end{proof}
+
+We denote the inverse series to $A(x)$ by $(A(x))^{-1}$ or $\frac{1}{A(x)}$.
+
+
+\end{document}

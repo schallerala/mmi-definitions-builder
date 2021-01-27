@@ -1,0 +1,25 @@
+\input{../preamble.tex}
+\begin{document}
+\setcounter{section}{8}
+\setcounter{subsection}{1}
+\setcounter{dfn}{1}
+
+\begin{dfn}
+A \emph{Turing machine} is
+\[
+M = (Q, \Sigma, \Gamma, \delta, q_0, B, F),
+\]
+where
+\begin{itemize}
+\item
+$Q$ is the set of states, $q_0 \in Q$ is the initial state, and $F \subset Q$ is the set of final states;
+\item
+$\Gamma$ is the set of \emph{tape symbols}, $\Sigma \subset \Gamma$ is the set of \emph{input symbols},
+and $B \in \Gamma \setminus \Sigma$ is the \emph{blank} symbol;
+\item
+$\delta \colon Q \times \Gamma \to Q \times \Gamma \times \{L, R\}$
+is a partial map (that is, it can be undefined for some arguments), called the \emph{move function}.
+\end{itemize}
+\end{dfn}
+
+\end{document}

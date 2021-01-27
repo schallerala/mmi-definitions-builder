@@ -1,0 +1,30 @@
+\input{../preamble.tex}
+\begin{document}
+\setcounter{section}{3}
+\setcounter{subsection}{4}
+\setcounter{dfn}{5}
+
+\begin{proof}
+This is similar to the money changing problem, but with banknotes of any denomination available.
+
+The right hand side is equal to
+\[
+(1+x+x^2+\cdots)(1+x^2+x^4+\cdots)(1+x^3+x^6+\cdots)\cdots = \sum x^{m_1 + 2m_2 + 3m_3 + \cdots + km_k},
+\]
+where the sum is taken over all $k$ and all collections of non-negative integers $m_1, \ldots, m_k$.
+When we collect the like terms, the coefficient at $x^n$ will be equal to the number of representations of $n$ in the form
+$m_1 + 2m_2 + \cdots + km_k$.
+This corresponds to a unique partition, namely to
+\[
+n = \underbrace{k+\cdots+k}_{m_k} + \cdots + \underbrace{1+\cdots+1}_{m_1}.
+\]
+Thus the product on the right hand side is equal to the generating function of the number of partitions.
+\end{proof}
+
+In the above proof we met an infinite product of power series.
+This product is again a power series because in order to compute the coefficient at $x^n$
+only finitely many factors from the infinite product are needed (the first $n$ factors in the above case).
+Definitions below formalize this.
+
+
+\end{document}

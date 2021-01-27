@@ -1,0 +1,30 @@
+\input{../preamble.tex}
+\begin{document}
+\setcounter{section}{2}
+\setcounter{subsection}{4}
+\setcounter{dfn}{11}
+
+We will find a spanning tree by deleting edges from the graph one by one while taking care that the graph remains connected.
+For any graph $G = (V, E)$ and any its edge $e \in E$ denote by $G - e$ the graph $(V, E \setminus \{e\})$.
+(Note that we are not removing any vertices, even if after deletion of $e$ an isolated vertex appears.)
+This is the operation of \emph{edge deletion}.
+\begin{proof}
+Let $G$ be a connected graph.
+If $G$ contains a cycle $C$, then let $e$ be any edge of $C$.
+I claim that the graph $G - e$ is connected.
+Indeed, let $v, w \in V$ be any two vertices of $G$.
+Since $G$ is connected, there is a path in $G$ between $v$ and $w$.
+If this path never uses the edge $e$, then this is also a path in $G - e$.
+If it does use $e$, then instead going on $e$, take a detour via the path $C - e$.
+This produces a walk in $G - e$ from $v$ to $w$.
+A walk can be transformed into a path by removing cycles.
+
+Thus $G - e$ is connected.
+If it is acyclic, then it is a spanning tree.
+Otherwise repeat the operation: take another cycle and remove an edge from it etc.
+until we arrive at an acyclic connected subgraph with the same vertex set as $G$.
+\end{proof}
+
+The following theorem is a strengthening of Theorem \ref{thm:TreeEdges}.
+
+\end{document}

@@ -1,0 +1,36 @@
+\input{../preamble.tex}
+\begin{document}
+\setcounter{section}{4}
+\setcounter{subsection}{2}
+\setcounter{dfn}{4}
+
+
+It follows that an $M$-augmenting path can look only as the bottom path on Figure \ref{fig:AltPath}.
+In addition, there must be no edge of $M$ incident to the initial and terminal vertices of the path.
+See Figure \ref{fig:AugmPathDef}.
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=.6\textwidth]{AugmPathDef.pdf}
+\end{center}
+\caption{An augmenting path.}
+\label{fig:AugmPathDef}
+\end{figure}
+
+An $M$-augmenting path can be used to modify $M$ to a bigger matching by ``switching'' the edges along the path.
+This is illustrated in Figure \ref{fig:AugmPath}.
+
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=.8\textwidth]{AugmPath1.pdf}
+\end{center}
+\caption{Modifying a matching with the help of an augmenting path.}
+\label{fig:AugmPath}
+\end{figure}
+
+
+The following theorem provides a basis to an algorithm for finding a maximum matching.
+
+
+\end{document}

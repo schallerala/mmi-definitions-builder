@@ -1,0 +1,24 @@
+\input{../preamble.tex}
+\begin{document}
+\setcounter{section}{2}
+\setcounter{subsection}{4}
+\setcounter{dfn}{17}
+
+\begin{cor}
+\label{cor:GenBinom}
+For every $\alpha \in \R$ put by definition
+\[
+(1 + x)^\alpha = \sum_{k=0}^\infty \binom{\alpha}{k} x^k
+\]
+(which for $\alpha \in \N$ agrees with the binomial formula, so that this definition does not override the usual definition of $(1+x)^n$).
+Then for every $\alpha, \beta \in \R$ the following identity between formal power series holds:
+\[
+(1+x)^\alpha (1+x)^\beta = (1+x)^{\alpha + \beta}.
+\]
+In particular, for every $p \in \Z$ and $q \in \N$ one has
+\[
+\left( (1+x)^{\frac{p}{q}} \right)^q = (1+x)^p.
+\]
+\end{cor}
+
+\end{document}

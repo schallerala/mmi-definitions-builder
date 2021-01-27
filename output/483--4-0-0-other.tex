@@ -1,0 +1,42 @@
+\input{../preamble.tex}
+\begin{document}
+\setcounter{section}{1}
+\setcounter{subsection}{0}
+\setcounter{dfn}{20}
+
+\chapter{Predicate logic}
+\section*{Introduction}
+Predicate logic is a more complicated and powerful system than the propositional logic.
+
+Before proceeding to formal definitions, let us have a glimpse at how it works.
+Consider the statement
+\begin{quote}
+For every number $x$ one has $x < x+1$.
+\end{quote}
+It can be expressed by a predicate formula
+\begin{equation}
+\label{eqn:PredForm}
+\forall x P(x, f(x)),
+\end{equation}
+where $f(x) = x+1$, and $P(x,y)$ means $x < y$.
+Functions of one or several arguments that take truth values (such as $x < y$ or ``$x$ is blue'') are called \emph{predicates}.
+Formula \eqref{eqn:PredForm} contains all the main building blocks of the predicate logic: a variable $x$, a function $f$, and a predicate $P$.
+
+Let us now forget the origin of formula \eqref{eqn:PredForm}.
+In order to make sense of it, its elements must be interpreted:
+what kind of objects are represented by the variable $x$, how is the function $f$ defined, and what does $P(x,y)$ mean.
+This interpretation can be as above, but can also be different.
+For example, the same formula can be interpreted as
+\begin{quote}
+It gets colder every day.
+\end{quote}
+Now $x$ is a day, $f(x)$ is the day after day $x$, and $P(x,y)$ means ``$y$ is colder than $x$''.
+
+Our first interpretation evaluates the formula \eqref{eqn:PredForm} to true, while the second evaluates it to false.
+A formula of the predicate logic is \emph{valid} if it evaluates to true in all interpretations.
+Similarly to the propositional logic, one aims at finding a method (a proof theory) to establish the validity of a formula.
+
+
+
+
+\end{document}

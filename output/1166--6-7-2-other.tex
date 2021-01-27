@@ -1,0 +1,75 @@
+\input{../preamble.tex}
+\begin{document}
+\setcounter{section}{7}
+\setcounter{subsection}{3}
+\setcounter{dfn}{6}
+
+\begin{proof}
+The length of $z$ is the number of leaves of the derivation tree.
+Deleting the terminal nodes does not change the number of leaves but decreases the depth of the tree by one.
+A full binary tree of depth $i-1$ has at most $2^{i-1}$ leaves.
+\end{proof}
+
+\begin{proof}[Proof of Theorem \ref{thm:PumpCFL}]
+Let $G$ be a grammar in Chomsky form generating the language $L \setminus \{\epsilon\}$.
+Put $n = 2^{k-1}+1$, where $k$ is the number of variables in $G$.
+We will show that this $n$ satisfies the conditions of the pumping lemma.
+
+Let $z \in L(G)$ be such that $|z| \ge n$, and let $T$ be any derivation tree for $z$.
+By Lemma \ref{lem:ChomskyTree}, $T$ contains a path of length at least $k+1$.
+This path contains at least $k+2$ vertices.
+The last vertex of the path is labeled by a terminal, all of the other vertices are labeled by variables.
+Hence there is a variable that appears on this path at least twice.
+
+Take any of the longest paths in $T$ and, ascending it from the leaf, find the first repetition of variables.
+This gives us two vertices $v_1$ and $v_2$ such that
+\begin{enumerate}
+\item
+$v_1$ and $v_2$ have the same label, say $A$;
+\item
+$v_1$ is closer to the root than $v_2$;
+\item
+the portion of the path from $v_1$ to the leaf has length at most $k+1$.
+\end{enumerate}
+
+The subtree $T_1$ with the root $v_1$ represents a derivation from $A$ of a word $z'$ which is a subword of $z$ and has length at most $2^k$.
+Indeed, the portion of our path from $v_1$ down to the leaf has length at most $k+1$, and there is no longer path starting from $v_1$
+because we have chosen a longest path.
+
+
+\begin{figure}[ht]
+\begin{center}
+\input{Fig/PumpCFL1.pdf_t}
+\end{center}
+\caption{Proof of the pumping lemma for CFLs: structuring a word.}
+\label{fig:PumpCFL1}
+\end{figure}
+
+The tree $T_1$ contains a subtree $T_2$ growing from $v_2$.
+This subtree derives from $A$ a word $w$ which is a subword of $z'$:
+\[
+z' = vwx,
+\]
+see Figure \ref{fig:PumpCFL1}.
+The words $v$ and $x$ cannot both be $\epsilon$, because $v_1$ has two children, only one of which is an ancestor of $v_2$,
+so that the other child generates a subword of $z'$ disjoint from $w$.
+
+To summarize, we have
+\[
+S \xRightarrow[]{*} uAy, \quad \xRightarrow[]{*} vAx, \quad A \xRightarrow[]{*} w.
+\]
+It follows that $A \xRightarrow[]{*} v^iwx^i$ and $S \xRightarrow[]{*} uv^iwx^iy$ for all $i \ge 0$.
+A derivation tree for $uv^iwx^iy$ can be obtained from the tree $T$ by cut, copy, and paste, see Figure \ref{fig:PumpCFL2}.
+\end{proof}
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=\textwidth]{PumpCFL2.pdf}
+\end{center}
+\caption{Proof of the pumping lemma for CFLs: pumping a word. These trees represent the words $uv^3wx^3y$ and $uwy$ respectively.}
+\label{fig:PumpCFL2}
+\end{figure}
+
+
+
+\end{document}

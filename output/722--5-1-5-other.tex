@@ -1,0 +1,37 @@
+\input{../preamble.tex}
+\begin{document}
+\setcounter{section}{2}
+\setcounter{subsection}{0}
+\setcounter{dfn}{8}
+
+This and many other relations between Fibonacci numbers can be proved by induction,
+sometimes in a not very straightforward way.
+When the Binet formula is used, the proof consists of simple algebraic manipulations.
+
+\begin{proof}
+We have $a_n = \frac{1}{\sqrt{5}}(\lambda_1^n - \lambda_2^n)$ with $\lambda_i$ as in \eqref{eqn:FibRoots}.
+Taking into account that $\lambda_1\lambda_2 = -1$, one computes
+\[
+a_n^2 = \frac15(\lambda_1^{2n} - 2 \lambda_1^n \lambda_2^n + \lambda_2^{2n}) = \frac15(\lambda_1^{2n} + \lambda_2^{2n} - 2(-1)^n).
+\]
+On the other hand,
+\begin{multline*}
+a_{n-1} a_{n+1} = \frac15(\lambda_1^{n-1} - \lambda_2^{n-1})(\lambda_1^{n+1} - \lambda_2^{n+1})\\
+= \frac15(\lambda_1^{2n} - \lambda_1^{n-1}\lambda_2^{n+1} - \lambda_2^{n-1}\lambda_1^{n+1} + \lambda_2^{2n})\\
+= \frac15(\lambda_1^{2n} + \lambda_2^{2n} - \lambda_1^{n-1}\lambda_2^{n-1}(\lambda_1^2 + \lambda_2^2))
+\end{multline*}
+One computes
+\[
+\lambda_1^2 + \lambda_2^2 = \frac{1 + 2\sqrt{5} + 5}4 + \frac{1 - 2\sqrt{5} + 5}4 = 3,
+\]
+which implies
+\[
+a_{n-1} a_{n+1} = \frac15(\lambda_1^{2n} + \lambda_2^{2n} - 3(-1)^{n-1}) = a_n^2 + (-1)^n.
+\]
+\end{proof}
+
+
+
+
+
+\end{document}

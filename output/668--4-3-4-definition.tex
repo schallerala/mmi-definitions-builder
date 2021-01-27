@@ -1,0 +1,16 @@
+\input{../preamble.tex}
+\begin{document}
+\setcounter{section}{3}
+\setcounter{subsection}{4}
+\setcounter{dfn}{30}
+
+\begin{dfn}
+Let $B$ be a formula of the predicate logic in the signature of Peano arithmetic with exactly one free variable $y$.
+One says that $B$ \emph{represents} a subset $Y \subset \N$ if
+\[
+n \in Y \text{ if and only if }PA_0 \vdash B[\underline{n}/y],
+\]
+where $\underline{n} = \underbrace{s \circ s \circ \cdots \circ s}_{n\text{ times}}(0)$.
+\end{dfn}
+
+\end{document}
