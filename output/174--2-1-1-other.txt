@@ -1,0 +1,21 @@
+
+Examples of graphs: transport networks, neural networks, "friendship" graphs (social networks).
+Usually the set  of vertices is assumed to be finite.
+However it can be quite large (and it is in some of the above examples).
+
+In some situations one is lead to consider graphs with loops (lines joining a vertex to itself)
+and multiple edges (several lines between the same pair of vertices), see Figure fig:OtherGraphs, left.
+In some other situations one wants to draw arrows instead of lines, see Figure fig:OtherGraphs, right.
+Graphs with oriented edges are called directed graphs.
+Another type of graphs are weighted graphs: here to every edge a number is assigned.
+When we say "a graph", we mean it in the sense of definition dfn:Graph: an undirected graph without loops and multiple edges
+and without assignment of weights.
+
+figure[ht]
+center
+OtherGraphs.pdf
+center
+A graph with loops and multiple edges; a directed graph.
+fig:OtherGraphs
+figure
+

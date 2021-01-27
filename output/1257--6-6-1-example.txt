@@ -1,0 +1,27 @@
+exl
+Consider the language of binary palindromes with a symbol  ("center") in the middle:
+
+L = w c w w 0,1^*.
+
+We describe a deterministic PDA accepting  by the empty stack. Put
+
+M = (q_1, q_2, 0, 1, c, A, B, Z_0, , q_1, Z_0, .
+
+While the automaton is in the state , it stores the input in the stack encoding  with  and  with :
+
+(q_1, 0, Z) = (q_1, AZ) (q_1, 1, Z) = (q_1, BZ)  for all Z .
+
+If the input symbol is , then the automaton switches to the state :
+
+(q_1, c, Z) = (q_2, Z)  for all Z .
+
+While in the state , the automaton compares the input symbol with the top symbol in the stack.
+If the symbols agree, then the top symbol is removed; if they disagree, the automaton "breaks down".
+
+(q_2, 0, A) = (q_2, ) (q_2, 1, B) = (q_2, )
+
+Finally, when the automaton sees the start symbol at the bottom of the stack, this symbol is removed, and the word is accepted:
+
+(q_2, , Z_0) = (q_2, ).
+
+exl

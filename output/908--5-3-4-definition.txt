@@ -1,0 +1,5 @@
+dfn
+
+_i=1^A_i(x) = _k  _i=1^k A_i(x)
+
+dfn

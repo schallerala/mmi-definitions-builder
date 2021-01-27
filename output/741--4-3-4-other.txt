@@ -1,0 +1,1 @@
+In other words, a set  is recursive if there is an algorithm which for every input  terminates in finite time and tells whether  belongs to  or not.

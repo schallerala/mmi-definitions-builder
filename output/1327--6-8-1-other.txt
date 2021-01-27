@@ -1,0 +1,24 @@
+At each moment of time, the machine is situated opposite to some cell of the input tape.
+The input symbol  and the current state  of the machine determine its move 
+which consists in:
+itemize
+changing the state to ,
+replacing the symbol  in the current cell by ,
+and moving in the direction  (one cell to the left if  or one cell to the right if ).
+itemize
+See Figure fig:TuringMachine.
+
+figure[ht]
+center
+
+center
+A Turing machine.
+fig:TuringMachine
+figure
+
+
+At the beginning, the machine is placed at the leftmost cell of the tape and is in the state .
+The language accepted by  is the set of all input words for which  enters a final state at some moment of time.
+After entering a final state, the machine halts, that is  is undefined for all .
+If the input word is not accepted, then the machine either halts in a non-final state or runs forever
+(in an infinite loop or by increasing the data volume on the tape to infinity).

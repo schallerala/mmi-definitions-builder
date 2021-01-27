@@ -1,0 +1,6 @@
+
+A special case of this theorem is Theorem thm:SequentCalcComplete, which says that  implies 
+(here the theory is empty).
+
+
+The completeness theorem can be formulated in a different way.

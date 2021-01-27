@@ -1,0 +1,2 @@
+Triangulations of polygons
+A triangulation of a polygon is a subdivision of the polygon into triangles by diagonals.

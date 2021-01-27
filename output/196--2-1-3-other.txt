@@ -1,0 +1,5 @@
+Note that we cannot take any pair of subsets :
+if , then we must have .
+
+An -cycle in a graph is a subgraph isomorphic to .
+Bipartite graphs contain no -cycles, and more generally no cycles of odd length.

@@ -1,0 +1,4 @@
+dfn
+A proposition is called provable if and only if it is an axiom or can be obtained from provable propositions by applying rules of inference,
+that is there is a set of provable propositions  such that  is an inference rule.
+dfn

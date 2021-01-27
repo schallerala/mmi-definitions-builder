@@ -1,0 +1,9 @@
+dfn
+A sequence  is called a linear recursive sequence of order 
+if it satisfies the relation
+equation
+eqn:LinReck
+a_n = r_1 a_n-1 + r_2 a_n-2 + + r_k a_n-k
+equation
+for all  for some constants , where .
+dfn

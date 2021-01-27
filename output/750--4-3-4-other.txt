@@ -1,0 +1,9 @@
+proof
+If we have an algorithm for computing , then modify it by going into an endless loop if the output is .
+This computes the function . The function  is computed similarly.
+
+If one has an algorithm which stops only for inputs  and an algorithm which stops only for inputs , then run them parallelly
+and interpret the output of the first algorithm as , and the output of the second algorithm as .
+This allows us to compute the function .
+proof
+

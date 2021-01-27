@@ -1,4 +1,5 @@
 import {PortionType} from '../../entities/PdfPortion';
+import {normalizeTex} from '../../utils/normalizeTex';
 
 export class MathEnvironment {
 
@@ -22,7 +23,7 @@ export class MathEnvironment {
     testOpening(line: string): boolean {
         let match;
         if ((match = line.match(this.beginEnvRegex))) {
-            this.lastTitle = match[2];
+            this.lastTitle = normalizeTex(match[2]);
             return true;
         }
         return false;

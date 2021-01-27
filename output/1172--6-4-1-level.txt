@@ -1,0 +1,1 @@
+Equivalence of words with respect to a language

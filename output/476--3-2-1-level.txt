@@ -1,0 +1,12 @@
+Deductive systems
+A proof theory is a method of establishing the validity of a proposition (that is whether a given proposition is a tautology).
+There is a type of proof theories called deductive systems.
+A deductive system consists of
+itemize
+a set of propositional formulas called axioms;
+a set of inference rules.
+itemize
+
+An inference rule has the form , where  is a proposition and  is a set of propositions.
+It is convenient to write an axiom  in the form .
+This allows to define provable propositions recursively.

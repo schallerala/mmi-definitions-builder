@@ -1,0 +1,3 @@
+exl
+Every model  defines a theory , the set of all sentences satisfied by the model .
+exl

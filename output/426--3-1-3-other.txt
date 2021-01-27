@@ -1,0 +1,17 @@
+proof
+The set of all valuations is non-empty.
+Therefore if all valuations satisfy , then there is at least one valuation that satisfies .
+
+From the truth table for  it follows that
+
+v A  if and only if  v A.
+
+It follows that  is satisfied by all valuations if and only if  is not satisfied by any.
+proof
+
+The problem of determining whether a given proposition is satisfiable is called satisfiability problem, abbreviated .
+The problem of determining whether a given proposition is a tautology is called tautology problem, abbreviated .
+The satisfiability problem is -complete, that is every non-deterministically solvable in polynomial time problem can be reduced to it.
+Therefore if  can be solved in polynomial time, then every -problem can, that is .
+On the other hand, if  is not , then .
+For more details, see[Section 3.3.5]Gallier.

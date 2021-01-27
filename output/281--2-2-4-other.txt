@@ -1,0 +1,10 @@
+
+Figure fig:SpanningTrees shows examples of spanning trees.
+
+figure[ht]
+center
+SpanningTrees.pdf
+center
+Examples of spanning trees.
+fig:SpanningTrees
+figure

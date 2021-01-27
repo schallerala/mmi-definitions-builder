@@ -1,0 +1,4 @@
+exl
+The graphs in Figure fig:K33 are isomorphic (check this!).
+Thus the graph on the right is also .
+exl

@@ -1,0 +1,5 @@
+lem
+lem:InferencePred
+For each of the inference rules, the conclusion is falsifiable in some structure 
+if and only if at least one of the premises is falsifiable in the structure .
+lem

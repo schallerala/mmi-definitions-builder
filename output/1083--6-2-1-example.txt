@@ -1,0 +1,11 @@
+exl
+The language of words consisting of alternating 's and 's.
+It can be represented by a regular expression .
+In this expression a case distinction is incorporated: if the word is of even length and starts with ,
+then it belongs to the language , etc.
+
+The same language can be described by the expression
+
+(01)^* + 1(01)^* + (01)^*0 + 1(01)^*0 = (+ 1)(01)^*(+ 0).
+
+exl

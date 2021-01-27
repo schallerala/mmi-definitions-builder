@@ -1,0 +1,7 @@
+cor
+For every positive integers  the equation
+
+x_1 + x_2 + + x_k = n
+
+has  solutions in positive integers.
+cor

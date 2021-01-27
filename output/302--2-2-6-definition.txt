@@ -1,0 +1,6 @@
+dfn
+A weighted graph is a pair , where  is a usual graph, and
+
+E(G) 
+is a map. The number  is called the weight of the edge .
+dfn

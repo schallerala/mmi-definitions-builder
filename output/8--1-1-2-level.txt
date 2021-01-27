@@ -1,0 +1,15 @@
+Product rule
+First, let us state a special product rule:
+
+X Y = X Y.
+
+Here , the Cartesian product of  and , denotes the set of ordered pairs  with , .
+
+The elements of  can be written in a table whose rows correspond to the elements of ,
+and the columns correspond to the elements of .
+This justifies the product rule.
+
+Again, there is an extension to several sets:
+
+X_1 X_n = X_1 X_n.
+

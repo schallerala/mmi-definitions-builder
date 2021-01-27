@@ -1,0 +1,33 @@
+
+
+
+Axioms of the Gentzen system are, as before, sequents 
+with some formula occurring on both sides: .
+Axioms are valid (because no structure can at the same time satisfy and falsify ).
+Inference rules for the logical connectives  are the same.
+There are four new rules involving the quantifiers.
+
+align*
+&( left):
+
+
+&&( right):
+
+
+
+
+&( left):
+
+
+&&( right):
+
+
+align*
+
+Here  is any term free for  in , and  is any variable free for  in  and not occurring freely in the conclusion
+(that is, in the sequent  for the right  rule and in the sequent 
+for the left  rule).
+In particular, one can substitute  for itself if  does not occur freely in  and .
+
+As before, a deduction tree is a proof tree if all of its leaves are axioms.
+A sequent is called provable if there is a proof tree with this sequent as a root.

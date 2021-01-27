@@ -1,0 +1,21 @@
+
+A graph  is a subdivision of a graph  if  is obtained from  by repeated edge subdivisions.
+To subdivide an edge  of a graph  means to introduce a new vertex , delete , and introduce two new edges  and .
+Figure fig:KSubdivisions shows a subdivision of  and a subdivision of .
+
+figure[ht]
+center
+KSubdivisions.pdf
+center
+Some subdivisions of  and .
+fig:KSubdivisions
+figure
+
+One direction of the Kuratowski theorem is easy to prove: If a graph contains a subdivision of  or , then it cannot be planar.
+Indeed, an embedding of the graph would contain an embedding of a subdivision of  or ,
+and hence an embedding of  or .
+It is the opposite direction which is the most interesting and non-obvious:
+the only obstacles to existence of a planar embedding of  are graphs  or  contained in  (in the form of subdivisions).
+
+
+There is a similar planarity criterion that uses the notion of a minor.

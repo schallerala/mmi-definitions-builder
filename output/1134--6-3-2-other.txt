@@ -1,0 +1,16 @@
+proof
+1) The path corresponding to the shortest accepted word does not visit any state more than once.
+Otherwise it contains a cycle, and by removing this cycle we obtain a shorter accepted word.
+Therefore the length of the shortest accepted word is strictly less than .
+
+2) The "if" direction. If  is an accepted word of length , then its path contains a cycle.
+By pumping this cycle, we obtain infinitely many accepted words.
+
+The "only if" direction. If the language is infinite, then it contains a word  with .
+If , then we are done.
+If , then write  as  according to the pumping lemma.
+Then  is also accepted, and we have .
+Thus we can apply the same case distiction to the word  and proceed until we get a word of length  and .
+proof
+
+

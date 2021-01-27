@@ -5,6 +5,7 @@ import {PdfPortion, PortionType} from '../entities/PdfPortion';
 import {EOL} from 'os';
 import {join} from 'path';
 import {MathEnvironment} from './math/MathEnvironment';
+import {normalizeTex} from '../utils/normalizeTex';
 
 export class LevelPortionHunter implements ILineHunter {
 
@@ -37,7 +38,6 @@ export class LevelPortionHunter implements ILineHunter {
 
     constructor(
         readonly outputFolderPath: string,
-        readonly outputRelativePreamblePath: string,
         readonly continuousMultiStandaloneStream: WriteStream,
         readonly writeStreamOptions?: {
             flags?: string;
@@ -93,11 +93,12 @@ export class LevelPortionHunter implements ILineHunter {
     }
 
     createMathTitle(mathEnv: MathEnvironment) {
-        const numberedEnv = `${this.levelHunter.sectionCounter}.${this.definitionCounter + 1}. ${mathEnv.capitalizedType}`;
+        let numberedEnv = `${this.levelHunter.sectionCounter}.${this.definitionCounter + 1}. ${mathEnv.capitalizedType}`;
         if (mathEnv.lastTitle) {
-            return `${numberedEnv} (${mathEnv.lastTitle})`;
+            numberedEnv = `${numberedEnv} (${mathEnv.lastTitle})`;
         }
-        return numberedEnv;
+
+        return `${numberedEnv}: ${this.currentLevel.breadcrumb}`;
     }
 
     writeLine (line: string) {
@@ -114,8 +115,13 @@ export class LevelPortionHunter implements ILineHunter {
     startNewPortion(type: PortionType, title?: string) {
         this.portionId++;
         const texFilePath = join(this.outputFolderPath, `${this.levelPath}-${type}.tex`);
-        this.currentOpenPortion = new PdfPortion(type, this.currentLevel, texFilePath, title);
+
+        if (!title) {
+            title = this.currentLevel.breadcrumb;
+        }
+        this.currentOpenPortion = new PdfPortion(this.portionId, type, this.currentLevel, texFilePath, title);
         this.pdfPortions.push(this.currentOpenPortion);
+
         this.currentPortionLines = new Array<string>();
     }
 
@@ -125,20 +131,7 @@ export class LevelPortionHunter implements ILineHunter {
         if (content.trim().length) {
             const texStream = createWriteStream(this.currentOpenPortion.texPath, this.writeStreamOptions);
 
-            const singleContent = [
-                `\\input{${this.outputRelativePreamblePath}}`,
-                `\\begin{document}`,
-                // `\\setcounter{chapter}{${this.levelHunter.chapterCounter}}`,
-                `\\setcounter{section}{${this.levelHunter.sectionCounter}}`,
-                `\\setcounter{subsection}{${this.levelHunter.subSectionCounter}}`,
-                `\\setcounter{dfn}{${this.definitionCounter}}`,
-                '',
-                content,
-                '',
-                `\\end{document}`,
-            ].join(EOL);
-
-            texStream.write(singleContent);
+            texStream.write(content);
             texStream.end();
 
             const standalonePage = [
@@ -148,7 +141,7 @@ export class LevelPortionHunter implements ILineHunter {
                 `\\setcounter{section}{${this.levelHunter.sectionCounter}}`,
                 `\\setcounter{subsection}{${this.levelHunter.subSectionCounter}}`,
                 `\\setcounter{dfn}{${this.definitionCounter}}`,
-                `\\label{portion:${this.portionId}}`,
+                `\\label{portion:${this.currentOpenPortion.id}}`,
                 '',
                 content,
                 '',
@@ -157,6 +150,8 @@ export class LevelPortionHunter implements ILineHunter {
             ].join(EOL);
 
             this.continuousMultiStandaloneStream.write(standalonePage);
+        } else {
+            this.pdfPortions.pop();
         }
 
         // tmp create an "other" portion
@@ -199,7 +194,7 @@ export class LevelCounter {
         let match;
         if ((match = line.match(LevelCounter.subSectionLevel))) {
             this._subSectionCounter++;
-            this.currentSubsection = new SubSection(this.currentSection, this._subSectionCounter, match[1]);
+            this.currentSubsection = new SubSection(this.currentSection, this._subSectionCounter, normalizeTex(match[1]));
             if (this.listener?.onNewSubSection)
                 this.listener.onNewSubSection([this._chapterCounter, this._sectionCounter, this._subSectionCounter], this.currentSubsection);
 
@@ -208,7 +203,7 @@ export class LevelCounter {
             this._sectionCounter++;
             this._subSectionCounter = 0;
             this.currentSubsection = undefined;
-            this.currentSection = new Section(this.currentChapter, this._subSectionCounter, match[1]);
+            this.currentSection = new Section(this.currentChapter, this._subSectionCounter, normalizeTex(match[1]));
             if (this.listener?.onNewSection)
                 this.listener.onNewSection([this._chapterCounter, this._sectionCounter], this.currentSection);
 
@@ -219,7 +214,7 @@ export class LevelCounter {
             this._subSectionCounter = 0;
             this.currentSection = undefined;
             this.currentSubsection = undefined;
-            this.currentChapter = new Chapter(this._chapterCounter, match[1]);
+            this.currentChapter = new Chapter(this._chapterCounter, normalizeTex(match[1]));
             if (this.listener?.onNewChapter)
                 this.listener.onNewChapter([this._chapterCounter], this.currentChapter);
 

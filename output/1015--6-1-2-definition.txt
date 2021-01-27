@@ -1,0 +1,11 @@
+dfn
+A deterministic finite automaton (DFA) is a quintuple , where
+itemize
+ is the set of states;
+ is the input alphabet;
+ is the transition function, that is, a map ;
+ is the initial state;
+ is the set of final states.
+itemize
+The sets  and  are assumed to be finite, and  non-empty.
+dfn

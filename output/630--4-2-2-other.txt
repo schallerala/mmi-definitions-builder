@@ -1,0 +1,5 @@
+proof
+For the inference rules for  the argument simply invokes the truth tables.
+
+For the inference rules involving quantifiers this follows from Lemmas lem:TermSubstitute and lem:VarSubstitute.
+proof

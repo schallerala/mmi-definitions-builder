@@ -1,0 +1,7 @@
+
+DNF is not unique: different formulas in DNF can be equivalent.
+The procedure described in Theorem thm:BooleNF produces a disjunction of clauses of length  (where  is the number of variables in the input formula).
+For example, the formula  (although it is already in DNF) will be represented by .
+The same applies to CNF.
+
+

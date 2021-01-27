@@ -1,0 +1,9 @@
+Incidence and adjacency
+An edge is said to be incident with a vertex if it contains this vertex.
+In other words, the edge  is incident with the vertices  and .
+
+The degree of a vertex , denoted , is the number of edges incident with .
+A vertex of degree zero, that is without incident edges, is called an isolated vertex.
+
+In the complete graph  all vertices have degree .
+In the cycle , all vertices have degree .

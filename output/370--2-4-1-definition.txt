@@ -1,0 +1,6 @@
+dfn
+Let  be a graph.
+A set of its edges  is called a matching if no two edges in  have a common vertex.
+If a vertex  belongs to an edge of , then  is called matched, otherwise unmatched.
+A matching is called perfect if all vertices of  are matched.
+dfn

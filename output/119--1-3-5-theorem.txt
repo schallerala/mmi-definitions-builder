@@ -1,0 +1,4 @@
+thm
+thm:WeakComp
+The number of weak compositions of  from  parts is .
+thm

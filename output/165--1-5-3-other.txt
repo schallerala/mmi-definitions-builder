@@ -1,0 +1,34 @@
+proof
+Let  be the set of numbers among  divisible by .
+Then  and we have
+
+(n) = n - A_1 A_m.
+
+To compute , use the inclusion-exclusion formula.
+We have
+
+A_i = p_i, 2p_i, , np_i p_i,
+
+thus .
+Similarly, we have
+
+A_i_1 A_i_k = np_i_1 p_i_k.
+
+By the inclusion-exclusion formula,
+
+A_1 A_m = _i=1^m np_i - _i<j np_ip_j + + (-1)^m-1 np_1p_m.
+
+Thus we have
+multline*
+(n) = n - A_1 A_m
+
+= n ( 1 - _i<j 1p_i + + (-1)^m 1p_1 p_m )
+
+= n (1-1p_1) (1-1p_m).
+multline*
+
+
+proof
+
+
+

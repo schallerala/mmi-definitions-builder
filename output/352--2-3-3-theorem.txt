@@ -1,0 +1,3 @@
+thm[Kuratowski]
+A graph is planar if and only if it does not contain a subgraph isomorphic to a subdivision of  or .
+thm

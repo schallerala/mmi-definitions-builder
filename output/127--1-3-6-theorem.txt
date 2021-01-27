@@ -1,0 +1,3 @@
+thm
+The number of different -multisets with elements taken from  is .
+thm

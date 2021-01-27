@@ -42,7 +42,6 @@ const writeStreamOptions = {
 
     const portionHunter = new LevelPortionHunter(
         outFolder,
-        preambleFile,
         multiStandaloneStream,
         writeStreamOptions
     );

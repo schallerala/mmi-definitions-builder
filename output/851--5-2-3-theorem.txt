@@ -1,0 +1,10 @@
+thm
+The generating function of a sequence satisfying the linear recursion
+
+a_n = r_1 a_n-1 + r_2 a_n-2 + + r_k a_n-k, n k
+
+can be written in the form , where  is some polynomial, and
+
+P(x) = 1 - r_1 x - r_2 x^2 - - r_k x^k.
+
+thm

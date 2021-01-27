@@ -1,0 +1,6 @@
+
+The matrix  has zero determinant (because the vector  belongs to its kernel).
+Moreover, its rank equals , where  and  is the number of connected components of .
+In particular, if  is connected, then  contains an  minor with non-zero determinant.
+In fact,  implies that all cofactors  are equal (you can try to prove this).
+This common value is the number of the spanning trees.

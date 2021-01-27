@@ -1,0 +1,14 @@
+Sum rule
+center
+If , then .
+center
+
+More generally,
+center
+.9If the sets  are pairwise disjoint
+(that is  for all ),
+then .
+center
+Formally, this follows by induction on  from the sum rule for two sets.
+
+Later we will learn how to proceed if the sets are not disjoint.

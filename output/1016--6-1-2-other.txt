@@ -1,0 +1,28 @@
+
+It is convenient to represent a DFA in the form of a transition diagram.
+A transition diagram is a graph whose vertex set is the set of states, and edges are directed and labeled by the alphabet symbols.
+The edges describe the transition function: if , then we draw a directed edge from  to  and label it with .
+The initial state is indicated by an incoming arrow starting at nowhere.
+The final states are indicated by double circles.
+Figure fig:DFAOdd shows an example of a DFA.
+
+figure[htb]
+center
+
+A deterministic finite automaton.
+fig:DFAOdd
+center
+figure
+
+At the beginning the automaton is in the initial state.
+When it receives an input word , it reads it from left to right and changes its state after each letter according to the transition function.
+If after reading the input the automaton is in one of the final states, then one says that the word  is accepted by the automaton.
+(Because of this, the final states are sometimes called accepting states.)
+
+One describes it formally by extending the transition function  to a function .
+The value of  is the state in which the automaton ends if it starts at  and reads the word .
+The definition is recursive:
+enumerate
+ for every state ;
+ for every state , every word , and every letter .
+enumerate

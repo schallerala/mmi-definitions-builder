@@ -1,0 +1,5 @@
+rem
+Isomorphic graphs obviously have the same number of vertices and the same number of edges.
+The converse is not true: one can find two graphs with the same number of vertices and the same number of edges
+which are not isomorphic.
+rem

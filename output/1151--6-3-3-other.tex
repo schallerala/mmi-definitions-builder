@@ -1,9 +1,3 @@
-\input{../preamble.tex}
-\begin{document}
-\setcounter{section}{3}
-\setcounter{subsection}{3}
-\setcounter{dfn}{12}
-
 \begin{proof}
 Let $L$ be a regular language, and let $r$ be a regular expression representing $L$.
 Make a substitution in $r$, replacing every symbol by its image under the homomorphism.
@@ -21,6 +15,3 @@ L(h(r_1+r_2)) = L(h(r_1)+h(r_2)) = L(h(r_1)) \cup L(h(r_2))\\
 For example, if $h(0) = 0$ and $h(1) = 10$, then $h((0+1)^*) = (0+10)^*$.
 
 The next example shows that a homomorphic image of a non-regular language can be regular.
-
-
-\end{document}

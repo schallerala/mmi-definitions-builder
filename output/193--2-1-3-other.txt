@@ -1,0 +1,8 @@
+
+figure[h]
+center
+Fig/PetersenGraph.pdf
+center
+The Petersen graph.
+fig:Petersen
+figure

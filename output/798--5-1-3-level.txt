@@ -1,0 +1,2 @@
+Linear recursive sequences of higher order
+Linear recursive sequences of higher orders are defined similarly and can be handled in a similar way.

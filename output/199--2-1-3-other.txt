@@ -1,0 +1,7 @@
+
+A Hamiltonian cycle in a graph is a cycle that contains all of its vertices.
+It provides a closed path visiting all of its vertices exactly once
+A graph is called Hamiltonian if it has a Hamiltonian cycle.
+The graph  is Hamiltonian, the Petersen graph is not.
+
+

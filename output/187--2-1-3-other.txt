@@ -1,0 +1,8 @@
+
+figure[ht]
+center
+K33.pdf
+center
+The complete bipartite graph .
+fig:K33
+figure

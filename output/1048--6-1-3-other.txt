@@ -1,0 +1,10 @@
+
+figure[htb]
+center
+
+center
+A DFA equivalent to the NFA in Figure fig:NFABroken.
+fig:NFAtoDFA2
+figure
+
+

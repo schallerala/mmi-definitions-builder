@@ -1,0 +1,18 @@
+The last condition can be replaced by the requirement that  is the smallest (in the sense of inclusion) set satisfying the first three conditions.
+
+A propositional formula has a recursive structure that can be represented with a parse tree.
+See Figure fig:ParseTreeProp for an example.
+
+figure[ht]
+center
+
+center
+Parse tree for .
+fig:ParseTreeProp
+figure
+
+Parentheses in a propositional formula ensure that the parse tree is unique.
+If the root of the parsing tree is labeled with , or , then the formula starts with  and ends with .
+This pair of parentheses is not needed for parsing, and we will often omit it.
+Strictly speaking, this is syntactically wrong, but should not lead to confusion.
+

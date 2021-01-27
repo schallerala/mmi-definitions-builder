@@ -1,0 +1,9 @@
+
+figure[htb]
+center
+
+center
+A nondeterministic finite automaton with .
+fig:NFABroken
+figure
+

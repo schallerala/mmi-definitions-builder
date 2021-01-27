@@ -1,0 +1,10 @@
+exl
+A restaurant offers a choice of  first courses,  main courses, and  desserts.
+How many different full course dinners are there?
+
+A full course dinner is an element of the Cartesian product
+
+first courses main courses desserts.
+
+Multiplying the cardinalities of these sets we obtain the answer:  different full course dinners are possible.
+exl

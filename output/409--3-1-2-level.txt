@@ -1,0 +1,7 @@
+Truth tables
+The set of truth values is a two-element set .
+For brevity we will denote
+
+1 = true, 0 = false.
+
+Various other abbreviations are used, for example  for "true" and  for "false".

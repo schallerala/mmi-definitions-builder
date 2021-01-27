@@ -1,0 +1,24 @@
+exl
+Let us prove the tautology .
+First, substitute in the second axiom  for  and  for :
+
+(A ((A A) A)) ((A (A A)) (A A))
+
+Now substitute  for  in the first axiom:
+
+(A ((A A) A))
+
+This coincides with the "left half" of the previous formula, so by modus ponens we infer the "right half" of that formula:
+
+(A (A A)) (A A)
+
+Now take the first axiom with  substituted for :
+
+(A (A A)).
+
+This is the left half of the previous formula, so again by modus ponens we infer
+
+(A A),
+
+and the proof is finished.
+exl

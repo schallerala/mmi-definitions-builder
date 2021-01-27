@@ -1,0 +1,40 @@
+exl
+Consider the DFA in Figure fig:DFAMinim.
+It has one inaccessible state .
+
+figure[ht]
+center
+
+center
+A non-minimal DFA.
+fig:DFAMinim
+figure
+
+We thus draw a  table and fill it step by step.
+It suffices to fill only a half of the table, on one side of the diagonal.
+
+
+
+
+
+
+
+
+A pair of states is marked with  if these states were recognized as non-equivalent at Step .
+As initialization (Step 0) we mark all pairs  because  is the only final state.
+
+A lot of cells are marked at Step 1.
+These are all pairs  such that either the -arrows or the -arrows lead from  to a final and from  to a non-final state or vice versa.
+For example, we mark  because  is non-final and  is final.
+
+At Step 2 two cells are marked.
+For example, we mark  because , , and the pair  is already marked (it was marked at Step 1).
+
+At Step 3 we check all pairs of unmarked cells, by looking where the - and -arrows lead, but do not find anything that should be marked.
+Thus the algorithm stops, and the minimal DFA is obtained from the one in Figure  by removing the state ,
+merging  with  and merging  with . See Figure .
+
+
+
+
+The minimal DFA equivalent to one in Figure .

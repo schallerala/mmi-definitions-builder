@@ -1,0 +1,30 @@
+proof
+The proof is based on the interpretation of an NFA as "being in several states at the same time".
+One constructs a deterministic automaton whose states correspond to sets of states of NFA.
+
+Take any NFA .
+Define a DFA  as follows.
+itemize
+: the states of  are all subsets of the set of states of .
+, a one-element set.
+, all subsets of  that contain at least one final state of .
+For any  put .
+itemize
+
+We claim that
+
+q, u) = (q, u)
+
+for all  and all  and prove it by induction on the length of .
+If , then both sides are equal to .
+Take any word of length at least , and let  be its last letter.
+Then this word can be written as , and we have
+gather*
+q, wa) = q, w), a) = _p q, w) (p, a)
+
+(q, wa) = _p (q,w) (p, a)
+gather*
+By induction hypothesis, , and the induction step is proved.
+
+Definition of  and definition eqn:NFALanguage imply that .
+proof

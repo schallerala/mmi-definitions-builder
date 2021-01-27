@@ -1,0 +1,3 @@
+thm
+In a tree, any two vertices are connected by exactly one path.
+thm

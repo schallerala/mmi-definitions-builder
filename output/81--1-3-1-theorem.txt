@@ -1,0 +1,4 @@
+thm
+thm:BinWordsK
+The number  is equal to the number of binary words of length  containing exactly  digits .
+thm

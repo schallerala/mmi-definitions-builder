@@ -1,0 +1,3 @@
+thm
+For every PDA  the language  is context-free.
+thm

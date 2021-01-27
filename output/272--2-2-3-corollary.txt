@@ -1,0 +1,4 @@
+cor
+cor:ForestEdges
+A forest with  vertices and  components has  edges.
+cor

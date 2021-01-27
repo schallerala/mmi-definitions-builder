@@ -1,0 +1,9 @@
+thm[Inclusion-exclusion formula]
+thm:IncExc
+multline*
+A_1 A_n = _i=1^n A_i - _1 i < j n A_i A_j 
++ _1 i < j < k n A_i A_j A_k - 
+
++(-1)^n-1 A_1 A_n
+multline*
+thm

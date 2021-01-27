@@ -1,0 +1,10 @@
+dfn
+dfn:ENFA
+A nondeterministic finite automaton with -transitions (-NFA)
+is a quintuple , where , , , and 
+are, as before, the set of states, the input alphabet, the initial state, and the set of final states,
+but
+
+Q () 2^Q.
+
+dfn

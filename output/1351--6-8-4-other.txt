@@ -1,0 +1,11 @@
+proof
+Receiving  as input, let  run on .
+As soon as  halts accepting , accept the pair .
+
+A Turing machine which implements the above algorithm can be described in a multi-track architecture:
+the first tape holds the code of , the second tape holds the word , the third tape is used to store the state of ,
+the fourth tape stores the position in the tape of .
+proof
+
+
+

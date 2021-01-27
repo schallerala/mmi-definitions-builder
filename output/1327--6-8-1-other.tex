@@ -1,9 +1,3 @@
-\input{../preamble.tex}
-\begin{document}
-\setcounter{section}{8}
-\setcounter{subsection}{1}
-\setcounter{dfn}{1}
-
 At each moment of time, the machine is situated opposite to some cell of the input tape.
 The input symbol $X$ and the current state $p$ of the machine determine its move $\delta(p, X) = (q, Y, D)$
 which consists in:
@@ -31,6 +25,3 @@ The \emph{language accepted by} $M$ is the set of all input words for which $M$ 
 After entering a final state, the machine \emph{halts}, that is $q(f,X)$ is undefined for all $f \in F$.
 If the input word is not accepted, then the machine either halts in a non-final state or runs forever
 (in an infinite loop or by increasing the data volume on the tape to infinity).
-
-
-\end{document}

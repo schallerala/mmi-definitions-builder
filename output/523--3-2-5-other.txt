@@ -1,0 +1,22 @@
+A parent vertex in a rooted tree is a vertex with the out-degree  in the canonical orientation of the edges, see Figure fig:RootedTreeOrient.
+Vertices of out-degree  will be called leaves of a rooted tree.
+Since the in-degree of every non-root vertex is , non-root leaves are leaves in the usual sense.
+However, the root is a leaf if and only if the tree has only one vertex.
+
+A standalone sequent is a simplest deduction tree (tree with one vertex).
+Next to it are the deduction trees copied from the inference rules as shown in Figure fig:DeductionTree.
+Note that a deduction tree the root is at the bottom, and the children of every vertex are situated above the vertex.
+
+figure[ht]
+center
+1cm
+
+
+
+
+
+
+center
+The (: right) inference rule as a deduction tree.
+fig:DeductionTree
+figure

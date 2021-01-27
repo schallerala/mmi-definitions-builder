@@ -1,0 +1,4 @@
+rem
+One might argue that the number of binary sequences of length  is  because they represent all numbers from  to  in the binary system.
+But this result itself requires a proof, which is not easier than our combinatorial argument.
+rem

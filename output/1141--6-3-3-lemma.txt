@@ -1,0 +1,4 @@
+lem
+A homomorphism is uniquely determined by the images of the letters of the alphabet .
+That is, any  extends to a unique homomorphism.
+lem

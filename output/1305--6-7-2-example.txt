@@ -1,0 +1,19 @@
+exl
+exl:WW
+The language  is not context-free.
+Assume it is, and let  be a pumping bound for this language.
+Take the word  and write it as  according to the pumping lemma.
+By the lemma, the word  is in , we will however show that this is impossible.
+
+The subword  is contained within some two consecutive blocks (inside  or ).
+
+
+
+
+
+
+If  is contained in the first half, then while transforming  to  we removed some symbols from the first half.
+It follows that , where  and at least one of them is .
+This word does not belong to .
+Similarly, for the other situations of  the depumped word has the form  or  and does not belong to  either.
+exl

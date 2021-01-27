@@ -1,0 +1,29 @@
+
+If we prove this lemma, then the formula for  follows immediately:
+multline*
+c_n = 2nn - 2nn-1 = (2n)!n!n! - (2n)!(n+1)!(n-1)!
+
+= (2n)!(n+1)!n!((n+1) - n) = 1n+1 2nn.
+multline*
+
+
+proof[Proof of Lemma lem:NonDyck]
+Let  be the first point where a non-Dyck path enters the triangle below the diagonal.
+The number  can take any value between  (which means that the first step goes below the diagonal) and .
+Reflect the part of the path from  to  as shown in Figure fig:NonDyckCount.
+
+figure[ht]
+center
+NonDyckCount
+center
+Counting non-Dyck paths.
+fig:NonDyckCount
+figure
+
+This transforms every non-Dyck path to a path from  to .
+For every path from  to  there is a unique non-Dyck path that produces it.
+To reconstruct this non-Dyck path, apply the same operation: take the first point of the form  on the path to 
+and reflect the part of the path after this point.
+proof
+
+

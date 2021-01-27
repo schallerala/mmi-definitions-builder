@@ -1,0 +1,4 @@
+dfn
+A graph is called planar if it can be drawn in the plane in such a way that its edges do not cross each other.
+A drawing with pairwise non-crossing edges is called a planar embedding of the graph or, for short, a plane graph.
+dfn

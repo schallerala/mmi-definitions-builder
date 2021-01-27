@@ -1,0 +1,4 @@
+How to count
+All sets in this chapter are finite.
+
+For a finite set , by  we denote the number of elements in , also called the cardinality of .

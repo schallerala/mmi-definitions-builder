@@ -1,0 +1,8 @@
+thm
+thm:CatalanFormula
+The -th Catalan number is equal to
+equation
+eqn:CatalanFormula
+c_n = 1n+1 2nn.
+equation
+thm

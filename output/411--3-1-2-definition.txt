@@ -1,0 +1,8 @@
+dfn
+Let  be the set of all proposition symbols.
+A valuation is a map
+
+v S 0,1
+
+assigning a truth value to all propositional symbols.
+dfn

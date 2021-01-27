@@ -1,0 +1,1 @@
+In other words, a path in a graph  is a subgraph of  isomorphic to  for some .

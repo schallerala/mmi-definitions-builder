@@ -1,0 +1,7 @@
+thm[Vandermonde's identity]
+thm:Vandermonde
+For every  the following holds:
+
++ k = _i=0^k i k-i.
+
+thm

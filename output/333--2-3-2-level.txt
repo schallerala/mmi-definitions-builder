@@ -1,0 +1,8 @@
+Euler's formula
+A plane graph separates the plane into regions, called faces.
+Every embedding has one unbounded face, called the outer face.
+
+The graphs on Figure fig:TwoEmbeddings have two faces each.
+If the graph has  vertices and no edges, then its embedding has only one face: the plane punctured at  points.
+
+A face is called incident with an edge if the edge belongs to the boundary of the face.

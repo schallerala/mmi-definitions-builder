@@ -1,0 +1,6 @@
+Indeed, a permutation of an -element set  can be thought of as a bijection .
+
+The same number appears as the answer to a different problem.
+Imagine that we have a bag with  balls.
+We take out  balls consecutively and lay them in a line in the order in which they were taken.
+How many different outcomes are there?

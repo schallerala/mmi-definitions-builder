@@ -1,0 +1,5 @@
+
+For  the set  is a one-element set.
+Therefore an interpretation of a nullary function  is equivalent to choosing an element of .
+This is the reason why nullary functions are also called constants.
+Similarly, an interpretation of a nullary predicate is a choice of a truth value for it.

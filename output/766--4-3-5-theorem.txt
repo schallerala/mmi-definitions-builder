@@ -1,0 +1,3 @@
+thm
+A complete and recursive theory is decidable.
+thm

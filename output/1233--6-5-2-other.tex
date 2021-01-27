@@ -1,9 +1,3 @@
-\input{../preamble.tex}
-\begin{document}
-\setcounter{section}{5}
-\setcounter{subsection}{2}
-\setcounter{dfn}{8}
-
 \begin{proof}
 Let $G$ be a context-free grammar possibly containing $\epsilon$- and unit productions.
 We construct a grammar $G'$ without $\epsilon$-productions such that $L(G') = L(G) \setminus \{\epsilon\}$.
@@ -43,6 +37,3 @@ Thus the new set of productions generates the same language as before.
 \end{proof}
 It is important to remove first the $\epsilon$-productions and then the unit productions.
 If first the unit, and then $\epsilon$-productions are removed, then the result might contain unit productions.
-
-
-\end{document}

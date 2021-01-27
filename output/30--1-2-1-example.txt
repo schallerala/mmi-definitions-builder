@@ -1,0 +1,9 @@
+exl
+Let  be the set of all countries in the world, and  be the set of all cities in the world.
+Define a map  by letting  be the capital of the country .
+Then  is injective (no city can be the capital of two countries), but not surjective (some cities are not capitals).
+Define a map  by letting  be the country in which the city  lies.
+Then  is surjective (in every country there is at least one city), but not injective (some countries have more than one city).
+
+It is also interesting to look at the compositions  and ...
+exl

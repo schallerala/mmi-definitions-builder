@@ -1,0 +1,6 @@
+proof
+One can argue by the product rule, or one can interpret an ordered choice of  balls out of  as an injective map .
+Here  tells us which of the balls was taken on the -th step.
+proof
+
+

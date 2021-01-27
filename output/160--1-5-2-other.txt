@@ -1,0 +1,33 @@
+proof
+Let  be the set of permutations  such that .
+Then  is the set of all non-derangements, permutations with at least one fixed points.
+Calculate its cardinality by the inclusion-exclusion formula.
+The intersection  consists of all permutations satisfying the conditions
+
+f(i_1) = i_1, , f(i_k) = i_k.
+
+The number of such permutations is 
+(to determine , it remains to map bijectively an -element set to an -element set).
+Thus we have
+
+A_i_1 A_i_k = (n-k)!
+
+for any choice of  sets out of .
+Since the number of such choices is , we have
+
+A_1 A_n = n (n-1)! - n2 (n-2)! + + (-1)^n-1 nn 0!.
+
+To count the derangements, we subtract the number of non-derangements from the number of all permutations,
+which leads to the formula in the theorem.
+proof
+
+Now we can compute the probability that no guest gets his hat:
+
+derangementspermutations = _k=0^n (-1)^k n!k!n! = _k=0^n (-1)^kk!.
+
+Recall that
+
+_k=0^x^kk! = e^x.
+
+It follows that the above probability converges to .
+

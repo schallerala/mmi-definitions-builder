@@ -1,0 +1,3 @@
+thm
+The sequent calculus is complete: every valid sequent is provable.
+thm

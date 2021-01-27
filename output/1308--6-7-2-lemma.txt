@@ -1,0 +1,5 @@
+lem
+lem:ChomskyTree
+Let  be a grammar in Chomsky form, and  be a parse tree for a word .
+If  contains no path of length greater than , then .
+lem

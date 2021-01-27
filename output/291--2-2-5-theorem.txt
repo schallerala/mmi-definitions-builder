@@ -1,0 +1,3 @@
+thm[Borchardt, Cayley]
+The complete graph on  vertices has  spanning trees.
+thm

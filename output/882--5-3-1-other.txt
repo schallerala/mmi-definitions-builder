@@ -1,0 +1,26 @@
+proof
+The right hand side is equal to
+multline*
+(1 + x^9 + x^18 + )(1 + x^17 + x^34 + )(1 + x^31 + x^62 + )
+
+= _k,l,m0 x^9k+17l+31m.
+multline*
+(We pick  from the first brackets,  from the second brackets, and  from the third brackets).
+Thus the coefficient at  is the number of solutions of the equation
+
+9k + 17l + 31m = n, k, l, m 0,
+
+that is .
+proof
+
+One can represent the quotient  as the sum of partial fractions.
+For this one has to factorize .
+Complex roots of unity will appear.
+It is ultimately possible (but very time-consuming) to write a closed formula for the number of ways to change  dollars.
+What is easier to prove is the asymptotics of the number :
+
+a_n n^29 17 31 = n^24743,  that is  _n 0 a_nn^2 = 14743.
+
+
+
+

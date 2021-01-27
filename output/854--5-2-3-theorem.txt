@@ -1,0 +1,15 @@
+thm[Partial fraction decomposition]
+enumerate
+Let , and let  be a polynomial of degree .
+Then there are real numbers  such that
+
+B(x)(1-_1 x) (1-_k x) = c_11-_1 x + + c_k1-_k x
+
+Let ,  such that ,
+and let  be a polynomial of degree .
+Then there are real numbers , ,  such that
+
+B(x)(1-_1 x)^k_1 (1-_m x)^k_m = _i=1^m _j=1^k_i c_ij(1-_i x)^j
+
+enumerate
+thm

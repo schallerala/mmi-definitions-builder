@@ -1,0 +1,12 @@
+Birthday problem
+Given  people, what is the probability that some two of them have the same birthday?
+How big should  be for this probability to exceed ?
+
+
+
+
+
+
+
+
+

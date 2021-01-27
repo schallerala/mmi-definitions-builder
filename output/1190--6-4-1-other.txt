@@ -1,0 +1,6 @@
+proof
+Assume that , and let  be a distinguishing extension.
+Then  is a distinguishing extension for  and .
+proof
+
+

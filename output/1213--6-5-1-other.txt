@@ -1,0 +1,10 @@
+
+Note that the alphabet  of variables and the alphabet  of terminals must be disjoint.
+To avoid confusion, we will use different symbols in the following way.
+itemize
+The capital letters  are variables.
+The letters  and digits are terminals.
+The letters  denote symbols that may be variables or terminals.
+The letters  are used to denote strings of terminals, that is elements of .
+The letters  are used to denote strings of variables and terminals, that is elements of .
+itemize

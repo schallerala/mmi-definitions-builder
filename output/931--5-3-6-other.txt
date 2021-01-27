@@ -1,0 +1,10 @@
+
+figure[ht]
+center
+FerrersConj
+center
+Conjugation of Ferrers diagrams.
+fig:FerrersConj
+figure
+
+Conjugation provides an immediate proof of the following theorem.

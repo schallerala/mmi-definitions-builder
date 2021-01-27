@@ -1,0 +1,10 @@
+dfn
+Formulas are expressions that can be obtained by finitely many applications of the following rules.
+itemize
+If  is a -ary predicate symbol, and  are terms, then  is a formula.
+If  and  are terms, then  is a formula.
+If  is a formula, then so is .
+If  and  are formulas, then so are , , .
+If  is a formula, and  is a variable, then  and  are formulas.
+itemize
+dfn

@@ -1,0 +1,16 @@
+thm
+enumerate
+If the characteristic polynomial of eqn:LinRec2 has two different roots , ,
+then one has
+
+a_n = c_1 _1^n + c_2 _2^n
+
+for some .
+If the characteristic polynomial of eqn:LinRec2 has one (double) root ,
+then one has
+
+a_n = c_1 ^n + c_2 n ^n
+
+for some .
+enumerate
+thm

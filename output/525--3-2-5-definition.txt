@@ -1,0 +1,5 @@
+dfn
+dfn:ProofTree
+A deduction tree is called a proof tree if all of its leaves are axioms.
+A sequent is called provable if there is a proof tree with this sequent at the root.
+dfn

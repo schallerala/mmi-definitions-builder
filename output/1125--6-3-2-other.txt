@@ -1,0 +1,10 @@
+proof
+Since  is a regular language, there is a DFA accepting it.
+Let  be the number of states of such a DFA.
+Then any word  determines a path of length  from  to one of the final states.
+By Lemma lem:LongWord, if , then within the first  edges of this path there is a cycle.
+Let  be the prefix of  before the beginning of this cycle, let  be the subword corresponding to the cycle, and let  be the remaining suffix.
+Then , and the path determined by the word  differs from the path determined by  in the number of times it runs along the cycle of ,
+but has the same endpoint, a final state of the DFA.
+Thus  for all .
+proof

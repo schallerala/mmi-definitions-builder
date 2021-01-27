@@ -1,0 +1,17 @@
+Formulas obtained by applying the first or the second rule are called atomic formulas (because they cannot be decomposed into smaller formulas).
+
+For example, in the signature
+align*
+: &a(), f() 
+
+: &P(, )
+align*
+one can build the following formulas:
+gather*
+x (f(x) = a)
+
+x (f(x)=f(y) x=y)
+
+x P(x, f(x)).
+gather*
+

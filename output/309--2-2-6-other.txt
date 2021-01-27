@@ -1,0 +1,51 @@
+This is a greedy algorithm: at each step we do what seems to us the best, we take the lightest edge.
+Of course, a "locally optimal" procedure does not always lead to a "globally optimal" result.
+We must prove that Kruskal's algorithm outputs a minimum spanning tree.
+But first of all, we must show that the output is a tree at all.
+
+proof[Proof that the output is a tree]
+By construction, every graph , and in particular , is acyclic.
+Let us show that  is connected.
+Assume the converse.
+Take any two connected components of .
+Since  is connected, there is an edge  joining two vertices  and  from these components.
+This  does not belong to .
+Thus at the -th step of the algorithm, when we were deciding to take  or not,
+this edge created a cycle with edges of .
+This means that in  (and hence in ) there is a path from  to .
+But then  and  are in the same connected component of , which is a contradiction.
+proof
+
+proof[Proof that the tree is minimal]
+We prove by induction on  that every graph  is contained in some minimum spanning tree.
+For  this will tell us that  is a minimum spanning tree.
+
+As the induction base take .
+Here the assertion is trivially true, because there exists at least one minimum spanning tree.
+
+For the induction step, assume that  is a subgraph of a minimum spanning tree .
+Consider the next edge .
+If  (which happens if  creates a cycle), then  is a subgraph of , and we are good.
+If  and  is an edge of , then  is a subgraph of  as well.
+
+The only non-trivial case is when  and  is not an edge of .
+Then the graph  contains a cycle,
+which is formed by the edge  and the path  in  connecting the endpoints of .
+There is an edge  of  that does not belong to : if this is not the case, then  contains a cycle.
+The graph  is a tree: it is connected and has  edges.
+We claim that this tree is also a minimum tree.
+For this one has to show that .
+
+Assume that , then the edge  appears on the list of all edges earlier than .
+But why did not we add  to the graph that we are constructing?
+This can only be because  would create a cycle.
+But then  also creates a cycle when added to .
+Since , it follows that  contains a cycle, which is a contradiction.
+
+Thus .
+It is not possible that , because then the tree  has smaller weight than ,
+which by assumption is a minimum spanning tree.
+Thus we have .
+But then  is a subgraph of the minimum spanning tree , so the induction step is proved.
+proof
+

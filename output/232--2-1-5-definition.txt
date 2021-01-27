@@ -1,0 +1,3 @@
+dfn
+A component of a graph  is a maximal connected subgraphs of .
+dfn

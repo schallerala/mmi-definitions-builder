@@ -15,10 +15,17 @@ export abstract class PdfLevel {
     @Column()
     readonly text: string;
 
-    protected constructor(parent: PdfLevel, level: number, text: string) {
+    protected constructor(parent: PdfLevel, level: number, text?: string) {
         this.parent = parent;
         this.level = level;
         this.text = text;
+    }
+
+    get rootChapter(): number {
+        let currentLevel: PdfLevel = this;
+        while ( !! currentLevel.parent)
+            currentLevel = currentLevel.parent;
+        return currentLevel.level;
     }
 
     get numberedTitle(): string {
@@ -28,6 +35,15 @@ export abstract class PdfLevel {
             levelNumbers.push(currentLevel.level);
         } while ((currentLevel = currentLevel.parent))
         return `${levelNumbers.reverse().join('.')}. ${this.text}`;
+    }
+
+    get breadcrumb(): string {
+        const breadcrumbPart = [];
+        let currentLevel: PdfLevel = this;
+        do {
+            breadcrumbPart.push(currentLevel.numberedTitle);
+        } while ((currentLevel = currentLevel.parent))
+        return breadcrumbPart.reverse().join(' > ');
     }
 }
 

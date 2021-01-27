@@ -1,0 +1,38 @@
+
+It follows that one can extract -th root from any formal power series with non-zero constant term.
+
+proof[Proof of Theorem thm:Vandermonde]
+Step 1. If  and  are positive integers, then
+
+m + nk = _i=0^k mi nk-i
+
+can be proved by a combinatorial argument:  is the number of different choices of  elements from the set .
+To choose  elements, one has to choose  elements among  and  elements among  for some  between  and .
+The number of such choices is .
+Summing over  we obtain the desired formula.
+
+Step 2. Let us prove
+
++ nk = _i=0^k i nk-i
+
+for all  and all positive integers .
+For fixed  and  the left hand side of the above formula is a polynomial in  of degree ;
+the right hand side is also a polynomial in  of degree .
+Both polynomials take equal values at  for all positive integers .
+It follows that the polynomials are identical
+(if two polynomials of degree  coincide at  points, then their difference is a polynomial of degree  with  roots, hence identically zero).
+
+Step 3. Finally let us prove
+
++ k = _i=0^k i k-i
+
+for all .
+Fix  and . Then the left and the right hand sides are polynomials in  of degree .
+By Step 2, the values of these polynomials coincide whenever  is a positive integer.
+Thus the polynomials are identically equal.
+(In particular, evaluating the left hand side and the right hand side for any values of  leads to the same results.)
+proof
+
+
+
+

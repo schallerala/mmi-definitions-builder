@@ -1,0 +1,15 @@
+exl
+exl:CounterexampleFinite
+Disprove the formula .
+prooftree
+
+
+
+prooftree
+
+This tree is closed, and its only leaf describes a counterexample:
+
+U = u_1, u_2, I(P)(u_2,u_1) = I(P)(u_2,u_2) = false
+
+(the value of  on  and  is inessential).
+exl

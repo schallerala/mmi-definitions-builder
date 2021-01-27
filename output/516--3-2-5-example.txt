@@ -1,0 +1,7 @@
+exl
+The following sequents are axioms:
+itemize
+,
+.
+itemize
+exl

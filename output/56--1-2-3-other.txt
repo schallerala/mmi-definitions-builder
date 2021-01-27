@@ -1,0 +1,9 @@
+proof
+Without loss of generality, .
+We have  possibilities to choose .
+After this, for  there remain  possibilities, then  possibilities for ,
+and so on up to , for which  possibilities remain.
+
+The above argument works for , but the formula is true for  as well:
+there are no injective maps in this case, and the product  vanishes because it contains a zero factor.
+proof

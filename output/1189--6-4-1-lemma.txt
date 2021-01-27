@@ -1,0 +1,4 @@
+lem
+lem:LEquivRInvar
+If , then  for all .
+lem

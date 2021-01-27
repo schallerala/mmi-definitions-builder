@@ -1,0 +1,3 @@
+lem
+A set  is recursive if and only if both  and  are recursively enumerable.
+lem

@@ -1,0 +1,7 @@
+proof
+Proof by contradiction.
+Assume that there is a model  of  which does not satisfy .
+Then this model falsifies the sequent , and therefore falsifies one of the leaves of the deduction tree.
+But this is impossible, thus every model that satisfies  also satisfies .
+proof
+

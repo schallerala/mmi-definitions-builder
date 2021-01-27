@@ -1,0 +1,6 @@
+dfn
+For  and  define the composition as
+
+A(B(x)) = _k=0^a_k (B(x))^k.
+
+dfn

@@ -1,0 +1,9 @@
+In particular, if  is a nullary function, then  is a term.
+We will usually omit the brackets in this situation.
+This has one drawback: syntactically, a nullary function becomes indistinguishable from a variable.
+(Later we will see that their semantics is different.)
+
+For example, with a ternary function , a binary function , and a -ary function  one can compose the following terms:
+
+f(x, g(y,x), a), g(f(x,y,a), g(x,z)).
+

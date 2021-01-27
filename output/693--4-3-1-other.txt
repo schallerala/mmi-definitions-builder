@@ -1,0 +1,9 @@
+proof
+Assume  is complete, and let  be any of its models.
+For every sentence , we have either  or .
+Due to the completeness of  this implies , respectively .
+
+Assume  is incomplete. Then there are two models  and  whose sets of satisfied formulas differ.
+Without loss of generality, let  and .
+Then neither  nor  hold.
+proof

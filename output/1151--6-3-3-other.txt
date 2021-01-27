@@ -1,0 +1,18 @@
+proof
+Let  be a regular language, and let  be a regular expression representing .
+Make a substitution in , replacing every symbol by its image under the homomorphism.
+The result is a regular expression in the alphabet ; denote it by .
+Then the language defined by  is , thus  is regular.
+
+The claim  is proved by induction on the complexity of the expression .
+Here is the induction step to :
+multline*
+L(h(r_1+r_2)) = L(h(r_1)+h(r_2)) = L(h(r_1)) L(h(r_2))
+
+= h(L(r_1)) h(L(r_2)) = h(L(r_1) L(r_2)) = h(L(r_1+r_2)).
+multline*
+proof
+
+For example, if  and , then .
+
+The next example shows that a homomorphic image of a non-regular language can be regular.

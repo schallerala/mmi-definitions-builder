@@ -1,0 +1,27 @@
+exl
+exl:Palindromes
+A PDA accepting the language  by the empty stack.
+
+M = (q_1, q_2, 0, 1, A, B, Z_0, , q_1, Z_0, 
+
+The principle is the same: while in the state , we encode the input by putting into the stack  for the input symbol  and  for the input :
+gather*
+(q_1, 0, Z_0) = (q_1, AZ_0), (q_1, 0, B) = (q_1, AB)
+
+(q_1, 1, Z_0) = (q_1, BZ_0), (q_1, 1, A) = (q_1, BA)
+gather*
+However, if the input symbol agrees with the top stack symbol, then this might be the middle of the palindrome (but also might be not).
+So, we make a guess and allow a multiple transition:
+
+(q_1, 0, A) = (q_1, AA), (q_2, ), (q_1, 1, B) = (q_1, BB), (q_2, ).
+
+While in the state , we compare the input with the content of the stack:
+
+(q_2, 0, A) = (q_2, ) (q_2, 1, B) = (q_2, )
+
+Finally, we have the possibility to empty the stack spontaneously if its top symbol is ,
+because this can happen only in the case if the input word was a palindrome (including the empty input):
+
+(q_1, , Z_0) = (q_2, ) (q_2, , Z_0) = (q_2, )
+
+exl

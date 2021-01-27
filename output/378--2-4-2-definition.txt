@@ -1,0 +1,4 @@
+dfn
+Let  be a matching in .
+An -alternating path in  is a path whose edges are alternately in  and not in .
+dfn

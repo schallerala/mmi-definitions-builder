@@ -1,0 +1,30 @@
+
+proof
+Induction on the number of edges.
+
+Let . The only connected graph without edges is the graph with one vertex.
+It has one face, and we have . The induction base is proved.
+
+Now take a graph with  edges, .
+Consider two cases.
+
+1) The graph is acyclic.
+Then it is a tree. A tree does not separate the plane, so we have  in this case.
+By Theorem thm:TreeEdges, .
+Thus we have
+
+V - E + F = V - (V-1) + 1 = 2.
+
+
+2) The graph contains a cycle.
+Let  be any cycle and let  be any edge of .
+The graph  is still connected and has one edge less.
+Let us show that it also has one face less.
+Indeed, the points on different sides of  belong to different faces of :
+any arc connecting them must intersect the cycle .
+These two faces are merged to one face in ; all other faces are unchanged.
+Thus  has the same number of vertices, one edge less, and one face less than .
+By the induction assumption, Euler's formula holds for .
+Thus it also holds for .
+proof
+

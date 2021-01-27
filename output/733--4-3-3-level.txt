@@ -1,0 +1,28 @@
+Peano arithmetic
+The signature consists of a nullary function , a unary function  (successor), two binary functions  and .
+The equality predicate .
+Axioms of :
+enumerate
+
+
+
+
+
+
+
+
+enumerate
+The last item is the induction schema, that is it encodes infinitely many sentences.
+Here  denotes , and  denotes .
+The number  can be any non-negative integer, and  can be any formula with  free variables .
+
+
+The theory consisting of the first seven axioms is called Robinson arithmetic, we will denote it by .
+It does not imply that the addition is commutative.
+
+Since we assume that  is an objective reality and the operations with positive integers satisfy the above properties,
+theory  is satisfiable and hence consistent.
+
+
+
+

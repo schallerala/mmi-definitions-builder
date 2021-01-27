@@ -1,9 +1,3 @@
-\input{../preamble.tex}
-\begin{document}
-\setcounter{section}{6}
-\setcounter{subsection}{1}
-\setcounter{dfn}{3}
-
 
 There are two versions of acceptance criteria.
 In the first, a word $w$ is accepted if some sequence of moves corresponding to the input $w$ leads to an empty stack
@@ -16,6 +10,3 @@ A PDA is \emph{deterministic} if every set $\delta(q, a, Z) \cup \delta(q, \epsi
 (from every state and every input symbol at most one move is possible, taking $\epsilon$-transitions into account).
 Note however that $\delta(q, a, Z) = \emptyset$ means that in the state $q$ with top stack symbol $Z$
 the input symbol $a$ is rejected (or ``breaks'' the automaton).
-
-
-\end{document}

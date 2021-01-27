@@ -1,0 +1,4 @@
+thm
+Provable formulas are valid.
+In other words, sequent calculus for predicate logic is sound.
+thm

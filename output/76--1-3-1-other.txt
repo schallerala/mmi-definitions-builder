@@ -1,0 +1,9 @@
+proof[First proof]
+This is immediate from eqn:NChooseK: if we replace  by , then the factors in the denominator simply interchange.
+proof
+proof[Second proof]
+The theorem can be proved even without knowing a formula for , by a bijective argument.
+Associate to every subset of an -element set its complement: .
+This is a bijection, and it sends -element subsets to -element subsets.
+Thus there are as many -element subsets as there are -element subsets.
+proof

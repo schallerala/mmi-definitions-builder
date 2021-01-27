@@ -1,0 +1,6 @@
+thm
+The generating function of the sequence  is
+
+_n=0^p_n x^n = 1(1-x)(1-x^2)(1-x^3).
+
+thm

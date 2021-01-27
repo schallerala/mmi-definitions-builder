@@ -1,0 +1,12 @@
+proof
+Lay  stones in a row.
+To form a composition of the number  we must separate these stones by  sticks.
+The numbers of stones between consecutive sticks sum up to , thus form a composition of .
+For example,
+
+     5 = 1+3+1
+
+In how many ways can we put  sticks between  stones?
+There are  gaps, and we must choose  of them.
+There are  ways to do this. The theorem is proved.
+proof

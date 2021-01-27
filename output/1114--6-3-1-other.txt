@@ -1,0 +1,25 @@
+proof
+If  is a regular expression for , and  is a regular expression for ,
+then the regular expression  describes the language , which is therefore regular.
+
+Given regular expressions , , ,
+it is very difficult to find regular expressions for the intersection  and the complement .
+Let us approach the problem from a different direction.
+
+Let  be a DFA accepting the language .
+Then  accepts the language .
+Indeed,
+
+w ^* R w R (q_0, w) F
+(q_0, w) Q F w L(M).
+
+Therefore  is regular.
+
+With the intersection we are helped by de Morgan's rule:
+
+R_1 R_2 = R_1 R_2,
+
+where the overline denotes the complement.
+Since the operations applied on the right hand side preserve regularity, the intersection of two regular languages is regular.
+proof
+

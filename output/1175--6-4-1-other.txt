@@ -1,0 +1,3 @@
+
+In other words,  and  are not -equivalent if they have a distinguishing extension:
+a word  such that one of the words ,  is in , and the other not.

@@ -1,5 +1,9 @@
 import {exec, ExecOptions} from 'child_process';
 
+export async function execDetex(sourceFile: string, outFile: string): Promise<void> {
+    await promiseExec(`detex ${sourceFile} > ${outFile}`);
+}
+
 export function execPdfToText(file: string, cwd: string): Promise<void> {
     const txtFile = `${file.substring(0, file.length - 4)}.txt`;
     return promiseExec(`pdftotext ${file} ${txtFile}`, {

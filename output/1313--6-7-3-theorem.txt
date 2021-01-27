@@ -1,0 +1,4 @@
+thm
+thm:CFLIntClosed
+The set of context-free languages is not closed under intersection.
+thm

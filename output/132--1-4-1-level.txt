@@ -1,0 +1,29 @@
+Words with repeating letters
+Consider the following problem:
+quote
+How many different words of length  can be written with  letters ,  letters , and  letters ?
+quote
+
+We have  places for the letters.
+First choose  places where to put the letters .
+This can be done in  different ways.
+Then from  remaining places choose  places where to put the letters .
+This can be done in  different ways.
+Thus by the (general) product rule the number of different words is
+
+nk n-kl = n!k!(n-k)! (n-k)!l!(n-k-l)! = n!k!l!m!.
+
+
+We might have started by choosing  places for the letters , and then, say, choose  places for the letters .
+Then we would compute the product
+
+nl n-lm
+
+which is the same.
+
+The following notation is used:
+
+n!k!l!m! =: nk, l, m.
+
+
+Let us now consider a more general problem and solve it in a different way.

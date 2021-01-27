@@ -1,0 +1,19 @@
+proof
+Assume the contrary.
+Then there is a Turing machine  which accepts the language .
+By inspection of the word  we arrive to a contradiction:
+itemize
+if , then by definition of  the word  is not accepted by , which by the choice of  means that ;
+if , then by definition of  the word  is accepted by , which by the choice of  means that .
+itemize
+proof
+
+
+proof[Proof of Theorem thm:HaltingProblem]
+If  is recursive, then there is a Turing machine  which always halts and accepts only pairs  from .
+Let us show that then  is recursive, which contradicts Lemma lem:LdNotRE.
+Given a word  determine the integer  such that .
+Then determine the machine .
+Feed  into  and accept  if and only if  does not accept .
+This gives an algorithm which always stops and recognizes the language .
+proof

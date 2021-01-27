@@ -1,0 +1,30 @@
+
+Given a structure, one can evaluate every closed formula.
+For example, the formula  acquires the meaning
+
+x   x+1 1,
+
+which we identify as a true statement.
+
+It should be intuitively clear how to find the truth value of a given closed formula.
+But one needs a formal definition.
+Of course, it proceeds by recursion because formulas have a recursive structure.
+This means that, even if we want to determine the truth values only of closed formulas,
+we also need to determine the truth values of formulas with free variables (which appear as intermediate steps when building a closed formula).
+
+A variable assignment is a map  which associated to every variable an element from the universe.
+Together with interpretation  it allows to evaluate every term to an element of  and every formula to a truth value.
+itemize
+Given terms  which evaluate to  and a -ary function symbol ,
+the term  evaluates to .
+Similarly, a formula  evaluates to  if  evaluates to .
+Given terms  and  which evaluate to  and , the formula  evaluates to true if and only if .
+Formulas of the form , , ,  evaluate according to the truth tables
+for logical connectives.
+A formula  evaluates to true if there exists an evaluation  that differs from  only in the value of 
+such that  evaluates under  to true.
+A formula  evaluates to true if  evaluates to true under all assignments  that differ from  only in the value of .
+itemize
+One sees that the truth values of  and  do not depend on the assignment value of the variable .
+It follows that the truth values of closed formulas are independent of the variable assignments, hence determined by  only.
+

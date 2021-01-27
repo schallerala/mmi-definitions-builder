@@ -1,9 +1,3 @@
-\input{../preamble.tex}
-\begin{document}
-\setcounter{section}{2}
-\setcounter{subsection}{6}
-\setcounter{dfn}{18}
-
 This is a greedy algorithm: at each step we do what seems to us the best, we take the lightest edge.
 Of course, a ``locally optimal'' procedure does not always lead to a ``globally optimal'' result.
 We must prove that Kruskal's algorithm outputs a minimum spanning tree.
@@ -55,6 +49,3 @@ Thus we have $\omega(f) = \omega(e_{i+1})$.
 But then $G_{i+1}$ is a subgraph of the minimum spanning tree $T_i + e_{i+1} - f$, so the induction step is proved.
 \end{proof}
 
-
-
-\end{document}

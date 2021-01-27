@@ -1,0 +1,19 @@
+
+
+One can omit some of the brackets in regular expressions by adopting the convention that  precedes the concatenation, and the concatenation precedes the sum.
+For example,  may be written as , and we have
+
+01^* + 0 = 0, 01, 011, 0111, .
+
+
+Two regular expressions are called equivalent if they describe the same language.
+Here are some simple equivalences:
+
+(rs)t rs(t), (r+s)t rs + rt.
+
+Instead of the equivalence sign we will use the equality sign to denote the equivalence of regular expressions.
+For example,
+
+01^* + 0 = 01^*, r = , r = r.
+
+

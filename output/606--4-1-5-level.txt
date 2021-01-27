@@ -1,0 +1,18 @@
+Propositional logic inside predicate logic
+Consider the signature without functions and with nullary predicates only:
+equation
+eqn:NullSign
+: P_1(), P_2(), equation
+Formulas in this signature contain no terms, because a term must occur as an argument of a predicate, but nullary predicates have no arguments.
+We can introduce variables in the formulas only with quantifiers by writing something like ,
+but in any structure this formula evaluates in the same way as .
+Thus the formulas in signature eqn:NullSign look like propositional formulas with variable symbols .
+
+How does  actually evaluate?
+By definition, a first-order structure  assigns to each nullary predicate  a truth value .
+Then the truth value of  is  (and the universe  has no significance).
+Similarly for every other formula: an evaluation with respect to interpretation  is the same as evaluation of a propositional formula
+with  viewed as valuation .
+
+Thus signature eqn:NullSign realizes the propositional logic as a special case of the predicate logic.
+One can state this as follows.

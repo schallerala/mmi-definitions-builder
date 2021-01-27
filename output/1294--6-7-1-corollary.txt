@@ -1,0 +1,3 @@
+cor
+Every regular language is context-free.
+cor

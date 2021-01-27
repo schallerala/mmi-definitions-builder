@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "rm-all": "rm -rf db.sqlite* output*",
+    "produce-portions": "ts-node src/produce-portions.ts ../OrigMMI2020.tex ../preamble.tex output",
+    "produce-txt": "ts-node src/produce-txt.ts",
+    "produce-toml-config": "ts-node src/produce-toml-config.ts",
+    "compile-standalone": "cd output && (test -L Fig || ln -s ../../Fig) && pdflatex -synctex=1 -interaction=nonstopmode -file-line-error OrigMMI2020.tex && pdflatex -synctex=1 -interaction=nonstopmode -file-line-error OrigMMI2020.tex",
+    "build-index": "stork --build mmi.toml"
   },
   "keywords": [],
   "author": "",

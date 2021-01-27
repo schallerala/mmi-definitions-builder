@@ -1,0 +1,7 @@
+thm
+thm:Comb
+The number of unordered choices of  balls out of  is
+
+n(n-1)(n-k+1)k!.
+
+thm

@@ -1,0 +1,4 @@
+rem
+The above argument together with Lemma lem:UniLangRE shows that
+the complement of  is recursively enumerable (but not recursive).
+rem

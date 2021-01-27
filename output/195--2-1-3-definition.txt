@@ -1,0 +1,3 @@
+dfn
+A graph  is called a subgraph of graph  if  and .
+dfn

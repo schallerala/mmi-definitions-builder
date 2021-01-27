@@ -1,0 +1,4 @@
+rem
+If the logical symbols  and  are present, then one can consider  as a disjunction of zero length
+(and thus a CNF and a DNF for a tautology), and  as a conjunction of zero length (thus a CNF and a DNF for an unsatisfiable formula).
+rem

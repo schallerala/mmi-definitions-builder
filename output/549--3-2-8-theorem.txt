@@ -1,0 +1,9 @@
+thm
+Let  be a proposition.
+Take a closed deduction tree with  at the root.
+For each counterexample leaf  of this tree write a disjunctive clause
+
+p_1 p_k q_1 q_l.
+
+Then the conjunction of all such clauses is a CNF for .
+thm

@@ -1,0 +1,7 @@
+dfn
+Let  be a homomorphism, and  be a language in the alphabet .
+The inverse homomorphic image of  is
+
+h^-1(L) = x ^* h(x) L.
+
+dfn

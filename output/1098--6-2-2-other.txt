@@ -1,0 +1,2 @@
+
+Now we proceed to the second part of Theorem thm:RegLangExpr.

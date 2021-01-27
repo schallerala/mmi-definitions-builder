@@ -1,0 +1,38 @@
+proof
+Let us prove that if  is a maximum matching, then there is no -augmenting path.
+By contraposition we have to show that if  contains an -augmenting path, then  is not a maximum matching.
+This follows from the observation we made before stating the theorem:
+an augmenting path can be used to increase the number of edges in a matching.
+
+For the opposite direction we have to show that if  is not a maximum matching, then there is an -augmenting path.
+Let  be a maximum matching in .
+Then .
+Let  be the graph formed by those edges that belong to exactly one of  and : the edge set of  is
+
+(M M') (M M').
+
+(This is called symmetric difference of  and .)
+Every vertex of  has degree  or  because it is incident to at most one edge from  and at most one edge from .
+Therefore each connected component of  is either an even cycle with edges alternately in  and  or a path with edges alternately in  and ,
+see Figure fig:MM'.
+
+figure[ht]
+center
+TwoMatchings.pdf
+center
+Symmetric difference of a non-maximum matching  (blue) and a maximum matching  (red).
+fig:MM'
+figure
+
+Due to , in  there are more edges from  than from .
+Therefore there is a path that starts and ends with an -edge.
+The endpoints of this path have no incident -edges, otherwise such an edge would also belong to , and the path would not stop here.
+This path is an -augmenting path and the theorem is proved.
+proof
+
+
+In order to find a maximum matching in a graph, start with any matching (for example, an empty set of edges).
+Then, recursively, find an augmenting path and modify the current matching.
+If no augmenting path can be found, then the current matching is a maximum one.
+Algorithms for finding an augmenting path are described in[Section 16.5]BM.
+

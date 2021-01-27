@@ -1,0 +1,27 @@
+exl
+exl:ENFA
+The automaton on Figure fig:ENFA accepts positive and negative integers: strings of digits,
+possibly preceded by the minus sign, the only string beginning with  is .
+figure[ht]
+center
+
+center
+An -NFA recognizing decimally represented integers.
+fig:ENFA
+figure
+
+The transition table of this automaton is given below.
+
+center
+tabularccccc
+&  &  &  & -
+ &  &  &  & 
+
+ &  &  &  & 
+
+ &  &  &  & 
+
+ &  &  &  & 
+tabular
+center
+exl

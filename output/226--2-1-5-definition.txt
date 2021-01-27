@@ -1,0 +1,4 @@
+dfn
+dfn:PathCycle
+A path in a graph is a walk with distinct vertices:  for .
+dfn

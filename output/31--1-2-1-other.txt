@@ -1,0 +1,29 @@
+
+A map is bijective iff at every element of  ends exactly one arrow.
+By inverting the arrows we obtain the inverse map ,
+which has the properties  for all  and  for all .
+
+If  is not bijective, then there is no inverse map .
+However, by abuse of notation one uses  to denote the preimage of :
+
+f^-1(y) = x X f(x) = y.
+
+Similarly one can define the preimage  of any subset .
+
+Observe that
+itemize
+ injective   for all ;
+ surjective   for all .
+itemize
+
+We can now formulate the quotient rule in the mathematical language.
+
+center
+.75If a map  satisfies  for all , then .
+center
+
+A special case of this is the bijection principle:
+center
+.75If a map  is a bijection, then .
+center
+

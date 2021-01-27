@@ -1,0 +1,4 @@
+proof
+Follows from Lemma lem:InferencePred.
+proof
+

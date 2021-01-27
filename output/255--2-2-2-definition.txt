@@ -1,0 +1,3 @@
+dfn
+A vertex of degree  is called a leaf.
+dfn
