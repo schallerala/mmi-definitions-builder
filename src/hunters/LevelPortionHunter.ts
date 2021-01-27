@@ -14,7 +14,7 @@ export class LevelPortionHunter implements ILineHunter {
 
     private readonly levelHunter = new LevelCounter();
 
-    private portionId: number = 0;
+    private portionId: number = 1;
 
     private currentPortionLines = new Array<string>();
 
@@ -113,14 +113,12 @@ export class LevelPortionHunter implements ILineHunter {
     }
 
     startNewPortion(type: PortionType, title?: string) {
-        this.portionId++;
         const texFilePath = join(this.outputFolderPath, `${this.levelPath}-${type}.tex`);
 
         if (!title) {
             title = this.currentLevel.breadcrumb;
         }
         this.currentOpenPortion = new PdfPortion(this.portionId, type, this.currentLevel, texFilePath, title);
-        this.pdfPortions.push(this.currentOpenPortion);
 
         this.currentPortionLines = new Array<string>();
     }
@@ -129,6 +127,9 @@ export class LevelPortionHunter implements ILineHunter {
         const content = this.currentPortionLines.join(EOL);
 
         if (content.trim().length) {
+            this.pdfPortions.push(this.currentOpenPortion);
+            this.portionId++;
+
             const texStream = createWriteStream(this.currentOpenPortion.texPath, this.writeStreamOptions);
 
             texStream.write(content);
@@ -141,7 +142,6 @@ export class LevelPortionHunter implements ILineHunter {
                 `\\setcounter{section}{${this.levelHunter.sectionCounter}}`,
                 `\\setcounter{subsection}{${this.levelHunter.subSectionCounter}}`,
                 `\\setcounter{dfn}{${this.definitionCounter}}`,
-                `\\label{portion:${this.currentOpenPortion.id}}`,
                 '',
                 content,
                 '',
@@ -150,8 +150,6 @@ export class LevelPortionHunter implements ILineHunter {
             ].join(EOL);
 
             this.continuousMultiStandaloneStream.write(standalonePage);
-        } else {
-            this.pdfPortions.pop();
         }
 
         // tmp create an "other" portion
