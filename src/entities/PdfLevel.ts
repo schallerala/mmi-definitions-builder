@@ -20,6 +20,15 @@ export abstract class PdfLevel {
         this.level = level;
         this.text = text;
     }
+
+    get numberedTitle(): string {
+        const levelNumbers = [];
+        let currentLevel: PdfLevel = this;
+        do {
+            levelNumbers.push(currentLevel.level);
+        } while ((currentLevel = currentLevel.parent))
+        return `${levelNumbers.reverse().join('.')}. ${this.text}`;
+    }
 }
 
 @ChildEntity('chapter')

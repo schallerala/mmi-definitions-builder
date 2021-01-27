@@ -65,6 +65,7 @@ export class LevelPortionHunter implements ILineHunter {
         if (newLevel) {
             this.levels.push(newLevel);
             this.commitPortion();
+            this.startNewPortion("level", newLevel.numberedTitle)
             if (newLevel instanceof Section)
                 this.definitionCounter = 0;
         }
@@ -73,7 +74,8 @@ export class LevelPortionHunter implements ILineHunter {
             this.currentMathEnv = this.mathEnvs.find(env => env.testOpening(line));
             if (this.currentMathEnv) {
                 this.commitPortion();
-                this.startNewPortion(this.currentMathEnv.type);
+                const mathTitle = this.createMathTitle(this.currentMathEnv);
+                this.startNewPortion(this.currentMathEnv.type, mathTitle);
                 this.definitionCounter++;
             }
         } else {
@@ -90,6 +92,14 @@ export class LevelPortionHunter implements ILineHunter {
         return this;
     }
 
+    createMathTitle(mathEnv: MathEnvironment) {
+        const numberedEnv = `${this.levelHunter.sectionCounter}.${this.definitionCounter + 1}. ${mathEnv.capitalizedType}`;
+        if (mathEnv.lastTitle) {
+            return `${numberedEnv} (${mathEnv.lastTitle})`;
+        }
+        return numberedEnv;
+    }
+
     writeLine (line: string) {
         this.currentPortionLines.push(line);
         let match;
@@ -101,10 +111,10 @@ export class LevelPortionHunter implements ILineHunter {
         }
     }
 
-    startNewPortion(type: PortionType) {
+    startNewPortion(type: PortionType, title?: string) {
         this.portionId++;
         const texFilePath = join(this.outputFolderPath, `${this.levelPath}-${type}.tex`);
-        this.currentOpenPortion = new PdfPortion(type, this.currentLevel, texFilePath);
+        this.currentOpenPortion = new PdfPortion(type, this.currentLevel, texFilePath, title);
         this.pdfPortions.push(this.currentOpenPortion);
         this.currentPortionLines = new Array<string>();
     }
@@ -168,12 +178,9 @@ export class LevelCounter {
     private currentSection: Section;
     private currentSubsection: SubSection;
 
-    // private repository: Repository<PdfLevel>;
-
     constructor(
         readonly listener?: LevelsChangeListener
     ) {
-        // this.repository = getRepository(PdfLevel);
     }
 
     get chapterCounter(): number {

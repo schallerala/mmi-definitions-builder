@@ -2,12 +2,17 @@
 \begin{document}
 \setcounter{section}{2}
 \setcounter{subsection}{2}
-\setcounter{dfn}{5}
+\setcounter{dfn}{2}
 
 \begin{proof}
-Apply the product rule.
-The coin is making $n$ choices, each time from two possibilities.
-Thus the number of outcomes is $\underbrace{2  \cdots  2}_n = 2^n$.
+Without loss of generality, let $X = \{1, 2, \ldots, m\}$.
+In order to define a map $f \colon X \to Y$ we need to make $m$ choices, each time from $n$ possibilities:
+$f(1)$ can take $n$ different values, so can $f(2)$, and so on up to $f(m)$.
+Thus there are
+\[
+\underbrace{n \cdots n}_{m} = n^m
+\]
+different maps $X \to Y$.
 \end{proof}
 
 

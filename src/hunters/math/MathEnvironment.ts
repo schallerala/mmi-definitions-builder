@@ -4,8 +4,9 @@ export class MathEnvironment {
 
     readonly beginEnvRegex: RegExp;
     readonly endEnvRegex: RegExp;
+    readonly capitalizedType: string;
 
-    private insideEnv = false;
+    lastTitle?: string;
 
     protected constructor(
         readonly envName: string,
@@ -14,26 +15,22 @@ export class MathEnvironment {
         // the theorem env might get an optional name
         this.beginEnvRegex = new RegExp(`\\\\begin{${envName}}(\\[(.*)\])?`);
         this.endEnvRegex = new RegExp(`\\\\end{${envName}}`);
+
+        this.capitalizedType = `${type.charAt(0).toUpperCase()}${type.slice(1)}`;
     }
 
     testOpening(line: string): boolean {
-        if (this.beginEnvRegex.test(line)) {
-            if (this.insideEnv)
-                console.warn('Opening while already inside', this.type);
-            this.insideEnv = true;
+        let match;
+        if ((match = line.match(this.beginEnvRegex))) {
+            this.lastTitle = match[2];
             return true;
         }
         return false;
     }
 
     testClosing (line: string): boolean {
-        if (this.endEnvRegex.test(line)) {
-            if ( ! this.insideEnv)
-                console.warn('Closing while not open...', this.type);
-            this.insideEnv = false;
-            return true;
-        }
-        return false;
+        return this.endEnvRegex.test(line);
+
     }
 
     static createDefinitionEnv (): MathEnvironment {

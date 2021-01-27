@@ -24,13 +24,6 @@ export class PdfPortion {
     @Column("simple-array")
     readonly referenceList = new Array<string>();
 
-    // @ManyToMany(() => PortionReferenceLabel)
-    // @JoinTable()
-    // readonly referencingList: Array<PortionReferenceLabel> = [];
-    //
-    // @OneToMany(() => PortionReferenceLabel, ref => ref.insidePortion)
-    // readonly referenceList: Array<PortionReferenceLabel>;
-
     constructor(type: PortionType, partOf: PdfLevel, texPath: string, title?: string) {
         this.type = type;
         this.partOf = partOf;
@@ -45,15 +38,6 @@ export class PdfPortion {
     addReference (label: string) {
         this.referenceList.push(label);
     }
-
-    // addReferenceLabel (label: string) {
-    //     this.referenceList.push(new PortionReferenceLabel(label, this));
-    // }
-    //
-    // async addReferencing (label: string) {
-    //     const referencing = await PortionReferenceLabel.repository.findOne(label);
-    //     this.referencingList.push(referencing);
-    // }
 }
 
-export type PortionType = "definition" | "theorem" | "lemma" | "corollary" | "example" | "remark" | "exercise" | "other";
+export type PortionType = "definition" | "theorem" | "lemma" | "corollary" | "example" | "remark" | "exercise" | "level" | "other";
