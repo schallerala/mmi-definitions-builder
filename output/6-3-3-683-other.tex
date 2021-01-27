@@ -1,0 +1,25 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{3}
+\setcounter{subsection}{3}
+\setcounter{dfn}{9}
+
+\begin{proof}
+Let us prove the uniqueness.
+If we know $h(a)$ for all $a \in \Sigma$, then we have no other choice but put
+\[
+h(a_1 \ldots a_n) = h(a_1) \ldots h(a_n).
+\]
+Also by definition of a homomorphism one has
+\[
+h(x) = h(\epsilon x) = h(\epsilon) h(x),
+\]
+which implies $h(\epsilon) = \epsilon$.
+Thus there is no more than one homomorphism with given values on the letters of the alphabet.
+
+On the other hand, putting $h(a_1 \ldots a_n) = h(a_1) \ldots h(a_n)$ and $h(\epsilon) = \epsilon$ defines a homomorphism,
+so the extension exists and is unique.
+\end{proof}
+
+
+\end{document}

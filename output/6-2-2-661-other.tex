@@ -1,0 +1,85 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{2}
+\setcounter{subsection}{2}
+\setcounter{dfn}{10}
+
+\begin{proof}
+Let $R$ be the language accepted by a DFA with the set of states $Q = \{q_1, \ldots, q_n\}$, where $q_1$ is the initial state.
+Our goal is to construct a regular expression $r$ that describes $R$.
+
+Denote by $R_{ij}^k$ the set of all words $w$ such that
+\begin{itemize}
+\item
+$\widehat{\delta}(q_i, w) = q_j$;
+\item
+$\widehat{\delta}(q_i, x) \in \{q_1, \ldots, q_k\}$ for all proper prefixes $x$ of $w$.
+\end{itemize}
+In other words, $R_{ij}^k$ is the set of all words that lead you from $q_i$ to $q_j$
+through the states with indices less or equal $k$ only.
+Note that we allow $i$ or $j$ to be bigger than $k$: one may be in a state with number bigger than $k$ at the beginning or at the end, but not in between.
+One has
+\[
+R = \bigcup_{q_j \in F} R_{1j}^n.
+\]
+We will prove by induction on $k$ that each of $R_{ij}^k$ can be represented by a regular expression.
+
+\textbf{Base:} $k = 0$.
+By definition, $R_{ij}^0$ consists of direct transitions from $q_i$ to $q_j$. Thus
+\[
+R_{ij}^0 =
+\begin{cases}
+\{a \mid \delta(q_i, a) = q_j\}, &\text{ if } i \ne j,\\
+\{a \mid \delta(q_i, a) = q_j\} \cup \{\epsilon\}, &\text{ if } i = j.
+\end{cases}
+\]
+In both cases, the set $R_{ij}^0$ is finite and therefore described by a regular expression of the following form:
+\[
+r_{ij}^0 =
+\begin{cases}
+a_1 + \cdots + a_p, &\text{ if } i \ne j \text{ and } R_{ij}^0 = \{a_1, \ldots, a_p\},\\
+\emptyset, &\text{ if } i \ne j \text{ and } R_{ij}^0 = \emptyset,\\
+a_1 + \cdots + a_p + \epsilon, &\text{ if } i = j \text{ and } R_{ij}^0 = \{a_1, \ldots, a_p\},\\
+\epsilon, &\text{ if } i = j \text{ and }R_{ij}^0 = \{\epsilon\}.
+\end{cases}
+\]
+
+\textbf{Step.} Let us prove that for $k \ge 1$ and for all $i, j$ one has
+\[
+R_{ij}^k = R_{ij}^{k-1} \cup R_{ik}^{k-1} (R_{kk}^{k-1})^* R_{kj}^{k-1}.
+\]
+Indeed, take any $w \in R_{ij}^k$ and look at the corresponding path from $q_i$ to $q_j$.
+If this path does not pass through $q_k$, then $w \in R_{ij}^{k-1}$.
+Otherwise split the path into the following pieces:
+\begin{itemize}
+\item
+from $q_i$ to $q_k$ without passing through $q_k$;
+\item
+from $q_k$ to $q_k$ without passing through $q_k$ (there may be several pieces like this);
+\item
+from $q_k$ to $q_j$ without passing through $q_k$.
+\end{itemize}
+This represents the word $w$ as a concatenation $w = w_1 \cdots w_m$, where
+\[
+w_1 \in R_{ik}^{k-1}, \quad w_2, \ldots, w_{m-1} \in R_{kk}^{k-1}, \quad w_m \in R_{kj}^{k-1}.
+\]
+Thus $w \in R_{ik}^{k-1} (R_{kk}^{k-1})^* R_{kj}^{k-1}$.
+It is also clear than any $w \in R_{ij}^{k-1}$ or $R_{ik}^{k-1} (R_{kk}^{k-1})^* R_{kj}^{k-1}$ leads from $q_i$ to $q_j$
+without passing through states with the number $>k$.
+
+By induction assumption, for all $i, j$ there is a regular expression $r_{ij}^{k-1}$ which describes the language $R_{ij}^{k-1}$.
+The language $R_{ij}^k$ is then described by the regular expression
+\[
+r_{ij}^k = r_{ij}^{k-1} + r_{ik}^{k-1} (r_{kk}^{k-1})^* r_{kj}^{k-1}.
+\]
+
+Finally, the language $R$ is described by the regular expression
+\[
+r = r_{1,m+1}^n + \cdots + r_{1,n}^n,
+\]
+where $F = \{q_{m+1}, \ldots, q_n\}$.
+\end{proof}
+
+
+
+\end{document}

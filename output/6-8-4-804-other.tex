@@ -1,0 +1,20 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{8}
+\setcounter{subsection}{4}
+\setcounter{dfn}{7}
+
+\begin{proof}
+Receiving $(M, w)$ as input, let $M$ run on $w$.
+As soon as $M$ halts accepting $w$, accept the pair $(M,w)$.
+
+A Turing machine which implements the above algorithm can be described in a multi-track architecture:
+the first tape holds the code of $M$, the second tape holds the word $w$, the third tape is used to store the state of $M$,
+the fourth tape stores the position in the tape of $M$.
+\end{proof}
+
+
+
+
+
+\end{document}

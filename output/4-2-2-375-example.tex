@@ -1,0 +1,21 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{2}
+\setcounter{subsection}{2}
+\setcounter{dfn}{7}
+
+\begin{exl}
+\label{exl:CounterexamplePred}
+The following deduction tree allows us to find a counterexample for $\exists x(P \to Q(x)) \to (P \to \forall y Q(y))$.
+\begin{prooftree}
+\AxiomC{$P \vdash P, \forall y Q(y)$}
+\AxiomC{$Q(z_1), P \vdash Q(z_2)$}
+\UnaryInfC{$Q(z_1), P \vdash \forall y Q(y)$}
+\BinaryInfC{$P, P \to Q(z_1) \vdash \forall y Q(y)$}
+\UnaryInfC{$P \to Q(z_1) \vdash P \to \forall y Q(y)$}
+\UnaryInfC{$\exists x(P \to Q(x)) \vdash P \to \forall y Q(y)$}
+\UnaryInfC{$\vdash \exists x(P \to Q(x)) \to (P \to \forall y Q(y))$}
+\end{prooftree}
+\end{exl}
+
+\end{document}

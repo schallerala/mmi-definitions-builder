@@ -1,0 +1,22 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{4}
+\setcounter{subsection}{1}
+\setcounter{dfn}{0}
+
+Recall that a \emph{rooted tree} is a tree with a marked vertex, the root.
+We have used rooted trees (with labels at the vertices) as parse trees of propositional formulas
+and as proof structures in the sequent calculus.
+Edges or a rooted tree have a natural orientation such that the path from the root to every vertex goes in the direction of edges.
+The \emph{out-degree} of a vertex in a rooted tree is the number of outward-directed edges incident to this vertex.
+Similarly, the \emph{in-degree} is the number of inward-directed edges; the in-degree of the root is zero, and the in-degrees of all other vertices are one.
+
+A \emph{binary rooted tree} is a rooted tree where the out-degrees of all vertices are at most two.
+A \emph{full binary rooted tree} is a rooted tree where the out-degree of each vertex is either two or zero.
+(Vertices with out-degree zero are the leaves of the tree.)
+
+With the help of the handshake lemma and the relation $|V| = |E| + 1$ one can show that
+a full binary rooted tree with $n+1$ leaves has $2n+1$ vertices and $2n$ edges.
+
+
+\end{document}

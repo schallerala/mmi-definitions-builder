@@ -1,0 +1,4 @@
+::: {.thm}
+**Theorem 1**. *The number of self-conjugate partitions of $n$ is equal
+to the number of partitions of $n$ into distinct odd parts.*
+:::

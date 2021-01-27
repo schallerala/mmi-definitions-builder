@@ -1,0 +1,17 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{3}
+\setcounter{subsection}{2}
+\setcounter{dfn}{4}
+
+\begin{exl}
+Take the alphabet of one symbol $\Sigma = \{0\}$
+and consider the language $L = \{0^{k^2} \mid k \text{ is a positive integer}\}$:
+all sequences of $0$'s whose length is a perfect square.
+Let us show that $L$ is not regular. Assume the contrary, and let $n$ be the integer in the pumping lemma.
+Let $z = 0^{n^2}$. By the pumping lemma, $z = uvw$, where $1 \le |v| \le |uv| \le n$, and $uv^kw \in L$ for all $k$.
+For $k=2$ one has $n^2+1 \le |uv^2w| \le n^2 + n < (n+1)^2$, thus $uv^2w \notin L$.
+This contradiction shows that our assumption was false, and $L$ is not regular.
+\end{exl}
+
+\end{document}

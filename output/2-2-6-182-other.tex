@@ -1,0 +1,60 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{2}
+\setcounter{subsection}{6}
+\setcounter{dfn}{18}
+
+This is a greedy algorithm: at each step we do what seems to us the best, we take the lightest edge.
+Of course, a ``locally optimal'' procedure does not always lead to a ``globally optimal'' result.
+We must prove that Kruskal's algorithm outputs a minimum spanning tree.
+But first of all, we must show that the output is a tree at all.
+
+\begin{proof}[Proof that the output is a tree]
+By construction, every graph $G_i$, and in particular $G_m$, is acyclic.
+Let us show that $G_m$ is connected.
+Assume the converse.
+Take any two connected components of $G_m$.
+Since $(V, E)$ is connected, there is an edge $e_i \in E$ joining two vertices $v$ and $w$ from these components.
+This $e_i$ does not belong to $G_m$.
+Thus at the $i$-th step of the algorithm, when we were deciding to take $e_i$ or not,
+this edge created a cycle with edges of $G_{i-1}$.
+This means that in $G_{i-1}$ (and hence in $G_m$) there is a path from $v$ to $w$.
+But then $v$ and $w$ are in the same connected component of $G_m$, which is a contradiction.
+\end{proof}
+
+\begin{proof}[Proof that the tree is minimal]
+We prove by induction on $i$ that every graph $G_i$ is contained in some minimum spanning tree.
+For $i=m$ this will tell us that $G_m$ is a minimum spanning tree.
+
+As the induction base take $i=0$.
+Here the assertion is trivially true, because there exists at least one minimum spanning tree.
+
+For the induction step, assume that $G_i$ is a subgraph of a minimum spanning tree $T_i$.
+Consider the next edge $e_{i+1}$.
+If $G_{i+1} = G_i$ (which happens if $e_{i+1}$ creates a cycle), then $G_{i+1}$ is a subgraph of $T_i$, and we are good.
+If $G_{i+1} = G_i + e_{i+1}$ and $e_{i+1}$ is an edge of $T_i$, then $G_{i+1}$ is a subgraph of $T_i$ as well.
+
+The only non-trivial case is when $G_{i+1} = G_i + e_{i+1}$ and $e_{i+1}$ is not an edge of $T_i$.
+Then the graph $T_i + e_{i+1}$ contains a cycle,
+which is formed by the edge $e_{i+1}$ and the path $P$ in $T_i$ connecting the endpoints of $e_{i+1}$.
+There is an edge $f$ of $P$ that does not belong to $G_i$: if this is not the case, then $G_{i+1}$ contains a cycle.
+The graph $T_i + e_{i+1} - f$ is a tree: it is connected and has $|V|-1$ edges.
+We claim that this tree is also a minimum tree.
+For this one has to show that $\omega(f) = \omega(e_{i+1})$.
+
+Assume that $\omega(f) < \omega(e_{i+1})$, then the edge $f$ appears on the list of all edges earlier than $e_{i+1}$.
+But why did not we add $f$ to the graph that we are constructing?
+This can only be because $f$ would create a cycle.
+But then $f$ also creates a cycle when added to $G_i$.
+Since $G_i + f \subset T_i$, it follows that $T_i$ contains a cycle, which is a contradiction.
+
+Thus $\omega(f) \ge \omega(e_{i+1})$.
+It is not possible that $\omega(f) > \omega(e_{i+1})$, because then the tree $T_i + e_{i+1} - f$ has smaller weight than $T_i$,
+which by assumption is a minimum spanning tree.
+Thus we have $\omega(f) = \omega(e_{i+1})$.
+But then $G_{i+1}$ is a subgraph of the minimum spanning tree $T_i + e_{i+1} - f$, so the induction step is proved.
+\end{proof}
+
+
+
+\end{document}

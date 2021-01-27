@@ -1,0 +1,23 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{2}
+\setcounter{subsection}{3}
+\setcounter{dfn}{9}
+
+\begin{exl}
+\label{exl:CounterexampleFinite}
+Disprove the formula $\forall x \exists y P(x,y)$.
+\begin{prooftree}
+\AxiomC{$\vdash P(u_2,u_1), P(u_2, u_2), \exists y P(u_2,y)$}
+\UnaryInfC{$\vdash \exists y P(u_2,y)$}
+\UnaryInfC{$\vdash \forall x \exists y P(x,y)$}
+\end{prooftree}
+
+This tree is closed, and its only leaf describes a counterexample:
+\[
+U = \{u_1, u_2\}, \quad I(P)(u_2,u_1) = I(P)(u_2,u_2) = \text{false}
+\]
+(the value of $I(P)$ on $(u_1, u_2)$ and $(u_1, u_1)$ is inessential).
+\end{exl}
+
+\end{document}

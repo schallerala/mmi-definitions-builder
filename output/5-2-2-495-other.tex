@@ -1,0 +1,20 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{2}
+\setcounter{subsection}{2}
+\setcounter{dfn}{5}
+
+The composition is not always well-defined. Indeed, we have
+\[
+A(B(x)) = a_0 + a_1(b_0 + b_1 x + b_2 x^2 + \cdots) + a_2(b_0 + b_1 x + b_2 x^2 + \cdots)^2 + \cdots.
+\]
+In particular, the constant term is an infinite sum $a_0 + a_1 b_0 + a_2 b_0^2 + \cdots$, which is not good.
+However, if $b_0 = 0$, then we have
+\[
+a_k (B(x))^k = a_k (b_1 x + b_2 x^2 + \cdots)^k = a_k b_1^k x^k + \text{ higher order terms},
+\]
+so that the coefficient at $x^k$ in $A(B(x))$ is a finite expression in $a_i, b_j$.
+Thus we arrive to the following conclusion.
+
+
+\end{document}

@@ -1,0 +1,28 @@
+Proof. Let |X| = n. With every subset A ⊂ X we associate a map 1A : X →
+{0, 1} (the indicator function of A) defined as
+(
+1, if x ∈ A,
+1A (x) =
+0, if x ∈
+/ A.
+One can show that A 7→ 1A is a bijection between the set of all subsets and the
+set of all maps X → {0, 1}: different subsets define different maps and every
+map f is the indicator function of the subset f −1 (1) ⊂ X.
+The number of all maps X → {0, 1} is 2|X| by Theorem 2.4. By the bijection
+principle, the number of all subsets of X is the same.
+
+Remark 2.4. The set of all maps X → Y is sometimes denoted by Y X , so that
+Theorem 2.4 can be formulated as Y X = |Y ||X| . This is not the only reason
+for the notation Y X . One can show that Z X∪Y = Z X × Z Y for disjoint X and
+Y , and Z X×Y = (Z X )Y .
+Also, the Cartesian power
+X n = X × · · · × X = {(x1 , . . . , xn ) | xi ∈ X for all i}
+|
+{z
+}
+n
+
+can be viewed as the set X {1,...,n} : a sequence (x1 , . . . , xn ) corresponds to a
+map f : {1, . . . , n} → X, f (i) = xi .
+
+

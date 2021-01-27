@@ -1,0 +1,17 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{7}
+\setcounter{subsection}{2}
+\setcounter{dfn}{3}
+
+\begin{exl}
+Let us prove that the language $L = \{a^ib^ic^i \mid i \ge 1\}$ is not context-free.
+Assume it is, and let $n$ be a constant from the pumping lemma corresponding to this language.
+Take $z = a^nb^nc^n$ and write it as $z = uvwxy$ so that the properties of the pumping lemma are satisfied.
+We claim that $z' = uwy = uv^0wx^0y \notin L$.
+Indeed, since $|vwx| \le n$, the subword $vwx$ is eiter contained in the prefix $a^nb^n$ or in the suffix $b^nc^n$ of $z$.
+In the first case the word $z'$ has $n$ letters $c$ at the end, but less than $2n$ $a$'s and $b$'s in total, so that $z' \notin L$.
+Similarly, in the second case $z'$ has $n$ $a$'s, but not enough $b$'s and $c$'s.
+\end{exl}
+
+\end{document}

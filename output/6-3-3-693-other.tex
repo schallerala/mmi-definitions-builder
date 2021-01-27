@@ -1,0 +1,23 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{3}
+\setcounter{subsection}{3}
+\setcounter{dfn}{14}
+
+\begin{proof}
+Let $\Sigma$ be the alphabet of the propositional logic.
+Consider the homomorphism $h \colon \Sigma^* \to \{0, 1\}^*$ defined by
+\[
+( \mapsto 0, \quad ) \mapsto 1, \quad x \mapsto \epsilon \text{ for all other symbols of }\Sigma.
+\]
+Every propositional formula is sent to a balanced bracket sequence (now represented by zeros and ones),
+and every balanced bracket sequence is the image of some propositional formula.
+If the language of all propositional formulas is regular, then the language of all balanced bracket sequences is also regular.
+But it is not, by the pumping lemma: if $n$ is the number from the lemma, then $0^n1^n = uvw$ belongs to the language, but $uv^2w$ is unbalanced.
+\end{proof}
+
+
+
+
+
+\end{document}

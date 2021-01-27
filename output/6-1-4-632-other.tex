@@ -1,0 +1,29 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{1}
+\setcounter{subsection}{4}
+\setcounter{dfn}{14}
+
+In other words, $\overline{P}$ is $P$ together with all states that can be reached from $P$ by sequences of $\epsilon$-transitions.
+
+Let us modify and extend the transition function so that it will tell us what states are accessible from a given state
+for a given input.
+\begin{enumerate}
+\item
+$\widehat{\delta}(q, \epsilon) = \overline{\{q\}}$
+\item
+$\widehat{\delta}(q, wa) = \overline{\delta(\widehat{\delta}(q,w), a)} \text{ for all }w \in \Sigma^*$
+\end{enumerate}
+(Note that $\widehat\delta(q,w)$ is a set, so that $\delta(\widehat{\delta}(q,w), a)$ denotes
+the union of $\delta(p,w)$ over all $p \in \widehat{\delta}(q,w)$.)
+
+Observe that, contrarily to the case of DFA and NFA, $\widehat{\delta}(q,a) \ne \delta(q,a)$, but rather
+\[
+\widehat{\delta}(q,a) = \overline{\delta(\overline{\{q\}}, a)} \supset \delta(q,a).
+\]
+It is not hard to see that $\widehat{\delta}(q,w)$ consists of all states reachable from $q$ on the input $w$
+with arbitrarily many $\epsilon$-transitions before $w$, in the middle of $w$, and after $w$.
+
+In terms of the extended transition function the language accepted by an $\epsilon$-NFA is defined as follows.
+
+\end{document}

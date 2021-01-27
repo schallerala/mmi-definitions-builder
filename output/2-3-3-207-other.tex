@@ -1,0 +1,30 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{3}
+\setcounter{subsection}{3}
+\setcounter{dfn}{10}
+
+
+A graph $G'$ is a \emph{subdivision} of a graph $G$ if $G'$ is obtained from $G$ by repeated \emph{edge subdivisions}.
+To subdivide an edge $e = \{v,w\}$ of a graph $G$ means to introduce a new vertex $x$, delete $e$, and introduce two new edges $\{x,v\}$ and $\{x,w\}$.
+Figure \ref{fig:KSubdivisions} shows a subdivision of $K_5$ and a subdivision of $K_{3,3}$.
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=.8\textwidth]{KSubdivisions.pdf}
+\end{center}
+\caption{Some subdivisions of $K_5$ and $K_{3,3}$.}
+\label{fig:KSubdivisions}
+\end{figure}
+
+One direction of the Kuratowski theorem is easy to prove: If a graph contains a subdivision of $K_5$ or $K_{3,3}$, then it cannot be planar.
+Indeed, an embedding of the graph would contain an embedding of a subdivision of $K_5$ or $K_{3,3}$,
+and hence an embedding of $K_5$ or $K_{3,3}$.
+It is the opposite direction which is the most interesting and non-obvious:
+the only obstacles to existence of a planar embedding of $G$ are graphs $K_5$ or $K_{3,3}$ contained in $G$ (in the form of subdivisions).
+
+
+There is a similar planarity criterion that uses the notion of a \emph{minor}.
+
+
+\end{document}

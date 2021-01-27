@@ -1,0 +1,26 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{3}
+\setcounter{subsection}{5}
+\setcounter{dfn}{13}
+
+\begin{proof}[First proof]
+Let us establish a bijection between the weak compositions of $n$ from $k$ parts and the compositions of $n+k$ from $k$ parts.
+Indeed, adding $1$ to every summand in a weak composition of $n$ transforms it into a (strong) composition of $n+k$.
+In the opposite direction, subtracting $1$ from every summand of a composition of $n+k$ transforms it into
+a weak composition of $n$.
+This is a one-to-one correspondence (a bijection).
+By Theorem \ref{thm:Compositions}, the number of (strong) compositions of $n+k$ from $k$ parts is $\binom{n+k-1}{k-1}$, and we are done.
+\end{proof}
+
+\begin{proof}[Second proof]
+You have $n$ stones and $k-1$ sticks.
+Mark $n+k-1$ spots on the ground.
+You have to choose $k-1$ among them where you lay sticks, then you will lay your stones on the remaining spots.
+There are $\binom{n+k-1}{k-1}$ different arrangements, and they correspond to weak compositions of $n$ from $k$ parts.
+For example, if the stones are on the first $k-1$ spots, then the first $k-1$ summands are equal to zero, and the $k$-th summand equals $n$.
+\end{proof}
+
+
+
+\end{document}

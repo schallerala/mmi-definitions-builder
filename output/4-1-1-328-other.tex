@@ -1,0 +1,18 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{1}
+\setcounter{subsection}{1}
+\setcounter{dfn}{2}
+
+In particular, if $f$ is a nullary function, then $f()$ is a term.
+We will usually omit the brackets in this situation.
+This has one drawback: syntactically, a nullary function becomes indistinguishable from a variable.
+(Later we will see that their semantics is different.)
+
+For example, with a ternary function $f$, a binary function $g$, and a $0$-ary function $a$ one can compose the following terms:
+\[
+f(x, g(y,x), a), \quad g(f(x,y,a), g(x,z)).
+\]
+
+
+\end{document}

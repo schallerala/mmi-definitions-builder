@@ -1,0 +1,19 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{2}
+\setcounter{subsection}{1}
+\setcounter{dfn}{1}
+
+\begin{lem}
+\label{lem:TermSubstitute}
+Assume that a term $t$ is free for $x$ in $A$.
+Then for every structure $M$ the following holds:
+\begin{itemize}
+\item
+If $\forall x A$ is satisfiable in $M$, then $A[t/x]$ is satisfiable in $M$.
+\item
+If $\exists x A$ is falsifiable in $M$, then $A[t/x]$ is falsifiable in $M$.
+\end{itemize}
+\end{lem}
+
+\end{document}

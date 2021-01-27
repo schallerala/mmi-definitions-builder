@@ -1,0 +1,27 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{1}
+\setcounter{subsection}{5}
+\setcounter{dfn}{14}
+
+Consider the signature without functions and with nullary predicates only:
+\begin{equation}
+\label{eqn:NullSign}
+\cP:\ P_1(), P_2(), \ldots
+\end{equation}
+Formulas in this signature contain no terms, because a term must occur as an argument of a predicate, but nullary predicates have no arguments.
+We can introduce variables in the formulas only with quantifiers by writing something like $\forall x \exists y P \wedge Q$,
+but in any structure this formula evaluates in the same way as $P \wedge Q$.
+Thus the formulas in signature \eqref{eqn:NullSign} look like propositional formulas with variable symbols $P_i$.
+
+How does $P \wedge Q$ actually evaluate?
+By definition, a first-order structure $(U,I)$ assigns to each nullary predicate $P$ a truth value $I(P)$.
+Then the truth value of $P \wedge Q$ is $I(P) \wedge I(Q)$ (and the universe $U$ has no significance).
+Similarly for every other formula: an evaluation with respect to interpretation $I$ is the same as evaluation of a propositional formula
+with $I$ viewed as valuation $v$.
+
+Thus signature \eqref{eqn:NullSign} realizes the propositional logic as a special case of the predicate logic.
+One can state this as follows.
+
+
+\end{document}

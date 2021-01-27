@@ -1,0 +1,17 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{5}
+\setcounter{subsection}{3}
+\setcounter{dfn}{3}
+
+Two positive integers whose greatest common divisor equals $1$ are called relatively prime.
+Denote by $\phi(n)$ the number of positive integers $\le n$ which are relatively prime to $n$:
+\[
+\phi(n) = \#\{k \in \{1, 2, \ldots, n\} \mid \gcd(k,n) = 1\}.
+\]
+For example, for $n = 6$ only the numbers $1$ and $5$ among $1, 2, 3, 4, 5, 6$ are relatively prime to $6$,
+so that we have $\phi(6) = 2$.
+In $n=p$ is prime, then all numbers $1, \ldots, p-1$ are relatively prime to $p$, so that $\phi(p) = p-1$.
+
+
+\end{document}

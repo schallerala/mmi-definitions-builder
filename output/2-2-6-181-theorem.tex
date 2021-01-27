@@ -1,0 +1,25 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{2}
+\setcounter{subsection}{6}
+\setcounter{dfn}{17}
+
+\begin{thm}[Kruskal's algorithm]
+Order the edges of a weighted connected graph according to their weights:
+\[
+(e_1, \ldots, e_m) \quad \text{such that} \quad \omega(e_1) \le \cdots \le \omega(e_m).
+\]
+Going through this list, mark an edge if it does not create a cycle together with the previously marked edges.
+More exactly, put $G_0 = (V, \emptyset)$: the graph with isolated vertices only.
+If $G_i$ is already defined, then put
+\[
+G_{i+1} =
+\begin{cases}
+G_i + e_{i+1} &\text{ if } G_i + e_{i+1} \text{ has no cycles}\\
+G_i &\text{ otherwise.}
+\end{cases}
+\]
+The output of the algorithm is the graph $G_m$.
+\end{thm}
+
+\end{document}

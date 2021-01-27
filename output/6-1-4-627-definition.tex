@@ -1,0 +1,18 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{1}
+\setcounter{subsection}{4}
+\setcounter{dfn}{11}
+
+\begin{dfn}
+\label{dfn:ENFA}
+A \emph{nondeterministic finite automaton with $\epsilon$-transitions ($\epsilon$-NFA)}
+is a quintuple $(Q, \Sigma, \delta, q_0, F)$, where $Q$, $\Sigma$, $q_0 \in Q$, and $F \subset Q$
+are, as before, the set of states, the input alphabet, the initial state, and the set of final states,
+but
+\[
+\delta \colon Q \times (\Sigma \cup \{\epsilon\}) \to 2^Q.
+\]
+\end{dfn}
+
+\end{document}

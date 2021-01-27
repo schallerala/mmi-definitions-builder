@@ -1,0 +1,32 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{2}
+\setcounter{subsection}{1}
+\setcounter{dfn}{2}
+
+\begin{proof}
+Take any two vertices of a tree.
+Since a tree is connected, there is at least one path between these two vertices.
+If there is more than one path, then this implies the existence of a cycle.
+Namely, take the first vertex where the two paths diverge and the first vertex where they meet again;
+the union of the segments of our paths between these vertices will be a cycle.
+(We are not working out the details here.)
+This contradicts the assumption that our graph is a tree, thus there cannot be more than one path between two vertices.
+\end{proof}
+
+A \emph{rooted} tree is a tree $T$ with a specified vertex $x$, called the \emph{root} of~$T$.
+The edges of a tree can be equipped with orientation so that for every vertex $v$ the (unique) path from $x$ to $v$ always follows the directions of edges.
+(Again, this looks intuitively clear, but requires a formal proof.)
+See Figure~\ref{fig:RootedTreeOrient} for an example.
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=.6\textwidth]{RootedTreeOrient.pdf}
+\end{center}
+\caption{A canonically oriented rooted tree.}
+\label{fig:RootedTreeOrient}
+\end{figure}
+
+
+
+\end{document}

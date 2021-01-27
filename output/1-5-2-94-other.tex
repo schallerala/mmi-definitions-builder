@@ -1,0 +1,42 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{5}
+\setcounter{subsection}{2}
+\setcounter{dfn}{3}
+
+\begin{proof}
+Let $A_i$ be the set of permutations $f$ such that $f(i) = i$.
+Then $A_1 \cup \cdots \cup A_n$ is the set of all non-derangements, permutations with at least one fixed points.
+Calculate its cardinality by the inclusion-exclusion formula.
+The intersection $|A_{i_1} \cap \cdots \cap A_{i_k}|$ consists of all permutations satisfying the conditions
+\[
+f(i_1) = i_1, \ldots, f(i_k) = i_k.
+\]
+The number of such permutations is $(n-k)!$
+(to determine $f$, it remains to map bijectively an $(n-k)$-element set to an $(n-k)$-element set).
+Thus we have
+\[
+|A_{i_1} \cap \cdots \cap A_{i_k}| = (n-k)!
+\]
+for any choice of $k$ sets out of $A_1, \ldots, A_n$.
+Since the number of such choices is $\binom{n}{k}$, we have
+\[
+|A_1 \cup \cdots \cup A_n| = n (n-1)! - \binom{n}{2} (n-2)! + \cdots + (-1)^{n-1} \binom{n}{n} 0!.
+\]
+To count the derangements, we subtract the number of non-derangements from the number of all permutations,
+which leads to the formula in the theorem.
+\end{proof}
+
+Now we can compute the probability that no guest gets his hat:
+\[
+\frac{\#\text{derangements}}{\#\text{permutations}} = \frac{\sum_{k=0}^n (-1)^k \frac{n!}{k!}}{n!} = \sum_{k=0}^n \frac{(-1)^k}{k!}.
+\]
+Recall that
+\[
+\sum_{k=0}^\infty \frac{x^k}{k!} = e^x.
+\]
+It follows that the above probability converges to $\frac{1}{e} \approx 0.37$.
+
+
+
+\end{document}

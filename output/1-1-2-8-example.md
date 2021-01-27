@@ -1,0 +1,7 @@
+**Example 1**. A person wants to go to a swimming pool once a week, and
+play tennis once a week, but not both on the same day. How many
+different schedules are there?
+
+Choose a swimming day. There are $7$ possibilities for this. When the
+choice is made, there remain $6$ possible tennis days. So, there are
+$7 \cdot 6 = 42$ different schedules.

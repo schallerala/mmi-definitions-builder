@@ -1,0 +1,37 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{4}
+\setcounter{subsection}{6}
+\setcounter{dfn}{10}
+
+
+If we prove this lemma, then the formula for $c_n$ follows immediately:
+\begin{multline*}
+c_n = \binom{2n}{n} - \binom{2n}{n-1} = \frac{(2n)!}{n!n!} - \frac{(2n)!}{(n+1)!(n-1)!}\\
+= \frac{(2n)!}{(n+1)!n!}((n+1) - n) = \frac{1}{n+1} \binom{2n}{n}.
+\end{multline*}
+
+
+\begin{proof}[Proof of Lemma \ref{lem:NonDyck}]
+Let $(k,k-1)$ be the first point where a non-Dyck path enters the triangle below the diagonal.
+The number $k$ can take any value between $1$ (which means that the first step goes below the diagonal) and $n$.
+Reflect the part of the path from $(k,k-1)$ to $(n,n)$ as shown in Figure \ref{fig:NonDyckCount}.
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics{NonDyckCount}
+\end{center}
+\caption{Counting non-Dyck paths.}
+\label{fig:NonDyckCount}
+\end{figure}
+
+This transforms every non-Dyck path to a path from $(0,0)$ to $(n+1,n-1)$.
+For every path from $(0,0)$ to $(n+1,n-1)$ there is a unique non-Dyck path that produces it.
+To reconstruct this non-Dyck path, apply the same operation: take the first point of the form $(k,k-1)$ on the path to $(n+1,n-1)$
+and reflect the part of the path after this point.
+\end{proof}
+
+
+
+
+\end{document}

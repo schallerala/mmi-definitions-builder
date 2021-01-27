@@ -1,0 +1,22 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{5}
+\setcounter{subsection}{1}
+\setcounter{dfn}{1}
+
+\begin{proof}
+We will show that every element of the union is counted exactly once on the right hand side of the formula.
+
+(Can make a warm-up for the elements in the intersection of all sets.)
+Take an element that belongs to exactly $k$ of the sets $A_1, \ldots, A_n$.
+In the first sum on the right hand side it is counted $k$ times,
+in the second sum $\binom{k}{2}$ times, and so on.
+In total, this element is counted with the multiplicity
+\[
+\binom{k}{1} - \binom{k}{2} + \cdots + (-1)^{k-1}\binom{k}{k}.
+\]
+Due to Theorem \ref{thm:BinAltern}, this sum is equal to $\binom{k}{0} = 1$.
+\end{proof}
+
+
+\end{document}

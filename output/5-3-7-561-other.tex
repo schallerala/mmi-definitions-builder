@@ -1,0 +1,19 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{3}
+\setcounter{subsection}{7}
+\setcounter{dfn}{17}
+
+\begin{proof}
+Partitions of $n$ into $\le k$ parts can be split into two classes:
+partitions into $\le k-1$ parts and partitions into exactly $k$ parts.
+By definition, the first class contains $p(n, \le k-1)$ partitions.
+Take a partition from the second class and subtract $1$ from each of its parts.
+Since it had exactly $k$ parts, the sum of the parts becomes $n-k$,
+and their number becomes $\le k$ (it will be strictly less than $k$ if the smallest part was of size $1$,
+and exactly $k$ if the smallest part was larger than $1$).
+This establishes a bijection between the second class and partitions of $n-k$ into $\le k$ parts
+and proves the theorem.
+\end{proof}
+
+\end{document}

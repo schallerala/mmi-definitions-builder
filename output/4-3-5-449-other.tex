@@ -1,0 +1,31 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{3}
+\setcounter{subsection}{5}
+\setcounter{dfn}{31}
+
+Denote by $L$ the language of $PA$ (that is, the set of all formulas in the signature of $PA$).
+There is an injective map
+\[
+\sharp \colon L \to \N
+\]
+called \emph{G\"odel numbering} such that its image $\sharp(L) \subset \N$ is a recursive set.
+(Such a map can be constructed by associating to every symbol a number (similarly ASCII encoding) and then encoding a sequence of numbers by a single number
+for example through $(k_1, \ldots, k_n) \mapsto p_1^{k_1} \cdots p_n^{k_n}$, where $p_i$ is the $i$-th prime number.)
+That the image of this map is recursive means that there is an algorithm which determines for any number $m \in \N$ whether it encodes a well-formed formula.
+It is clear how to reconstruct a sequence of symbols from its G\"odel number, and it is clear how to check whether a sequence of symbols is a formula.
+
+The G\"odel numbering can be extended to sequences of formulas:
+\[
+\sharp\sharp \colon L^* \to \N.
+\]
+A proof of a formula can be represented as a sequence of formulas
+(this is so in the Hilbert proof system, for the Gentzen system one has to agree how to transform a tree into a list; this is doable).
+Thus every proof has a G\"odel number as well, with different numbers corresponding to different proofs (and some numbers not corresponding to any proof).
+
+G\"odel numbering allows to speak about recursive sets of formulas.
+
+Let $\Th(T)$ denote the set of all theorems of theory $T$.
+
+
+\end{document}

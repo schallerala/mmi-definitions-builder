@@ -1,0 +1,34 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{3}
+\setcounter{subsection}{1}
+\setcounter{dfn}{1}
+
+\begin{proof}
+The right hand side is equal to
+\begin{multline*}
+(1 + x^9 + x^{18} + \cdots)(1 + x^{17} + x^{34} + \cdots)(1 + x^{31} + x^{62} + \cdots)\\
+= \sum_{k,l,m\ge 0} x^{9k+17l+31m}.
+\end{multline*}
+(We pick $x^{9k}$ from the first brackets, $x^{17l}$ from the second brackets, and $x^{31m}$ from the third brackets).
+Thus the coefficient at $x^n$ is the number of solutions of the equation
+\[
+9k + 17l + 31m = n, \quad k, l, m \ge 0,
+\]
+that is $a_n$.
+\end{proof}
+
+One can represent the quotient $\frac{1}{(1-x^9)(1-x^{17})(1-x^{31})}$ as the sum of partial fractions.
+For this one has to factorize $1-x^9$.
+Complex roots of unity will appear.
+It is ultimately possible (but very time-consuming) to write a closed formula for the number of ways to change $n$ dollars.
+What is easier to prove is the asymptotics of the number $a_n$:
+\[
+a_n \sim \frac{n^2}{9 \cdot 17 \cdot 31} = \frac{n^2}{4743}, \text{ that is } \lim_{n \to 0} \frac{a_n}{n^2} = \frac{1}{4743}.
+\]
+
+
+
+
+
+\end{document}

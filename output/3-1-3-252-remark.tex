@@ -1,0 +1,23 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{1}
+\setcounter{subsection}{3}
+\setcounter{dfn}{8}
+
+\begin{rem}
+The symbol $\simeq$ of the logical equivalence does not belong to the alphabet of propositional logic, so that $A \simeq B$ is not a propositional formula.
+The symbols $\simeq$ and $\vDash$, and also symbols $A$ and $B$ used to denote arbitrary propositions,
+all belong to the \emph{metalanguage}, a language that we use to describe propositional logic and prove its properties.
+Also the symbol $\Leftrightarrow$ that we will use in our arguments as an abbreviation for ``if and only if'' is a metasymbol.
+The definitions and statements in this section define notions of a metalanguage and formulate metatheorems.
+
+When we prove some properties of propositional logic,
+we are implicitly using another, more complicated, logical system with its own semantics (what is true and what is not true).
+If, in turn, we want to discuss this more complicated system, then we need a metametalanguage and so on.
+
+Imagine a computer program which is able to recognize propositional formulas and compute their truth values for any valuation.
+This program speaks the language of propositional logic, and it cannot analize its own actions.
+The programmer speaks a metalanguage and can predict the behavior of the program.
+\end{rem}
+
+\end{document}

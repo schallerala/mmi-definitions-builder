@@ -1,0 +1,25 @@
+Theorem 3.2. For every n we have
+n  
+X
+n
+k=1
+
+k
+
+=
+
+   
+ 
+n
+n
+n
++
++ ··· +
+= 2n .
+0
+1
+n
+
+(1)
+
+

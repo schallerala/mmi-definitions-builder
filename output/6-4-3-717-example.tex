@@ -1,0 +1,63 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{4}
+\setcounter{subsection}{3}
+\setcounter{dfn}{8}
+
+\begin{exl}
+Consider the DFA in Figure \ref{fig:DFAMinim}.
+It has one inaccessible state~$q_3$.
+
+\begin{figure}[ht]
+\begin{center}
+\input{Fig/DFAMinim.pdf_t}
+\end{center}
+\caption{A non-minimal DFA.}
+\label{fig:DFAMinim}
+\end{figure}
+
+We thus draw a $7 \times 7$ table and fill it step by step.
+It suffices to fill only a half of the table, on one side of the diagonal.
+
+\renewcommand{\arraystretch}{1.7}
+% \begin{figure}[ht]
+\begin{center}
+\begin{tabular}{c|c|c|c|c|c|c|c|}
+& $q_0$ & $q_1$ & $q_2$ & $q_4$ & $q_5$ & $q_6$ & $q_7$\\\hline
+$q_0$ & \cellcolor{lightgray} &&&&&&\\\hline
+$q_1$ & $\times_1$ & \cellcolor{lightgray} &&&&&\\\hline
+$q_2$ & $\times_0$ & $\times_0$ & \cellcolor{lightgray} &&&&\\\hline
+$q_4$ &  & $\times_1$ & $\times_0$ & \cellcolor{lightgray} &&&\\\hline
+$q_5$ & $\times_1$ & $\times_1$ & $\times_0$ & $\times_1$ & \cellcolor{lightgray} &&\\\hline
+$q_6$ & $\times_2$ & $\times_1$ & $\times_0$ & $\times_2$ & $\times_1$ & \cellcolor{lightgray} &\\\hline
+$q_7$ & $\times_1$ &  & $\times_0$ & $\times_1$ & $\times_1$ & $\times_1$ & \cellcolor{lightgray}\\\hline
+\end{tabular}
+% \caption{Calculation of equivalent states. The mark $\times_n$ means that the corresponding pair of states was recognized as non-equivalent at the step $n$.}
+% \label{fig:DFAMinimTable}
+\end{center}
+% \end{figure}
+
+A pair of states is marked with $\times_n$ if these states were recognized as non-equivalent at Step $n$.
+As initialization (Step 0) we mark all pairs $(q_2, q_i)$ because $q_2$ is the only final state.
+
+A lot of cells are marked at Step 1.
+These are all pairs $(q_i, q_j)$ such that either the $0$-arrows or the $1$-arrows lead from $q_i$ to a final and from $q_j$ to a non-final state or vice versa.
+For example, we mark $(q_0, q_1)$ because $\delta(q_0, 1) = q_5$ is non-final and $\delta(q_1, 1) = q_2$ is final.
+
+At Step 2 two cells are marked.
+For example, we mark $(q_4, q_6)$ because $\delta(q_4, 0) = q_7$, $\delta(q_6, 0) = q_6$, and the pair $(q_6, q_7)$ is already marked (it was marked at Step 1).
+
+At Step 3 we check all pairs of unmarked cells, by looking where the $0$- and $1$-arrows lead, but do not find anything that should be marked.
+Thus the algorithm stops, and the minimal DFA is obtained from the one in Figure~\ref{fig:DFAMinim} by removing the state $q_3$,
+merging $q_0$ with $q_4$ and merging $q_1$ with $q_7$. See Figure \ref{fig:DFAMinimResult}.
+
+\begin{figure}[ht]
+\begin{center}
+\input{Fig/DFAMinimResult.pdf_t}
+\end{center}
+\caption{The minimal DFA equivalent to one in Figure \ref{fig:DFAMinim}.}
+\label{fig:DFAMinimResult}
+\end{figure}
+\end{exl}
+
+\end{document}

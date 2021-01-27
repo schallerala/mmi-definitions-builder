@@ -1,0 +1,46 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{4}
+\setcounter{subsection}{2}
+\setcounter{dfn}{7}
+
+\begin{proof}
+Assume that $L$ is regular.
+Take a DFA that accepts $L$.
+Let $q_0, \ldots, q_n$ be its states, and $q_0$ be the initial state.
+Denote
+\[
+T_i = \{w \in \Sigma^* \mid \widehat{\delta}(q_0, w) = q_i\}.
+\]
+One has
+\[
+\Sigma^* = T_0 \cup T_1 \cup \cdots T_n.
+\]
+We claim that every $T_i$ is a subset of some $S_j$ from the decomposition \eqref{eqn:SigmaEqClasses}.
+In other words, every $S_j$ is the union of one or several $T_i$,
+which means that the number of $\sim_L$-equivalence classes is at most $n+1$ and implies the first part of the theorem.
+
+In order to prove the claim it suffices to show that if $u$ and $v$ belong to the same $T_i$, then $u \sim_L v$.
+Then for every $x \in \Sigma^*$ one has
+\[
+\widehat{\delta}(q_0, ux) = \widehat{\delta}(\widehat{\delta}(q_0,u), x) = \widehat{\delta}(q_i, x)
+= \widehat{\delta}(\widehat{\delta}(q_0,v), x) = \widehat{\delta}(q_0, vx).
+\]
+Since both words $ux$ and $vx$ bring us to the same state, they either both belong to $L$ (if this state is final)
+or both not belong to $L$ (if this state is not final).
+Thus $u \sim_L v$.
+
+
+In the opposite direction, let $\Sigma^* = S_0 \cup \cdots \cup S_n$, where $\epsilon \in S_0$.
+Construct a DFA with states $q_0, \ldots, q_n$, the initial state $q_0$, and the transition function defined as follows.
+To find $\delta(q_i, a)$, take some $u \in S_i$ and look in which class the word $ua$ lies.
+If $ua \in S_j$, then put $\delta(q_i, a) = q_j$.
+The result is independent of the choice of a representative $u \in S_i$.
+Indeed, by Lemma \ref{lem:LEquivRInvar} $u \sim_L v \Rightarrow ua \sim_L va$.
+A state $q_i$ is designated as final if and only if $S_i \subset L$.
+It is easy to see that the language accepted by this automaton is $L$.
+\end{proof}
+
+
+
+\end{document}

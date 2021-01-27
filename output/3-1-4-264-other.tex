@@ -1,0 +1,40 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{1}
+\setcounter{subsection}{4}
+\setcounter{dfn}{14}
+
+\begin{proof}
+By Theorem \ref{thm:BooleNF} every Boolean function can be represented by a formula using $\neg, \wedge, \vee$ only.
+Replace every occurrence of $\vee$ using a De Morgan law and the double negation:
+\[
+A \vee B \simeq \neg(\neg A \wedge \neg B).
+\]
+This gives an equivalent formula with connectives $\neg$ and $\wedge$ only.
+One removes conjunctions in a similar way with the help of the equivalence
+\[
+A \wedge B \simeq \neg (\neg A \vee \neg B).
+\]
+\end{proof}
+
+For example,
+\begin{align*}
+(\neg p \wedge q) \vee (p \wedge \neg q) &\simeq \neg(\neg(\neg p \wedge q) \wedge \neg (p \wedge \neg q))\\
+&\simeq \neg(p \vee \neg q) \vee \neg(\neg p \vee q)
+\end{align*}
+
+One can achieve an absolute minimalism by introducing a logical connective $\uparrow$ with the truth table
+\begin{center}
+\begin{tabular}{|c|c||c|c|c|}
+\hline
+$A$ & $B$ & $A \uparrow B$\\\hline
+$0$ & $0$ & $1$\\\hline
+$0$ & $1$ & $1$\\\hline
+$1$ & $0$ & $1$\\\hline
+$1$ & $1$ & $0$\\\hline
+\end{tabular}
+\end{center}
+(also called $NAND$ for obvious reasons).
+
+
+\end{document}

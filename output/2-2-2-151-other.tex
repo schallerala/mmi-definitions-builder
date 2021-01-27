@@ -1,0 +1,20 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{2}
+\setcounter{subsection}{2}
+\setcounter{dfn}{4}
+
+\begin{proof}
+Take a path $P \subset T$ of maximum length.
+(If there are several paths of maximum length, take one of them.)
+I claim that its endpoints $v$ and $w$ are leaves.
+Indeed, assume $\deg v > 1$.
+Then there is an edge of $T$ incident with $v$ and not belonging to $P$.
+If the other end of this edge is also a vertex of $P$, then $T$ contains a cycle, which contradicts to it being a tree.
+If the other end is not in $P$, then adding it to $P$ we obtain a longer path.
+This contradicts the choice of $P$.
+Thus the assumption $\deg v > 1$ was false, $v$ is a leaf, and $w$ is a leaf as well.
+\end{proof}
+
+
+\end{document}

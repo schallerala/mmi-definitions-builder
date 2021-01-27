@@ -1,0 +1,36 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{8}
+\setcounter{subsection}{1}
+\setcounter{dfn}{1}
+
+At each moment of time, the machine is situated opposite to some cell of the input tape.
+The input symbol $X$ and the current state $p$ of the machine determine its move $\delta(p, X) = (q, Y, D)$
+which consists in:
+\begin{itemize}
+\item
+changing the state to $q$,
+\item
+replacing the symbol $X$ in the current cell by $Y$,
+\item
+and moving in the direction $D$ (one cell to the left if $D = L$ or one cell to the right if $D = R$).
+\end{itemize}
+See Figure \ref{fig:TuringMachine}.
+
+\begin{figure}[ht]
+\begin{center}
+\input{Fig/TuringMachine.pdf_t}
+\end{center}
+\caption{A Turing machine.}
+\label{fig:TuringMachine}
+\end{figure}
+
+
+At the beginning, the machine is placed at the leftmost cell of the tape and is in the state $q_0$.
+The \emph{language accepted by} $M$ is the set of all input words for which $M$ enters a final state at some moment of time.
+After entering a final state, the machine \emph{halts}, that is $q(f,X)$ is undefined for all $f \in F$.
+If the input word is not accepted, then the machine either halts in a non-final state or runs forever
+(in an infinite loop or by increasing the data volume on the tape to infinity).
+
+
+\end{document}

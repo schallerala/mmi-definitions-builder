@@ -1,0 +1,16 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{3}
+\setcounter{subsection}{8}
+\setcounter{dfn}{19}
+
+\begin{thm}[Euler]
+\label{thm:EulerPenta}
+One has
+\begin{multline*}
+(1-x)(1-x^2)(1-x^3) \cdots = 1 - x - x^2 + x^5 + x^7 - x^{12} - x^{15} + x^{22} + x^{26} - \cdots\\
+= 1 + \sum_{k=1}^{\infty} (-1)^k (x^{(3k^2-k)/2} + x^{(3k^2+k)/2})
+\end{multline*}
+\end{thm}
+
+\end{document}

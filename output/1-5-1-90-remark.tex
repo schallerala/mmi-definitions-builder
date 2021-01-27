@@ -1,0 +1,23 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{5}
+\setcounter{subsection}{1}
+\setcounter{dfn}{1}
+
+\begin{rem}
+One can give an exact meaning to the words ``how many times was an element counted''.
+Instead of the intersections $A_i \cap A_j$ etc. consider their indicator functions $\mathbf{1}_{A_i \cap A_j}$.
+Instead of summing the cardinalities, sum these functions.
+The diagrams on Figures \ref{fig:IncExc2} and \ref{fig:IncExc3} show the values of certain sums of indicator functions.
+The argument in the proof of Theorem \ref{thm:IncExc} shows that
+\begin{multline*}
+\mathbf{1}_{|A_1 \cup \cdots \cup A_n|} = \sum_{i=1}^n \mathbf{1}_{|A_i|} - \sum_{1 \le i < j \le n} \mathbf{1}_{|A_i \cap A_j|} 
++ \sum_{1 \le i < j < k \le n} \mathbf{1}_{|A_i \cap A_j \cap A_k|} - \cdots \\
+\cdots +(-1)^{n-1} \mathbf{1}_{|A_1 \cap \cdots \cap A_n|}
+\end{multline*}
+by comparing the values of the functions on the left and on the right at every point.
+The formula for the number of elements is obtained by taking the ``integrals'' of both sides,
+that is replacing each function $f$ by the number $\sum_{x \in A_1 \cup \cdots \cup A_n} f(x)$.
+\end{rem}
+
+\end{document}

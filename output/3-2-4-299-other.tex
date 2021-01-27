@@ -1,0 +1,36 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{2}
+\setcounter{subsection}{4}
+\setcounter{dfn}{9}
+
+\begin{proof}
+The proof is done by looking at the truth tables of the logical connectives.
+Let us prove, for example, the ($\wedge$ right) rule:
+\begin{prooftree}
+\AxiomC{$\Gamma \vdash A, \Delta$}
+\AxiomC{$\Gamma \vdash B, \Delta$}
+\BinaryInfC{$\Gamma \vdash A \wedge B, \Delta$}
+\end{prooftree}
+A valuation $v$ falsifies the conclusion if and only if
+it satisfies all propositions in $\Gamma$, falsifies $A \wedge B$, and falsifies all propositions in $\Delta$.
+But $v$ falsifies $A \wedge B$ if and only if it either falsifies $A$ or falsifies $B$.
+Thus $v$ falsifies the conclusion if and only if it
+\begin{itemize}
+\item
+satisfies $\Gamma$ and falsifies $A$ and $\Delta$, or
+\item
+satisfies $\Gamma$ and falsifies $B$ and $\Delta$.
+\end{itemize}
+These conditions are the premises of the ($\wedge$ right) rule, therefore the statement of the lemma holds for this rule.
+Similar arguments work for all of the other rules.
+\end{proof}
+
+For any proposition $A$ one can form a sequent $\vdash A$, which is falsifiable, respectively valid, if and only if
+$A$ is falsifiable, respectively valid (a tautology).
+Thus if we learn to prove all valid sequents, then we will be able to prove all tautologies.
+
+
+
+
+\end{document}

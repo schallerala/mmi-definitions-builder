@@ -1,0 +1,34 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{3}
+\setcounter{subsection}{6}
+\setcounter{dfn}{16}
+
+\begin{proof}
+In a self-conjugate partition join the dots as shown on Figure \ref{fig:OddDist}.
+That is, take the union of the first row with the first column,
+then the union of what remained of the second row with what remained of the second column, etc.
+Each of these sets has an odd number of elements due to the symmetry of the diagram.
+Besides, every set has less elements than the previous one.
+This transforms a self-conjugate partition into a partition with distinct odd parts.
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=.8\textwidth]{OddDist}
+\end{center}
+\caption{From self-conjugate partitions to partitions into distinct odd parts: $12 = 11 + 1 = 9 + 3 = 7 + 5$.}
+\label{fig:OddDist}
+\end{figure}
+
+The above transformation has an inverse.
+Take any partition with distinct odd parts and ``bend'' each part in the middle.
+Packing these hooks one inside another in the decreasing order produces the diagram of a self-conjugate partition.
+Thus we have a bijection between the set of self-conjugate partitions and the set of partitions into distinct odd parts.
+\end{proof}
+
+
+
+
+
+
+\end{document}

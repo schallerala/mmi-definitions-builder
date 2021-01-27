@@ -1,0 +1,24 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{1}
+\setcounter{subsection}{2}
+\setcounter{dfn}{0}
+
+\begin{dfn}
+A \emph{deterministic finite automaton (DFA)} is a quintuple $(Q, \Sigma, \delta, q_0, F)$, where
+\begin{itemize}
+\item
+$Q$ is the set of states;
+\item
+$\Sigma$ is the input alphabet;
+\item
+$\delta$ is the transition function, that is, a map $\delta \colon Q \times \Sigma \to Q$;
+\item
+$q_0$ is the initial state;
+\item
+$F \subset Q$ is the set of final states.
+\end{itemize}
+The sets $Q$ and $\Sigma$ are assumed to be finite, and $F$ non-empty.
+\end{dfn}
+
+\end{document}

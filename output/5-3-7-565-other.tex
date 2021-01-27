@@ -1,0 +1,26 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{3}
+\setcounter{subsection}{7}
+\setcounter{dfn}{19}
+
+
+Computing the first few terms of the sequences $\frac{3k^2 \pm k}2$, one rewrites MacMahon's recurrence as
+\[
+p_n = p_{n-1} + p_{n-2} - p_{n-5} - p_{n-7} + p_{n-12} + p_{n-15} - \cdots
+\]
+The sum on the right hand side looks infinite but is in fact finite: $p(n-i)$ becomes zero as soon as $i$ exceeds $n$.
+Thus the sum contains about $2\sqrt{\frac{2}{3} n}$ summands and allows a very fast computation of $p_n$.
+
+MacMahon, more than a hundred years ago, has computed $p(n)$ for $n$ up to $200$.
+In particular, he found that
+\[
+p(200) = 3 972 999 029 388.
+\]
+
+We will prove MacMahon's recurrence in the next section.
+
+
+
+
+\end{document}

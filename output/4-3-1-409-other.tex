@@ -1,0 +1,18 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{3}
+\setcounter{subsection}{1}
+\setcounter{dfn}{12}
+
+\begin{proof}
+Assume $T$ is complete, and let $M$ be any of its models.
+For every sentence $A$, we have either $M \vDash A$ or $M \vDash \neg A$.
+Due to the completeness of $T$ this implies $T \vDash A$, respectively $T \vDash \neg A$.
+
+Assume $T$ is incomplete. Then there are two models $M$ and $M'$ whose sets of satisfied formulas differ.
+Without loss of generality, let $M \vDash A$ and $M' \not\vDash A$.
+Then neither $T \vDash A$ nor $T \vDash \neg A$ hold.
+\end{proof}
+
+
+\end{document}

@@ -1,0 +1,50 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{4}
+\setcounter{subsection}{4}
+\setcounter{dfn}{6}
+
+In Figure \ref{fig:PentaTriangulations} all triangulations of a regular pentagon are presented.
+As one can see, triangulations which differ by rotation or reflection of the polygon are counted separately.
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=\textwidth]{PentaTriangulations}
+\end{center}
+\caption{All $5$ triangulations of the pentagon.}
+\label{fig:PentaTriangulations}
+\end{figure}
+
+
+\begin{proof}
+We establish a bijection between triangulations and binary trees.
+
+Place a dot inside every triangle of the triangulation and place a dot near every edge of the polygon just outside of the polygon.
+Then draw a segment between every pair of vertices separated by an edge of the triangulation or by an edge of the polygon.
+The result is a tree; every vertex inside of a triangle has degree $3$, and the vertices outside of the polygon are leaves.
+Remove the dot at the base edge of the polygon and the edge incident to it.
+The result is a rooted binary tree.
+See Figure \ref{fig:TriangToTree} for an example.
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=.9\textwidth]{TriangToTree}
+\end{center}
+\caption{From a triangulation to a binary tree.}
+\label{fig:TriangToTree}
+\end{figure}
+
+The base edge is chosen in advance.
+For example, if the polygon ``stands'' on a line, one can declare the lowest edge the base edge.
+Distinguishing the base edge reflects the fact that the polygon is not allowed to rotate.
+
+From every binary tree one can reconstruct the corresponding triangulation in a unique way.
+First, add an edge to the root so that all non-leaf vertices have degree $3$.
+Then draw a triangle around each vertex so that each of the sides of the triangle intersects one edge of the tree.
+Finally, for every edge of the tree glue the triangles surrounding the incident vertices along their sides intersecting this edge.
+\end{proof}
+
+
+
+
+\end{document}

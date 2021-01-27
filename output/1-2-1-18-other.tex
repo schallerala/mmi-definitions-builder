@@ -1,0 +1,40 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{2}
+\setcounter{subsection}{1}
+\setcounter{dfn}{1}
+
+
+A map is bijective iff at every element of $Y$ ends exactly one arrow.
+By inverting the arrows we obtain the \emph{inverse map} $f^{-1} \colon Y \to X$,
+which has the properties $f^{-1}(f(x)) = x$ for all $x \in X$ and $f(f^{-1}(y)) = y$ for all $y \in Y$.
+
+If $f$ is not bijective, then there is no inverse map $f^{-1}$.
+However, by abuse of notation one uses $f^{-1}(y)$ to denote the \emph{preimage} of $y$:
+\[
+f^{-1}(y) = \{x \in X \mid f(x) = y\}.
+\]
+Similarly one can define the preimage $f^{-1}(B)$ of any subset $B \subset Y$.
+
+Observe that
+\begin{itemize}
+\item
+$f$ injective $\Leftrightarrow$ $|f^{-1}(y)| \le 1$ for all $y$;
+\item
+$f$ surjective $\Leftrightarrow$ $f^{-1}(y) \ne \emptyset$ for all $y$.
+\end{itemize}
+
+We can now formulate the quotient rule in the mathematical language.
+
+\begin{center}
+\parbox{.75\textwidth}{\emph{If a map $f \colon X \to Y$ satisfies $|f^{-1}(y)| = k$ for all $y \in Y$, then $|Y| = \frac{|X|}{k}$.}}
+\end{center}
+
+A special case of this is the bijection principle:
+\begin{center}
+\parbox{.75\textwidth}{\emph{If a map $f \colon X \to Y$ is a bijection, then $|X| = |Y|$.}}
+\end{center}
+
+
+
+\end{document}

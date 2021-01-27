@@ -1,0 +1,19 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{2}
+\setcounter{subsection}{4}
+\setcounter{dfn}{13}
+
+\begin{rem}
+Observe that
+\begin{multline*}
+\binom{-n}{k} = (-1)^k \frac{(n+k-1) (n+k-2) \cdot \ldots \cdot n}{k!}\\
+= (-1)^k \binom{n+k-1}{k} = (-1)^k \binom{n+k-1}{n-1}.
+\end{multline*}
+Therefore, by substituting $-x$ instead of $x$ one can rewrite \eqref{eqn:BinomNeg} as
+\[
+(1-x)^{-n} = \sum_{k=0}^\infty \binom{n+k-1}{n-1} x^k.
+\]
+\end{rem}
+
+\end{document}

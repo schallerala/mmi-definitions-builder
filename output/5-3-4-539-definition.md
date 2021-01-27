@@ -1,0 +1,4 @@
+::: {.dfn}
+**Definition 1**.
+*$$\prod_{i=1}^\infty A_i(x) = \lim_{k \to \infty} \prod_{i=1}^k A_i(x)$$*
+:::

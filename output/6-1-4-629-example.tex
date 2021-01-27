@@ -1,0 +1,32 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{1}
+\setcounter{subsection}{4}
+\setcounter{dfn}{12}
+
+\begin{exl}
+\label{exl:ENFA}
+The automaton on Figure \ref{fig:ENFA} accepts positive and negative integers: strings of digits,
+possibly preceded by the minus sign, the only string beginning with $0$ is $0$.
+\begin{figure}[ht]
+\begin{center}
+\input{Fig/ENFA.pdf_t}
+\end{center}
+\caption{An $\epsilon$-NFA recognizing decimally represented integers.}
+\label{fig:ENFA}
+\end{figure}
+
+The transition table of this automaton is given below.
+
+\begin{center}
+\begin{tabular}{c|cccc}
+& $\epsilon$ & $-$ & $0$ & $1$-$9$\\\hline
+$q_0$ & $\{q_1\}$ & $\{q_1\}$ & $\{q_3\}$ & $\emptyset$\\
+$q_1$ & $\emptyset$ & $\emptyset$ & $\emptyset$ & $\{q_2\}$\\
+$q_2$ & $\{q_3\}$ & $\emptyset$ & $\{q_2\}$ & $\{q_2\}$\\
+$q_3$ & $\emptyset$ & $\emptyset$ & $\emptyset$ & $\emptyset$
+\end{tabular}
+\end{center}
+\end{exl}
+
+\end{document}

@@ -1,0 +1,65 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{4}
+\setcounter{subsection}{2}
+\setcounter{dfn}{4}
+
+Observe that on the right hand side we divide a formal power series by $x$.
+In Section \ref{sec:OperFPS} we have shown that division by formal power series with non-zero constant term is possible.
+In general, it is not allowed to divide by $x$: for example, $\frac{1+x}{x}$ does not correspond to any power series
+(there is no series $A(x)$ such that $1+x = xA(x)$).
+But in the above case one has $c_0 = 1$, therefore $C(x) - 1 = c_1 x + c_2 x^2 + \cdots$, and we put \emph{by definition}
+\[
+\frac{C(x) - 1}{x} = c_1 + c_2 x + c_3 x^2 + \cdots.
+\]
+\begin{proof}
+One has
+\begin{multline*}
+(C(x))^2 = (c_0 + c_1 x + c_2 x^2 + \cdots)(c_0 + c_1 x + c_2 x^2 + \cdots)\\
+= c_0^2 + (c_0c_1 + c_1c_0) x + (c_0c_2 + c_1^2 + c_2c_0) x^2 + \cdots\\
+= 1 + c_2 x + c_3 x^2 + \cdots = \frac{C(x) - 1}{x}
+\end{multline*}
+\end{proof}
+
+\begin{proof}[Proof of Theorem \ref{thm:CatalanFormula}]
+Lemma \ref{lem:CatalanGenFunc} implies that $C(x)$ satisfies a quadratic equation
+\[
+x (C(x))^2 - C(x) + 1 = 0.
+\]
+It follows that
+\[
+C(x) = \frac{1 - \sqrt{1-4x}}{2x}.
+\]
+(We choose the minus sign before the square root because otherwise the numerator is not divisible by $x$.
+One can check that this is a solution of the quadratic equation by direct substitution.)
+By the generalized binomial formula one has
+\[
+\sqrt{1-4x} = \sum_{k=0}^\infty \binom{\frac12}{k} (-4x)^k,
+\]
+where
+\begin{multline*}
+\binom{\frac12}{k} = \frac{\frac12 \cdot -\frac12 \cdot \cdots \cdot \left(\frac12 - k + 1\right)}{k!}
+= (-1)^{k-1} \frac{(2k-3)!!}{2^k k!}\\
+= (-1)^{k-1} \frac{(2k-2)!}{2^{2k-1} k! (k-1)!} = (-1)^{k-1} \frac{1}{2^{2k-1}k} \frac{(2k-2)!}{(k-1)!(k-1)!}\\
+= (-1)^{k-1} \frac{1}{2^{2k-1}k} \binom{2k-2}{k-1}
+\end{multline*}
+for all $k \ge 1$, while $\binom{\frac12}{0} = 1$.
+By substituting the expression for $\binom{\frac12}{k}$ into the binomial formula one gets
+\[
+\sqrt{1-4x} = 1 - \sum_{k=1}^\infty \frac{1}{2^{2k-1}k} \binom{2k-2}{k-1} 4^k x^k
+= 1 - \sum_{k=1}^\infty \frac{2}{k} \binom{2k-2}{k-1} x^k.
+\]
+It follows that
+\[
+C(x) = \frac{1}{2x} \sum_{k=1}^\infty \frac{2}{k} \binom{2k-2}{k-1} x^k
+= \sum_{k=1}^\infty \frac{1}{k} \binom{2k-2}{k-1} x^{k-1} = \sum_{k=0}^\infty \frac{1}{k+1} \binom{2k}{k} x^k,
+\]
+which proves the theorem.
+\end{proof}
+
+
+
+
+
+
+\end{document}

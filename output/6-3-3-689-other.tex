@@ -1,0 +1,26 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{3}
+\setcounter{subsection}{3}
+\setcounter{dfn}{12}
+
+\begin{proof}
+Let $L$ be a regular language, and let $r$ be a regular expression representing $L$.
+Make a substitution in $r$, replacing every symbol by its image under the homomorphism.
+The result is a regular expression in the alphabet $\Delta$; denote it by $h(r)$.
+Then the language defined by $h(r)$ is $h(L)$, thus $h(L)$ is regular.
+
+The claim $L(h(r)) = h(L(r))$ is proved by induction on the complexity of the expression $r$.
+Here is the induction step to $h = h_1 + h_2$:
+\begin{multline*}
+L(h(r_1+r_2)) = L(h(r_1)+h(r_2)) = L(h(r_1)) \cup L(h(r_2))\\
+= h(L(r_1)) \cup h(L(r_2)) = h(L(r_1) \cup L(r_2)) = h(L(r_1+r_2)).
+\end{multline*}
+\end{proof}
+
+For example, if $h(0) = 0$ and $h(1) = 10$, then $h((0+1)^*) = (0+10)^*$.
+
+The next example shows that a homomorphic image of a non-regular language can be regular.
+
+
+\end{document}

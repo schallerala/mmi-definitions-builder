@@ -1,0 +1,19 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{3}
+\setcounter{subsection}{2}
+\setcounter{dfn}{20}
+
+\begin{proof}
+Proof by contraposition.
+Let $T$ be an inconsistent theory: there is a sentence $A$ such that $T \vdash A$ and $T \vdash \neg A$.
+Assume that $T$ is satisfiable: $M \vDash T$.
+Then the soundness of the proof system implies that $M \vDash A$ and $M \vDash \neg A$, which is a contradiction.
+Thus every inconsistent theory is unsatisfiable.
+\end{proof}
+
+The inverse implication is also correct; it can be derived from the completeness theorem and vice versa by some manipulations with deduction trees.
+Therefore it is also called the completeness theorem.
+
+
+\end{document}

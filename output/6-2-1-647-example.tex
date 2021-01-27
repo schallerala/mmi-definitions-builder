@@ -1,0 +1,19 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{2}
+\setcounter{subsection}{1}
+\setcounter{dfn}{3}
+
+\begin{exl}
+The language of words consisting of alternating $0$'s and $1$'s.
+It can be represented by a regular expression $(01)^* + (10)^* + 0(10)^* + 1(01)^*$.
+In this expression a case distinction is incorporated: if the word is of even length and starts with $0$,
+then it belongs to the language $(01)^*$, etc.
+
+The same language can be described by the expression
+\[
+(01)^* + 1(01)^* + (01)^*0 + 1(01)^*0 = (\epsilon + 1)(01)^*(\epsilon + 0).
+\]
+\end{exl}
+
+\end{document}

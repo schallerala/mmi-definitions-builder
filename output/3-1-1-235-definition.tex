@@ -1,0 +1,22 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{1}
+\setcounter{subsection}{1}
+\setcounter{dfn}{0}
+
+\begin{dfn}
+\label{dfn:PropForm}
+The set of \emph{propositions} or \emph{propositional formulas} $\Prop$ is defined as follows.
+\begin{enumerate}
+\item
+Proposition symbols belong to $\Prop$. They are called \emph{atoms} or \emph{atomic propositions}.
+\item
+If $A \in \Prop$, then $\neg A \in \Prop$.
+\item
+If $A, B \in \Prop$, then $(A \wedge B)$, $(A \vee B)$, $(A \to B) \in \Prop$.
+\item
+A string of symbols belongs to $\Prop$ only if it can be obtained by applying the above rules.
+\end{enumerate}
+\end{dfn}
+
+\end{document}

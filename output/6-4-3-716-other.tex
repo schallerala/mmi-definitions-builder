@@ -1,0 +1,29 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{4}
+\setcounter{subsection}{3}
+\setcounter{dfn}{8}
+
+
+
+From any DFA one can construct the minimum DFA accepting the same language by merging certain sets of states into one state.
+Two states $q_i$, $q_j$ must be merged if the corresponding sets $T_i$, $T_j$ are contained in the same equivalence class $S_k$.
+That is, $q_i \sim q_j$ if for all $x \in \Sigma^*$ either both $\widehat{\delta}(q_i, x)$ and $\widehat{\delta}(q_j, x)$ belong to $F$ or both do not.
+
+One can certify non-equivalence of two states by finding a word $x$ such that $\widehat{\delta}(q_i, x) \in F$ and $\widehat{\delta}(q_j, x) \notin F$
+or vice versa.
+The algorithm marks pairs of distinguishable states recursively.
+
+At the very beginning one removes all inaccessible states.
+Obviously, this does not change the accepted language.
+
+Then one draws a table whose rows and columns are marked by the remaining states.
+As initialization, one marks all pairs $(q_i,q_j)$ such that $q_i \in F$ and $q_j \notin F$ or vice versa.
+At each of the following steps one goes through all pairs $(q_i,q_j)$, and for each of them one considers all alphabet letters $a$.
+If the pair $(\delta(q_i,a), \delta(q_j,a))$ was marked at one of the previous steps, then one marks the pair $(q_i, q_j)$.
+If at some step no new pairs are marked, then the algorithm stops.
+All pairs of states which are unmarked are merged into a single state
+(it is also possible that several states are merged into one state).
+
+
+\end{document}

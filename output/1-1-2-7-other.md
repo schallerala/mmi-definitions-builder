@@ -1,0 +1,12 @@
+Up to now we have considered independent choices, when the result of one
+choice does not influence the sets of subsequent choices. However, it is
+not the **set** of choices what matters, but rather the **number** of
+choices. This leads us to the general product rule:
+
+*If two consecutive choices are made, with $m$ possibilities for the
+first choice and $n$ possibilities for the second choice, then the
+number of all possible outcomes is equal to $mn$.*
+
+Of course, this can be generalized to several consecutive choices if the
+number of possibilities for each choice is independent of the results of
+all previous choices.

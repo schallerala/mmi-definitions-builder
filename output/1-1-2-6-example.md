@@ -1,0 +1,8 @@
+**Example 1**. A restaurant offers a choice of $3$ first courses, $4$
+main courses, and $5$ desserts. How many different full course dinners
+are there?
+
+A full course dinner is an element of the Cartesian product
+$$\{\text{first courses}\} \times \{\text{main courses}\} \times \{\text{desserts}\}.$$
+Multiplying the cardinalities of these sets we obtain the answer:
+$3 \cdot 4 \cdot 5 = 60$ different full course dinners are possible.

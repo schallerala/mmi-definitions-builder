@@ -1,0 +1,48 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{3}
+\setcounter{subsection}{5}
+\setcounter{dfn}{36}
+
+
+\begin{proof}[Proof of Theorem \ref{thm:ConstUndecid}]
+Assume that $T$ is decidable.
+Consider the set
+\[
+X = \{(m,n) \mid m = \sharp A(\cdot), T \vdash A[\underline{n}/\cdot]\} \subset \N^2.
+\]
+(Here $A(\cdot)$ means that $A$ has one free variable, and $A[t/\cdot]$ means substitution of term $t$ for this variable.)
+Since $T$ is decidable, the set $X$ is recursive (there is an algorithm which decides whether $(m,n) \in X$ or not).
+
+Now let
+\[
+Y = \{n \mid (n,n) \notin X\}.
+\]
+Clearly, since $X$ is recursive, so is $Y$.
+By Theorem \ref{thm:ReprThm}, the set $Y$ is representable.
+That is, there is a formula $B(y)$ such that
+\begin{gather*}
+n \in Y \Rightarrow PA_0 \vdash B[\underline{n}/y]\\
+n \notin Y \Rightarrow PA_0 \vdash \neg B[\underline{n}/y]
+\end{gather*}
+Since $T \supset PA_0$, for every $C$ such that $PA_0 \vdash C$ we also have $T \vdash C$.
+
+Now let $n = \sharp B(y)$.
+Let us ask ourselves if $n \in Y$ or not. Assume $n \in Y$.
+By definition of $Y$, $X$, and $n$ we have
+\[
+n \in Y \Rightarrow (n,n) \notin X \Rightarrow T \not\vdash B[\underline{n}/y] \Rightarrow T \vdash \neg B[\underline{n}/y].
+\]
+On the other hand, by definition of $B(y)$ we have
+\[
+n \in Y \Rightarrow T \vdash B[\underline{n}/y],
+\]
+which implies that $T$ is incoherent.
+If we assume that $n \notin Y$, then we derive similarly that $T \vdash B[\underline{n}/y]$ and $T \vdash \neg B[\underline{n}/y]$.
+
+Thus the decidability assumption contradicts the consistency assumption, and the theorem is proved.
+\end{proof}
+
+
+
+\end{document}

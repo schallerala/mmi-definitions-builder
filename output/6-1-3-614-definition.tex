@@ -1,0 +1,17 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{1}
+\setcounter{subsection}{3}
+\setcounter{dfn}{5}
+
+\begin{dfn}
+A \emph{nondeterministic finite automaton (NFA)} is a quintuple $(Q, \Sigma, \delta, q_0, F)$, where as before
+$Q$ is a set of states, $\Sigma$ is a finite alphabet, $q_0 \in Q$ is the initial state, $F \subset Q$ is the set of final states.
+However, the transition function
+\[
+\delta \colon Q \times \Sigma \to 2^Q
+\]
+associates to a pair $(q,a)$ not a state, but a set of states $P \subset Q$, which is allowed to be empty.
+\end{dfn}
+
+\end{document}

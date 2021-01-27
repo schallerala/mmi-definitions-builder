@@ -1,0 +1,5 @@
+::: {.dfn}
+**Definition 1**. *The *conjugate* of a partition $\lambda$ is obtained
+by reflecting the diagram of $\lambda$ in the northwest-southeast
+diagonal.*
+:::

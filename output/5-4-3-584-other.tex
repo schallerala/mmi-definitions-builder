@@ -1,0 +1,31 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{4}
+\setcounter{subsection}{3}
+\setcounter{dfn}{4}
+
+Assume that we have to multiply three variables $x$, $y$, and $z$.
+Here by ``multiplication'' we mean any binary operation.
+If this operation is commutative and associative, then neither the order of variables nor the order of operations is important:
+\[
+(xy)z = x(yz) = x(zy).
+\]
+If the operation is associative but not commutative (as multiplication of matrices for example),
+then the order of variables matters, but the order of operations does not:
+\[
+(xy)z = x(yz) \ne x(zy).
+\]
+Finally, if the operation is neither commutative nor associative (as, for example, $xy := x^y$),
+then we must take care both of the order of variables and the order of operations:
+\[
+(xy)z \ne x(yz).
+\]
+In how many ways can one multiply a given sequence of variables without changing their order?
+For two variables there is only one way, for three variables two: $(xy)z$ and $x(yz)$,
+below are all expressions with four variables:
+\[
+((x_1x_2)x_3)x_4, \quad (x_1(x_2x_3))x_4, \quad (x_1x_2)(x_3x_4), \quad x_1((x_2x_3)x_4), \quad x_1(x_2(x_3x_4)).
+\]
+
+
+\end{document}

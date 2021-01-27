@@ -1,0 +1,41 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{5}
+\setcounter{subsection}{3}
+\setcounter{dfn}{4}
+
+\begin{proof}
+Let $A_i$ be the set of numbers among $1, 2, \ldots, n$ divisible by $p_i$.
+Then $A_1 \cup \cdots \cup A_m = \{k \in \{1, 2, \ldots, n\} \mid \gcd(k,n) > 1\}$ and we have
+\[
+\phi(n) = n - |A_1 \cup \cdots \cup A_m|.
+\]
+To compute $|A_1 \cup \cdots \cup A_m|$, use the inclusion-exclusion formula.
+We have
+\[
+A_i = \{p_i, 2p_i, \ldots, \frac{n}{p_i} p_i\},
+\]
+thus $|A_i| = \frac{n}{p_i}$.
+Similarly, we have
+\[
+|A_{i_1} \cap \cdots \cap A_{i_k}| = \frac{n}{p_{i_1} \cdots p_{i_k}}.
+\]
+By the inclusion-exclusion formula,
+\[
+|A_1 \cup \cdots \cup A_m| = \sum_{i=1}^m \frac{n}{p_i} - \sum_{i<j} \frac{n}{p_ip_j} + \cdots + (-1)^{m-1} \frac{n}{p_1\cdots p_m}.
+\]
+Thus we have
+\begin{multline*}
+\phi(n) = n - |A_1 \cup \cdots \cup A_m|\\
+= n \left( 1 - \sum_{i<j} \frac{1}{p_i} + \cdots + (-1)^m \frac{1}{p_1 \cdots p_m} \right)\\
+= n \left(1-\frac{1}{p_1}\right) \cdots \left(1-\frac{1}{p_m}\right).
+\end{multline*}
+
+
+\end{proof}
+
+
+
+
+
+\end{document}

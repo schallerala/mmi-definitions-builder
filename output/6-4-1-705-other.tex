@@ -1,0 +1,25 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{4}
+\setcounter{subsection}{1}
+\setcounter{dfn}{3}
+
+\begin{proof}
+The reflexivity and the symmetry are obvious.
+To prove the transitivity, let $u \sim_L v$, $v \sim_L w$, and assume that $u \not\sim_L w$.
+Then there is a distinguishing extension $x$ for $u$ and $w$.
+Without loss of generality, $ux \in L$, $wx \notin L$.
+Then if $vx \in L$, we have $v \not\sim_L w$, and if $vx \notin L$, we have $u \not\sim_L v$.
+\end{proof}
+
+An equivalence relation splits the set $\Sigma^*$ of all words into \emph{equivalence classes}:
+\begin{equation}
+\label{eqn:SigmaEqClasses}
+\Sigma^* = S_0 \cup S_1 \cup S_2 \cup \cdots
+\end{equation}
+where $u \sim_L v$ if and only if $u$ and $v$ belong to the same class.
+As we noticed in Example \ref{exl:LEquiv}, if $u \sim_L v$, then either $u,v \in L$ or $u,v \notin L$.
+It follows that every class $S_i$ is either contained in $L$ or disjoint from $L$.
+
+
+\end{document}

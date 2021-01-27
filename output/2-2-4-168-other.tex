@@ -1,0 +1,23 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{2}
+\setcounter{subsection}{4}
+\setcounter{dfn}{12}
+
+\begin{proof}
+Both statements are proved by contraposition.
+That is, we prove the following: if $G$ contains no cycle, then $|E| \le |V| - 1$; if $G$ is connected, then $|E| \ge |V| - 1$.
+
+Let $G$ be acyclic.
+Then by Corollary \ref{cor:ForestEdges} it has $|V| - k \le |V| - 1$ edges, where $k$ is the number of components of $G$.
+
+Let $G$ be connected.
+By Theorem \ref{thm:SpanTree}, $G$ has a spanning tree which, by Theorem \ref{thm:TreeEdges}, has $|V| - 1$ edges.
+Thus $G$ has at least $|V| - 1$ edges.
+\end{proof}
+
+
+
+
+
+\end{document}

@@ -1,0 +1,22 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{2}
+\setcounter{subsection}{1}
+\setcounter{dfn}{0}
+
+Let $A$ be a predicate formula, and let $t$ be a term.
+Assume that $A$ contains a free variable $x$.
+Then we can define a new formula $A[t/x]$ obtained by substitution of $t$ for all free occurrences of $x$.
+(We don't exclude the possibility that $x$ also occurs bound in $A$.)
+
+Intuitively, $A[t/x]$ should represent a special case of $A$, so that for example if $A$ is true for all $x$, then $A[t/x]$ is valid.
+However, some substitutions do not have this property.
+Take for example
+\[
+A = \exists y (y < x), \quad t = y.
+\]
+Then we have $A[t/x] = \exists y (y < y)$.
+This is false in the universe of integers, although $A$ was true.
+
+
+\end{document}

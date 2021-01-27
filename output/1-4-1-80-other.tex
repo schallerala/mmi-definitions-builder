@@ -1,0 +1,26 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{4}
+\setcounter{subsection}{1}
+\setcounter{dfn}{1}
+
+\begin{proof}
+Make the balls of the same color distinguishable (by writing on them numbers, for example).
+Then all $n$ balls can be arranged in $n!$ different ways.
+Now apply the quotient rule.
+There is a forgetful map from the set $X$ of arrangements with balls of the same color distinguishable
+to the set $Y$ of arrangements where balls of the same color are undistinguishable.
+What is the multiplicity of this map, that is the cardinalities of the preimages $|f^{-1}(y)|$?
+The balls of the $i$-th color can be permuted amongst themselves in $k_i!$ different ways.
+Permutations within every color can be performed independently, which gives us $k_1! \cdots k_m!$ elements in $Y$
+all of which correspond to the same element in $X$.
+Thus we have $|f^{-1}(y)| = k_1! \cdots k_m!$, and hence
+\[
+|Y| = \frac{|X|}{k_1! \cdots k_m!} = \frac{n!}{k_1! \cdots k_m!}.
+\]
+\end{proof}
+
+
+
+
+\end{document}

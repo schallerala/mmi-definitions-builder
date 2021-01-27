@@ -1,0 +1,33 @@
+\input{preamble.tex}
+\begin{document}
+\setcounter{section}{2}
+\setcounter{subsection}{1}
+\setcounter{dfn}{0}
+
+A \emph{map} $f \colon X \to Y$ is a rule that associates to every element $x \in X$ a unique element of $Y$.
+The element associated to $x$ is denoted by $f(x)$.
+
+A map can be pictured as a collection of arrows going from elements of $X$ to elements of $Y$.
+At every element of $X$ one and only one arrow must start.
+By contrast, at an element of $Y$ several arrows or none at all may end.
+
+\begin{figure}[ht]
+\begin{center}
+\input{Fig/Map.pdf_t}
+\end{center}
+\caption{A map $f \colon X \to Y$.}
+\label{fig:Map}
+\end{figure}
+
+A map $f \colon X \to Y$ is called
+\begin{itemize}
+\item
+\emph{injective}, if no two different elements of $X$ are sent to the same element of $Y$: for every $x_1 \ne x_2$ we have $f(x_1) \ne f(x_2)$;
+\item
+\emph{surjective}, if to every element of $Y$ some element of $X$ is sent: for every $y \in Y$ there is $x \in X$ such that $f(x) = y$;
+\item
+\emph{bijective}, if it is injective and surjective.
+\end{itemize}
+
+
+\end{document}
