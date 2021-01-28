@@ -1,6 +1,0 @@
-thm
-thm:3V-6
-Let  be a connected plane graph with  vertices.
-Then .
-Moreover, equality holds if and only if all faces of  are triangles.
-thm

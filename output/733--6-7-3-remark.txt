@@ -1,9 +1,0 @@
-rem
-The situation is similar to the following proof of the existence of two irrational numbers  and  such that  is rational.
-If  is rational, then one may take .
-If  is irrational, then one may take ,  because of
-
-(2^2)^2 = 2^2 2 = 2^2 = 2.
-
-(In fact,  is rational, which follows from a more general (and more complicated) theorem by Gelfond and Schneider from 1934.)
-rem

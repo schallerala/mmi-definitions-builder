@@ -1,1 +1,0 @@
-Syntax and semantics of predicate logic

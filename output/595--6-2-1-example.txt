@@ -1,3 +1,0 @@
-exl
-The language of all binary words can be represented by the expression .
-exl

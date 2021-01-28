@@ -1,4 +1,0 @@
-thm
-thm:RegLangExpr
-A language is regular if and only if it can be represented by a regular expression.
-thm

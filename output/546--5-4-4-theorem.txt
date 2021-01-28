@@ -1,3 +1,0 @@
-thm
-The number of different triangulations of a convex -gon is equal to the -th Catalan number.
-thm

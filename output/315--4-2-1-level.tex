@@ -1,0 +1,22 @@
+\section{Proof theory}
+We will present Gentzen's sequent calculus for predicate logic.
+There are other proof theories, for example Hilbert-style systems.
+These theories are equivalent to each other, which means that a formula provable within one of them is also provable within any other.
+(Postfactum it follows from their soundness and completeness,
+but one can describe a transformation of Hilbert proof into a Gentzen proof and vice versa in a direct way.)
+
+
+\subsection{Substitutions}
+Let $A$ be a predicate formula, and let $t$ be a term.
+Assume that $A$ contains a free variable $x$.
+Then we can define a new formula $A[t/x]$ obtained by substitution of $t$ for all free occurrences of $x$.
+(We don't exclude the possibility that $x$ also occurs bound in $A$.)
+
+Intuitively, $A[t/x]$ should represent a special case of $A$, so that for example if $A$ is true for all $x$, then $A[t/x]$ is valid.
+However, some substitutions do not have this property.
+Take for example
+\[
+A = \exists y (y < x), \quad t = y.
+\]
+Then we have $A[t/x] = \exists y (y < y)$.
+This is false in the universe of integers, although $A$ was true.

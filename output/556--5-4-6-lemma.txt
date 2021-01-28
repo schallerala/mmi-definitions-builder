@@ -1,4 +1,0 @@
-lem
-lem:NonDyck
-Among the monotone paths from  to  there are exactly  non-Dyck paths.
-lem

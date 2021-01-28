@@ -1,9 +1,0 @@
-Euler's totient function
-Two positive integers whose greatest common divisor equals  are called relatively prime.
-Denote by  the number of positive integers  which are relatively prime to :
-
-(n) = k 1, 2, , n (k,n) = 1.
-
-For example, for  only the numbers  and  among  are relatively prime to ,
-so that we have .
-In  is prime, then all numbers  are relatively prime to , so that .

@@ -1,8 +1,0 @@
-The pumping lemma for CFLs
-For any finite alphabet  the set of all words  is countably infinite.
-The set of all languages over  is the set of all subsets of  and therefore uncountably infinite.
-On the other hand, the set of all pushdown automata with the input language  is countably infinite
-(as is the set of all context-free grammars).
-It follows that there are languages which are not context-free.
-
-The following theorem provides a tool to prove non-context-freeness of some languages.

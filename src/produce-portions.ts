@@ -50,7 +50,8 @@ const writeStreamOptions = {
     );
 
     readInterface.on('line', function(line) {
-        currentHunter = currentHunter.read(line);
+        if ( ! line.trim().startsWith('%'))
+            currentHunter = currentHunter.read(line);
     });
 
     await waitEndReadLines(readInterface);

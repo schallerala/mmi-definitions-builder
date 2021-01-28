@@ -1,5 +1,0 @@
-exl
-The graphs of platonic solids (and more generally, of all convex polytopes) are planar.
-Thus the Euler formula holds for the numbers of vertices, edges, and faces of any convex polytope.
-For example, the cube has  vertices,  edges, and  faces, and we have indeed .
-exl

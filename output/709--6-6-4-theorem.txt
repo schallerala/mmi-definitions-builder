@@ -1,4 +1,0 @@
-thm
-thm:CFLtoPDA
-For every context-free language  there is a PDA  such that .
-thm

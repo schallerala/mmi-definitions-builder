@@ -1,2 +1,0 @@
-Thus a graph is -edge connected graphs if and only if it is connected.
-A connected graph is not -edge connected if it has a bridge or cut edge: an edge whose deletion disconnects the graph.

@@ -1,9 +1,0 @@
-exl
-Let us prove that the language  is not context-free.
-Assume it is, and let  be a constant from the pumping lemma corresponding to this language.
-Take  and write it as  so that the properties of the pumping lemma are satisfied.
-We claim that .
-Indeed, since , the subword  is eiter contained in the prefix  or in the suffix  of .
-In the first case the word  has  letters  at the end, but less than  's and 's in total, so that .
-Similarly, in the second case  has  's, but not enough 's and 's.
-exl

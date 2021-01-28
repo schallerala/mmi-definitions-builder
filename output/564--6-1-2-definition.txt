@@ -1,8 +1,0 @@
-dfn
-Let  be a DFA.
-A word  is called accepted by  if .
-The language  accepted by  is the set of all words accepted by :
-
-L(M) = w ^* (q_0,w) F.
-
-dfn

@@ -1,7 +1,0 @@
-thm[Pumping lemma for regular languages]
-Let  be a regular language.
-Then there is an integer  such that for any word  of length  the word  can be represented as  in such a way that
-
-uv n, v 1,  and for all k 0  one has  uv^kw L.
-
-thm

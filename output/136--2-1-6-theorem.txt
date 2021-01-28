@@ -1,6 +1,0 @@
-thm
-A graph is Eulerian if and only if all of its vertex degrees are even
-and all vertices of positive degree belong to the same connected component.
-A graph is semi-Eulerian if and only if it has exactly two vertices of odd degree
-and all vertices of positive degree belong to the same connected component.
-thm

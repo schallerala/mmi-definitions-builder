@@ -1,3 +1,0 @@
-Equivalence of regular expressions and regular languages
-We will now prove Theorem thm:RegLangExpr.
-It splits in two parts.

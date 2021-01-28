@@ -1,3 +1,0 @@
-proof
-This is nothing else but a formal description of a composition of the number .
-proof

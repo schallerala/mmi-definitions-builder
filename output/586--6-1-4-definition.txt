@@ -1,7 +1,0 @@
-dfn
-A subset of the set of states  is called -closed
-if all -transitions from states of  lead to : for every  one has .
-
-The -closure of a subset  is the minimal -closed subset containing .
-We denote the -closure of  by .
-dfn

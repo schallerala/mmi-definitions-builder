@@ -1,7 +1,0 @@
-rem
-One can show that two finite models are elementarily equivalent if and only if the corresponding graphs are isomorphic.
-But this is false for infinite models: a doubly infinite path is elementarily equivalent to the union of two of its copies.
-
-The connectivity property of a graph cannot be written as a sentence of the first-order logic.
-One can express it with the help of quantifiers over subsets of the universe, which belong already to the second-order logic.
-rem

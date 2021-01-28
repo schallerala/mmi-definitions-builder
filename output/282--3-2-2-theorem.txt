@@ -1,3 +1,0 @@
-thm
-A Hilbert system is sound if and only if all of its axioms are tautologies.
-thm

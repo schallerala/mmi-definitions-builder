@@ -1,3 +1,0 @@
-lem
-A theory  is complete if and only if it is satisfiable and for every sentence  one has either  or .
-lem

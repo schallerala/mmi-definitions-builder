@@ -1,8 +1,0 @@
-thm
-thm:DualHandshake
-For every plane graph the sum of the degrees of its faces is twice the number of edges:
-
-_f F f = 2 E.
-
-(Here  denotes the set of all faces.)
-thm

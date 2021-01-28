@@ -1,4 +1,0 @@
-exl
-The set of prime numbers is recursive.
-It is not easy to give an example of a recursively enumerable but not recursive set.
-exl

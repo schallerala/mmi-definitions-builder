@@ -1,8 +1,0 @@
-exl
-enumerate
-[a)]
-The language accepted by the automaton on Figure fig:DFAOdd consists of all strings with an odd number of ones.
-[b)]
-One has  if and only if the initial state  of  belongs to the set of final states of .
-enumerate
-exl

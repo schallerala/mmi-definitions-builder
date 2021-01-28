@@ -1,7 +1,0 @@
-dfn
-The Laplacian matrix of a graph  is
-
-L = D - A,
-
-where  is the degree matrix, that is a diagonal matrix with , and  is the adjacency matrix of .
-dfn

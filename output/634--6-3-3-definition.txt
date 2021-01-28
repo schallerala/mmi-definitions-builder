@@ -1,7 +1,0 @@
-dfn
-Let  be a language. The homomorphic image of  is the language
-
-h(L) = h(w) w L ^*,
-
-where  is some homomorphism.
-dfn

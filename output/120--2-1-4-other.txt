@@ -1,3 +1,0 @@
-Indeed, the sum of all vertex degrees must be even by Theorem thm:Handshake.
-
-Two vertices joined by an edge are called adjacent.

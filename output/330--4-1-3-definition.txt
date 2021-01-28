@@ -1,3 +1,0 @@
-dfn
-The universal closure of a formula is obtained by adding a universal quantifier for every free variable.
-dfn

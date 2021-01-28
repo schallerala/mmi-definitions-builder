@@ -1,2 +1,0 @@
-Isomorphic graphs and subgraphs
-sec:Subgraphs

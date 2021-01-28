@@ -1,1 +1,0 @@
-A minimum spanning tree is not necessarily unique: if all weights are the same, then all spanning trees have the same total weight.

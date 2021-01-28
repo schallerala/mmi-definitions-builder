@@ -1,6 +1,0 @@
-Eulerian graphs
-Euler's "Seven bridges of Konigsberg" problem.
-
-Informally speaking, we are asking what graphs can be drawn without lifting the pencil from paper
-(and drawing every edge only once).
-You can try to draw the graph on Figure fig:TwoDrawings in this way.

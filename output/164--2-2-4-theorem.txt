@@ -1,5 +1,0 @@
-thm
-Let  be a graph.
-If , then  contains a cycle.
-If , then  is not connected.
-thm

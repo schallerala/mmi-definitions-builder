@@ -1,4 +1,0 @@
-dfn
-A recursive function is a function  defined on a subset  of  for some 
-which can be computed in finite time.
-dfn

@@ -1,4 +1,0 @@
-thm
-thm:GentzenSound
-The sequent calculus is sound: every provable sequent is valid.
-thm

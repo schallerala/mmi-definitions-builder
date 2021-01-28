@@ -1,6 +1,0 @@
-dfn
-One says that a sequence  stabilizes to  if  for all sufficiently big :
-
-N  such that  c_n = c n > N.
-
-dfn

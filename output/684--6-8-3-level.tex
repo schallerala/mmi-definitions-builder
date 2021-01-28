@@ -1,0 +1,21 @@
+\subsection{Modifications of Turing machines}
+There are several variations of Turing machines, e.~g.:
+\begin{itemize}
+\item
+multi-tape: several tapes, each with its own head for reading and writing;
+\item
+multidimensional: a square grid instead of a tape, the head can move not only left and right, but also up and down;
+\item
+non-deterministic.
+\end{itemize}
+Although they seem more powerful, each of them can be simulated by an ordinary Turing machine.
+
+
+
+\subsection{Problems and languages}
+Consider a problem like ``Is a given finite graph connected?''
+An \emph{instance} of a problem is any finite graph.
+Since graphs can be encoded as words in an alphabet, this problem determines a language:
+the set of all words encoding connected graphs.
+This holds for any question which depends on some countable parameter and has a yes/no answer:
+encode the parameter values by words, and consider the set of all words for which the answer to the question is ``yes''.

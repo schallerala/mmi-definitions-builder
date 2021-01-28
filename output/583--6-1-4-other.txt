@@ -1,4 +1,0 @@
-
-A word  is accepted by an -NFA if
-there is a path from the initial state to one of the final states which corresponds to the input 
-with any number of -transitions inbetween.

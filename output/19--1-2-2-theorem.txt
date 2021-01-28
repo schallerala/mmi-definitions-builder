@@ -1,4 +1,0 @@
-thm
-thm:AllSubsets
-The number of different subsets of an -element set is .
-thm

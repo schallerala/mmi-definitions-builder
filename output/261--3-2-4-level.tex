@@ -1,0 +1,71 @@
+\subsection{Gentzen's sequent calculus: the idea}
+Given a proposition $A$, we want to determine whether it is a tautology.
+Recall that $A$ is \emph{not} a tautology if and only if there is a valuation $v$ that falsifies $A$.
+(We will also call $v$ a \emph{counterexample} to $A$.)
+So let us try to falsify $A$ or to show that this is impossible.
+As an example, take
+\[
+A = (p \to q) \to (p \vee q).
+\]
+
+In order to falsify a proposition of the form $B \to C$ one has to satisfy $B$ and falsify $C$ at the same time.
+This reduces our problem to a combination of two simpler ones.
+Let us write our new task on the top of the old one:
+\begin{prooftree}
+\AxiomC{$p \to q \vdash p \vee q$}
+\UnaryInfC{$\vdash (p \to q) \to (p \vee q)$}
+\end{prooftree}
+The turnstile symbol is used as a separator: on the left we write the things we want to satisfy, on the right the things we want to falsify.
+(One can use any other separator.
+The choice of $\vdash$ looks awkward because the symbol was used earlier to denote provability.
+This choice is partially motivated by the subsequent sections.)
+
+So, now we want to satisfy $p \to q$ and falsify $p \vee q$.
+In order to falsify $p \vee q$ we have to falsify both of them at the same time.
+We express this by $p \to q \vdash p, q$.
+Now on the right hand side we have a list of formulas that we want to falsify simultaneously.
+Our diagram takes the following form:
+\begin{prooftree}
+\AxiomC{$p \to q \vdash p, q$}
+\UnaryInfC{$p \to q \vdash p \vee q$}
+\UnaryInfC{$\vdash (p \to q) \to (p \vee q)$}
+\end{prooftree}
+
+There are two ways to satisfy $p \to q$: one has either to satisfy $q$ or to falsify $p$.
+This introduces branching in the diagram:
+\begin{center}
+\AxiomC{$q \vdash p, q$}
+\AxiomC{$\vdash p, p, q$}
+\BinaryInfC{$p \to q \vdash p, q$}
+\UnaryInfC{$p \to q \vdash p \vee q$}
+\UnaryInfC{$\vdash (p \to q) \to (p \vee q)$}
+\DisplayProof
+\end{center}
+
+Now, any valuation that solves one of the problems on the top of the diagram also solves the problem in the bottom.
+The first problem sounds ``satisfy $p$ and falsify $p$ and $q$''.
+This is, of course, impossible.
+But the second problem says ``falsify $p$ and $q$''.
+This is solved by setting $v(p) = 0$, $v(q) = 0$.
+From the construction principle of the diagram it follows that this valuation falsifies the initial proposition $A = (p \to q) \to (p \vee q)$.
+Thus we have shown that $A$ is not a tautology.
+
+A couple of remarks are in order.
+First, there is no need to repeat two equal propositions on the same side of $\vdash$ as we did with $p$ on the top right.
+(We did it just to show that trying to satisfy $p \to q$ brings $q$ to the left or $p$ to the right.)
+Second, sometimes we have a choice which connective to eliminate.
+Here we had it at the second step.
+If we choose to eliminate $p \to q$ before $p \vee q$, then the branching happens earlier, and the final diagram looks as follows.
+\begin{prooftree}
+\AxiomC{$q \vdash p,q$}
+\UnaryInfC{$q \vdash p \vee q$}
+\AxiomC{$\vdash p,q$}
+\UnaryInfC{$\vdash p, p \vee q$}
+\BinaryInfC{$p \to q \vdash p \vee q$}
+\UnaryInfC{$\vdash (p \to q) \to (p \vee q)$}
+\end{prooftree}
+
+
+
+\subsection{Sequents and inference rules}
+In the above example we have operated with sets of propositions split into two subsets: those to satisy and those to falsify.

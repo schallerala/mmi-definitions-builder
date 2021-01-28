@@ -1,1 +1,0 @@
-Completeness of the sequent calculus

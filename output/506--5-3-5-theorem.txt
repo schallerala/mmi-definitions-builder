@@ -1,3 +1,0 @@
-thm
-The number of partitions of  into distinct parts is equal to the number of partitions of  into odd parts.
-thm

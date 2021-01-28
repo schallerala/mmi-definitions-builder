@@ -1,6 +1,0 @@
-thm
-The number of all derangements of  elements is equal to
-
-_k=0^n (-1)^k nk (n-k)! = _k=0^n (-1)^k n!k!.
-
-thm

@@ -1,4 +1,0 @@
-dfn
-A proof system is called sound if every provable formula is a tautology.
-A proof system is called complete if every tautology is provable.
-dfn

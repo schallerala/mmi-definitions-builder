@@ -1,3 +1,0 @@
-dfn
-A tree is a connected acyclic graph.
-dfn

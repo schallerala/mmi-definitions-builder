@@ -1,7 +1,0 @@
-dfn
-Terms are expressions that can be obtained by finitely many applications of the following rules.
-itemize
-Any variable is a term.
-If  is a -ary function symbol, and  are terms, then  is a term.
-itemize
-dfn

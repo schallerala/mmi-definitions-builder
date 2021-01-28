@@ -1,3 +1,0 @@
-thm
-The number of Dyck paths from  to  is equal to the -th Catalan number.
-thm

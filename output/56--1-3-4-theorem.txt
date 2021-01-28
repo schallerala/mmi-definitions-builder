@@ -1,8 +1,0 @@
-thm
-For any  we have
-multline*
-(a+b)^n = _k=0^n nk a^n-kb^k
-
-= n0a^n + n1a^n-1b + n2a^n-2b^2 + + nnb^n
-multline*
-thm

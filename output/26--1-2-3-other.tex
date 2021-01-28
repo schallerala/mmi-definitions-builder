@@ -1,0 +1,9 @@
+\begin{proof}
+Without loss of generality, $X = \{1, \ldots, k\}$.
+We have $n$ possibilities to choose $f(1)$.
+After this, for $f(2)$ there remain $n-1$ possibilities, then $n-2$ possibilities for $f(3)$,
+and so on up to $f(k)$, for which $n-(k-1) = n-k+1$ possibilities remain.
+
+The above argument works for $k \le n$, but the formula is true for $k > n$ as well:
+there are no injective maps in this case, and the product $n(n-1) \cdots (n-k+1)$ vanishes because it contains a zero factor.
+\end{proof}

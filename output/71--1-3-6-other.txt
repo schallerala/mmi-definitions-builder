@@ -1,1 +1,0 @@
-Our question can be formulated as "how many -multisets, with elements taken from  are there?"

@@ -1,7 +1,0 @@
-thm
-Propositions  and  are logically equivalent if and only if the proposition
-
-(A B) (B A)
-
-is a tautology.
-thm

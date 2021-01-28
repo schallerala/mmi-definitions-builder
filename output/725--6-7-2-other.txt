@@ -1,9 +1,0 @@
-
-
-
-Recall that a derivation of a word in a context-free grammar can be represented in the form of a derivation tree,
-see Figure fig:Chomsky.
-(Sometimes different trees can derive the same word, but this is not a problem.)
-If the grammar has Chomsky form, then its derivation trees are binary trees.
-More exactly, a derivation tree of a Chomsky form grammar is a full binary tree (variable nodes)
-together with an additional edge hanging down from every leaf (terminal nodes).

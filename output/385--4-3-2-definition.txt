@@ -1,6 +1,0 @@
-dfn
-A sentence  is said to be a syntactic consequence of a theory  (denoted ) if
-there is a deduction tree with  at the root, where  is any finite subset, and logical axioms at the leaves.
-One says that  is a theorem of theory .
-The set of all theorems of  is denoted by .
-dfn

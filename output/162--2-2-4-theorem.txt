@@ -1,4 +1,0 @@
-thm
-thm:SpanTree
-Every connected graph has a spanning tree.
-thm

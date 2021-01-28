@@ -1,2 +1,0 @@
-Minimization of a DFA
-Myhill-Nerode theorem implies

@@ -1,4 +1,0 @@
-lem
-lem:UniLangRE
-The universal language is recursively enumerable.
-lem

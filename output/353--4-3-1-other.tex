@@ -1,0 +1,30 @@
+\begin{proof}
+Assume $T$ is complete, and let $M$ be any of its models.
+For every sentence $A$, we have either $M \vDash A$ or $M \vDash \neg A$.
+Due to the completeness of $T$ this implies $T \vDash A$, respectively $T \vDash \neg A$.
+
+Assume $T$ is incomplete. Then there are two models $M$ and $M'$ whose sets of satisfied formulas differ.
+Without loss of generality, let $M \vDash A$ and $M' \not\vDash A$.
+Then neither $T \vDash A$ nor $T \vDash \neg A$ hold.
+\end{proof}
+
+\begin{exc}
+For every model $M$, the theory $T_M$ is complete.
+\end{exc}
+
+The first-order theory of graphs is incomplete, and this is good: one has many different graphs with different properties.
+But if we want to know everything about the arithmetics of $\N$, the natural numbers, then we need a complete theory.
+The theory should contain some axioms for addition and multiplication and maybe some other axioms,
+so that every sentence has a well-defined truth value
+(that is, all structures that satisfy our axioms assign to it the same value).
+For example, the question ``Can every integer greater than $2$ be expressed as the sum of two primes?'' should have a definite answer.
+
+One might use the result of the above exercise: if we assume that $\N$ is something objectively real,
+then there is the corresponding complete theory $T_{\N}$.
+But this theory has ``too many'' axioms, and we have no explicit description for it, apart from saying ``what is true, is true''.
+G\"odel's incompleteness theorem says that there is no complete theory of $\N$
+such that for every sentence one can decide in finite time is it an axiom of the theory or not.
+
+Before we say more about the incompleteness theorem, we must discuss proofs, a constructive way to derive consequences of a theory.
+
+

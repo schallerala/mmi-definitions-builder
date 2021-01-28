@@ -1,3 +1,0 @@
-
-In terms of the turnstile notation, a system is sound if , and complete if .
-

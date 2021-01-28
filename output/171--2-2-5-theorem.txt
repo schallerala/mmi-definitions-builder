@@ -1,8 +1,0 @@
-thm[Kirchhoff]
-Let  be a connected graph, and  be its Laplacian matrix.
-Then the number of spanning trees of  is equal to each of the following numbers.
-itemize
-, where  is the matrix obtained by removing the -th row and the -th column from ;
-, where  are the non-zero eigenvalues of .
-itemize
-thm

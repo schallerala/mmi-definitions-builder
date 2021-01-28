@@ -1,4 +1,0 @@
-cor
-A theory  is complete if and only if it is consistent and syntactically complete,
-that is for every sentence  either  or  but not both.
-cor

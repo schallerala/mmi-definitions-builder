@@ -1,7 +1,0 @@
-dfn
-A sequent  is called falsifiable
-if there exists a first-order structure  and a variable assignment  which simultaneously make all  true and all  false:
-
-(M,) A_i  for all i, (M,) B_j  for all j.
-
-dfn

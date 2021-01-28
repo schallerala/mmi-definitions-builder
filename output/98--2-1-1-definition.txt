@@ -1,5 +1,0 @@
-dfn
-dfn:Graph
-A graph  is a pair , where  is some set and  is a collection of two-element subsets (unordered pairs of elements) of .
-The set  is called the vertex set of , the set  is called the edge set of .
-dfn

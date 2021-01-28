@@ -1,1 +1,0 @@
-Matchings in bipartite graphs: Hall's theorem

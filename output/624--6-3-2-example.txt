@@ -1,9 +1,0 @@
-exl
-Take the alphabet of one symbol 
-and consider the language :
-all sequences of 's whose length is a perfect square.
-Let us show that  is not regular. Assume the contrary, and let  be the integer in the pumping lemma.
-Let . By the pumping lemma, , where , and  for all .
-For  one has , thus .
-This contradiction shows that our assumption was false, and  is not regular.
-exl

@@ -1,3 +1,0 @@
-dfn
-The number of different full binary rooted trees with  leaves is called the -th Catalan number and is denoted by .
-dfn

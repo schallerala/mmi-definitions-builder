@@ -1,5 +1,0 @@
-Monotone paths in higher dimensions
-Consider the cubical grid in .
-It is possible to visualize for ; for larger  one uses an abstract description.
-Mark the points  and  in this grid.
-A monotone path is one that moves along the grid lines and in the positive directions only.

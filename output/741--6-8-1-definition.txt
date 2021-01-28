@@ -1,4 +1,0 @@
-dfn
-A language is called recursively enumerable if it is accepted by some Turing machine.
-A language is called recursive if it is accepted by a Turing machine which halts on every input.
-dfn

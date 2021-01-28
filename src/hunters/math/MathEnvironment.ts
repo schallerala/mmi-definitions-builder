@@ -57,8 +57,4 @@ export class MathEnvironment {
     static createRemarkEnv (): MathEnvironment {
         return new MathEnvironment('rem', 'remark');
     }
-
-    static createExerciseEnv (): MathEnvironment {
-        return new MathEnvironment('exc', 'exercise');
-    }
 }

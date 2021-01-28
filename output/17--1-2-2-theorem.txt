@@ -1,4 +1,0 @@
-thm
-thm:AllMaps
-If  and , then there are  different maps .
-thm

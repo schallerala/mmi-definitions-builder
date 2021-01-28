@@ -1,0 +1,34 @@
+\section{Regular expressions}
+A regular expression is a formula which describes a language.
+We will see that languages represented by regular expressions are regular (i.e. are accepted by a finite automaton)
+and that every regular language can be represented by a regular expression.
+
+\subsection{Definition and examples}
+A regular expression is defined recursively.
+The basic building blocks are the following.
+\begin{enumerate}
+\item
+$\emptyset$ is a regular expression and denotes the language $\emptyset$.
+\item
+$\epsilon$ is a regular expression and denotes the language $\{\epsilon\}$.
+\item
+$a$ is a regular expression for every $a \in \Sigma$ and denotes the language $\{a\}$.
+\end{enumerate}
+Don't confuse the empty language $\emptyset$ and the language $\{\epsilon\}$ consisting of an empty word.
+
+
+
+Sometimes one uses the boldface $\bf{a}$ to denote the language $\{a\}$.
+We will use the same symbol $a$.
+
+From these building blocks one constructs more complex regular expressions by using the following operations.
+If $r$ and $s$ are regular expressions denoting the languages $R$ and $S$ respectively, then
+\begin{enumerate}
+\item
+$(r+s)$ is a regular expression and denotes the language $R \cup S$;
+\item
+$(rs)$ is a regular expression and denotes the language $RS = \{uv \mid u \in R, v \in S\}$;
+\item
+$r^*$ is a regular expression and denotes the language $R^* = \cup_{i=0}^\infty R^i$, where $R^i = \underbrace{RR \cdots R}_{i}$
+(the \emph{Kleene closure} of language $R$).
+\end{enumerate}

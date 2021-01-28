@@ -1,8 +1,0 @@
-proof
-This follows from Theorem thm:BooleNF.
-Every formula represents a boolean function.
-As we proved in Theorem thm:BooleNF, every boolean function is represented by a formula in DNF.
-Formulas representing the same function are logically equivalent.
-proof
-
-Similarly, a disjunctive clause is a disjunction of several literals.

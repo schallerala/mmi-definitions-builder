@@ -1,3 +1,0 @@
-dfn
-A graph is called -regular if all of its vertices have degree .
-dfn

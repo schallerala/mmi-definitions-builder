@@ -1,3 +1,0 @@
-thm
-A homomorphic image of a regular language is regular.
-thm

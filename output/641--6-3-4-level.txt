@@ -1,1 +1,0 @@
-Closure under inverse homomorphism

@@ -1,7 +1,0 @@
-Some graphs known by names
-Below are some important families of graphs.
-itemize
-The complete graph  is a graph with  vertices, with each pair of vertices joined by an edge.
-The cycle graph  is a graph with  vertices  and the edges  for  and .
-The path graph  is a graph with  vertices  and the edges  for .
-itemize

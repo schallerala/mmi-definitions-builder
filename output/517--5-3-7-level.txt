@@ -1,5 +1,0 @@
-Recursive formulas for the number of partitions
-Denote by  the number of partitions of  into at most  parts.
-(As we know from Theorem thm:RestrPart, this is also the number of partitions into parts that do not exceed .)
-Clearly, one has .
-

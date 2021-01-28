@@ -1,6 +1,0 @@
-thm
-enumerate
-Every tautology is satisfiable.
-A proposition  is a tautology if and only if  is unsatisfiable.
-enumerate
-thm

@@ -1,6 +1,0 @@
-dfn
-A homomorphism is a map  such that
-
-h(xy) = h(x)h(y)  for all x, y ^*.
-
-dfn

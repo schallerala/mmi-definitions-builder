@@ -1,4 +1,0 @@
-exl
-The language of all binary words with equal numbers of 's and 's is context free.
-However, the generating grammar is more complicated, see[Example 4.3]HU79.
-exl

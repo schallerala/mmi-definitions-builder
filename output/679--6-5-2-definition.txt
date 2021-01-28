@@ -1,4 +1,0 @@
-dfn
-An -production is a production of the form .
-A unit production is a production of the form .
-dfn

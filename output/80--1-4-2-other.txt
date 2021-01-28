@@ -1,9 +1,0 @@
-proof
-Multiply the brackets respecting the order of the factors.
-We obtain the sum of all words of length  from the letters .
-When collecting the like terms, we disregard the order of the letters, looking only at the number of occurences of every letter.
-The words with  letters  (for all  from  to ) become the terms .
-The coefficient at this term is the number of the words made of  letters ,...  letters ,
-that is .
-proof
-

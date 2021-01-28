@@ -1,3 +1,0 @@
-thm
-Tossing a coin  times can lead to  different outcomes.
-thm

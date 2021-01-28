@@ -1,3 +1,0 @@
-dfn
-A system of logical connectives is called functionally complete if every Boolean function can be represented by a formula using only these connectives.
-dfn

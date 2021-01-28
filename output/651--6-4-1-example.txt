@@ -1,5 +1,0 @@
-exl
-exl:LEquiv
-If  and , then .
-Indeed,  is a distinguishing extension for  and .
-exl

@@ -1,9 +1,0 @@
-lem
-lem:VarSubstitute
-Assume that a variable  is free for  in  and is not occurring freely in .
-Then for every structure  the following holds:
-itemize
-If  is satisfiable in , then  is satisfiable in .
-If  is falsifiable in , then  is falsifiable in .
-itemize
-lem

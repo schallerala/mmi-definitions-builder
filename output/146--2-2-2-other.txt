@@ -1,2 +1,0 @@
-
-Find leaves of trees in Figure fig:Trees.

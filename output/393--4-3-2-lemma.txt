@@ -1,4 +1,0 @@
-lem
-lem:SatConsist
-Every satisfiable theory is consistent.
-lem

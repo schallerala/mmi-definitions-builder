@@ -1,6 +1,0 @@
-dfn
-A sentence  is said to be a semantic consequence of a theory  (denoted ) if every model of  satisfies :
-
-T A def if  M T,  then  M A.
-
-dfn

@@ -1,3 +1,0 @@
-
-What do we mean by ?
-This is a power series  such that .

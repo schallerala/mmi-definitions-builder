@@ -1,4 +1,0 @@
-thm[Godel's completeness theorem, second version]
-thm:Complete2
-Every consistent theory is satisfiable.
-thm

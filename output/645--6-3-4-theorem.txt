@@ -1,3 +1,0 @@
-thm
-An inverse homomorphic image of a regular language is regular.
-thm

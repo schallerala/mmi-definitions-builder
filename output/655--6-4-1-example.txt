@@ -1,8 +1,0 @@
-exl
-Let  be the set of all binary words with equal numbers of zeros and ones.
-Then  if and only if the difference between the numbers of zeros and ones in  and in  is the same:
-
-^* = S_-2 S_-1 S_0 S_1 S_2 , S_i = u _0(u) - _1(u) = i.
-
-One has .
-exl

@@ -1,3 +1,0 @@
-dfn
-Two finite automata  and  are called equivalent if they accept the same languages: .
-dfn

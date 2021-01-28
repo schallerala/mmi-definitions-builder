@@ -1,9 +1,0 @@
-thm[Euler]
-Let  be a connected plane graph.
-Denote by  the set of its faces.
-Then we have
-
-V - E + F = 2.
-
-In particular, the number of faces does not depend on the choice of an embedding.
-thm

@@ -1,3 +1,0 @@
-
-In a bipartite graph , if , then .
-

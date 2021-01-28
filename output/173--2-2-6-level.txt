@@ -1,5 +1,0 @@
-Minimum spanning tree: Kruskal's algorithm
-Every spanning tree in a connected graph on  vertices has  edges.
-However, if edges are equipped with weights, then we can speak about the spanning tree of minimum total weight.
-For example, if the weights of edges are the costs of building railroads between towns,
-then the minimum spanning tree is the cheapest railroad network connecting all towns.

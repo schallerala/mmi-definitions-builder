@@ -1,8 +1,0 @@
-thm[Godel's completeness theorem]
-thm:Complete1
-A semantic consequence of a theory is also its syntactic consequence:
-
-T A T A.
-
-In other words, every sentence which is true in a given theory has a formal proof.
-thm

@@ -1,3 +1,0 @@
-dfn
-A theory  is called (syntactically) consistent if there is no sentence  such that  and .
-dfn

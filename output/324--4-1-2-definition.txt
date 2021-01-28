@@ -1,7 +1,0 @@
-dfn
-A formula is called rectified if the following two conditions are satisfied:
-itemize
-no variable occurs as free and as bound;
-distinct quantifiers bind distinct variables.
-itemize
-dfn

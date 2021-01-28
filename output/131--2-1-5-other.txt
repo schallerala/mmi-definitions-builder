@@ -1,3 +1,0 @@
-
-This is the same as to say that there is a walk between  and :
-every path is a walk, and from every walk one can remove cycles so that it becomes a path.

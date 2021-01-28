@@ -1,6 +1,0 @@
-exl
-Looking at the truth table of Example exl:TruthTable we see that
-
-((p q) q) q.
-
-exl

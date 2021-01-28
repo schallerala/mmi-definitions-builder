@@ -1,3 +1,0 @@
-Dyck paths
-Recall that a monotone lattice path is a path on the coordinate grid moving only upwards and to the right.
-As we know, there are  monotone paths from  to .

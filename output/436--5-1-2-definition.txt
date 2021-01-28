@@ -1,6 +1,0 @@
-dfn
-The characteristic polynomial of the sequence eqn:LinRec2 is the quadratic polynomial
-
-x^2 - rx - s.
-
-dfn

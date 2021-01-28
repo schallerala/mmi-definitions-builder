@@ -1,7 +1,0 @@
-dfn
-A theory  is called satisfiable if it has at least one model,
-that is a structure which satisfies all sentences of the theory:
-
-M T def M A  for all A T.
-
-dfn

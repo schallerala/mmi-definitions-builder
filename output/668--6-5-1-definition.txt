@@ -1,9 +1,0 @@
-dfn
-A context-free grammar (or CFG or just grammar) is a quadruple , where
-itemize
- is a finite set of variables;
- is a finite set of terminals;
- is a finite set of productions, each production is of the form , where ;
- is a special variable () called the start symbol.
-itemize
-dfn

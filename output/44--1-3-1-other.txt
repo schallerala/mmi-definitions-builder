@@ -1,5 +1,0 @@
-proof
-By Theorem thm:AllSubsets, an -element set has  subsets.
-By definition,  is the number of -element subsets.
-(One may say that we are using the sum rule here: the set of all subsets is a disjoint union of sets of -element subsets over all  from  to .)
-proof

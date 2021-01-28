@@ -1,7 +1,0 @@
-dfn
-A proposition  is satisfiable if it is satisfied by at least one valuation.
-A proposition is unsatisfiable if it is not satisfied by any valuation.
-
-A proposition  is valid or a tautology if it is satisfied by all valuations:  for all .
-We denote this by .
-dfn

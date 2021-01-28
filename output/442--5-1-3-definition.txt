@@ -1,6 +1,0 @@
-dfn
-The characteristic polynomial of the sequence eqn:LinReck is
-
-P(x) = x^k - r_1 x^k-1 - r_2 x^k-2 - - r_k.
-
-dfn

@@ -1,5 +1,0 @@
-rem
-Another problem for a connected weighted graph is to find a minimum path between two given vertices.
-This can be done with Dijkstra's algorithm.
-Note that a minimum spanning tree contains a path between any pair of vertices, but this path is not necessarily minimal.
-rem

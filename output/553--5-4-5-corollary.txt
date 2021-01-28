@@ -1,3 +1,0 @@
-cor
-The number of balanced bracket sequences of  opening and  closing brackets is .
-cor

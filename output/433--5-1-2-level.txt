@@ -1,2 +1,0 @@
-Linear recursive sequences of order 2
-We will prove not only the Binet formula, but show that similar formulas hold for all sequences defined similarly to the Fibonacci sequence.

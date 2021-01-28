@@ -1,7 +1,0 @@
-Difference rule
-The set difference: .
-
-If X Y,  then  X Y = X - Y.
-
-Instead of counting the number of "good" outcomes,
-one can count the number of "bad" ones and subtract it from the total number of outcomes.

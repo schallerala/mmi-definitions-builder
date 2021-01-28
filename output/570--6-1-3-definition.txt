@@ -1,9 +1,0 @@
-dfn
-A nondeterministic finite automaton (NFA) is a quintuple , where as before
- is a set of states,  is a finite alphabet,  is the initial state,  is the set of final states.
-However, the transition function
-
-Q 2^Q
-
-associates to a pair  not a state, but a set of states , which is allowed to be empty.
-dfn

@@ -1,3 +1,0 @@
-lem
-A language  is recursive if and only if both  and its complement are recursively enumerable.
-lem

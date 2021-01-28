@@ -1,5 +1,0 @@
-lem
-lem:LongWord
-Any path of length  (the length of a path is the number of edges) in a graph with  vertices contains a cycle.
-Besides, there is a cycle within the first  edges of this path.
-lem

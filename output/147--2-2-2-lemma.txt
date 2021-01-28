@@ -1,4 +1,0 @@
-lem
-lem:LeafTree
-Every tree has at least two leaves.
-lem

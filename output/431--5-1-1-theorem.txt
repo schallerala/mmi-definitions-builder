@@ -1,7 +1,0 @@
-thm[Binet]
-thm:Binet
-The -th Fibonacci number is equal to
-
-a_n = (1+52)^n - (1-52)^n5
-
-thm

@@ -1,8 +1,0 @@
-A combinatorial proof of the formula for 
-The proof of the formula for  in Section sec:GenFuncCatalan was algebraic,
-building upon the recursive formula eqn:CatalanRecursion.
-Since Catalan numbers have so many combinatorial interpretation, it would be good to have a combinatorial proof of the same formula.
-
-Instead of counting Dyck paths let us count paths that enter the triangle below the diagonal.
-They may stay all the time below the diagonal or cross the diagonal one or several times.
-We call them non-Dyck paths.

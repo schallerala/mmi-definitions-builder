@@ -1,3 +1,0 @@
-dfn
-A map  is called a boolean function of  variables.
-dfn

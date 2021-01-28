@@ -1,8 +1,0 @@
-thm
-thm:BinomSum
-For every  we have
-equation
-eqn:SumBinCoeff
-_k=1^n nk = n0 + n1 + + nn = 2^n.
-equation
-thm

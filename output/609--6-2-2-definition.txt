@@ -1,5 +1,0 @@
-dfn
-A word  is called a prefix of a word  if  for some word .
-In particular, both  and  are prefixes of .
-A proper prefix of  is a prefix distinct from  and .
-dfn

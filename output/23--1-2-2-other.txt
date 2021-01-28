@@ -1,5 +1,0 @@
-proof
-Apply the product rule.
-The coin is making  choices, each time from two possibilities.
-Thus the number of outcomes is .
-proof

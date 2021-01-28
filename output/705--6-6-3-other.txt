@@ -1,5 +1,0 @@
-proof[Idea of the proof]
-To replace acceptance by final states with acceptance by empty stack, add a new state (erasure state),
-allow the automaton to go to this state as soon as it enters a final state,
-and while in the erasure state delete the top stack symbols spontaneously.
-proof

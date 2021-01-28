@@ -1,3 +1,0 @@
-thm
-For every -NFA there is an equivalent DFA.
-thm

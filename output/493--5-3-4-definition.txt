@@ -1,6 +1,0 @@
-dfn
-A partition of a positive integer  is its representation as a sum of positive integers.
-Representations that differ only in the order of summands are considered the same.
-
-The number of partitions of  is denoted by .
-dfn

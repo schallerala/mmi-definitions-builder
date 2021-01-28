@@ -1,3 +1,0 @@
-dfn
-A formula is called closed if it does not contain free variables.
-dfn

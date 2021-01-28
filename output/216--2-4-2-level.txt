@@ -1,4 +1,0 @@
-Augmenting paths and maximum matchings
-Assume that  is a non-maximum matching in a graph.
-We want to modify it so that to obtain a matching with more edges.
-By the previous section, it is not always possible just to add edges to , we also have to remove some.

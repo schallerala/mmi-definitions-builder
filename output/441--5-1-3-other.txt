@@ -1,1 +1,0 @@
-A linear recursive sequence of order  is completely determined by the values of its first  terms.

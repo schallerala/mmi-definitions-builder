@@ -1,3 +1,0 @@
-
-Note that the language  is not regular, as can be shown with the help of the pumping lemma.
-We will later see that every regular language is context-free.

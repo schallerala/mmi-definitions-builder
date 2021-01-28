@@ -1,0 +1,37 @@
+\chapter{Basic combinatorics}
+
+\section{How to count}
+All sets in this chapter are finite.
+
+For a finite set $X$, by $|X|$ we denote the number of elements in $X$, also called the \emph{cardinality} of $X$.
+
+\subsection{Sum rule}
+\begin{center}
+\emph{If $X \cap Y = \emptyset$, then $|X \cup Y| = |X| + |Y|$.}
+\end{center}
+
+More generally,
+\begin{center}
+\parbox{.9\textwidth}{\emph{If the sets $X_1, \ldots, X_n$ are pairwise disjoint
+(that is $X_i \cap X_j = \emptyset$ for all $i \ne j$),
+then $|X_1 \cup X_2 \cup \cdots \cup X_n| = |X_1| + |X_2| + \cdots + |X_n|$.}}
+\end{center}
+Formally, this follows by induction on $n$ from the sum rule for two sets.
+
+Later we will learn how to proceed if the sets are not disjoint.
+
+\subsection{Product rule}
+First, let us state a special product rule:
+\[
+|X \times Y| = |X| \cdot |Y|.
+\]
+Here $X \times Y$, the \emph{Cartesian product} of $X$ and $Y$, denotes the set of ordered pairs $(x,y)$ with $x \in X$, $y \in Y$.
+
+The elements of $X \times Y$ can be written in a table whose rows correspond to the elements of $X$,
+and the columns correspond to the elements of $Y$.
+This justifies the product rule.
+
+Again, there is an extension to several sets:
+\[
+|X_1 \times \cdots X_n| = |X_1| \cdots |X_n|.
+\]

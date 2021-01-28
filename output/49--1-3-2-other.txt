@@ -1,9 +1,0 @@
-proof
-A monotone path can be encoded by a binary word,
-where  stands for "a step to the right" and  stands for "a step upwards".
-In order to attain the point , we need to make  steps to the right and  steps upwards.
-Therefore the monotone paths from  to  correspond to words of length 
-containing exactly  digits .
-From Theorem thm:BinWordsK we know that the number of such words is .
-proof
-

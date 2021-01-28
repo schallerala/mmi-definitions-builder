@@ -1,4 +1,0 @@
-rem
-In terms of the Ferrers diagrams, the above transition from a partition of  into  parts to a partition of  into  parts
-consists in removing the leftmost column of the diagram.
-rem

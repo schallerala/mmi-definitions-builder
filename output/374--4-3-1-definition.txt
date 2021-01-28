@@ -1,4 +1,0 @@
-dfn
-Two models  and  are called elementarily equivalent (denoted ) if , that is
-every sentence satisfied by one is also satisfied by the other.
-dfn

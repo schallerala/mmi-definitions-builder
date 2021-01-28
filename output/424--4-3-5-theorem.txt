@@ -1,3 +1,0 @@
-thm[First Godel's incompleteness theorem]
-Every consistent and recursive theory which contains  is incomplete.
-thm

@@ -1,5 +1,0 @@
-dfn
-A sequent is a pair  of finite (possibly empty) sets of propositions.
-The set  is called the antecedent, the set  is called the succedent.
-A sequent is written as  with the elements of  and  listed in an arbitrary order.
-dfn

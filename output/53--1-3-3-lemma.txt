@@ -1,8 +1,0 @@
-lem
-lem:BinCoeffRec
-For every  the following identity holds:
-equation
-eqn:BinCoeffRec
-nk = n-1k-1 + n-1k.
-equation
-lem

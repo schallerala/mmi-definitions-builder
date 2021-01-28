@@ -1,5 +1,0 @@
-thm
-thm:ClosRegLang
-Let  be any regular languages in the alphabet .
-Then the languages  are also regular.
-thm

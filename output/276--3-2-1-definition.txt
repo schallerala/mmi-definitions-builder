@@ -1,9 +1,0 @@
-dfn
-dfn:HilbertProof
-A formal proof is a sequence of propositional formulas,
-where each formula is an axiom or is obtained from some of the previous formulas by an inference rule.
-That is, if  is an inference rule and the sequence already contains all the formulas from the list ,
-then you can add  at the end of the sequence.
-
-The final formula of a formal proof is called a theorem.
-dfn

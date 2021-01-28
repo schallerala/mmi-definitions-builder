@@ -1,2 +1,0 @@
-The number of spanning trees
-The number of spanning trees of a given graph is an interesting combinatorial problem.

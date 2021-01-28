@@ -1,9 +1,0 @@
-exl
-exl:0n1n
-Let , , .
-From
-
-S 0S1 00S11 0^n-1S1^n-1 0^n1^n
-
-we see that .
-exl

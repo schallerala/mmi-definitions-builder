@@ -1,4 +1,0 @@
-thm
-thm:ReprThm
-Every recursive subset of  is representable.
-thm

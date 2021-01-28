@@ -1,7 +1,0 @@
-thm[MacMahon's recurrence]
-The number of partitions satisfies the following recurrence relation:
-
-p(n) =  _k=1^(-1)^k-1 (p(n - 3k^2 - k2) + p(n - 3k^2 + k2))
-
-Here the notation  is used instead of .
-thm

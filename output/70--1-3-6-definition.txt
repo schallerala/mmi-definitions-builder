@@ -1,3 +1,0 @@
-dfn
-A multiset is an unordered collection of elements with possible repetitions.
-dfn

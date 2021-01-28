@@ -1,3 +1,0 @@
-thm
-A language  is regular if and only if the number of -equivalence classes is finite.
-thm

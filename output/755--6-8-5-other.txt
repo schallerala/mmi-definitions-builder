@@ -1,5 +1,0 @@
-
-Construct a language :
-
-L_d = w_i w_i  is not accepted by M_i.
-

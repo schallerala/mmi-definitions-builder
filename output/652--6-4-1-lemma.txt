@@ -1,3 +1,0 @@
-lem
-The relation  is an equivalence relation.
-lem

@@ -1,5 +1,0 @@
-thm
-
-nk = nn-k
-
-thm

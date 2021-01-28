@@ -1,3 +1,0 @@
-thm
-Every propositional formula is logically equivalent to a formula in CNF.
-thm

@@ -1,7 +1,0 @@
-In other words, when we are substituting  for free occurrences of ,
-we also want all parts of  to remain free in the resulting formula.
-
-In order to determine the truth value of a non-closed formula , one needs a structure 
-and an assignment  for all free variables in  (that is,  is a map from the set of free variables in  to ).
-A formula  is called satisfiable (respectively, falsifiable) in 
-if there is an assignment  such that  (respectively, ).

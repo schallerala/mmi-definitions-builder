@@ -1,4 +1,0 @@
-thm
-thm:BooleNF
-Every boolean function  can be represented by a propositional formula.
-thm

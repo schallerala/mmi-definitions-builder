@@ -1,4 +1,0 @@
-dfn
-One says that a structure  satisfies a closed formula , if  evaluates to true under .
-In this case  is also called a model of , and one writes .
-dfn

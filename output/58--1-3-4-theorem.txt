@@ -1,7 +1,0 @@
-thm
-thm:BinAltern
-For any  we have
-
-n0 - n1 + + (-1)^nnn = 0
-
-thm

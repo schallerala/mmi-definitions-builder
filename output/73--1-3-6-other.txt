@@ -1,7 +1,0 @@
-proof
-There is a bijection between -multisets and weak compositions of  from  parts.
-Namely, to a weak composition  of  we associate the multiset
-where  occurs  times,  occurs  times etc.
-The number of weak compositions was computed in Theorem thm:WeakComp.
-proof
-

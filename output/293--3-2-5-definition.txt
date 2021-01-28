@@ -1,4 +1,0 @@
-dfn
-A sequent  is an axiom if and only if :
-there is a proposition listed both in  and .
-dfn

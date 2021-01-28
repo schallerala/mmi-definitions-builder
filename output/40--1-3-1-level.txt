@@ -1,9 +1,0 @@
-Subsets or unordered choices
-This is our original definition:  is the number of unordered choices of  elements out of .
-In a more abstract language, this is the number of -element subsets of an -element set.
-
-We have proved that
-equation
-eqn:NChooseK
-nk = n(n-1)(n-k+1)k! = n!k!(n-k)!.
-equation

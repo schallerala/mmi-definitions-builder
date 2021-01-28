@@ -1,2 +1,0 @@
-
-One can be more concrete by defining formal proofs as follows.

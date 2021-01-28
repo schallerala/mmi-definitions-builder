@@ -1,6 +1,0 @@
-Quotient rule
-center
-.9The number of sheep in a herd is equal to the number of legs divided by four.
-center
-This is a highly inefficient way of counting sheep.
-But if we see only the legs and cannot see the heads, then this is the only available way.

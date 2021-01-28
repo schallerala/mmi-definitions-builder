@@ -1,4 +1,0 @@
-dfn
-A propositional formula is said to be in disjunctive normal form (for brevity, DNF)
-if it is a disjunction of conjunctive clauses.
-dfn

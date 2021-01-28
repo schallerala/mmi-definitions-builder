@@ -1,4 +1,0 @@
-In other words, a Eulerian circuit or Eulerian walk is an ordering of the edges of 
-such that two consecutive edges share a vertex.
-
-A graph is called Eulerian if it has a Eulerian circuit and semi-Eulerian if it has a Eulerian walk.

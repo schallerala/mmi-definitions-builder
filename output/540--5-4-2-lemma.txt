@@ -1,8 +1,0 @@
-lem
-lem:CatalanGenFunc
-For the generating function  of the Catalan sequence
-the following identity holds:
-
-(C(x))^2 = C(x) - 1x.
-
-lem

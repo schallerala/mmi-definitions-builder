@@ -1,6 +1,0 @@
-thm
-thm:RestrPart
-The number of partitions of  into exactly  parts is equal to the number of partitions of  with the largest part equal to .
-
-The number of partitions of  into at most  parts is equal to the number of partitions of  into parts that do not exceed .
-thm

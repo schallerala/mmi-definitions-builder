@@ -1,8 +1,7 @@
-import {ChildEntity, Column, Entity, ManyToOne, PrimaryGeneratedColumn, TableInheritance} from 'typeorm';
+import {Column, Entity, ManyToOne, PrimaryGeneratedColumn} from 'typeorm';
 
 @Entity()
-@TableInheritance({ column: { type: 'varchar', name: 'type' } })
-export abstract class PdfLevel {
+export class PdfLevel {
     @PrimaryGeneratedColumn()
     readonly id: number;
 
@@ -15,10 +14,26 @@ export abstract class PdfLevel {
     @Column()
     readonly text: string;
 
-    protected constructor(parent: PdfLevel, level: number, text?: string) {
+    @Column()
+    readonly type: Levels;
+
+    private constructor(parent: PdfLevel, level: number, text: string, type: Levels) {
         this.parent = parent;
         this.level = level;
         this.text = text;
+        this.type = type;
+    }
+
+    static createChapter(level: number, text: string) {
+        return new PdfLevel(undefined, level, text, 'chapter');
+    }
+
+    static createSection(parent: PdfLevel, level: number, text: string) {
+        return new PdfLevel(parent, level, text, 'section');
+    }
+
+    static createSubsection(parent: PdfLevel, level: number, text: string) {
+        return new PdfLevel(parent, level, text, 'subsection');
     }
 
     get rootChapter(): number {
@@ -40,30 +55,15 @@ export abstract class PdfLevel {
     get breadcrumb(): string {
         const breadcrumbPart = [];
         let currentLevel: PdfLevel = this;
-        do {
+        // Don't add the chapter, which we don't include its title
+        while (currentLevel.parent) {
             breadcrumbPart.push(currentLevel.numberedTitle);
-        } while ((currentLevel = currentLevel.parent))
+            currentLevel = currentLevel.parent;
+        }
+        // Add only the number of the chapter
+        breadcrumbPart.push(`Chap. ${currentLevel.level}.`);
         return breadcrumbPart.reverse().join(' > ');
     }
 }
 
-@ChildEntity('chapter')
-export class Chapter extends PdfLevel {
-    constructor(level: number, text: string) {
-        super(undefined, level, text);
-    }
-}
-
-@ChildEntity('section')
-export class Section extends PdfLevel {
-    constructor(parent: Chapter, level: number, text: string) {
-        super(parent, level, text);
-    }
-}
-
-@ChildEntity('subsection')
-export class SubSection extends PdfLevel {
-    constructor(parent: Section, level: number, text: string) {
-        super(parent, level, text);
-    }
-}
+type Levels = 'chapter' | 'section' | 'subsection';

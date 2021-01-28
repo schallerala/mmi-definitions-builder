@@ -1,3 +1,0 @@
-thm
-The graph  is not planar.
-thm

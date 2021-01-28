@@ -1,8 +1,0 @@
-thm
-The sequence of Catalan numbers satisfies the recurrence
-equation
-eqn:CatalanRecursion
-c_n+1 = _k=0^n c_k c_n-k = c_0c_n + c_1c_n-1 + + c_nc_0,
-equation
-where one puts .
-thm

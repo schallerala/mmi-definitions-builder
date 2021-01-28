@@ -1,7 +1,0 @@
-This is obvious for odd : because of  the summands can be split into pairs that cancel each other.
-For  even there is no cancellation.
-proof
-Substitute  and  in the binomial theorem.
-proof
-
-

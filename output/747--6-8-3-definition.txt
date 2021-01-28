@@ -1,7 +1,0 @@
-dfn
-A problem is called decidable if the corresponding language is recursive,
-that is if there is a Turing machine which halts on every input
-and accepts exactly those words which correspond to problem instances with the positive answer.
-
-A problem is called semi-decidable if the corresponding language is recursively enumerable.
-dfn

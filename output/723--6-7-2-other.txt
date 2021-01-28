@@ -1,8 +1,0 @@
-
-Recall that the language  is context-free (Example exl:0n1n, slightly modified to exclude the empty word).
-The language from the previous example does not look more complicated, however it is no more context-free.
-
-Similarly, we know from Example exl:Palindromes that the set of even-length palindromes 
-is a context-free language.
-The language of the next example does not look much different, but it is not context-free.
-(Althoug it could be accepted by an automaton with a queue memory.)

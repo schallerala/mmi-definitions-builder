@@ -1,9 +1,0 @@
-dfn
-dfn:FalsifySequent
-A valuation  falsifies a sequent  if it satisfies all of  and falsifies all of :
-
-v (A_1 A_m) (B_1 B_n).
-
-A sequent is called falsifiable if it is falsified by some valuation.
-A sequent is called valid if it is not falsifiable.
-dfn

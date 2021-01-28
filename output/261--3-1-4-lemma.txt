@@ -1,3 +1,0 @@
-lem
-The system of a single logical connective  is functionally complete.
-lem

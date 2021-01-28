@@ -1,2 +1,0 @@
-Closure under homomorphisms
-Let  and  be two finite alphabets.

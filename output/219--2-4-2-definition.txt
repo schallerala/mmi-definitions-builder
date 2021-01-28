@@ -1,3 +1,0 @@
-dfn
-An -augmenting path is an -alternating path that starts and ends with unmatched vertices.
-dfn

@@ -1,3 +1,0 @@
-thm
-The number of self-conjugate partitions of  is equal to the number of partitions of  into distinct odd parts.
-thm

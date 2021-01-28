@@ -1,4 +1,0 @@
-dfn
-A (first-order) theory is any set of sentences of the predicate logic.
-These sentences are called axioms of the theory.
-dfn

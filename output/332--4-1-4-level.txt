@@ -1,3 +1,0 @@
-First-order structures
-A signature only lists symbols of functions and predicates with the number of their arguments;
-it does not specify what operations and relations stand behind these symbols.

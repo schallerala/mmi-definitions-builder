@@ -1,5 +1,0 @@
-dfn
-Let  be a proposition and  be a valuation.
-If , then we say that  satisfies  and denote this by .
-If , then we say that  falsifies  and denote this by .
-dfn

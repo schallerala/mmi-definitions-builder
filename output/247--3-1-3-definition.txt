@@ -1,8 +1,0 @@
-dfn
-dfn:LogEqProp
-Two propositions  and  are called logically equivalent, which is denoted by  if they are satisfied by the same valuations:
-
-v(A) = v(B)  for all v.
-
-In other words,  if and only if  and  have the same truth table.
-dfn

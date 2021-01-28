@@ -1,3 +1,0 @@
-thm[Fary]
-If a graph can be drawn in the plane, then it can also be drawn with straight edges.
-thm

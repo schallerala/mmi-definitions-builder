@@ -1,4 +1,0 @@
-thm
-thm:HaltingProblem
-The halting problem is undecidable, that is, the universal language is not recursive.
-thm

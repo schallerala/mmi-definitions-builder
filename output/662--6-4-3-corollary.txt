@@ -1,4 +1,0 @@
-cor
-The minimum number of states in a DFA accepting a regular language  is equal to the number of -equivalence classes.
-The minimal DFA is unique up to renaming the states.
-cor

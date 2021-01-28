@@ -1,3 +1,0 @@
-lem
-The composition  is well-defined if .
-lem

@@ -1,4 +1,0 @@
-thm
-thm:CFLClosed
-Context-free languages are closed under union, concatenation and Kleene closure.
-thm

@@ -1,4 +1,0 @@
-Thus, a formula is called provable if and only if it is a theorem.
-An axiom is also a theorem.
-Its proof is a sequence consisting of a single term.
-

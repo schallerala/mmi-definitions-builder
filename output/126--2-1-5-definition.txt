@@ -1,7 +1,0 @@
-dfn
-A walk in a graph  is a sequence
-
-(v_0, e_1, v_1, e_2, , e_k, v_k),
-
-where , and for each  we have .
-dfn

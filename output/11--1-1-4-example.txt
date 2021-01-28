@@ -1,9 +1,0 @@
-exl
-Draw a convex -gon and all of its diagonals.
-How many segments (sides and diagonals) do we get?
-
-Every point belongs to  segments.
-If we multiply this by the number of points, we get .
-But every segment was counted twice, because it has two endpoints (two "legs").
-Thus the total number of segments is .
-exl

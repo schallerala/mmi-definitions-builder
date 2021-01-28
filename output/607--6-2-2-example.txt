@@ -1,7 +1,0 @@
-exl
-Construct an automaton accepting the language .
-
-The automaton obtained with the above argument has ten states, see Example 2.12 from the first edition of Hopcroft-Ullman.
-One can rather easily construct an -NFA with three states.
-The above algorithm aims not for the smallest number of states, but for the simplicity of the construction.
-exl

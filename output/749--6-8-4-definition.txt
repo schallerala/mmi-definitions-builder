@@ -1,6 +1,0 @@
-dfn
-The universal language is the set
-
-L_u = (M,w) Turing machine M  accepts word w.
-
-dfn

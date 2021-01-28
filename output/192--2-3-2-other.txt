@@ -1,2 +1,0 @@
-For example, on Figure fig:TwoEmbeddings, left, the outer face has degree 7 and the inner face has degree 3.
-On Figure fig:TwoEmbeddings, right, both the inner and the outer face have degrees 5.

@@ -1,4 +1,0 @@
-dfn
-A minimum spanning tree of a weighted connected graph  is a spanning tree  of  such that
-the sum  has the minimum possible value among all spanning trees of .
-dfn

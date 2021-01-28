@@ -1,5 +1,0 @@
-dfn
-A first-order structure (based on a given signature) is a pair , where
- is a non-empty set and  is a map which assigns to each -ary function symbol 
-a function  and to each -ary predicate symbol  a predicate .
-dfn

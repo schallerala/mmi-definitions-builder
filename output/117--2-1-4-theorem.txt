@@ -1,7 +1,0 @@
-thm[Handshake lemma]
-thm:Handshake
-In every graph, the sum of all vertex degrees is twice the number of edges:
-
-_v V v = 2 E.
-
-thm

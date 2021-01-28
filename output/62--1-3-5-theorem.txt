@@ -1,4 +1,0 @@
-thm
-thm:Compositions
-The number of compositions of  from  parts is .
-thm

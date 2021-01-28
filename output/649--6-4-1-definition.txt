@@ -1,7 +1,0 @@
-dfn
-Let  be a language.
-Two words  are called -equivalent (written as ) if
-
-x ^*  either  ux, vx L  or  ux, vx L.
-
-dfn

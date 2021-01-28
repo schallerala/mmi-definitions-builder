@@ -1,9 +1,0 @@
-lem
-lem:TermSubstitute
-Assume that a term  is free for  in .
-Then for every structure  the following holds:
-itemize
-If  is satisfiable in , then  is satisfiable in .
-If  is falsifiable in , then  is falsifiable in .
-itemize
-lem

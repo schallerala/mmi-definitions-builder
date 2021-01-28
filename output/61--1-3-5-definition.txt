@@ -1,4 +1,0 @@
-dfn
-A composition of a positive integer  is a representation of  as the sum of positive integers.
-The order of summands plays the role, for example  and  are different compositions of .
-dfn

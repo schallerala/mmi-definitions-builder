@@ -1,5 +1,0 @@
-dfn
-Let  be a graph.
-For any subset  of the vertex set denote by  the set of all vertices adjacent to vertices in .
-The set  is called the neighbor set of .
-dfn

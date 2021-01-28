@@ -1,4 +1,0 @@
-exl
-The rule  means that the automaton can either go to state  and put  into the stack
-or go to state  and take  out of the stack.
-exl

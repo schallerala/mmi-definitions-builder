@@ -1,3 +1,0 @@
-thm
-The number of different multiplication orders in a sequence of  variables is equal to the -th Catalan number.
-thm

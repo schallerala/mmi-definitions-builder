@@ -1,3 +1,0 @@
-lem
-The language described by a regular expression is regular.
-lem

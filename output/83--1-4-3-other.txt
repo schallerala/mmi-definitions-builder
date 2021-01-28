@@ -1,7 +1,0 @@
-proof
-Monotone paths can be encoded by words: write the letter  for a step along the -th axis.
-Then a monotone path from  to  corresponds to a word
-consisting of  letters  for all  from  to .
-proof
-
-

@@ -1,7 +1,0 @@
-Compositions again
-Recall that a weak composition of a number  is a representation of  as a sum of non-negative integers.
-(One counts ordered sums:  and  are different compositions.)
-We have computed the number of weak compositions in Section sec:Comp by the "stones and sticks" method.
-Let us do it again with generating functions.
-
-Fix a positive integer  and denote by  the number of weak compositions of  from  parts.

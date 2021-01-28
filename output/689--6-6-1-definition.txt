@@ -1,8 +1,0 @@
-dfn
-A pushdown automaton or a PDA is a system , where
-itemize
- is a (finite) set of states,  the initial state,  the set of final states;
- is the input alphabet,  is the stack alphabet,  is a special symbol called the start symbol;
- is a map from  to finite subsets of .
-itemize
-dfn

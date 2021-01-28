@@ -1,5 +1,0 @@
-Inference rules
-Gentzen system for the predicate logic without equality operates with sequents ,
-where  and  are sets of predicate formulas.
-As before, we are building a deduction tree with the root ,
-where  is a formula which we are trying to prove or disprove.

@@ -1,5 +1,0 @@
-cor
-cor:NumberOfBijections
-The number of bijective maps between two -element sets is equal .
-The number of permutations of  elements is equal to .
-cor

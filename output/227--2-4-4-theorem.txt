@@ -1,9 +1,0 @@
-thm[Hall]
-thm:Hall
-Let  be a bipartite graph.
-Then  contains a matching that covers  if and only if
-equation
-eqn:Hall
-N(S) S  for all  S X.
-equation
-thm

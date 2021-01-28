@@ -1,6 +1,0 @@
-thm
-The generating function of the sequence  has the following form:
-
-_n=0^a_n x^n = 1(1-x)^k.
-
-thm

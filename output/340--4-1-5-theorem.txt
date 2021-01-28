@@ -1,3 +1,0 @@
-thm
-A predicate formula in signature eqn:NullSign is valid if and only if the corresponding propositional formula is a tautology.
-thm

@@ -1,3 +1,0 @@
-dfn
-A term  is free for  in  if no variable of  becomes bound after the substitution of  for all free occurrences of .
-dfn

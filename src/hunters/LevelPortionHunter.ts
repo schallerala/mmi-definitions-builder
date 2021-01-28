@@ -1,6 +1,6 @@
 import {ILineHunter} from './ILineHunter';
 import {createWriteStream, WriteStream} from 'fs';
-import {Chapter, PdfLevel, Section, SubSection} from '../entities/PdfLevel';
+import {PdfLevel} from '../entities/PdfLevel';
 import {PdfPortion, PortionType} from '../entities/PdfPortion';
 import {EOL} from 'os';
 import {join} from 'path';
@@ -26,7 +26,6 @@ export class LevelPortionHunter implements ILineHunter {
         MathEnvironment.createCorollaryEnv(),
         MathEnvironment.createExampleEnv(),
         MathEnvironment.createRemarkEnv(),
-        MathEnvironment.createExerciseEnv()
     ];
 
     private definitionCounter = 0;
@@ -63,10 +62,18 @@ export class LevelPortionHunter implements ILineHunter {
     read(line: string): ILineHunter {
         const newLevel = this.levelHunter.read(line);
         if (newLevel) {
+            const previousLevel = this.currentLevel;
             this.levels.push(newLevel);
-            this.commitPortion();
-            this.startNewPortion("level", newLevel.numberedTitle)
-            if (newLevel instanceof Section)
+            if (previousLevel && newLevel.rootChapter === previousLevel.rootChapter && this.currentOpenPortion.type === 'level') {
+                // merge the portions, by saving the buffer and infecting it in the new portion
+                const currentLines = this.currentPortionLines;
+                this.startNewPortion("level", newLevel.numberedTitle);
+                this.currentPortionLines.push(...currentLines);
+            } else {
+                this.commitPortion();
+                this.startNewPortion("level", newLevel.numberedTitle)
+            }
+            if (newLevel.type === 'section')
                 this.definitionCounter = 0;
         }
 
@@ -93,7 +100,7 @@ export class LevelPortionHunter implements ILineHunter {
     }
 
     createMathTitle(mathEnv: MathEnvironment) {
-        let numberedEnv = `${this.levelHunter.sectionCounter}.${this.definitionCounter + 1}. ${mathEnv.capitalizedType}`;
+        let numberedEnv = `${mathEnv.capitalizedType} ${this.levelHunter.sectionCounter}.${this.definitionCounter + 1}.`;
         if (mathEnv.lastTitle) {
             numberedEnv = `${numberedEnv} (${mathEnv.lastTitle})`;
         }
@@ -139,9 +146,6 @@ export class LevelPortionHunter implements ILineHunter {
                 '',
                 `%%%%%%%%%% ${this.currentOpenPortion.texPath}`,
                 '\\begin{page}',
-                `\\setcounter{section}{${this.levelHunter.sectionCounter}}`,
-                `\\setcounter{subsection}{${this.levelHunter.subSectionCounter}}`,
-                `\\setcounter{dfn}{${this.definitionCounter}}`,
                 '',
                 content,
                 '',
@@ -167,12 +171,11 @@ export class LevelCounter {
     private _sectionCounter = 0;
     private _subSectionCounter = 0;
 
-    private currentChapter: Chapter;
-    private currentSection: Section;
-    private currentSubsection: SubSection;
+    private currentChapter: PdfLevel;
+    private currentSection: PdfLevel;
+    private currentSubsection: PdfLevel;
 
     constructor(
-        readonly listener?: LevelsChangeListener
     ) {
     }
 
@@ -192,41 +195,29 @@ export class LevelCounter {
         let match;
         if ((match = line.match(LevelCounter.subSectionLevel))) {
             this._subSectionCounter++;
-            this.currentSubsection = new SubSection(this.currentSection, this._subSectionCounter, normalizeTex(match[1]));
-            if (this.listener?.onNewSubSection)
-                this.listener.onNewSubSection([this._chapterCounter, this._sectionCounter, this._subSectionCounter], this.currentSubsection);
+            this.currentSubsection = PdfLevel.createSubsection(this.currentSection, this._subSectionCounter, normalizeTex(match[1]));
 
             return this.currentSubsection;
-        } else if ((match = line.match(LevelCounter.sectionLevel))) {
+        }
+        else if ((match = line.match(LevelCounter.sectionLevel))) {
             this._sectionCounter++;
             this._subSectionCounter = 0;
             this.currentSubsection = undefined;
-            this.currentSection = new Section(this.currentChapter, this._subSectionCounter, normalizeTex(match[1]));
-            if (this.listener?.onNewSection)
-                this.listener.onNewSection([this._chapterCounter, this._sectionCounter], this.currentSection);
+            this.currentSection = PdfLevel.createSection(this.currentChapter, this._sectionCounter, normalizeTex(match[1]));
 
             return this.currentSection;
-        } else if ((match = line.match(LevelCounter.chapterLevel))) {
+        }
+        else if ((match = line.match(LevelCounter.chapterLevel))) {
             this._chapterCounter++;
             this._sectionCounter = 0;
             this._subSectionCounter = 0;
             this.currentSection = undefined;
             this.currentSubsection = undefined;
-            this.currentChapter = new Chapter(this._chapterCounter, normalizeTex(match[1]));
-            if (this.listener?.onNewChapter)
-                this.listener.onNewChapter([this._chapterCounter], this.currentChapter);
+            this.currentChapter = PdfLevel.createChapter(this._chapterCounter, normalizeTex(match[1]));
 
             return this.currentChapter;
         }
 
         return undefined;
     }
-}
-
-export interface LevelsChangeListener {
-    onNewChapter?(levels: [number], chapter: Chapter);
-
-    onNewSection?(levels: [number, number], chapter: Section);
-
-    onNewSubSection?(levels: [number, number, number], chapter: SubSection);
 }

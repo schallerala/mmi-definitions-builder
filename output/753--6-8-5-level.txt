@@ -1,3 +1,0 @@
-Undecidability of the halting problem
-The halting problem is "Does Turing machine  accept input ?"
-The corresponding language is the universal language .

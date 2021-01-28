@@ -1,3 +1,0 @@
-exl
-In our introductory example ,  is the set of words in a dictionary, and the productions  are as stated above.
-exl

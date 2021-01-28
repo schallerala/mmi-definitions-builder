@@ -1,7 +1,0 @@
-dfn
-A set  is called recursively enumerable if the function
-
-1_X X , 1_X(x) = 1  for all x X
-
-is recursive.
-dfn

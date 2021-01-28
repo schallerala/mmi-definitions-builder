@@ -1,4 +1,0 @@
-lem
-A syntactic consequence is a semantic consequence.
-That is,  implies .
-lem

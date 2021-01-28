@@ -1,9 +1,0 @@
-exl
-The language  consisting of all binary words with an equal number of zeros and ones is not regular.
-Indeed, assume the contrary, and let  be the integer in the pumping lemma.
-Then .
-By the pumping lemma, one can write , where , and  for all .
-It follows that the words  and  consist of zeros only.
-Since , the word  has less zeros than ones, thus it does not belong to .
-This contradiction shows that our assumption was false.
-exl
