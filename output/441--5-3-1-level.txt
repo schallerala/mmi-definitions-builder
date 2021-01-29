@@ -1,0 +1,17 @@
+Partition of integers
+In this section we will count the number of decompositions of a positive integer into summands.
+There are different versions of this problem.
+Before coming to the most difficult and interesting one in Section subsec:Partitions we look at simpler versions.
+
+
+
+Money changing problem
+Imagine a country where only , , and  dollar banknotes are in circulation.
+In how many different ways can one pay  dollars without change?
+
+The problem can be reformulated as finding the number of integer solutions of the equation
+
+9k + 17l + 31m = 1000, k, l, m 0
+
+More generally, denote by  the number of different ways to pay  dollars without change.
+What can one say about ?

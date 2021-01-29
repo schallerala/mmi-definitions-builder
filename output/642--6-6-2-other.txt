@@ -1,0 +1,14 @@
+
+The transition from one configuration to another is denoted by the symbol .
+By definition of the transition function one has
+
+(q, aw, Z) M (p, w, ) (p, ) (q, a, Z),
+
+where .
+
+We write  if for some  one has
+
+I M I_1 M I_2 M M I_n M J.
+
+
+In these terms, the acceptance criteria by final state and by empty stack are formulated as follows.

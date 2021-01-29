@@ -1,0 +1,63 @@
+The case of complex roots
+Back to the case of a recursive sequence of order 2, what happens if the characteristic polynomial
+
+x^2 - rx - s
+
+has no real roots? This happens when the discriminant  is negative.
+Then it has two complex roots
+
+_1,2 = r D2,
+
+and all arguments remain valid: the geometric progressions  solve the recurrence and every sequence satisfying the recurrence
+can be written as a linear combination of these two progressions.
+
+The two complex roots are conjugate to each other:
+
+_1 = , _2 = .
+
+A linear combination of the progressions  and  takes real values only if the coefficients are conjugate:
+
+a_n = c ^n + c ^n.
+
+
+Let us write the roots in the exponential form:
+
+= e^i = (+ i ),  = e^-i = (- i).
+
+Then we have
+multline*
+c ^n + c ^n
+= ^n(ce^in + ce^-in)
+
+= ^n(c(n+ in) + c(n- in))
+
+= ^n((c+c) n+ i(c-c) n)
+multline*
+That is, every recursive sequence is a linear combination with real coefficients of the following two sequences:
+
+^n nand ^n n.
+
+
+Consider the special case .
+Then the recursive relation has the form
+
+a_n = r a_n-1 - a_n-2,
+
+where .
+If  is a rational multiple of , then this sequence will be periodic independently of the initial values .
+For example, this is the case of the recurrence
+
+a_n = a_n-1 - a_n-2
+
+Here , and the sequence will have period .
+(This is also easy to check by iterating the recurrence relation and writing  in terms of  and .)
+If  is not a rational multiple of , then the sequence will not be periodic.
+It will fill densely some interval.
+This is the case of the recurrence
+
+a_n = a_n-12 - a_n-2.
+
+
+
+
+An application of the Binet formula

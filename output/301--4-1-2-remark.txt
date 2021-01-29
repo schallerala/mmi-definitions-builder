@@ -1,0 +1,5 @@
+rem
+Non-rectified formulas are absolutely legitimate.
+The main reason to introduce rectification is that
+some formal definitions and procedures are easier to describe for rectified formulas than for non-rectified ones.
+rem

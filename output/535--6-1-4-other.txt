@@ -1,0 +1,19 @@
+In other words,  is  together with all states that can be reached from  by sequences of -transitions.
+
+Let us modify and extend the transition function so that it will tell us what states are accessible from a given state
+for a given input.
+enumerate
+
+
+enumerate
+(Note that  is a set, so that  denotes
+the union of  over all .)
+
+Observe that, contrarily to the case of DFA and NFA, , but rather
+
+(q,a) = (q, a) (q,a).
+
+It is not hard to see that  consists of all states reachable from  on the input 
+with arbitrarily many -transitions before , in the middle of , and after .
+
+In terms of the extended transition function the language accepted by an -NFA is defined as follows.

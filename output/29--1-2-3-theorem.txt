@@ -1,0 +1,6 @@
+thm
+The number of ordered choices of  balls out of  is
+
+n(n-1)(n-k+1).
+
+thm

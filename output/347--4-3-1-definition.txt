@@ -1,0 +1,6 @@
+dfn
+A theory  is called complete if it is satisfiable and any two models satisfying it are elementarily equivalent:
+
+M T, M' T' M M'.
+
+dfn

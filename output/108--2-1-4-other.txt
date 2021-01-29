@@ -1,0 +1,5 @@
+
+Recall the matrix multiplication: for  matrices  and  we define their product  as
+
+c_ij = _l=1^n a_il b_lj.
+

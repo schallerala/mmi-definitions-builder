@@ -1,0 +1,10 @@
+thm
+thm:PumpCFL
+Let  be a context-free language.
+Then there is a positive integer  such that every  of length  can be split into subwords  in such a way that
+enumerate
+, that is the words  and  are not both empty;
+;
+for all  we have .
+enumerate
+thm

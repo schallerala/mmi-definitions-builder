@@ -1,0 +1,8 @@
+exl
+A person wants to go to a swimming pool once a week, and play tennis once a week, but not both on the same day.
+How many different schedules are there?
+
+Choose a swimming day. There are  possibilities for this.
+When the choice is made, there remain  possible tennis days.
+So, there are  different schedules.
+exl

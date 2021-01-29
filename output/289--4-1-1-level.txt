@@ -1,0 +1,58 @@
+Predicate logic
+Introduction
+Predicate logic is a more complicated and powerful system than the propositional logic.
+
+Before proceeding to formal definitions, let us have a glimpse at how it works.
+Consider the statement
+quote
+For every number  one has .
+quote
+It can be expressed by a predicate formula
+equation
+eqn:PredForm
+x P(x, f(x)),
+equation
+where , and  means .
+Functions of one or several arguments that take truth values (such as  or " is blue") are called predicates.
+Formula eqn:PredForm contains all the main building blocks of the predicate logic: a variable , a function , and a predicate .
+
+Let us now forget the origin of formula eqn:PredForm.
+In order to make sense of it, its elements must be interpreted:
+what kind of objects are represented by the variable , how is the function  defined, and what does  mean.
+This interpretation can be as above, but can also be different.
+For example, the same formula can be interpreted as
+quote
+It gets colder every day.
+quote
+Now  is a day,  is the day after day , and  means " is colder than ".
+
+Our first interpretation evaluates the formula eqn:PredForm to true, while the second evaluates it to false.
+A formula of the predicate logic is valid if it evaluates to true in all interpretations.
+Similarly to the propositional logic, one aims at finding a method (a proof theory) to establish the validity of a formula.
+
+
+
+Syntax and semantics of predicate logic
+First-order languages
+The alphabet of the predicate logic consists of
+itemize
+variables;
+function symbols;
+predicate symbols;
+logical connectives ;
+auxiliary symbols  and ;
+equality symbol .
+itemize
+
+Informally speaking (and as indicated in the introduction), a variable is an object,
+a function is an operation with objects whose result is also an object,
+and a predicate is a statement about one or several object (in other words, an operation with objects whose result is a truth value).
+
+Compared to the propositional logic, we have two new logical connectives:
+the universal quantifier  and the existential quantifier .
+
+The equality symbol is not always included in the alphabet.
+Accordingly, there are two slightly different versions of predicate logic: logic with equality and logic without equality.
+
+Before stating the rules according to which the alphabet symbols can be combined one has to fix a signature.
+This is a list of function symbols and predicate symbols together with the number of arguments for each of them.

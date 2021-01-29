@@ -1,0 +1,8 @@
+dfn
+Let  be a formula of the predicate logic in the signature of Peano arithmetic with exactly one free variable .
+One says that  represents a subset  if
+
+n Y  if and only if PA_0 B[n/y],
+
+where .
+dfn

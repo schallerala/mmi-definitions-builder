@@ -1,0 +1,37 @@
+Basic combinatorics
+
+How to count
+All sets in this chapter are finite.
+
+For a finite set , by  we denote the number of elements in , also called the cardinality of .
+
+Sum rule
+center
+If , then .
+center
+
+More generally,
+center
+.9If the sets  are pairwise disjoint
+(that is  for all ),
+then .
+center
+Formally, this follows by induction on  from the sum rule for two sets.
+
+Later we will learn how to proceed if the sets are not disjoint.
+
+Product rule
+First, let us state a special product rule:
+
+X Y = X Y.
+
+Here , the Cartesian product of  and , denotes the set of ordered pairs  with , .
+
+The elements of  can be written in a table whose rows correspond to the elements of ,
+and the columns correspond to the elements of .
+This justifies the product rule.
+
+Again, there is an extension to several sets:
+
+X_1 X_n = X_1 X_n.
+

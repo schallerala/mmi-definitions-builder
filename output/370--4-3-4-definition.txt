@@ -1,0 +1,12 @@
+dfn
+A set  is called recursive if the function
+
+1_X ^p , 1_X(x) =
+cases
+1,  if x X
+
+0,  if x X
+cases
+
+is recursive.
+dfn

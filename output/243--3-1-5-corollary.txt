@@ -1,0 +1,4 @@
+cor
+cor:DNF
+Every propositional formula is logically equivalent to a formula in DNF.
+cor

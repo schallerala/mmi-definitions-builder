@@ -1,0 +1,4 @@
+lem
+lem:AxiomValid
+All axioms are valid.
+lem

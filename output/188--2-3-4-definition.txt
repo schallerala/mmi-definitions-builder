@@ -1,0 +1,3 @@
+dfn
+A graph is called -edge connected if one needs to delete at least  edges in order to disconnect the graph.
+dfn

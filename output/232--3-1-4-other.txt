@@ -1,0 +1,4 @@
+
+We have shown that every propositional formula  determines a boolean function .
+One can now ask whether every boolean function  can appear in this way.
+The answer is "yes".

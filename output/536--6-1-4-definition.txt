@@ -1,0 +1,6 @@
+dfn
+The language accepted by an -NFA  is
+
+L(M) = w ^* (q_0, w) F .
+
+dfn

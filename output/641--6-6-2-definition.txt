@@ -1,0 +1,5 @@
+dfn
+An instantaneous description or ID of a PDA is a triple ,
+where  is the current state,  is the not yet processed suffix of the input word,
+and  is the content of the stack.
+dfn

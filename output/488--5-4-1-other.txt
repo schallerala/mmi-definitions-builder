@@ -1,0 +1,19 @@
+
+figure[ht]
+center
+InductionCatalanTrees
+center
+Proof of the recurrence for Catalan numbers.
+fig:InductionCatalanTrees
+figure
+
+proof
+Take a binary tree with  leaves and remove its root.
+This splits the tree into two parts: the left subtree and the right subtree, see Figure fig:InductionCatalanTrees.
+Each of them is either a full binary tree or a single vertex.
+If the left subtree contains  leaves, then the right subtree contains  leaves
+(if the subtree has only one vertex, then the number of leaves is one).
+For every , there are  possible left subtrees and  possible right subtrees.
+This leads to the formula.
+proof
+

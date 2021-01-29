@@ -1,0 +1,3 @@
+thm
+For any NFA there is an equivalent DFA.
+thm

@@ -67,11 +67,11 @@ export class LevelPortionHunter implements ILineHunter {
             if (previousLevel && newLevel.rootChapter === previousLevel.rootChapter && this.currentOpenPortion.type === 'level') {
                 // merge the portions, by saving the buffer and infecting it in the new portion
                 const currentLines = this.currentPortionLines;
-                this.startNewPortion("level", newLevel.numberedTitle);
+                this.startNewPortion("level", previousLevel.breadcrumb);
                 this.currentPortionLines.push(...currentLines);
             } else {
                 this.commitPortion();
-                this.startNewPortion("level", newLevel.numberedTitle)
+                this.startNewPortion("level", newLevel.breadcrumb)
             }
             if (newLevel.type === 'section')
                 this.definitionCounter = 0;

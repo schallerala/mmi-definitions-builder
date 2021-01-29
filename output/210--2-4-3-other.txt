@@ -1,0 +1,21 @@
+proof
+Let  be a -regular bipartite graph.
+Since every edge is incident to exactly one vertex from , and every vertex is incident to exactly  edges, we have .
+Similarly, . Thus we have .
+
+Let us show that -regularity implies condition eqn:Hall.
+Take any  and consider the bipartite graph , where  is the set of all edges incident to a vertex from .
+By the above argument, .
+On the other hand, for every  we have , which implies .
+It follows that
+
+N(S) E'k = S,
+
+and we are done.
+proof
+
+
+
+
+
+

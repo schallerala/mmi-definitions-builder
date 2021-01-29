@@ -1,0 +1,14 @@
+proof
+Let  be the alphabet of the propositional logic.
+Consider the homomorphism  defined by
+
+( 0, ) 1, x  for all other symbols of .
+
+Every propositional formula is sent to a balanced bracket sequence (now represented by zeros and ones),
+and every balanced bracket sequence is the image of some propositional formula.
+If the language of all propositional formulas is regular, then the language of all balanced bracket sequences is also regular.
+But it is not, by the pumping lemma: if  is the number from the lemma, then  belongs to the language, but  is unbalanced.
+proof
+
+
+

@@ -1,0 +1,16 @@
+proof
+We know that CFL's are closed under union.
+If they would be closed under complementation, then due to
+
+L_1 L_2 = L_1 L_2
+
+they would also be closed under intersection, which is not the case.
+proof
+
+The above argument is non-constructive.
+Applied to the languages , ,  from the proof of Theorem thm:CFLIntClosed it says that at least one of the following is true:
+enumerate
+ is context-free, but  is not;
+ is context-free, but  is not;
+ is context free, but its complement is not.
+enumerate

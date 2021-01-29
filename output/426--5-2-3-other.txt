@@ -1,0 +1,16 @@
+
+proof
+Exercise.
+proof
+
+Note that  is related to the characteristic polynomial  through
+
+P(x) = x^k P(1x).
+
+It follows that the roots of the polynomial  are reciprocals of the roots of .
+More exactly, if , then
+
+P(x) = (1 - _1 x)^k_1 (1- _m)^k_m.
+
+
+The following theorem generalizes our representation of the fraction  as a sum of two simpler fractions.

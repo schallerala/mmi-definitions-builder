@@ -1,0 +1,70 @@
+Gentzen's sequent calculus: the idea
+Given a proposition , we want to determine whether it is a tautology.
+Recall that  is not a tautology if and only if there is a valuation  that falsifies .
+(We will also call  a counterexample to .)
+So let us try to falsify  or to show that this is impossible.
+As an example, take
+
+A = (p q) (p q).
+
+
+In order to falsify a proposition of the form  one has to satisfy  and falsify  at the same time.
+This reduces our problem to a combination of two simpler ones.
+Let us write our new task on the top of the old one:
+prooftree
+
+
+prooftree
+The turnstile symbol is used as a separator: on the left we write the things we want to satisfy, on the right the things we want to falsify.
+(One can use any other separator.
+The choice of  looks awkward because the symbol was used earlier to denote provability.
+This choice is partially motivated by the subsequent sections.)
+
+So, now we want to satisfy  and falsify .
+In order to falsify  we have to falsify both of them at the same time.
+We express this by .
+Now on the right hand side we have a list of formulas that we want to falsify simultaneously.
+Our diagram takes the following form:
+prooftree
+
+
+
+prooftree
+
+There are two ways to satisfy : one has either to satisfy  or to falsify .
+This introduces branching in the diagram:
+center
+
+
+
+
+
+center
+
+Now, any valuation that solves one of the problems on the top of the diagram also solves the problem in the bottom.
+The first problem sounds "satisfy  and falsify  and ".
+This is, of course, impossible.
+But the second problem says "falsify  and ".
+This is solved by setting , .
+From the construction principle of the diagram it follows that this valuation falsifies the initial proposition .
+Thus we have shown that  is not a tautology.
+
+A couple of remarks are in order.
+First, there is no need to repeat two equal propositions on the same side of  as we did with  on the top right.
+(We did it just to show that trying to satisfy  brings  to the left or  to the right.)
+Second, sometimes we have a choice which connective to eliminate.
+Here we had it at the second step.
+If we choose to eliminate  before , then the branching happens earlier, and the final diagram looks as follows.
+prooftree
+
+
+
+
+
+
+prooftree
+
+
+
+Sequents and inference rules
+In the above example we have operated with sets of propositions split into two subsets: those to satisy and those to falsify.

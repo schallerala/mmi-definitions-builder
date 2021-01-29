@@ -1,0 +1,18 @@
+thm[Kruskal's algorithm]
+Order the edges of a weighted connected graph according to their weights:
+
+(e_1, , e_m) such that (e_1) (e_m).
+
+Going through this list, mark an edge if it does not create a cycle together with the previously marked edges.
+More exactly, put : the graph with isolated vertices only.
+If  is already defined, then put
+
+G_i+1 =
+cases
+G_i + e_i+1 & if  G_i + e_i+1  has no cycles
+
+G_i & otherwise.
+cases
+
+The output of the algorithm is the graph .
+thm

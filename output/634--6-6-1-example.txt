@@ -1,0 +1,3 @@
+exl
+The rule  means that no spontaneous transition (from the state  with  on the top) is allowed.
+exl

@@ -1,0 +1,16 @@
+proof
+For a given sequent, consider its closed deduction tree.
+It has leaves of two kinds:
+itemize
+Leaves labeled with axioms  such that  for some , .
+Leaves with labels  such that  for all , .
+These are called counterexample leaves.
+itemize
+A counterexample leaf is falsifiable: it suffices to set  for all  and  for all .
+Thus if the closed deduction tree has a counterexample leaf, then the sequent at the root is also falsifiable.
+
+If our sequent is valid, then all of the leaves are of the first kind, and the tree is a proof tree.
+proof
+
+Note that we get more than just completeness: constructing a closed deduction tree provides a concrete counterexample to a falsifiable sequent.
+

@@ -1,0 +1,10 @@
+dfn
+dfn:PropForm
+The set of propositions or propositional formulas  is defined as follows.
+enumerate
+Proposition symbols belong to . They are called atoms or atomic propositions.
+If , then .
+If , then , , .
+A string of symbols belongs to  only if it can be obtained by applying the above rules.
+enumerate
+dfn

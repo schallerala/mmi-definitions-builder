@@ -1,0 +1,5 @@
+
+The only property of the sequence of perfect squares that was used is the existence of arbitrarily large gaps.
+Therefore any language of the form ,
+where  is a monotone sequence of integers such that for every  there is  such that , is non-regular.
+Later we will be able to show that the only regular languages of the form  are those for which the sequence  is periodic.

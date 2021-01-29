@@ -1,0 +1,20 @@
+Graph theory
+Basic notions
+Types of graphs
+Intuitively, a graph is a set of points, some of which are joined by lines.
+The points are called vertices of the graph, the lines are called edges of the graph.
+Quite often, we represent a graph by drawing it in the plane.
+For some graphs, one can draw the edges in such a way that they do not intersect.
+But for other graphs self-intersections are inavoidable.
+In order not to confuse the intersection points with the "true" vertices, we draw the vertices as small disks.
+See Figure fig:TwoDrawings for two drawings of the same graph: one with, the other without self-intersections.
+
+figure[ht]
+center
+HouseTwoDrawings.pdf
+center
+Two drawings of the same graph.
+fig:TwoDrawings
+figure
+
+Let us give a formal definition.

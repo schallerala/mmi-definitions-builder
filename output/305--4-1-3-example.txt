@@ -1,0 +1,6 @@
+exl
+The universal closure of  is
+
+x z (Q(x) y P(y,z)).
+
+exl

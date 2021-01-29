@@ -1,0 +1,12 @@
+rem
+Observe that
+multline*
+-nk = (-1)^k (n+k-1) (n+k-2) nk!
+
+= (-1)^k n+k-1k = (-1)^k n+k-1n-1.
+multline*
+Therefore, by substituting  instead of  one can rewrite eqn:BinomNeg as
+
+(1-x)^-n = _k=0^n+k-1n-1 x^k.
+
+rem

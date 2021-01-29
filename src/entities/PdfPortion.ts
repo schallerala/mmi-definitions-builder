@@ -41,7 +41,21 @@ export class PdfPortion {
     }
 
     get storkFileEntry (): string {
-        return `    { path = "${this.txtFilePath}", url = "#", title = "${this.title}", portionId = "${this.id}", chapter = "${this.chapterNumber}", type = "${this.type}" }`;
+        return `    { path = "${this.txtFilePath}", url = "#", title = "${this.title}", page = "${this.id}", chapter = "${this.chapterNumber}", type = "${this.type}" }`;
+    }
+
+    get shortTitle (): string {
+        // Theorem 5.3.: Chap. 1. > 1.5. Inclusion-exclusion formula > 1.5.2. De Montmort problem, or counting the derangements
+        if (this.title.includes('>')) {
+            const chapterRegExp = /^(.*)Chap\. \d\. >(.*)$/;
+            const match = this.title.match(chapterRegExp);
+            return `${match[1].trim()} ${match[2].trim()}`;
+        }
+        return this.title;
+    }
+
+    get shortStorkFileEntry (): string {
+        return `    { path = "${this.txtFilePath}", url = "#", title = "${this.shortTitle}", page = "${this.id}", chapter = "${this.chapterNumber}", type = "${this.type}" }`;
     }
 
     addLabel (label: string) {

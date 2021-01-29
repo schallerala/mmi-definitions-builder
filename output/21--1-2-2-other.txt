@@ -1,0 +1,6 @@
+proof
+One can argue by the product rule again.
+Or, one can establish a bijection between the set of binary sequences and the set of outcomes when tossing a coin:
+one encodes an outcome by putting  for "heads" and  for "tails".
+It is easy to see that this is a bijection, thus by the previous theorem the number of binary sequences is .
+proof

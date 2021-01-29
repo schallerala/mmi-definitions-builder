@@ -1,0 +1,6 @@
+lem
+We have
+
+(1-x)(1-x^2)(1-x^3) = 1 + _n=1^(q_n,even - q_n,odd)x^n.
+
+lem

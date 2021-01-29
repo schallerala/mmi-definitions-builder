@@ -1,0 +1,3 @@
+exl
+The conjugate of  is , see Figure fig:FerrersConj.
+exl

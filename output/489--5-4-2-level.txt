@@ -1,0 +1,2 @@
+Generating function and the formula for 
+sec:GenFuncCatalan

@@ -1,0 +1,3 @@
+dfn
+A deduction tree is called closed if the sequents labeling its leaves consist of proposition symbols only.
+dfn

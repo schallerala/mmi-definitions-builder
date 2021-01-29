@@ -1,0 +1,4 @@
+lem
+lem:LdNotRE
+The language  is not recursively enumerable.
+lem

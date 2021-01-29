@@ -1,0 +1,4 @@
+dfn
+A graph  is called bipartite if its vertex set can be partitioned in two sets  and  such that
+no two vertices from  are joined by an edge and no two vertices from  are joined by an edge.
+dfn

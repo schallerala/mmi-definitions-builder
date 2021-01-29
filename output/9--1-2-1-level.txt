@@ -1,0 +1,23 @@
+Counting maps and subsets
+Maps
+A map  is a rule that associates to every element  a unique element of .
+The element associated to  is denoted by .
+
+A map can be pictured as a collection of arrows going from elements of  to elements of .
+At every element of  one and only one arrow must start.
+By contrast, at an element of  several arrows or none at all may end.
+
+figure[ht]
+center
+
+center
+A map .
+fig:Map
+figure
+
+A map  is called
+itemize
+injective, if no two different elements of  are sent to the same element of : for every  we have ;
+surjective, if to every element of  some element of  is sent: for every  there is  such that ;
+bijective, if it is injective and surjective.
+itemize

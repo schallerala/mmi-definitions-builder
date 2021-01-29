@@ -1,0 +1,27 @@
+
+It follows that an -augmenting path can look only as the bottom path on Figure fig:AltPath.
+In addition, there must be no edge of  incident to the initial and terminal vertices of the path.
+See Figure fig:AugmPathDef.
+
+figure[ht]
+center
+AugmPathDef.pdf
+center
+An augmenting path.
+fig:AugmPathDef
+figure
+
+An -augmenting path can be used to modify  to a bigger matching by "switching" the edges along the path.
+This is illustrated in Figure fig:AugmPath.
+
+
+figure[ht]
+center
+AugmPath1.pdf
+center
+Modifying a matching with the help of an augmenting path.
+fig:AugmPath
+figure
+
+
+The following theorem provides a basis to an algorithm for finding a maximum matching.

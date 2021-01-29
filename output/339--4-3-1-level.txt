@@ -1,0 +1,4 @@
+Godel's incompleteness theorems
+Theories and models
+Very often, we will deal with closed predicate formulas.
+For brevity, a closed formula will be called a sentence.

@@ -1,0 +1,16 @@
+
+Speaking more formally, any valuation  extends to a unique map
+
+v 0,1
+
+defined recursively by  for all  and by
+align*
+v(A B) &= v(A) v(B) & v(A B) &= v(A) v(B)
+
+v(A B) &= v(A) v(B) & v(A) &= v(A),
+align*
+where the values at the right hand sides are computed according to the truth tables of logical connectives.
+
+Although by definition every valuation  assigns truth values to all proposition symbols,
+in order to determine  we need to know only the values of symbols occuring in .
+

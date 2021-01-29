@@ -1,0 +1,3 @@
+lem
+The language of all propositional formulas is not regular.
+lem

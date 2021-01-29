@@ -1,0 +1,8 @@
+exl
+Let  consist of all binary words with the number of zeros not divisible by .
+Then  if and only if the number of zeros in  and  has the same remainder under division by :
+
+^* = S_0 S_1 S_2, S_i = u _0(u) i (mod 3).
+
+One has .
+exl

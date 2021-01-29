@@ -1,0 +1,20 @@
+exl
+Two dice are thrown. What is the probability that at least one of them shows six?
+
+We give two solutions.
+The first one uses the sum and the product rules.
+Consider three cases:
+itemize
+Both dice show six. This is one outcome.
+The first dice shows six, the second does not. Five outcomes.
+The first dice does not show six, the second does. Five outcomes as well.
+itemize
+Thus in total we have  possibilities.
+To compute the probability, we have to divide by the total number of possibilities, which is .
+
+The second solution uses the difference rule.
+A "bad" outcome is one where neither of the dice shows six.
+For each of the dice there are  possibilities, so that this number is .
+To count the "good" outcomes, we subtract  from the number of all possible outcomes:
+.
+exl

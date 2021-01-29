@@ -1,0 +1,5 @@
+dfn
+Let  be a graph and  a vertex of .
+Denote by  the graph obtained by deleting the vertex  and all edges incident to it.
+This operation is called vertex deletion.
+dfn

@@ -1,0 +1,73 @@
+We will not give a detailed proof of this theorem, but will describe a procedure which, for every closed predicate formula ,
+constructs a deduction tree with the root  with one of the following two properties.
+The algorithm assumes that the signature does not contain functions; if it does, some modifications are needed.
+
+itemize
+It is finite and each of its leaves is an axiom.
+It is finite and has a leaf from which a counterexample can be read off.
+It contains an infinite path producing a counterexample.
+itemize
+
+One cannot exclude the possibility of an infinite tree because there are formulas satisfied by all finite structures
+but falsified by some infinite structure (see the exercises).
+
+proof[Algorithm description]
+We assume that the signature contains no function symbols.
+Given a closed formula , put the sequent  at the root.
+
+From the set of variables choose an infinite sequence of symbols  not occurring in .
+(The set  or a finite initial segment of it will later be our universe.)
+During the algorithm, the variables from the sequence  will be activated in their natural order.
+At the beginning, only  is active, the rest is not.
+
+At every step of the algorithm we have some previously constructed deduction tree
+and are going to apply an inference rule to one of its leaves.
+Each inference rule consists in copying most of the formulas of the sequent and changing only one of them, called the principal formula.
+The type of the inference rule is determined uniquely by the principal formula: this is the rule for the outermost connective in the principal formula,
+and it is the left or the right rule according on which side of  the principal formula is situated.
+For the connectives of propositional logic the inference rules are unique.
+For the quantifiers, one needs to specify the substitutions.
+This is done as follows.
+
+itemize
+Right  or left  rule:
+substitute the first inactive variable from the sequence .
+Left  or right  rule:
+substitute all active  not previously substituted into this formula.
+itemize
+That means, if there are several active variables not yet substituted into  or ,
+then the corresponding inference rule is applied several times.
+We abbreviate this sequence of steps as
+prooftree
+
+
+prooftree
+(and similarly for  on the right),
+where  are all active variables not substituted into  at some previous step.
+
+Let us note that if the signature contains function symbols, then in the left  and right  case one
+must substitute all possible terms with currently active variables (this is a finite but possibly quite large set).
+
+The inference rules are applied in a breadth-first way:
+in one round we go over all leaves, and every non-atomic formula inside a leaf is used as a principal formula.
+More exactly, if  is a leaf sequent,
+then we first apply the inference rule with  as the principal formula.
+After that we apply the inference rule with  as the principal formula to all "newly grown" leaves.
+Then we work with  in all new leaves, and so on.
+Only after we finished the work with the formula , we proceed to the next leaf sequent.
+
+A leaf is called closed if one of the following occurs:
+itemize
+its sequent contains only atomic formulas;
+its sequent contains only atomic formulas and -formulas on the left or -formulas on the right
+for which all substitutions (of active variables, see the instructions above) have already been performed.
+itemize
+
+A closed leaf with only atomic formulas is either an axiom leaf or a counterexample leaf (see Example exl:CounterexamplePred).
+
+Example exl:CounterexampleFinite illustrates the second possibility.
+
+It can happen that after every round there are non-closed leaves.
+In this case the algorithm never terminates, and the sequent at its root is falsifiable.
+Namely, the tree will contain an infinite path, and a counterexample can be read off this path as illustrated in Example exl:CounterexampleInfinite below.
+proof

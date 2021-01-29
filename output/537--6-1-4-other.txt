@@ -1,0 +1,2 @@
+
+We will now show that -NFAs are not more powerful than DFA: any language accepted by an -NFA is also accepted by some DFA.

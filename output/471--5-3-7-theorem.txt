@@ -1,0 +1,7 @@
+thm
+One has
+equation
+eqn:RecNK
+p(n, k) = p(n, k-1) + p(n-k, k).
+equation
+thm

@@ -1,0 +1,4 @@
+thm
+thm:TreeEdges
+If a graph  is a tree, then .
+thm

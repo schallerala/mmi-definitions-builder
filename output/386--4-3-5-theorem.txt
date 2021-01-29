@@ -1,0 +1,5 @@
+thm
+thm:ConstUndecid
+Let  be a consistent theory. Then  is undecidable.
+In particular,  and  are undecidable.
+thm

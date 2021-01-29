@@ -1,0 +1,7 @@
+Disjunctive and conjunctive normal forms
+Propositional formulas that we obtained in Theorem thm:BooleNF have a very special form:
+they are disjunction of conjunctions of (possibly negated) proposition symbols.
+
+Let us fix some terminology.
+A literal is a proposition symbol or its negation.
+A conjunctive clause is a conjunction of one or several literals.

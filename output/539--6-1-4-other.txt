@@ -1,0 +1,37 @@
+proof
+Let  be an -NFA.
+Construct a DFA  by putting
+
+q'_0 = q_0, F' = P Q P F ,
+
+and defining the transition function by
+
+a) = (P, a).
+
+We claim that for any word  holds
+equation
+eqn:DeltaD=DeltaE
+w) = (q_0, w),
+equation
+where  and  are the extended transition functions of  and .
+This is proved by induction on the length of the word .
+The base: , that is . We have
+
+) = q'_0 = q_0 = (q_0, ).
+
+The induction step: assume eqn:DeltaD=DeltaE holds for all words of length .
+Any word of length  has the form , where  and .
+Using the induction hypothesis, we obtain
+
+wa) = w), a) = (q_0, w), a)
+= ((q_0, w), a) = (q_0, wa).
+
+
+Now, by definition we have
+gather*
+w L(M) (q_0, w) F ,
+
+w L(M') w) F' w) F ,
+gather*
+which implies  due to eqn:DeltaD=DeltaE.
+proof

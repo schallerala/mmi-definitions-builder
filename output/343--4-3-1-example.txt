@@ -1,0 +1,4 @@
+exl
+The theory , where  is any sentence, is unsatisfiable.
+Indeed, in every model one of the sentences  takes the true value, the other one the false value.
+exl

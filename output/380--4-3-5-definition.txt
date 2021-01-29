@@ -1,0 +1,11 @@
+dfn
+A theory  is called recursive if the set
+
+T = A A T 
+is recursive.
+
+A theory  is called decidable if the set
+
+(T) = A A (T) 
+is recursive.
+dfn

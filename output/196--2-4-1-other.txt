@@ -1,0 +1,15 @@
+
+A maximum matching is obviously inclusion-maximal, but not vice versa.
+See Figure fig:MaxNotMax for two examples.
+
+figure[ht]
+center
+MaxNotMax.pdf
+center
+Two inclusion-maximal but not maximum matchings.
+fig:MaxNotMax
+figure
+
+It follows that the greedy algorithm (add edges as long as it is possible) does not always find a maximum matching.
+
+

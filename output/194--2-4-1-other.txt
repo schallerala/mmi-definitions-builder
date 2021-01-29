@@ -1,0 +1,16 @@
+
+A graph that has at least one perfect matching is called matchable.
+A matchable graph must have an even number of vertices.
+(More generally, every connected component of a matchable graph must have an even number of vertices.)
+But there are also connected unmatchable graphs with an even number of vertices, see Figure fig:PerfMatch, right.
+
+figure[ht]
+center
+PerfMatch.pdf
+center
+Two connected graphs on six vertices: one matchable (matching is shown by thick edges) and one non-matchable.
+fig:PerfMatch
+figure
+
+If it is not possible to match all vertices, then one can ask for a maximum possible matching.
+There are two notions of maximality.

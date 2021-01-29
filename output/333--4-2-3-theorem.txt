@@ -1,0 +1,4 @@
+thm
+thm:SequentCalcComplete
+The sequent calculus is complete: every valid formula is provable.
+thm

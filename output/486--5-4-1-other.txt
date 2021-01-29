@@ -1,0 +1,13 @@
+We count trees not up to isomorphism, but take into account also the way they are drawn in the plane.
+For example, Figure fig:Catalan3Trees shows all binary trees with  leaves.
+(When there is no risk of confusion, by "binary tree" we mean "full binary rooted tree".)
+
+figure[ht]
+center
+Catalan3Trees
+center
+All  binary trees with  leaves.
+fig:Catalan3Trees
+figure
+
+One has .

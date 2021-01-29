@@ -1,0 +1,9 @@
+exl
+Let , , and , .
+Then
+
+h^-1(1001) = ba, h^-1(0011) = .
+
+For  one has  (check this!).
+One has .
+exl

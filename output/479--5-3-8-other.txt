@@ -1,0 +1,62 @@
+
+This result is remarkable for two reasons.
+Firstly, the coefficients on the right hand side take only values  and  (and more often  than ).
+This means that there is a lot of cancellation happening during this bracket expansion.
+Secondly, we know the values of these coefficients exactly.
+
+The proof of the Euler identity is very elegant.
+Before learning it, let us see how this identity implies MacMahon's recurrence.
+
+proof[Proof of MacMahon's recurrence]
+The formula for generating function of the number of partitions
+
+_n=0^p_n x^n = 1(1-x)(1-x^2)(1-x^3) 
+
+and the Euler identity imply that
+
+(p_0 + p_1 x + p_2 x^2 + )(1 - x - x^2 + x^5 + x^7 - x^12 - x^15 + ) = 1.
+
+The coefficient at , , on the left hand side is
+
+p_n - p_n-1 - p_n-2 + p_n-5 + p_n-7 - ,
+
+while on the right hand side the term  is missing.
+This implies the MacMahon recurrence.
+proof
+
+
+The numbers  are called pentagonal numbers
+because they count the numbers of dots on Figure fig:PentaNumber.
+If one substitutes  for , then  becomes ,
+this is why the latter number is also called pentagonal.
+
+figure[ht]
+center
+
+center
+Pentagonal numbers .
+fig:PentaNumber
+figure
+
+What is of importance for us is not the arrangement of dots on Figure fig:PentaNumber
+but Ferrers diagrams on Figure fig:FerrersPenta.
+They show that pentagonal numbers have partitions of the following form:
+gather*
+3k^2-k2 = k + (k+1) + + (2k-1),
+
+3k^2+k2 = (k+1) + (k+2) + + 2k.
+gather*
+
+figure[ht]
+center
+FerrersPenta
+center
+Arrangements of  or  dots.
+fig:FerrersPenta
+figure
+
+
+Let us proceed to the proof of Theorem thm:EulerPenta.
+Denote by  the number of partitions of  into distinct parts.
+Also, denote by  and  the number of partitions of  into an even,
+respectively odd number of distinct parts.

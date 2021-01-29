@@ -1,0 +1,7 @@
+proof
+A subset of  can be encoded with a binary word:
+the -th digit of this word is  if and only if the number  belongs to the subset.
+The words with  digits  correspond to the -element subsets, hence there are  such words.
+proof
+
+

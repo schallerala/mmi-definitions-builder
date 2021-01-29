@@ -1,0 +1,31 @@
+proof
+By Theorem thm:BooleNF every Boolean function can be represented by a formula using  only.
+Replace every occurrence of  using a De Morgan law and the double negation:
+
+A B (A B).
+
+This gives an equivalent formula with connectives  and  only.
+One removes conjunctions in a similar way with the help of the equivalence
+
+A B (A B).
+
+proof
+
+For example,
+align*
+(p q) (p q) &((p q) (p q))
+
+&(p q) (p q)
+align*
+
+One can achieve an absolute minimalism by introducing a logical connective  with the truth table
+center
+tabularccccc
+ &  & 
+ &  & 
+ &  & 
+ &  & 
+ &  & 
+tabular
+center
+(also called  for obvious reasons).

@@ -1,0 +1,3 @@
+lem
+If theory  is recursive, then its set of theorems  is recursively enumerable.
+lem

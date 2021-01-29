@@ -1,0 +1,47 @@
+Inclusion-exclusion formula
+The formula
+If , then
+
+A B = A + B - A B.
+
+Indeed, in  we have counted all elements that belong to both  and  twice, see Figure fig:IncExc2, left.
+Subtracting  makes our count correct, see Figure fig:IncExc2, right.
+
+figure[ht]
+center
+
+center
+Counting the elements in the union of two sets.
+fig:IncExc2
+figure
+
+Let us now count the elements in the union of three sets .
+In the sum
+
+A + B + C
+
+every element is counted as many times as to how many sets it belongs, see Figure fig:IncExc3, left.
+Let us subtract the numbers of the elements in the pairwise intersections:
+
+A + B + C - A B - B C - A C.
+
+Now every element that belongs to one or two sets is counted exactly once,
+but the elements in  are not counted at all, see Figure fig:IncExc3, middle.
+So it remains to add the number of these elements to obtain the final formula:
+
+A B C = A + B + C - A B - B C - A C + A B C.
+
+
+figure[ht]
+center
+
+center
+Counting the elements in the union of three sets.
+fig:IncExc3
+figure
+
+What will the formula for the number of elements in the union of  sets look like?
+The formulas for  and  suggest that this will be the sum of the cardinalities of all sets
+minus the sum of the cardinalities of pairwise intersections plus all the triple intersections
+minus all the quadruple intersections, and so on.
+This conjecture is true, and we will prove it now.

@@ -1,0 +1,3 @@
+thm[Berge]
+A matching  in  is a maximum matching if and only if  contains no -augmenting path.
+thm

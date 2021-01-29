@@ -1,0 +1,25 @@
+proof
+Conjugation defines a self-bijection of the set of all partitions of .
+Diagrams with  rows are conjugate to diagrams with  columns,
+thus the number of diagrams of the first kind is equal to the number of diagrams of the second kind.
+On the other hand, diagrams with  rows correspond to partitions into  parts,
+and diagrams with  columns correspond to partitions whose largest part is equal to .
+Thus we have as many partitions of the first kind as partitions of the second kind.
+
+For partitions into at most  parts and partitions with all parts  the argument is similar.
+proof
+
+
+Let us present another elegant statement about partitions.
+First, call a partition  self-conjugate if it is conjugate to itself:
+the Ferrers diagram of  is symmetric with respect to the northwest-southeast diagonal.
+Figure fig:FerrersSelfConj shows all self-conjugate partitions of .
+
+figure[ht]
+center
+ConjPart12
+center
+Self-conjugate partitions of .
+fig:FerrersSelfConj
+figure
+

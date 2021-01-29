@@ -1,0 +1,12 @@
+proof
+By Lemma lem:FalsifyRoot, a valuation  satisfies  if and only if it satisfies all leaves of the deduction tree.
+The leaf  is satisfied if and only if
+the disjunctive clause above is satisfied (see Definition dfn:FalsifySequent).
+Finally,  satisfies all leaves if and only if it satisfies the conjunction of all these clauses.
+proof
+
+One constructs a DNF for  in a similar way starting from the sequent .
+
+
+
+

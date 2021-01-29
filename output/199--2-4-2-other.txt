@@ -1,0 +1,10 @@
+
+Figure fig:AltPath shows possible types of alternating paths.
+
+figure[ht]
+center
+AltPath.pdf
+center
+Alternating paths.
+fig:AltPath
+figure

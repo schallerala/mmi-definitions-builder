@@ -1,0 +1,4 @@
+dfn
+A signature is a triple of sets  together with two maps  and 
+which describe the arity of functions and predicates.
+dfn

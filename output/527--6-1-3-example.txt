@@ -1,0 +1,4 @@
+exl
+Figure fig:NFAtoDFA2 shows the DFA constructed from the NFA in Figure fig:NFABroken.
+The state  corresponds to the empty set.
+exl

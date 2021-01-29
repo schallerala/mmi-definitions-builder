@@ -1,0 +1,42 @@
+More about partitions
+itemize
+
+An infinite (but fast convergent) series that computes  was found by Ramanujan and Hardy and later improved by Rademacher.
+A consequences of the latter is the asymptotics for the number of partitions:
+
+p_n 14n3 e^2n/3.
+
+Ramanujan observed and later proved that
+gather*
+p_5n+4  is divisible by  5,
+
+p_7n+5  is divisible by  7,
+
+p_11n+6  is divisible by  11.
+gather*
+Erdos and Lehner proved that a "random" partition of  has  summands.
+itemize
+
+Both Ramanujan and Erdos were extraordinary figures.
+For the biography of Ramanujan see, for example,
+http://www-history.mcs.st-andrews.ac.uk/Biographies/Ramanujan.html.
+
+Further reading about partitions:AE04.
+
+
+
+Catalan numbers
+Rooted binary trees
+Recall that a rooted tree is a tree with a marked vertex, the root.
+We have used rooted trees (with labels at the vertices) as parse trees of propositional formulas
+and as proof structures in the sequent calculus.
+Edges or a rooted tree have a natural orientation such that the path from the root to every vertex goes in the direction of edges.
+The out-degree of a vertex in a rooted tree is the number of outward-directed edges incident to this vertex.
+Similarly, the in-degree is the number of inward-directed edges; the in-degree of the root is zero, and the in-degrees of all other vertices are one.
+
+A binary rooted tree is a rooted tree where the out-degrees of all vertices are at most two.
+A full binary rooted tree is a rooted tree where the out-degree of each vertex is either two or zero.
+(Vertices with out-degree zero are the leaves of the tree.)
+
+With the help of the handshake lemma and the relation  one can show that
+a full binary rooted tree with  leaves has  vertices and  edges.

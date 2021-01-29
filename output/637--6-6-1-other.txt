@@ -1,0 +1,4 @@
+
+Contrarily to DFA, non-deterministic PDAs are stronger than deterministic ones.
+The language of binary palindromes of even length cannot be accepted by a deterministic PDA
+but is accepted by a non-deterministic one as the next example shows.

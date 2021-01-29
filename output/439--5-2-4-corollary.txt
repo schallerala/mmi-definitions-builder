@@ -1,0 +1,16 @@
+cor
+cor:GenBinom
+For every  put by definition
+
+(1 + x)^= _k=0^k x^k
+
+(which for  agrees with the binomial formula, so that this definition does not override the usual definition of ).
+Then for every  the following identity between formal power series holds:
+
+(1+x)^(1+x)^= (1+x)^+ .
+
+In particular, for every  and  one has
+
+( (1+x)^pq )^q = (1+x)^p.
+
+cor

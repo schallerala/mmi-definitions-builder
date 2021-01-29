@@ -1,0 +1,7 @@
+proof
+By the lemma, the set  is recursively enumerable, so that it remains to show that its complement is recursively enumerable.
+But in a complete theory,  if and only if .
+Thus, if we use  as an input for the algorithm which stops if and only if its input is a theorem, then this algorithm will stop if and only if
+ is not a theorem.
+proof
+

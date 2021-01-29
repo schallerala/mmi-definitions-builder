@@ -1,0 +1,6 @@
+
+The leaf on the right has a counterexample: take a universe with two elements  and ,
+evaluate the nullary predicate  to true, and the unary predicate  to true on  and false on .
+
+
+

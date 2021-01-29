@@ -1,0 +1,6 @@
+dfn
+For every  and every non-negative integer  define the generalized binomial coefficient  as
+
+k = (- 1) (- k + 1)k!.
+
+dfn

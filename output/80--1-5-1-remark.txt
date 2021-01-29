@@ -1,0 +1,16 @@
+rem
+One can give an exact meaning to the words "how many times was an element counted".
+Instead of the intersections  etc. consider their indicator functions .
+Instead of summing the cardinalities, sum these functions.
+The diagrams on Figures fig:IncExc2 and fig:IncExc3 show the values of certain sums of indicator functions.
+The argument in the proof of Theorem thm:IncExc shows that
+multline*
+1_A_1 A_n = _i=1^n 1_A_i - _1 i < j n 1_A_i A_j 
++ _1 i < j < k n 1_A_i A_j A_k - 
+
++(-1)^n-1 1_A_1 A_n
+multline*
+by comparing the values of the functions on the left and on the right at every point.
+The formula for the number of elements is obtained by taking the "integrals" of both sides,
+that is replacing each function  by the number .
+rem

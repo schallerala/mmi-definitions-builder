@@ -1,0 +1,7 @@
+
+By definition, -transitions are allowed:
+
+(q, , Z) = (p_1, _1), , (p_m, _m)
+
+means that from the state  and with  on the top of the stack the automaton can do a spontaneous transition
+to a state  and replace  with .

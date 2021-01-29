@@ -1,0 +1,7 @@
+exl
+itemize
+, , . Then  consists of all even length sequences of zeros.
+, , . For every word  its image  is obtained by inserting a  after every .
+The language  consists of all words without two consecutive 's and not ending with .
+itemize
+exl

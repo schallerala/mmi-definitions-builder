@@ -1,0 +1,3 @@
+lem
+Each of the systems of logical connectives  and  is functionally complete.
+lem

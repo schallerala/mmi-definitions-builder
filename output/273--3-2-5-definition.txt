@@ -1,0 +1,5 @@
+dfn
+dfn:DeductionTree
+A deduction tree is a rooted tree whose vertices are labeled with sequents so that
+every parent vertex forms an inference rule together with its children, where the children are the premises and the parent is the conclusion.
+dfn

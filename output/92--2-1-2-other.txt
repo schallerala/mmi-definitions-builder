@@ -1,0 +1,7 @@
+
+itemize
+The complete bipartite graph  is a bipartite graph with the vertex set ,
+where , , and every vertex from  is joined with every vertex from .
+The graph  is shown in Figure fig:K33, left.
+itemize
+

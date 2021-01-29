@@ -1,0 +1,3 @@
+dfn
+A weak composition of a positive integer  is a representation of  as the sum of non-negative integers.
+dfn

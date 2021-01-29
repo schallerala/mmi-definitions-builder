@@ -1,0 +1,5 @@
+thm
+Let  be the complete factorization of the characteristic polynomial
+of a linear recursive sequence .
+Then the sequence  is a linear combination of the sequences , .
+thm

@@ -1,0 +1,3 @@
+lem
+Every regular language can be described by a regular expression.
+lem

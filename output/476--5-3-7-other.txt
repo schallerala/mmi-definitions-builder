@@ -1,0 +1,16 @@
+
+Computing the first few terms of the sequences , one rewrites MacMahon's recurrence as
+
+p_n = p_n-1 + p_n-2 - p_n-5 - p_n-7 + p_n-12 + p_n-15 - 
+The sum on the right hand side looks infinite but is in fact finite:  becomes zero as soon as  exceeds .
+Thus the sum contains about  summands and allows a very fast computation of .
+
+MacMahon, more than a hundred years ago, has computed  for  up to .
+In particular, he found that
+
+p(200) = 3 972 999 029 388.
+
+
+We will prove MacMahon's recurrence in the next section.
+
+

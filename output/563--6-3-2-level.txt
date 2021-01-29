@@ -1,0 +1,33 @@
+The pumping lemma
+Let  be a finite alphabet.
+The set  of all words in  is countably infinite.
+The set  of all languages in  is uncountable: it has the cardinality of the continuum.
+On the other hand, the set of regular languages is countable, because the set of all regular expressions (and of all finite automata) is countable.
+(Note that different automata or different regular expressions can define the same language, but this is not a problem.)
+It follows that "most" languages are non-regular.
+
+The above argument is a pure existence proof.
+In this section we prove the pumping lemma, a tool that allows to prove the non-regularity of some languages.
+
+Before stating the lemma, let us explain the underlying idea.
+Let  be a DFA.
+Any word  accepted by  determines a path from the initial state  to one of the finals states .
+If the word  is long enough (namely if its length is bigger than the number of states of ),
+then the corresponding path contains a cycle.
+This cycle gives rize to infinitely many other words accepted by , because one can run along it several times.
+For example, in Figure fig:LongWord one has .
+By repeating or removing the cycle contained in the path, one obtains
+
+a_1a_2(a_3a_4a_5)^ka_6a_7 L(M)
+
+for all , including .
+
+figure[ht]
+center
+
+center
+Idea of the pumping lemma: a long word contains a subword which can be repeated.
+fig:LongWord
+figure
+
+The existence of a cycle can be stated as follows.

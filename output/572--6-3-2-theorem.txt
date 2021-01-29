@@ -1,0 +1,7 @@
+thm
+A language accepted by a DFA with  states is
+enumerate
+nonempty if and only if the automaton accepts some word of length less than ;
+infinite if and only if the automaton accepts some word of length , where .
+enumerate
+thm

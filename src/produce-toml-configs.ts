@@ -27,7 +27,7 @@ const args = process.argv.slice(2);
         autoClose: true
     };
 
-    const portionsByChapter = groupByGroup(allPortions);
+    const portionsByChapter = groupByChapter(allPortions);
 
     const portionsCombinations = {
         'all': allPortions,
@@ -44,21 +44,24 @@ const args = process.argv.slice(2);
 
     for (const [key, portions] of Object.entries(portionsCombinations)) {
         const tomlFile = createWriteStream(join(outFolder, `mmi-${key}.toml`), writeStreamOptions);
+        const storkEntryMap = key.length === 1
+            ? portion => portion.shortStorkFileEntry
+            : portion => portion.storkFileEntry;
         const tomlFileContent = [
             '[input]',
             'title_boost = "Ridiculous"',
             'files = [',
-            portions.map(portion => portion.storkFileEntry).join(`,${EOL}`),
+            portions.map(storkEntryMap).join(`,${EOL}`),
             ']',
             '[output]',
-            `filename = "mmi${key}.st"`,
+            `filename = "${join(outFolder, `mmi-${key}.st`)}"`,
         ].join(EOL);
         tomlFile.write(tomlFileContent);
         tomlFile.end();
     }
 })();
 
-function groupByGroup (portions: Array<PdfPortion>): Map<number, Array<PdfPortion>> {
+function groupByChapter (portions: Array<PdfPortion>): Map<number, Array<PdfPortion>> {
     const groups = new Map<number, Array<PdfPortion>>();
 
     for (const portion of portions) {

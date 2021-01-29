@@ -1,0 +1,24 @@
+proof
+The equation  consists of an infinite sequence of equations
+gather*
+a_0b_0 = 1
+
+a_0b_1 + a_1b_0 = 0
+
+a_0b_2 + a_1b_1 + a_2b_0 = 0
+
+gather*
+with unknowns .
+The first equation implies  (which is defined because ).
+Knowing  we can express  from the second equation:
+
+b_1 = -a_1b_0a_0
+
+and continue in the same spirit, because -st equation can be solved for :
+
+b_k = -1a_0_i=1^k a_ib_k-i.
+
+This shows that the inverse series  exists and is unique.
+proof
+
+We denote the inverse series to  by  or .

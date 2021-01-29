@@ -1,0 +1,2 @@
+
+We are now ready to state and prove the pumping lemma.

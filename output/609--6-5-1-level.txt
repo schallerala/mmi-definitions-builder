@@ -1,0 +1,54 @@
+Context-free grammars and languages
+Generating a language by a grammar
+sec:LangGram
+Consider the sentence
+center
+Colorless green ideas sleep furiously.
+center
+Although it does not make any sense, it is syntactically correct.
+One distinguishes a noun phrase "colorless green ideas" and a verb phrase "sleep furiously".
+The noun phrase itself consists of a noun preceeded by adjectives, and the verb phrase consists of a verb followed by adverbs.
+
+More generally, one can formulate the following rules of production of simple English sentences:
+align*
+&S NV &&a sentence consists of a noun phrase and a verb phrase
+
+&N AdjN &&a noun phrase may start with one or more adjectives
+
+&V VAdv &&a verb phrase may end with one or more adverbs
+align*
+At any stage one can substitute for , , ,  a word from a dictionary:
+align*
+&N list of nouns
+
+&V list of verbs
+
+&Adj list of adjectives
+
+&Adv list of adverbs
+align*
+The result is a syntactically correct (but mostly meaningless) sentence.
+
+A production can be represented linearly:
+multline*
+S NV AdjNV AdjAdjNV colorless AdjNV
+
+colorless AdjNVAdv 
+multline*
+or by a derivation tree or parse tree, see Figure fig:Chomsky.
+
+figure[ht]
+center
+Chomsky.pdf
+center
+Derivation tree for the Chomsky example.
+fig:Chomsky
+figure
+
+The sentence at the beginning of this section is from a book of Noam Chomsky.
+In mid-1950's he proposed the above principles as description of the structure of human languages.
+(Of course one needs more production rules in order to be able to generate more complicated sentences.)
+A couple of years later John Backus, a programming language designer acquainted with Chomsky's ideas,
+described the syntax of the ALGOL programming language in a similar way.
+
+Let us now give an exact definition.

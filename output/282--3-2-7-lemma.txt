@@ -1,0 +1,3 @@
+lem
+Every sequent is the root of some closed deduction tree.
+lem

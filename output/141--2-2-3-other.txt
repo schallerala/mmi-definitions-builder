@@ -1,0 +1,7 @@
+proof
+Let the components have  vertices.
+By the above theorem, they have  edges, respectively.
+By summing up the number of edges we obtain the desired result.
+proof
+
+

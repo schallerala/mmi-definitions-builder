@@ -1,0 +1,3 @@
+dfn
+A graph  is called connected if for any two vertices  there is a path between  and .
+dfn

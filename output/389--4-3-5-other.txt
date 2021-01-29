@@ -1,0 +1,40 @@
+
+proof[Proof of Theorem thm:ConstUndecid]
+Assume that  is decidable.
+Consider the set
+
+X = (m,n) m = A(), T A[n/] ^2.
+
+(Here  means that  has one free variable, and  means substitution of term  for this variable.)
+Since  is decidable, the set  is recursive (there is an algorithm which decides whether  or not).
+
+Now let
+
+Y = n (n,n) X.
+
+Clearly, since  is recursive, so is .
+By Theorem thm:ReprThm, the set  is representable.
+That is, there is a formula  such that
+gather*
+n Y PA_0 B[n/y]
+
+n Y PA_0 B[n/y]
+gather*
+Since , for every  such that  we also have .
+
+Now let .
+Let us ask ourselves if  or not. Assume .
+By definition of , , and  we have
+
+n Y (n,n) X T B[n/y] T B[n/y].
+
+On the other hand, by definition of  we have
+
+n Y T B[n/y],
+
+which implies that  is incoherent.
+If we assume that , then we derive similarly that  and .
+
+Thus the decidability assumption contradicts the consistency assumption, and the theorem is proved.
+proof
+

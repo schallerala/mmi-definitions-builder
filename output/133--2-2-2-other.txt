@@ -1,0 +1,11 @@
+proof
+Take a path  of maximum length.
+(If there are several paths of maximum length, take one of them.)
+I claim that its endpoints  and  are leaves.
+Indeed, assume .
+Then there is an edge of  incident with  and not belonging to .
+If the other end of this edge is also a vertex of , then  contains a cycle, which contradicts to it being a tree.
+If the other end is not in , then adding it to  we obtain a longer path.
+This contradicts the choice of .
+Thus the assumption  was false,  is a leaf, and  is a leaf as well.
+proof

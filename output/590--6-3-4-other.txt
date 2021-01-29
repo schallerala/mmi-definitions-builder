@@ -1,0 +1,22 @@
+proof
+Let  be a regular language, and  a homomorphism.
+Let  be a DFA accepting .
+We will construct a DFA accepting  thus proving that this language is regular.
+The idea is to use the same set of states and the same set of final states, but interpret each symbol  as .
+Then a word  will be accepted by the new automaton if and only if  was accepted by the old one.
+Formally, put
+
+M' = (Q, , q_0, F),  where a) = (q, h(a)).
+
+It can be shown by induction on the length of a word  that .
+Thus we have
+
+w L(M') w) F (q, h(w)) F h(w) L
+w h^-1(L),
+
+which means .
+proof
+
+
+
+

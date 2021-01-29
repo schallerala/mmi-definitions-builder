@@ -1,0 +1,16 @@
+Note that we cannot take any pair of subsets :
+if , then we must have .
+
+An -cycle in a graph is a subgraph isomorphic to .
+Bipartite graphs contain no -cycles, and more generally no cycles of odd length.
+
+exc
+Prove the converse: if a graph contains no cycles of odd length, then it is bipartite.
+exc
+
+A Hamiltonian cycle in a graph is a cycle that contains all of its vertices.
+It provides a closed path visiting all of its vertices exactly once
+A graph is called Hamiltonian if it has a Hamiltonian cycle.
+The graph  is Hamiltonian, the Petersen graph is not.
+
+

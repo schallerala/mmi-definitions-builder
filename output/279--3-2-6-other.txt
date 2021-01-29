@@ -1,0 +1,31 @@
+proof
+Induction on the number of vertices.
+
+For trees with one vertex the statement is trivial.
+
+Assume that the statement is proved for all deduction trees with  vertices.
+Let  be a deduction tree with  vertices.
+By definition, if we delete the root of , then we obtain one or two deduction trees "growing" from the children of the root,
+see Figure fig:InductionDedTree.
+Besides, the root of  is the conclusion and its children are the premises of an inference rule.
+Hence by Lemma lem:RuleTrees a valuation falsifies the root if and only if it falsifies one of its children.
+The subtrees growing from the children have  vertices,
+therefore by induction assumption a valuation falsifies a child if and only if it falsifies one of the leaves of the corresponding subtree.
+Such a vertex is also childless in the big tree.
+This proves the induction step.
+proof
+
+figure[ht]
+center
+InductionDedTree.pdf
+center
+Deduction trees near their roots.
+fig:InductionDedTree
+figure
+
+proof[Proof of Theorem thm:GentzenSound]
+We want to show that for every proof tree the sequent at its root is valid.
+By Lemma lem:FalsifyRoot, if some valuation falsifies the root, then it falsifies one of the leaves.
+But all leaves of a proof tree are axioms, and by Lemma lem:AxiomValid they cannot be falsified.
+proof
+

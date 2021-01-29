@@ -1,0 +1,5 @@
+thm
+Let  be a graph with vertex set  and let  be its adjacency matrix.
+Let  denote the element of the matrix  at the position .
+Then  is the number of walks of length exactly  from the vertex  to the vertex  in the graph .
+thm

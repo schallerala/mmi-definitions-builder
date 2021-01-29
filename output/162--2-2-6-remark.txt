@@ -1,0 +1,6 @@
+rem
+There are other algorithms that find a minimum spanning tree, for example Prim's algorithm.
+Closely related to Kruskal's algorithm is the reverse-delete algorithm.
+Here we order the edges in the nonincreasing order of weights, go through the list
+and delete an edge if this does not disconnect the graph.
+rem

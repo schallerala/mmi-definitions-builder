@@ -1,0 +1,4 @@
+Grammars in Chomsky form
+A grammar is said to be in Chomsky form if all of its productions are of the form  and .
+According to our notation convention,  are variables and  is a terminal.
+Note that the "English grammar" from the beginning of Section sec:LangGram is in Chomsky form.

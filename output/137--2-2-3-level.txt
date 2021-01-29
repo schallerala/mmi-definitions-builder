@@ -1,0 +1,2 @@
+The number of edges in a tree
+Lemma lem:LeafDel allows to use induction when proving theorems about trees.

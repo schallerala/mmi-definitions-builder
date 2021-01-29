@@ -1,0 +1,5 @@
+lem
+lem:LeafDel
+Let  be a tree and  a leaf of .
+Then  is also a tree.
+lem

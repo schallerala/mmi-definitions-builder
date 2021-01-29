@@ -1,0 +1,2 @@
+
+For example, looking at the truth table of Example exl:TruthTable we see that the formula  is satisfiable but not a tautology.

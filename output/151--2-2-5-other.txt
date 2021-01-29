@@ -1,0 +1,4 @@
+For example,  has  spanning trees (obtained by deleting one arbitrary edge),
+ has , and  already  different spanning trees.
+
+In order to count the spanning trees in an arbitrary graph, the following matrix is needed.

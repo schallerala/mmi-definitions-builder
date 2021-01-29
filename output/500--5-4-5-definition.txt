@@ -1,0 +1,4 @@
+dfn
+A Dyck path is a monotone lattice path from  to  that stays above the diagonal.
+The path is allowed to touch the diagonal, but not to cross it.
+dfn

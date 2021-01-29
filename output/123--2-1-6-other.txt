@@ -1,0 +1,68 @@
+The somewhat awkward condition "all vertices of positive degree belong to the same connected component"
+is equivalent to "the graph becomes connected after deleting all isolated vertices".
+Another way to deal with the isolated vertices is to define the notion of a Eulerian circuit/walk differently:
+it must visit all vertices.
+Then a graph is (semi-)Eulerian if and only if it is connected and the degree evenness condition is satisfied.
+proof
+The "only if" direction. Assume that the graph has a Eulerian walk or a Eulerian circuit.
+Then there is a walk between any two vertices of positive degree:
+one can use a piece of the walk or circuit to get from one to the other.
+In order to prove that the degrees of all vertices (except two in the semi-Eulerian case) are even,
+orient the edges in the direction of the walk: orient  from  to .
+We obtain a directed graph.
+In a directed graph, every vertex  has the in-degree  and the out-degree :
+the number of edges entering  and the number of edges leaving .
+Clearly, .
+On the other hand, a Eulerian circuit enters and leaves every vertex equal number of times: .
+This implies that  is even for every vertex of a Eulerian graph.
+
+In a semi-Eulerian graph we have  for every intermediate vertex of the walk, but
+
+_+ v_0 = _- v_0 - 1, _+ v_m = _- v_m + 1
+
+for the initial and the final vertices of the walk, respectively.
+It follows that the degrees of all vertices except  and  are even.
+
+The "if" direction.
+First, consider the case when all vertex degrees are even.
+Start to walk from any vertex without going along any edge twice.
+At some point we must stop because all edges incident to the current vertex are used.
+This can only happen at the initial vertex of our walk because if you stop at a different vertex, then its in-degree will be one bigger than the out-degree,
+which contradicts the assumption that all vertex degrees are even.
+Thus we obtain a circuit (which does not necessarily cover all edges).
+Remove this circuit from the graph.
+We obtain a possibly disconnected graph where all vertex degrees are even.
+Repeat the procedure until the edge set of our graph will be partitioned into circuits.
+Then start to merge the circuits: if two circuits have a common vertex, then they can be replaced by a single circuit.
+If some circuit has no common vertices with the other circuits,
+then its vertices and edges form a connected component of the graph,
+and we will have at least two non-trivial connected components.
+Thus all circuits can be merged to a circuit covering all edges of the graph.
+
+If the graph has two vertices of odd degree, then start our first walk from one of these vertices.
+This walk will necessarily stop at the other odd vertex (again, by consideration of the in- and out-degrees).
+Removing this walk from the graph yields a graph with all vertices of even degree, and we proceed as in the previous case.
+proof
+
+Try this algorithm on the graph on Figure fig:EulerianGraph.
+
+figure[h]
+center
+Fig/EulerianGraph.pdf
+center
+Find a Eulerian circuit in this graph.
+fig:EulerianGraph
+figure
+
+Note that for graphs with two vertices of odd degree we have proved a bit more:
+every Eulerian circuit starts in one of the odd vertices and ends in the other one.
+
+
+
+
+
+
+
+
+
+

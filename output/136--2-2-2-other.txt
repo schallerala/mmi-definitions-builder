@@ -1,0 +1,9 @@
+proof
+The graph  is acyclic, because it is a subgraph of an acyclic graph.
+It remains to prove that  is connected.
+Let  and  be two vertices of  different from .
+There is a path in  connecting  and .
+This path does not contain , because otherwise the degree of  would be at least .
+Thus it can be considered as a path in , so  and  are connected within .
+proof
+

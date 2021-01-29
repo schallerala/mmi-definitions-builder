@@ -1,0 +1,3 @@
+dfn
+The set of all formulas (based on a given signature) is called a first-order language.
+dfn

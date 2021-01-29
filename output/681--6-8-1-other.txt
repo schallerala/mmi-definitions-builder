@@ -1,0 +1,6 @@
+All context-free languages are recursively enumerable because every pushdown automaton can be simulated by a Turing machine.
+One can show that context-free languages are also recursive.
+
+If a language is recursively enumerable but not recursive,
+then every Turing machine accepting it will run forever on some input word not belonging to the language.
+Later we will give an example of such a language.

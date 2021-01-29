@@ -1,0 +1,20 @@
+
+
+From any DFA one can construct the minimum DFA accepting the same language by merging certain sets of states into one state.
+Two states ,  must be merged if the corresponding sets ,  are contained in the same equivalence class .
+That is,  if for all  either both  and  belong to  or both do not.
+
+One can certify non-equivalence of two states by finding a word  such that  and 
+or vice versa.
+The algorithm marks pairs of distinguishable states recursively.
+
+At the very beginning one removes all inaccessible states.
+Obviously, this does not change the accepted language.
+
+Then one draws a table whose rows and columns are marked by the remaining states.
+As initialization, one marks all pairs  such that  and  or vice versa.
+At each of the following steps one goes through all pairs , and for each of them one considers all alphabet letters .
+If the pair  was marked at one of the previous steps, then one marks the pair .
+If at some step no new pairs are marked, then the algorithm stops.
+All pairs of states which are unmarked are merged into a single state
+(it is also possible that several states are merged into one state).

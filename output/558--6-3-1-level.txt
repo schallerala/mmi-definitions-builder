@@ -1,0 +1,2 @@
+Properties of regular languages
+Closure under boolean operations

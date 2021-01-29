@@ -6,11 +6,12 @@
   "scripts": {
     "rm-all": "rm -rf db.sqlite* output*",
     "produce-portions": "ts-node src/produce-portions.ts ../OrigMMI2020.tex ../preamble.tex output",
+    "produce-outline": "ts-node src/produce-outline.ts output/outline.json",
     "produce-toml-configs": "ts-node src/produce-toml-configs.ts output",
     "compile-standalone": "cd output && (test -L Fig || ln -s ../../Fig) && pdflatex -synctex=1 -interaction=nonstopmode -file-line-error OrigMMI2020.tex && pdflatex -synctex=1 -interaction=nonstopmode -file-line-error OrigMMI2020.tex",
     "produce-txt": "ts-node src/produce-txt.ts",
-    "build-index": "stork --build mmi.toml",
-    "all": "npm run rm-all && npm run produce-portions && npm run produce-toml-config && npm run compile-standalone && npm run produce-txt && npm run build-index"
+    "build-index": "ls output/*.toml | xargs -I{} stork --build {}",
+    "all": "npm run rm-all && npm run produce-portions && npm run produce-outline && npm run produce-toml-configs && npm run compile-standalone && npm run produce-txt && npm run build-index"
   },
   "keywords": [],
   "author": "",

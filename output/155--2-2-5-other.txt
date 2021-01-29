@@ -1,0 +1,17 @@
+
+In particular, for the complete graph we have the determinant of the following  matrix:
+
+pmatrix
+n-1 & -1 & & -1
+
+-1 & n-1 & & -1
+
+& & & 
+
+-1 & -1 & & n-1
+pmatrix.
+
+Cayley's theorem indicates that it is equal to .
+Of course, it is easier (but still not straightforward) to prove this equality without invoking two difficult theorems above.
+
+

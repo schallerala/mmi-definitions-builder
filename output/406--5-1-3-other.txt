@@ -1,0 +1,9 @@
+We don't give the proof, which is similar to the case of sequences of order 2.
+If all roots of  are distinct, then the coefficients  in
+
+a_n = c_1 _1^n + + c_k _k^n
+
+are found by solving a system of  linear equations with  unknowns.
+If there are multiple roots, some work should be done in order to prove that the sequences  satisfy
+the recursive relation eqn:LinReck.
+

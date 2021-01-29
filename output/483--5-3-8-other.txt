@@ -1,0 +1,61 @@
+proof
+We will construct a matching on the set of partitions into distinct summands
+such that partitions with an even number of summands are matched to partitions with an odd number of summands.
+For  different from  this matching will be perfect,
+and for  exactly one partition will remain unmatched.
+
+For every partition  denote by  the size of its smallest part.
+By  denote the number of consecutive parts of  starting with the largest part.
+On the Ferrers diagram,  is the length of the last row,
+and  is the length of the diagonal starting from the top right dot (let us call it the rightmost diagonal),
+see Figure fig:IandJ.
+
+figure[ht]
+center
+
+center
+Definition of  and .
+fig:IandJ
+figure
+
+Take a partition  with  and look at its diagram.
+Construct a new diagram by removing the last row and adding a dot to each of the first  rows.
+(In other words, move the last row so that it becomes a new rightmost diagonal.)
+This yields a new partition  with  (because the new rightmost diagonal is the old last row)
+and  (because the new last row is longer than the old one).
+In particular, .
+See Figure fig:PentaMatching.
+
+figure[ht]
+center
+PentaMatching
+center
+Transforming a -partition into a -partition.
+fig:PentaMatching
+figure
+
+This is an (almost) perfect matching between partitions with  and partitions with .
+Indeed, the above transformation is (almost always) invertible:
+take a partition with  and move its rightmost diagonal to the bottom so that it becomes the new last row.
+
+Also, this matching fulfills our needs: when the last row is moved, the number of parts changes by ,
+so that partitions with an even number of parts are matched to partitions with an odd number of parts.
+
+Why is it only almost perfect?
+The transformation of a -partition into a -partition is not going to work if  and the last row intersects the rightmost diagonal
+(in this case the new rightmost diagonal will "stick out").
+A partition with this property looks as shown on Figure fig:FerrersPenta, left.
+Thus it is only possible for .
+The inverse transformation of a -partition into a -partition will not work
+if  and the last row intersects the rightmost diagonal
+(in this case after the transformation the two last rows have equal length, so the partition does not have distinct parts).
+Such partitions look as shown on Figure fig:FerrersPenta, right, and are only possible for .
+
+The "lonely" partition has  rows.
+Thus if  is even, then there is one even partition more than odd,
+and if  is odd, then there is one odd partition more than even.
+proof
+
+
+
+

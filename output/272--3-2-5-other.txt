@@ -1,0 +1,5 @@
+proof
+In order to falsify a sequent , we have to satisfy all propositions in  and falsify all propositions in .
+If  and  contain a common proposition, then no valuation falsifies .
+Thus,  is valid.
+proof

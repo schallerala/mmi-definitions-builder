@@ -1,0 +1,13 @@
+proof
+We will show that every element of the union is counted exactly once on the right hand side of the formula.
+
+(Can make a warm-up for the elements in the intersection of all sets.)
+Take an element that belongs to exactly  of the sets .
+In the first sum on the right hand side it is counted  times,
+in the second sum  times, and so on.
+In total, this element is counted with the multiplicity
+
+k1 - k2 + + (-1)^k-1kk.
+
+Due to Theorem thm:BinAltern, this sum is equal to .
+proof

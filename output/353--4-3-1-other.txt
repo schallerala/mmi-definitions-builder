@@ -1,0 +1,30 @@
+proof
+Assume  is complete, and let  be any of its models.
+For every sentence , we have either  or .
+Due to the completeness of  this implies , respectively .
+
+Assume  is incomplete. Then there are two models  and  whose sets of satisfied formulas differ.
+Without loss of generality, let  and .
+Then neither  nor  hold.
+proof
+
+exc
+For every model , the theory  is complete.
+exc
+
+The first-order theory of graphs is incomplete, and this is good: one has many different graphs with different properties.
+But if we want to know everything about the arithmetics of , the natural numbers, then we need a complete theory.
+The theory should contain some axioms for addition and multiplication and maybe some other axioms,
+so that every sentence has a well-defined truth value
+(that is, all structures that satisfy our axioms assign to it the same value).
+For example, the question "Can every integer greater than  be expressed as the sum of two primes?" should have a definite answer.
+
+One might use the result of the above exercise: if we assume that  is something objectively real,
+then there is the corresponding complete theory .
+But this theory has "too many" axioms, and we have no explicit description for it, apart from saying "what is true, is true".
+Godel's incompleteness theorem says that there is no complete theory of 
+such that for every sentence one can decide in finite time is it an axiom of the theory or not.
+
+Before we say more about the incompleteness theorem, we must discuss proofs, a constructive way to derive consequences of a theory.
+
+

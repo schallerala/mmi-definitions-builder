@@ -1,0 +1,3 @@
+cor
+In every graph, the number of vertices of odd degree is even.
+cor

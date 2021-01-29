@@ -1,0 +1,4 @@
+exl
+The language  is non-regular, as can be shown with the help of pumping lemma.
+But under the homomorphism  it goes to the language , which is regular.
+exl

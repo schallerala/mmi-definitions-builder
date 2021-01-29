@@ -1,0 +1,3 @@
+thm
+If  and , then the number of injective maps from  to  is .
+thm

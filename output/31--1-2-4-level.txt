@@ -1,0 +1,5 @@
+Unordered choices
+Take the same bag with  balls.
+We take out  balls simultaneously.
+Equivalently, we take out  balls consecutively, but then forget the order in which they were taken.
+How many possibilities are there?

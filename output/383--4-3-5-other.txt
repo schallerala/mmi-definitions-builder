@@ -1,0 +1,3 @@
+Intuitively, if we can distinguish axioms from non-axioms, then the set of proofs is recursive.
+From certain properties of recursive sets it follows that the set of last terms of proofs is recursively enumerable.
+

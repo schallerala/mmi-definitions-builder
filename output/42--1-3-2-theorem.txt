@@ -1,0 +1,3 @@
+thm
+The number of monotone paths from  to  is .
+thm

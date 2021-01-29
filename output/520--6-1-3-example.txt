@@ -1,0 +1,12 @@
+exl
+exl:NFA
+enumerate
+[a)]
+The automaton in Figure fig:NFA accepts all words that contain two consecutive zeros.
+Indeed, the state  can be reached only if the input contains two consecutive zeros,
+and once  is reached, one stays there forever.
+[b)]
+The automaton in Figure fig:NFABroken accepts all words that do not contain two consecutive zeros.
+Indeed, it "breaks down" only if the input contains two consecutive zeros, and if it does not break down, then it accepts the input.
+enumerate
+exl

@@ -1,0 +1,7 @@
+rem
+Note that if , then we can divide  by the denominator with remainder:
+
+B(x) = Q(x) (x-_1)^k_1 (x-_m)^k_m + R(x), R < k,
+
+and then apply the theorem to a fraction with  in place of .
+rem

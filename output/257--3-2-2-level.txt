@@ -1,0 +1,22 @@
+A Hilbert system
+A Hilbert-style deductive system has a single inference rule, the so-called modus ponens:
+
+A, A B B
+
+(If  is provable and  is provable, then  is provable.)
+We will abbreviate modus ponens by MP.
+
+There are many different axyom systems.
+Here is one of them, the third ukasiewicz' system.
+
+align*
+&A (B A)
+
+&(A (B C)) ((A B) (A C))
+
+&(A B) (B A)
+align*
+
+Here , , and  may be any propositional formulas.
+Thus, in fact, we have infinitely many axioms (axiom instances) that can be obtained from the above axiom schemata
+by substituting for , , and  some particular formulas.

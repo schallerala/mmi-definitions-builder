@@ -1,0 +1,14 @@
+exl
+Consider again the signature
+align*
+: &a(), f() 
+
+: &P(, )
+align*
+Here is one of possible structures for it:
+
+U = , a = 1, I(f)(x) = x+1, I(P) = x y.
+
+Here  means  is true if and only if .
+In other words, we define  by describing the preimage of  under the map .
+exl

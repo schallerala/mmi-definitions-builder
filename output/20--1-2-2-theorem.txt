@@ -1,0 +1,3 @@
+thm
+The number of binary sequences of lenght  is .
+thm

@@ -1,0 +1,15 @@
+rem
+Alternatively to a transition diagram, a DFA can be represented by a table.
+For the DFA from Figure fig:DFAOdd this is
+center
+tabularccc
+&  & 
+
+ &  & 
+
+ &  & 
+tabular
+center
+The table contains the information about the transition function, the set of states, and the input alphabet.
+In addition one should specify the set of final states,  in our case.
+rem

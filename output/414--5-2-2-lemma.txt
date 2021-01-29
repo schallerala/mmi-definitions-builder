@@ -1,0 +1,5 @@
+lem
+lem:MultInverse
+Every formal power series  such that 
+has a unique multiplicative inverse.
+lem

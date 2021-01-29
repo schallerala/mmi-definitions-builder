@@ -1,0 +1,3 @@
+In other words,  is recursively enumerable if there is an algorithm which terminates only when the input  belongs to .
+
+Recursive sets are also called decidable, and recursively enumerable are called semi-decidable.

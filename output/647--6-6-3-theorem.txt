@@ -1,0 +1,3 @@
+thm
+If  for some PDA , then there is a PDA  such that .
+thm

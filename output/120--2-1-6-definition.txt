@@ -1,0 +1,4 @@
+dfn
+A Euler walk on a graph  is a walk that takes each edge of  exactly once.
+A Eulerian circuit is a closed walk that takes each edge exactly once.
+dfn

@@ -1,0 +1,4 @@
+dfn
+The conjugate of a partition  is
+obtained by reflecting the diagram of  in the northwest-southeast diagonal.
+dfn

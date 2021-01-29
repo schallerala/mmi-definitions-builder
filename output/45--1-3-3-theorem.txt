@@ -1,0 +1,4 @@
+thm
+thm:BinPascal
+The -th number in the -th row of the Pascal triangle is equal to .
+thm

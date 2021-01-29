@@ -1,0 +1,8 @@
+lem
+Let .
+The infinite product  is well-defined if and only if .
+Here the degree of a formal power series is the index of the first non-zero coefficient:
+
+(a_m x^m + a_m+1 x^m+1 + ) = m  if  a_m 0.
+
+lem

@@ -1,0 +1,8 @@
+
+The main question which will be studied is:
+center
+What languages are regular?
+center
+
+In other words, what decision problems can be solved by DFAs?
+For example, is there a DFA with the alphabet of propositional logic, which can tell if a given sequence of symbols is a tautological propositional formula?

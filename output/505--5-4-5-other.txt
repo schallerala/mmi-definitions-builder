@@ -1,0 +1,4 @@
+Balanced bracket sequences are characterized by the property that,
+when reading it from the left to the right, the number of closing brackets never exceeds the number of opening brackets.
+This leads to a natural bijection with Dyck paths: interpret an opening bracket as a step upwards, and a closing bracket as a step to the right.
+

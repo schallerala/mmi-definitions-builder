@@ -1,0 +1,4 @@
+exl
+A semantic consequence of an empty theory is a valid sentence (one which is true in all structures).
+If  is valid, then we write .
+exl

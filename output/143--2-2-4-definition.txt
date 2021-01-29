@@ -1,0 +1,4 @@
+dfn
+Let  be a graph.
+A subgraph of a graph  is called a spanning tree if it is a tree with the same vertex set as .
+dfn

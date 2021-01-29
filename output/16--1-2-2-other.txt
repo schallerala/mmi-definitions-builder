@@ -1,0 +1,16 @@
+proof
+Let . With every subset  we associate a map  (the indicator function of ) defined as
+
+1_A(x) =
+cases
+1, &if  x A,
+
+0, &if  x A.
+cases
+
+One can show that  is a bijection between the set of all subsets and the set of all maps :
+different subsets define different maps and every map  is the indicator function of the subset .
+
+The number of all maps  is  by Theorem thm:AllMaps.
+By the bijection principle, the number of all subsets of  is the same.
+proof

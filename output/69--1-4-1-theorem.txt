@@ -1,0 +1,8 @@
+thm
+Let  balls of  different colors be given, with  balls of -th color for all  (so that ).
+Considering balls of the same color undistinguishable, the whole set of  balls can be arranged in a row in
+
+nk_1, , k_m = n!k_1! k_m!
+
+different ways.
+thm
