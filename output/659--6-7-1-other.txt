@@ -9,7 +9,7 @@ P =  for L = , P = S   for L = , P = S a  for L = a.
 proof
 
 proof[Second proof]
-A regular language is accepted by some DFA. 
+A regular language is accepted by some DFA.
 Every DFA can be viewed as a PDA with stack playing no role and word acceptance by final states.
 proof
 

@@ -11,6 +11,3 @@ proof
 
 
 For details seeCL1,CL2.
-
-
-

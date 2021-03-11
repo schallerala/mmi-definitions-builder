@@ -1,7 +1,4 @@
 exl
-The set of all binary words that contain at least one  and at least one 
-can be represented by
-
-(0+1)^*0(0+1)^*1(0+1)^* + (0+1)^*1(0+1)^*0(0+1)^*.
-
+The set of all binary words whose tenth symbol from the right is  can be described by a regular expression ,
+where  denotes .
 exl

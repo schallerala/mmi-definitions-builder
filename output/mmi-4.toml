@@ -103,7 +103,8 @@ files = [
     { path = "output/388--4-3-5-theorem.txt", url = "#", title = "Theorem 3.32. (First Gödel's incompleteness theorem): 4.3. Gödel's incompleteness theorems > 4.3.5. Gödel's incompleteness theorems", page = "388", chapter = "4", type = "theorem" },
     { path = "output/389--4-3-5-other.txt", url = "#", title = " 4.3. Gödel's incompleteness theorems > 4.3.5. Gödel's incompleteness theorems", page = "389", chapter = "4", type = "other" },
     { path = "output/390--4-3-5-corollary.txt", url = "#", title = "Corollary 3.33.: 4.3. Gödel's incompleteness theorems > 4.3.5. Gödel's incompleteness theorems", page = "390", chapter = "4", type = "corollary" },
-    { path = "output/391--4-3-5-other.txt", url = "#", title = " 4.3. Gödel's incompleteness theorems > 4.3.5. Gödel's incompleteness theorems", page = "391", chapter = "4", type = "other" }
+    { path = "output/391--4-3-5-other.txt", url = "#", title = " 4.3. Gödel's incompleteness theorems > 4.3.5. Gödel's incompleteness theorems", page = "391", chapter = "4", type = "other" },
+    { path = "output/392--4-4-2-level.txt", url = "#", title = " 4.4. Own summary > 4.4.1. Equivalences between propositional formulas", page = "392", chapter = "4", type = "level" }
 ]
 [output]
 filename = "output/mmi-4.st"

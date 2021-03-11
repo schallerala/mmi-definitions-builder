@@ -1294,7 +1294,7 @@ This conjecture is true, and we will prove it now.
 \begin{thm}[Inclusion-exclusion formula]
 \label{thm:IncExc}
 \begin{multline*}
-|A_1 \cup \cdots \cup A_n| = \sum_{i=1}^n |A_i| - \sum_{1 \le i < j \le n} |A_i \cap A_j| 
+|A_1 \cup \cdots \cup A_n| = \sum_{i=1}^n |A_i| - \sum_{1 \le i < j \le n} |A_i \cap A_j|
 + \sum_{1 \le i < j < k \le n} |A_i \cap A_j \cap A_k| - \cdots \\
 \cdots +(-1)^{n-1} |A_1 \cap \cdots \cap A_n|
 \end{multline*}
@@ -1332,7 +1332,7 @@ Instead of summing the cardinalities, sum these functions.
 The diagrams on Figures \ref{fig:IncExc2} and \ref{fig:IncExc3} show the values of certain sums of indicator functions.
 The argument in the proof of Theorem \ref{thm:IncExc} shows that
 \begin{multline*}
-\mathbf{1}_{|A_1 \cup \cdots \cup A_n|} = \sum_{i=1}^n \mathbf{1}_{|A_i|} - \sum_{1 \le i < j \le n} \mathbf{1}_{|A_i \cap A_j|} 
+\mathbf{1}_{|A_1 \cup \cdots \cup A_n|} = \sum_{i=1}^n \mathbf{1}_{|A_i|} - \sum_{1 \le i < j \le n} \mathbf{1}_{|A_i \cap A_j|}
 + \sum_{1 \le i < j < k \le n} \mathbf{1}_{|A_i \cap A_j \cap A_k|} - \cdots \\
 \cdots +(-1)^{n-1} \mathbf{1}_{|A_1 \cap \cdots \cap A_n|}
 \end{multline*}
@@ -6535,12 +6535,160 @@ This contradicts the fact that $PA_0$ is undecidable, thus $V$ cannot be recursi
 For details see \cite{CL1,CL2}.
 
 
+\end{page}
+
+%%%%%%%%%% output/392--4-4-2-level.tex
+\begin{page}
+
+\section{Own summary}
+
+
+\subsection{Equivalences between propositional formulas}
+
+There are several simple and useful equivalences between propositional formulas.
+\begin{itemize}
+\item
+Associativity laws
+\[
+(A \wedge B) \wedge C \simeq A \wedge (B \wedge C) \qquad (A \vee B) \vee C \simeq A \vee (B \vee C)
+\]
+\item
+Commutativity laws
+\[
+A \wedge B \simeq B \wedge A \qquad A \vee B \simeq B \vee A
+\]
+\item
+Distributivity laws
+\[
+A \wedge (B \vee C) \simeq (A \wedge B) \vee (A \wedge C) \qquad A \vee (B \wedge C) \simeq (A \vee B) \wedge (A \vee C)
+\]
+\item
+De Morgan's laws
+\[
+\neg(A \wedge B) \simeq \neg A \vee \neg B \qquad \neg(A \vee B) \simeq \neg A \wedge \neg B
+\]
+\item
+Idempotency laws
+\[
+A \wedge A \simeq A \qquad A \vee A \simeq A
+\]
+\item
+Double negation law
+\[
+\neg\neg A \simeq A
+\]
+\end{itemize}
+
+The associativity laws allow us to omit parentheses in conjunctions or disjunctions.
+Due to it we can allow abuse of notation and write strings like this one:
+\[
+p \wedge q \wedge r \wedge s.
+\]
+This is against the syntax rules.
+In order to conform the rules, we must put some parentheses.
+This leads to several different propositional formulas, like $((p \wedge q) \wedge (r \wedge s))$ or $((p \wedge (q \wedge r)) \wedge s)$.
+Although these formulas are different, they are logically equivalent.
+Thus, the string $p \wedge q \wedge r \wedge s$ stands for a class of equivalent formulas.
+
+The distributivity laws allow us to operate with brackets as if $\wedge$ is the multiplication and $\vee$ is the addition
+or vice versa.
+For example,
+\[
+\neg p \vee (p \wedge q) \simeq (\neg p \vee p) \wedge (\neg p \vee q).
+\]
+
+Let us extend the language $\Prop$ by adding two new symbols $\top$ and $\perp$.
+We define a language $\widetilde{\Prop}$ by adding to the point 1. in Definition \ref{dfn:PropForm} that $\top$ and $\perp$ belong to $\widetilde{\Prop}$
+and leaving the other conditions as they are.
+The symbols $\top$ and $\perp$ are \emph{logical constants}: when computing the truth value of a proposition $A$
+we replace each $\top$ by $1$ and each $\perp$ by $0$.
+In $\widetilde{\Prop}$ there are the following logical equivalences.
+\begin{itemize}
+\item
+Laws of zero and one.
+\begin{gather*}
+(A \wedge \perp) \simeq \perp \qquad (A \vee \perp) \simeq A\\
+(A \wedge \top) \simeq A \qquad (A \vee \top) \simeq \top\\
+(A \wedge \neg A) \simeq \perp \qquad (A \vee \neg A) \simeq \top
+\end{gather*}
+\end{itemize}
+
+
+\subsection{All inference rules}
+
+\begin{align*}
+&(\wedge\text{ \rm left}):\
+\AxiomC{$A, B, \Gamma \vdash \Delta$}
+\UnaryInfC{$A \wedge B, \Gamma \vdash \Delta$}
+\DisplayProof
+&&(\wedge\text{ \rm right}):\
+\AxiomC{$\Gamma \vdash A, \Delta$}
+\AxiomC{$\Gamma \vdash B, \Delta$}
+\BinaryInfC{$\Gamma \vdash A \wedge B, \Delta$}
+\DisplayProof
+\\
+&(\vee\text{ \rm left}):\
+\AxiomC{$A, \Gamma \vdash \Delta$}
+\AxiomC{$B, \Gamma \vdash \Delta$}
+\BinaryInfC{$A \vee B, \Gamma \vdash \Delta$}
+\DisplayProof
+&&(\vee\text{ \rm right}):\
+\AxiomC{$\Gamma \vdash A, B, \Delta$}
+\UnaryInfC{$\Gamma \vdash A \vee B, \Delta$}
+\DisplayProof
+\\
+&(\to\text{ \rm left}):\
+\AxiomC{$\Gamma \vdash A, \Delta$}
+\AxiomC{$\Gamma, B \vdash \Delta$}
+\BinaryInfC{$A \to B, \Gamma \vdash \Delta$}
+\DisplayProof
+&&(\to\text{ \rm right}):\
+\AxiomC{$\Gamma, A \vdash B, \Delta$}
+\UnaryInfC{$\Gamma \vdash A \to B, \Delta$}
+\DisplayProof
+\\
+&(\neg\text{ \rm left}):\
+\AxiomC{$\Gamma \vdash A, \Delta$}
+\UnaryInfC{$\neg A, \Gamma \vdash \Delta$}
+\DisplayProof
+&&(\neg\text{ \rm right}):\
+\AxiomC{$A, \Gamma \vdash \Delta$}
+\UnaryInfC{$\Gamma \vdash \neg A, \Delta$}
+\DisplayProof
+\end{align*}
+
+Own comment:
+\begin{itemize}
+  \item \textbf{$A[t/x]$} \textit{replace $x$ with a term (reuse term or add a new one)}
+  \item \textbf{$A[y/x]$} \textit{replace $x$ with a new free variable}
+\end{itemize}
+
+\begin{align*}
+&(\forall\text{ \rm left}):\
+\AxiomC{$A[t/x], \forall x A, \Gamma \vdash \Delta$}
+\UnaryInfC{$\forall x A, \Gamma \vdash \Delta$}
+\DisplayProof
+&&(\forall\text{ \rm right}):\
+\AxiomC{$\Gamma \vdash A[y/x], \Delta$}
+\UnaryInfC{$\Gamma \vdash \forall x A, \Delta$}
+\DisplayProof
+\\
+&(\exists\text{ \rm left}):\
+\AxiomC{$A[y/x], \Gamma \vdash \Delta$}
+\UnaryInfC{$\exists x A, \Gamma \vdash \Delta$}
+\DisplayProof
+&&(\exists\text{ \rm right}):\
+\AxiomC{$\Gamma \vdash A[t/x], \exists x A, \Delta$}
+\UnaryInfC{$\Gamma \vdash \exists x A, \Delta$}
+\DisplayProof
+\end{align*}
+
 
 
 
 \end{page}
 
-%%%%%%%%%% output/392--5-1-1-level.tex
+%%%%%%%%%% output/393--5-1-1-level.tex
 \begin{page}
 
 \chapter{Combinatorics II}
@@ -6560,7 +6708,7 @@ Here are the first several terms:
 
 \end{page}
 
-%%%%%%%%%% output/393--5-1-1-theorem.tex
+%%%%%%%%%% output/394--5-1-1-theorem.tex
 \begin{page}
 
 \begin{thm}[Binet]
@@ -6573,7 +6721,7 @@ a_n = \frac{\left(\frac{1+\sqrt{5}}2\right)^n - \left(\frac{1-\sqrt{5}}2\right)^
 
 \end{page}
 
-%%%%%%%%%% output/394--5-1-1-other.tex
+%%%%%%%%%% output/395--5-1-1-other.tex
 \begin{page}
 
 
@@ -6602,7 +6750,7 @@ where $\lfloor x \rceil$ denotes the closest integer to the number $x$.
 
 \end{page}
 
-%%%%%%%%%% output/395--5-1-2-level.tex
+%%%%%%%%%% output/396--5-1-2-level.tex
 \begin{page}
 
 \subsection{Linear recursive sequences of order 2}
@@ -6611,7 +6759,7 @@ We will prove not only the Binet formula, but show that similar formulas hold fo
 
 \end{page}
 
-%%%%%%%%%% output/396--5-1-2-definition.tex
+%%%%%%%%%% output/397--5-1-2-definition.tex
 \begin{page}
 
 \begin{dfn}
@@ -6626,7 +6774,7 @@ for some constant coefficients $r$ and $s$, where $s \ne 0$.
 
 \end{page}
 
-%%%%%%%%%% output/397--5-1-2-other.tex
+%%%%%%%%%% output/398--5-1-2-other.tex
 \begin{page}
 
 Such a sequence is uniquely determined by the values of $a_0$ and $a_1$.
@@ -6634,7 +6782,7 @@ Such a sequence is uniquely determined by the values of $a_0$ and $a_1$.
 
 \end{page}
 
-%%%%%%%%%% output/398--5-1-2-definition.tex
+%%%%%%%%%% output/399--5-1-2-definition.tex
 \begin{page}
 
 \begin{dfn}
@@ -6646,7 +6794,7 @@ x^2 - rx - s.
 
 \end{page}
 
-%%%%%%%%%% output/399--5-1-2-theorem.tex
+%%%%%%%%%% output/400--5-1-2-theorem.tex
 \begin{page}
 
 \begin{thm}
@@ -6670,7 +6818,7 @@ for some $c_1, c_2 \in \R$.
 
 \end{page}
 
-%%%%%%%%%% output/400--5-1-2-other.tex
+%%%%%%%%%% output/401--5-1-2-other.tex
 \begin{page}
 
 \begin{proof}
@@ -6730,7 +6878,7 @@ The characteristic polynomial is $\lambda^2 - \lambda - 1$. Its roots are
 \label{eqn:FibRoots}
 \lambda_1 = \frac{1 + \sqrt{5}}2, \quad \lambda_2 = \frac{1 - \sqrt{5}}2.
 \end{equation}
-If we start the Fibonacci sequence from the zeroth term so that the recurrence relation holds between $a_0$, $a_1$, $a_2$ as well, 
+If we start the Fibonacci sequence from the zeroth term so that the recurrence relation holds between $a_0$, $a_1$, $a_2$ as well,
 then we must put $a_0 = 0$.
 Thus the coefficients $c_1$ and $c_2$ are found from the system
 \begin{gather*}
@@ -6750,7 +6898,7 @@ a_n = \frac{1}{\sqrt{5}} \lambda_1^n - \frac{1}{\sqrt{5}} \lambda_2^n.
 
 \end{page}
 
-%%%%%%%%%% output/401--5-1-3-level.tex
+%%%%%%%%%% output/402--5-1-3-level.tex
 \begin{page}
 
 \subsection{Linear recursive sequences of higher order}
@@ -6758,7 +6906,7 @@ Linear recursive sequences of higher orders are defined similarly and can be han
 
 \end{page}
 
-%%%%%%%%%% output/402--5-1-3-definition.tex
+%%%%%%%%%% output/403--5-1-3-definition.tex
 \begin{page}
 
 \begin{dfn}
@@ -6773,7 +6921,7 @@ for all $n \ge k$ for some constants $r_1, \ldots, r_k$, where $r_k \ne 0$.
 
 \end{page}
 
-%%%%%%%%%% output/403--5-1-3-other.tex
+%%%%%%%%%% output/404--5-1-3-other.tex
 \begin{page}
 
 A linear recursive sequence of order $k$ is completely determined by the values of its first $k$ terms.
@@ -6781,7 +6929,7 @@ A linear recursive sequence of order $k$ is completely determined by the values 
 
 \end{page}
 
-%%%%%%%%%% output/404--5-1-3-definition.tex
+%%%%%%%%%% output/405--5-1-3-definition.tex
 \begin{page}
 
 \begin{dfn}
@@ -6793,7 +6941,7 @@ P(x) = x^k - r_1 x^{k-1} - r_2 x^{k-2} - \cdots - r_k.
 
 \end{page}
 
-%%%%%%%%%% output/405--5-1-3-theorem.tex
+%%%%%%%%%% output/406--5-1-3-theorem.tex
 \begin{page}
 
 \begin{thm}
@@ -6804,7 +6952,7 @@ Then the sequence $a_n$ is a linear combination of the sequences $n^j \lambda_i^
 
 \end{page}
 
-%%%%%%%%%% output/406--5-1-3-other.tex
+%%%%%%%%%% output/407--5-1-3-other.tex
 \begin{page}
 
 We don't give the proof, which is similar to the case of sequences of order 2.
@@ -6820,7 +6968,7 @@ the recursive relation \eqref{eqn:LinReck}.
 
 \end{page}
 
-%%%%%%%%%% output/407--5-1-5-level.tex
+%%%%%%%%%% output/408--5-1-5-level.tex
 \begin{page}
 
 \subsection{The case of complex roots}
@@ -6887,7 +7035,7 @@ a_n = \frac{a_{n-1}}2 - a_{n-2}.
 
 \end{page}
 
-%%%%%%%%%% output/408--5-1-5-theorem.tex
+%%%%%%%%%% output/409--5-1-5-theorem.tex
 \begin{page}
 
 \begin{thm}
@@ -6900,7 +7048,7 @@ For example,
 
 \end{page}
 
-%%%%%%%%%% output/409--5-1-5-other.tex
+%%%%%%%%%% output/410--5-1-5-other.tex
 \begin{page}
 
 This and many other relations between Fibonacci numbers can be proved by induction,
@@ -6935,7 +7083,7 @@ a_{n-1} a_{n+1} = \frac15(\lambda_1^{2n} + \lambda_2^{2n} - 3(-1)^{n-1}) = a_n^2
 
 \end{page}
 
-%%%%%%%%%% output/410--5-2-2-level.tex
+%%%%%%%%%% output/411--5-2-2-level.tex
 \begin{page}
 
 \section{Generating functions}
@@ -7024,7 +7172,7 @@ We choose the second approach: \emph{formal power series}.
 
 \end{page}
 
-%%%%%%%%%% output/411--5-2-2-definition.tex
+%%%%%%%%%% output/412--5-2-2-definition.tex
 \begin{page}
 
 \begin{dfn}
@@ -7045,7 +7193,7 @@ c_k = a_0b_k + a_1b_{k-1} + \cdots + a_kb_0 = \sum_{i=0}^k a_i b_{k-i}.
 
 \end{page}
 
-%%%%%%%%%% output/412--5-2-2-other.tex
+%%%%%%%%%% output/413--5-2-2-other.tex
 \begin{page}
 
 The formula for the product comes from expanding the brackets in
@@ -7061,7 +7209,7 @@ etc.
 
 \end{page}
 
-%%%%%%%%%% output/413--5-2-2-definition.tex
+%%%%%%%%%% output/414--5-2-2-definition.tex
 \begin{page}
 
 \begin{dfn}
@@ -7073,7 +7221,7 @@ A(x)B(x) = 1 = 1 + 0 \cdot x + 0 \cdot x^2 + \cdots.
 
 \end{page}
 
-%%%%%%%%%% output/414--5-2-2-lemma.tex
+%%%%%%%%%% output/415--5-2-2-lemma.tex
 \begin{page}
 
 \begin{lem}
@@ -7084,7 +7232,7 @@ has a unique multiplicative inverse.
 
 \end{page}
 
-%%%%%%%%%% output/415--5-2-2-other.tex
+%%%%%%%%%% output/416--5-2-2-other.tex
 \begin{page}
 
 \begin{proof}
@@ -7113,7 +7261,7 @@ We denote the inverse series to $A(x)$ by $(A(x))^{-1}$ or $\frac{1}{A(x)}$.
 
 \end{page}
 
-%%%%%%%%%% output/416--5-2-2-example.tex
+%%%%%%%%%% output/417--5-2-2-example.tex
 \begin{page}
 
 \begin{exl}
@@ -7130,7 +7278,7 @@ shows.
 
 \end{page}
 
-%%%%%%%%%% output/417--5-2-2-definition.tex
+%%%%%%%%%% output/418--5-2-2-definition.tex
 \begin{page}
 
 \begin{dfn}
@@ -7142,7 +7290,7 @@ A(B(x)) = \sum_{k=0}^\infty a_k (B(x))^k.
 
 \end{page}
 
-%%%%%%%%%% output/418--5-2-2-other.tex
+%%%%%%%%%% output/419--5-2-2-other.tex
 \begin{page}
 
 The composition is not always well-defined. Indeed, we have
@@ -7160,7 +7308,7 @@ Thus we arrive to the following conclusion.
 
 \end{page}
 
-%%%%%%%%%% output/419--5-2-2-lemma.tex
+%%%%%%%%%% output/420--5-2-2-lemma.tex
 \begin{page}
 
 \begin{lem}
@@ -7169,7 +7317,7 @@ The composition $A(B(x))$ is well-defined if $b_0 = 0$.
 
 \end{page}
 
-%%%%%%%%%% output/420--5-2-2-other.tex
+%%%%%%%%%% output/421--5-2-2-other.tex
 \begin{page}
 
 (Note that it is also well-defined for any value of $b_0$ provided that $A(x)$ is a polynomial, but we are not going to need this.)
@@ -7188,7 +7336,7 @@ This implies in particular that for every formal power series $B(x)$ with $b_0 =
 
 \end{page}
 
-%%%%%%%%%% output/421--5-2-2-example.tex
+%%%%%%%%%% output/422--5-2-2-example.tex
 \begin{page}
 
 \begin{exl}
@@ -7206,7 +7354,7 @@ One has
 
 \end{page}
 
-%%%%%%%%%% output/422--5-2-2-other.tex
+%%%%%%%%%% output/423--5-2-2-other.tex
 \begin{page}
 
 
@@ -7218,14 +7366,14 @@ The definition and lemmas of this section give a meaning to the manipulations do
 
 \end{page}
 
-%%%%%%%%%% output/423--5-2-3-level.tex
+%%%%%%%%%% output/424--5-2-3-level.tex
 \begin{page}
 
 \subsection{Linear recursive sequences and partial fraction decomposition}
 
 \end{page}
 
-%%%%%%%%%% output/424--5-2-3-definition.tex
+%%%%%%%%%% output/425--5-2-3-definition.tex
 \begin{page}
 
 \begin{dfn}
@@ -7238,7 +7386,7 @@ is called the \emph{generating function} of the sequence $a_0, a_1, a_2, \ldots$
 
 \end{page}
 
-%%%%%%%%%% output/425--5-2-3-theorem.tex
+%%%%%%%%%% output/426--5-2-3-theorem.tex
 \begin{page}
 
 \begin{thm}
@@ -7254,7 +7402,7 @@ can be written in the form $\frac{B(x)}{\overline{P}(x)}$, where $B(x)$ is some 
 
 \end{page}
 
-%%%%%%%%%% output/426--5-2-3-other.tex
+%%%%%%%%%% output/427--5-2-3-other.tex
 \begin{page}
 
 
@@ -7269,14 +7417,14 @@ Note that $\overline{P}(x)$ is related to the characteristic polynomial $P(x)$ t
 It follows that the roots of the polynomial $\overline{P}(x)$ are reciprocals of the roots of $P(x)$.
 More exactly, if $P(x) = (x - \lambda_1)^{k_1} \cdots (x - \lambda_m)^{k_m}$, then
 \[
-\overline{P}(x) = (1 - \lambda_1 x)^{k_1} \cdots (1- \lambda_m)^{k_m}.
+\overline{P}(x) = (1 - \lambda_1 x)^{k_1} \cdots (1- \lambda_m x)^{k_m}.
 \]
 
 The following theorem generalizes our representation of the fraction $\frac{x}{1-x-x^2}$ as a sum of two simpler fractions.
 
 \end{page}
 
-%%%%%%%%%% output/427--5-2-3-theorem.tex
+%%%%%%%%%% output/428--5-2-3-theorem.tex
 \begin{page}
 
 \begin{thm}[Partial fraction decomposition]
@@ -7299,7 +7447,7 @@ Then there are real numbers $c_{ij}$, $1 \le i \le m$, $1 \le j \le k_i$ such th
 
 \end{page}
 
-%%%%%%%%%% output/428--5-2-3-remark.tex
+%%%%%%%%%% output/429--5-2-3-remark.tex
 \begin{page}
 
 \begin{rem}
@@ -7312,7 +7460,7 @@ and then apply the theorem to a fraction with $R$ in place of $B$.
 
 \end{page}
 
-%%%%%%%%%% output/429--5-2-3-other.tex
+%%%%%%%%%% output/430--5-2-3-other.tex
 \begin{page}
 
 
@@ -7333,7 +7481,7 @@ In the case of multiple roots we need to represent the quotient $\frac{1}{(1-\la
 
 \end{page}
 
-%%%%%%%%%% output/430--5-2-4-level.tex
+%%%%%%%%%% output/431--5-2-4-level.tex
 \begin{page}
 
 \subsection{Generalized binomial theorem}
@@ -7341,7 +7489,7 @@ In the case of multiple roots we need to represent the quotient $\frac{1}{(1-\la
 
 \end{page}
 
-%%%%%%%%%% output/431--5-2-4-theorem.tex
+%%%%%%%%%% output/432--5-2-4-theorem.tex
 \begin{page}
 
 \begin{thm}
@@ -7359,7 +7507,7 @@ where
 
 \end{page}
 
-%%%%%%%%%% output/432--5-2-4-other.tex
+%%%%%%%%%% output/433--5-2-4-other.tex
 \begin{page}
 
 
@@ -7369,7 +7517,7 @@ This is a power series $A(x)$ such that $A(x) (1+x)^n = 1$.
 
 \end{page}
 
-%%%%%%%%%% output/433--5-2-4-remark.tex
+%%%%%%%%%% output/434--5-2-4-remark.tex
 \begin{page}
 
 \begin{rem}
@@ -7386,7 +7534,7 @@ Therefore, by substituting $-x$ instead of $x$ one can rewrite \eqref{eqn:BinomN
 
 \end{page}
 
-%%%%%%%%%% output/434--5-2-4-other.tex
+%%%%%%%%%% output/435--5-2-4-other.tex
 \begin{page}
 
 
@@ -7401,7 +7549,7 @@ Now let us just check it for a special case $n=2$:
 
 \end{page}
 
-%%%%%%%%%% output/435--5-2-4-definition.tex
+%%%%%%%%%% output/436--5-2-4-definition.tex
 \begin{page}
 
 \begin{dfn}
@@ -7413,7 +7561,7 @@ For every $\alpha \in \R$ and every non-negative integer $k$ define the \emph{ge
 
 \end{page}
 
-%%%%%%%%%% output/436--5-2-4-other.tex
+%%%%%%%%%% output/437--5-2-4-other.tex
 \begin{page}
 
 For $k = 0$ the products in the denominator and in the numerator are empty, therefore we have $\binom{\alpha}{k} = \frac{1}{1} = 1$.
@@ -7421,7 +7569,7 @@ For $k = 0$ the products in the denominator and in the numerator are empty, ther
 
 \end{page}
 
-%%%%%%%%%% output/437--5-2-4-theorem.tex
+%%%%%%%%%% output/438--5-2-4-theorem.tex
 \begin{page}
 
 \begin{thm}[Vandermonde's identity]
@@ -7434,7 +7582,7 @@ For every $\alpha, \beta \in \R$ the following holds:
 
 \end{page}
 
-%%%%%%%%%% output/438--5-2-4-other.tex
+%%%%%%%%%% output/439--5-2-4-other.tex
 \begin{page}
 
 
@@ -7443,7 +7591,7 @@ A straightforward consequence of this is the following.
 
 \end{page}
 
-%%%%%%%%%% output/439--5-2-4-corollary.tex
+%%%%%%%%%% output/440--5-2-4-corollary.tex
 \begin{page}
 
 \begin{cor}
@@ -7465,7 +7613,7 @@ In particular, for every $p \in \Z$ and $q \in \N$ one has
 
 \end{page}
 
-%%%%%%%%%% output/440--5-2-4-other.tex
+%%%%%%%%%% output/441--5-2-4-other.tex
 \begin{page}
 
 
@@ -7510,7 +7658,7 @@ Thus the polynomials are identically equal.
 
 \end{page}
 
-%%%%%%%%%% output/441--5-3-1-level.tex
+%%%%%%%%%% output/442--5-3-1-level.tex
 \begin{page}
 
 \section{Partition of integers}
@@ -7534,7 +7682,7 @@ What can one say about $a_n$?
 
 \end{page}
 
-%%%%%%%%%% output/442--5-3-1-theorem.tex
+%%%%%%%%%% output/443--5-3-1-theorem.tex
 \begin{page}
 
 \begin{thm}
@@ -7547,7 +7695,7 @@ The generating function of the sequence $a_n$ has the following form:
 
 \end{page}
 
-%%%%%%%%%% output/443--5-3-1-other.tex
+%%%%%%%%%% output/444--5-3-1-other.tex
 \begin{page}
 
 \begin{proof}
@@ -7579,7 +7727,7 @@ a_n \sim \frac{n^2}{9 \cdot 17 \cdot 31} = \frac{n^2}{4743}, \text{ that is } \l
 
 \end{page}
 
-%%%%%%%%%% output/444--5-3-2-level.tex
+%%%%%%%%%% output/445--5-3-2-level.tex
 \begin{page}
 
 \subsection{Compositions again}
@@ -7592,7 +7740,7 @@ Fix a positive integer $k$ and denote by $a_n$ the number of weak compositions o
 
 \end{page}
 
-%%%%%%%%%% output/445--5-3-2-theorem.tex
+%%%%%%%%%% output/446--5-3-2-theorem.tex
 \begin{page}
 
 \begin{thm}
@@ -7604,7 +7752,7 @@ The generating function of the sequence $a_n$ has the following form:
 
 \end{page}
 
-%%%%%%%%%% output/446--5-3-2-other.tex
+%%%%%%%%%% output/447--5-3-2-other.tex
 \begin{page}
 
 \begin{proof}
@@ -7638,7 +7786,7 @@ a_n = (-1)^n \binom{-k}{n} = \binom{n+k-1}{n} = \binom{n+k-1}{k-1}.
 
 \end{page}
 
-%%%%%%%%%% output/447--5-3-4-level.tex
+%%%%%%%%%% output/448--5-3-4-level.tex
 \begin{page}
 
 \subsection{Fibonacci once again}
@@ -7674,7 +7822,7 @@ See Figure \ref{fig:FibDomino}.
 
 \end{page}
 
-%%%%%%%%%% output/448--5-3-4-definition.tex
+%%%%%%%%%% output/449--5-3-4-definition.tex
 \begin{page}
 
 \begin{dfn}
@@ -7686,7 +7834,7 @@ The number of partitions of $n$ is denoted by $p_n$.
 
 \end{page}
 
-%%%%%%%%%% output/449--5-3-4-other.tex
+%%%%%%%%%% output/450--5-3-4-other.tex
 \begin{page}
 
 In order to distinguish between different partitions, it is convenient to write the summands in the non-increasing order.
@@ -7695,7 +7843,7 @@ This means, one can also define partitions as compositions with non-increasing s
 
 \end{page}
 
-%%%%%%%%%% output/450--5-3-4-example.tex
+%%%%%%%%%% output/451--5-3-4-example.tex
 \begin{page}
 
 \begin{exl}
@@ -7714,7 +7862,7 @@ Thus we have $p_5=7$.
 
 \end{page}
 
-%%%%%%%%%% output/451--5-3-4-other.tex
+%%%%%%%%%% output/452--5-3-4-other.tex
 \begin{page}
 
 
@@ -7732,7 +7880,7 @@ Often we will be using the generating function method.
 
 \end{page}
 
-%%%%%%%%%% output/452--5-3-4-theorem.tex
+%%%%%%%%%% output/453--5-3-4-theorem.tex
 \begin{page}
 
 \begin{thm}
@@ -7744,7 +7892,7 @@ The generating function of the sequence $p_n$ is
 
 \end{page}
 
-%%%%%%%%%% output/453--5-3-4-other.tex
+%%%%%%%%%% output/454--5-3-4-other.tex
 \begin{page}
 
 \begin{proof}
@@ -7772,7 +7920,7 @@ Definitions below formalize this.
 
 \end{page}
 
-%%%%%%%%%% output/454--5-3-4-definition.tex
+%%%%%%%%%% output/455--5-3-4-definition.tex
 \begin{page}
 
 \begin{dfn}
@@ -7784,7 +7932,7 @@ One says that a sequence $c_n$ \emph{stabilizes} to $c$ if $c_n = c$ for all suf
 
 \end{page}
 
-%%%%%%%%%% output/455--5-3-4-definition.tex
+%%%%%%%%%% output/456--5-3-4-definition.tex
 \begin{page}
 
 \begin{dfn}
@@ -7804,7 +7952,7 @@ if the sequence of coefficients at $x^n$ in $B_k(x)$ stabilizes to the coefficie
 
 \end{page}
 
-%%%%%%%%%% output/456--5-3-4-definition.tex
+%%%%%%%%%% output/457--5-3-4-definition.tex
 \begin{page}
 
 \begin{dfn}
@@ -7815,7 +7963,7 @@ if the sequence of coefficients at $x^n$ in $B_k(x)$ stabilizes to the coefficie
 
 \end{page}
 
-%%%%%%%%%% output/457--5-3-4-lemma.tex
+%%%%%%%%%% output/458--5-3-4-lemma.tex
 \begin{page}
 
 \begin{lem}
@@ -7829,7 +7977,7 @@ Here the \emph{degree} of a formal power series is the index of the first non-ze
 
 \end{page}
 
-%%%%%%%%%% output/458--5-3-5-level.tex
+%%%%%%%%%% output/459--5-3-5-level.tex
 \begin{page}
 
 \subsection{Algebraic and bijective proofs}
@@ -7840,7 +7988,7 @@ Here is the first amazing fact about partitions.
 
 \end{page}
 
-%%%%%%%%%% output/459--5-3-5-theorem.tex
+%%%%%%%%%% output/460--5-3-5-theorem.tex
 \begin{page}
 
 \begin{thm}
@@ -7849,7 +7997,7 @@ The number of partitions of $n$ into distinct parts is equal to the number of pa
 
 \end{page}
 
-%%%%%%%%%% output/460--5-3-5-other.tex
+%%%%%%%%%% output/461--5-3-5-other.tex
 \begin{page}
 
 \begin{proof}[Algebraic proof]
@@ -7908,7 +8056,7 @@ Thus we have a bijection between partitions into odd and partitions into distinc
 
 \end{page}
 
-%%%%%%%%%% output/461--5-3-5-example.tex
+%%%%%%%%%% output/462--5-3-5-example.tex
 \begin{page}
 
 \begin{exl}
@@ -7924,7 +8072,7 @@ Turning a partition with distinct parts into a partition with odd parts:
 
 \end{page}
 
-%%%%%%%%%% output/462--5-3-6-level.tex
+%%%%%%%%%% output/463--5-3-6-level.tex
 \begin{page}
 
 \subsection{Ferrers diagrams}
@@ -7949,7 +8097,7 @@ With the help of Ferrers diagrams one can define the following transformation of
 
 \end{page}
 
-%%%%%%%%%% output/463--5-3-6-definition.tex
+%%%%%%%%%% output/464--5-3-6-definition.tex
 \begin{page}
 
 \begin{dfn}
@@ -7959,7 +8107,7 @@ obtained by reflecting the diagram of $\lambda$ in the northwest-southeast diago
 
 \end{page}
 
-%%%%%%%%%% output/464--5-3-6-example.tex
+%%%%%%%%%% output/465--5-3-6-example.tex
 \begin{page}
 
 \begin{exl}
@@ -7968,7 +8116,7 @@ The conjugate of $8 = 4 + 3 + 1$ is $8 = 3 + 2 + 2 + 1$, see Figure \ref{fig:Fer
 
 \end{page}
 
-%%%%%%%%%% output/465--5-3-6-other.tex
+%%%%%%%%%% output/466--5-3-6-other.tex
 \begin{page}
 
 
@@ -7985,7 +8133,7 @@ Conjugation provides an immediate proof of the following theorem.
 
 \end{page}
 
-%%%%%%%%%% output/466--5-3-6-theorem.tex
+%%%%%%%%%% output/467--5-3-6-theorem.tex
 \begin{page}
 
 \begin{thm}
@@ -7997,7 +8145,7 @@ The number of partitions of $n$ into at most $k$ parts is equal to the number of
 
 \end{page}
 
-%%%%%%%%%% output/467--5-3-6-other.tex
+%%%%%%%%%% output/468--5-3-6-other.tex
 \begin{page}
 
 \begin{proof}
@@ -8029,7 +8177,7 @@ Figure \ref{fig:FerrersSelfConj} shows all self-conjugate partitions of $12$.
 
 \end{page}
 
-%%%%%%%%%% output/468--5-3-6-theorem.tex
+%%%%%%%%%% output/469--5-3-6-theorem.tex
 \begin{page}
 
 \begin{thm}
@@ -8038,7 +8186,7 @@ The number of self-conjugate partitions of $n$ is equal to the number of partiti
 
 \end{page}
 
-%%%%%%%%%% output/469--5-3-6-other.tex
+%%%%%%%%%% output/470--5-3-6-other.tex
 \begin{page}
 
 \begin{proof}
@@ -8070,7 +8218,7 @@ Thus we have a bijection between the set of self-conjugate partitions and the se
 
 \end{page}
 
-%%%%%%%%%% output/470--5-3-7-level.tex
+%%%%%%%%%% output/471--5-3-7-level.tex
 \begin{page}
 
 \subsection{Recursive formulas for the number of partitions}
@@ -8082,7 +8230,7 @@ Clearly, one has $p_n = p(n, \le n)$.
 
 \end{page}
 
-%%%%%%%%%% output/471--5-3-7-theorem.tex
+%%%%%%%%%% output/472--5-3-7-theorem.tex
 \begin{page}
 
 \begin{thm}
@@ -8095,7 +8243,7 @@ p(n, \le k) = p(n, \le k-1) + p(n-k, \le k).
 
 \end{page}
 
-%%%%%%%%%% output/472--5-3-7-other.tex
+%%%%%%%%%% output/473--5-3-7-other.tex
 \begin{page}
 
 \begin{proof}
@@ -8112,7 +8260,7 @@ and proves the theorem.
 
 \end{page}
 
-%%%%%%%%%% output/473--5-3-7-remark.tex
+%%%%%%%%%% output/474--5-3-7-remark.tex
 \begin{page}
 
 \begin{rem}
@@ -8122,7 +8270,7 @@ consists in removing the leftmost column of the diagram.
 
 \end{page}
 
-%%%%%%%%%% output/474--5-3-7-other.tex
+%%%%%%%%%% output/475--5-3-7-other.tex
 \begin{page}
 
 
@@ -8153,7 +8301,7 @@ There is a recurrence which allows a much faster computation of the number of pa
 
 \end{page}
 
-%%%%%%%%%% output/475--5-3-7-theorem.tex
+%%%%%%%%%% output/476--5-3-7-theorem.tex
 \begin{page}
 
 \begin{thm}[MacMahon's recurrence]
@@ -8166,7 +8314,7 @@ Here the notation $p(n)$ is used instead of $p_n$.
 
 \end{page}
 
-%%%%%%%%%% output/476--5-3-7-other.tex
+%%%%%%%%%% output/477--5-3-7-other.tex
 \begin{page}
 
 
@@ -8190,7 +8338,7 @@ We will prove MacMahon's recurrence in the next section.
 
 \end{page}
 
-%%%%%%%%%% output/477--5-3-8-level.tex
+%%%%%%%%%% output/478--5-3-8-level.tex
 \begin{page}
 
 \subsection{Pentagonal numbers and the Euler identity}
@@ -8198,7 +8346,7 @@ MacMahon's recurrence is a consequence of the following remarkable theorem.
 
 \end{page}
 
-%%%%%%%%%% output/478--5-3-8-theorem.tex
+%%%%%%%%%% output/479--5-3-8-theorem.tex
 \begin{page}
 
 \begin{thm}[Euler]
@@ -8212,7 +8360,7 @@ One has
 
 \end{page}
 
-%%%%%%%%%% output/479--5-3-8-other.tex
+%%%%%%%%%% output/480--5-3-8-other.tex
 \begin{page}
 
 
@@ -8280,7 +8428,7 @@ respectively odd number of distinct parts.
 
 \end{page}
 
-%%%%%%%%%% output/480--5-3-8-lemma.tex
+%%%%%%%%%% output/481--5-3-8-lemma.tex
 \begin{page}
 
 \begin{lem}
@@ -8292,7 +8440,7 @@ We have
 
 \end{page}
 
-%%%%%%%%%% output/481--5-3-8-other.tex
+%%%%%%%%%% output/482--5-3-8-other.tex
 \begin{page}
 
 \begin{proof}
@@ -8310,7 +8458,7 @@ We have reduced Theorem \ref{thm:EulerPenta} to the following lemma.
 
 \end{page}
 
-%%%%%%%%%% output/482--5-3-8-lemma.tex
+%%%%%%%%%% output/483--5-3-8-lemma.tex
 \begin{page}
 
 \begin{lem}
@@ -8326,7 +8474,7 @@ q_{n,\mathrm{even}} - q_{n, \mathrm{odd}} =
 
 \end{page}
 
-%%%%%%%%%% output/483--5-3-8-other.tex
+%%%%%%%%%% output/484--5-3-8-other.tex
 \begin{page}
 
 \begin{proof}
@@ -8394,12 +8542,12 @@ and if $k$ is odd, then there is one odd partition more than even.
 
 \end{page}
 
-%%%%%%%%%% output/484--5-4-1-level.tex
+%%%%%%%%%% output/485--5-4-1-level.tex
 \begin{page}
 
 \subsection{More about partitions}
 \begin{itemize}
-\item 
+\item
 An infinite (but fast convergent) series that computes $p_n$ was found by Ramanujan and Hardy and later improved by Rademacher.
 A consequences of the latter is the asymptotics for the number of partitions:
 \[
@@ -8444,7 +8592,7 @@ a full binary rooted tree with $n+1$ leaves has $2n+1$ vertices and $2n$ edges.
 
 \end{page}
 
-%%%%%%%%%% output/485--5-4-1-definition.tex
+%%%%%%%%%% output/486--5-4-1-definition.tex
 \begin{page}
 
 \begin{dfn}
@@ -8453,7 +8601,7 @@ The number of different full binary rooted trees with $n+1$ leaves is called the
 
 \end{page}
 
-%%%%%%%%%% output/486--5-4-1-other.tex
+%%%%%%%%%% output/487--5-4-1-other.tex
 \begin{page}
 
 We count trees not up to isomorphism, but take into account also the way they are drawn in the plane.
@@ -8473,7 +8621,7 @@ One has $c_1 = 1, c_2 = 2, c_3 = 5, c_4 = 14, \ldots$.
 
 \end{page}
 
-%%%%%%%%%% output/487--5-4-1-theorem.tex
+%%%%%%%%%% output/488--5-4-1-theorem.tex
 \begin{page}
 
 \begin{thm}
@@ -8487,7 +8635,7 @@ where one puts $c_0 = 1$.
 
 \end{page}
 
-%%%%%%%%%% output/488--5-4-1-other.tex
+%%%%%%%%%% output/489--5-4-1-other.tex
 \begin{page}
 
 
@@ -8513,7 +8661,7 @@ This leads to the formula.
 
 \end{page}
 
-%%%%%%%%%% output/489--5-4-2-level.tex
+%%%%%%%%%% output/490--5-4-2-level.tex
 \begin{page}
 
 \subsection{Generating function and the formula for $c_n$}
@@ -8521,7 +8669,7 @@ This leads to the formula.
 
 \end{page}
 
-%%%%%%%%%% output/490--5-4-2-theorem.tex
+%%%%%%%%%% output/491--5-4-2-theorem.tex
 \begin{page}
 
 \begin{thm}
@@ -8535,7 +8683,7 @@ c_n = \frac1{n+1} \binom{2n}{n}.
 
 \end{page}
 
-%%%%%%%%%% output/491--5-4-2-lemma.tex
+%%%%%%%%%% output/492--5-4-2-lemma.tex
 \begin{page}
 
 \begin{lem}
@@ -8549,7 +8697,7 @@ the following identity holds:
 
 \end{page}
 
-%%%%%%%%%% output/492--5-4-2-other.tex
+%%%%%%%%%% output/493--5-4-2-other.tex
 \begin{page}
 
 Observe that on the right hand side we divide a formal power series by $x$.
@@ -8612,7 +8760,7 @@ which proves the theorem.
 
 \end{page}
 
-%%%%%%%%%% output/493--5-4-3-level.tex
+%%%%%%%%%% output/494--5-4-3-level.tex
 \begin{page}
 
 \subsection{Bracket-variable expressions}
@@ -8642,7 +8790,7 @@ below are all expressions with four variables:
 
 \end{page}
 
-%%%%%%%%%% output/494--5-4-3-theorem.tex
+%%%%%%%%%% output/495--5-4-3-theorem.tex
 \begin{page}
 
 \begin{thm}
@@ -8651,7 +8799,7 @@ The number of different multiplication orders in a sequence of $n+1$ variables i
 
 \end{page}
 
-%%%%%%%%%% output/495--5-4-3-other.tex
+%%%%%%%%%% output/496--5-4-3-other.tex
 \begin{page}
 
 \begin{proof}
@@ -8679,7 +8827,7 @@ Split in the same way the expressions at the child vertices and continue until a
 
 \end{page}
 
-%%%%%%%%%% output/496--5-4-4-level.tex
+%%%%%%%%%% output/497--5-4-4-level.tex
 \begin{page}
 
 \subsection{Triangulations of polygons}
@@ -8688,7 +8836,7 @@ A \emph{triangulation} of a polygon is a subdivision of the polygon into triangl
 
 \end{page}
 
-%%%%%%%%%% output/497--5-4-4-theorem.tex
+%%%%%%%%%% output/498--5-4-4-theorem.tex
 \begin{page}
 
 \begin{thm}
@@ -8697,7 +8845,7 @@ The number of different triangulations of a convex $(n+2)$-gon is equal to the $
 
 \end{page}
 
-%%%%%%%%%% output/498--5-4-4-other.tex
+%%%%%%%%%% output/499--5-4-4-other.tex
 \begin{page}
 
 In Figure \ref{fig:PentaTriangulations} all triangulations of a regular pentagon are presented.
@@ -8745,7 +8893,7 @@ Finally, for every edge of the tree glue the triangles surrounding the incident 
 
 \end{page}
 
-%%%%%%%%%% output/499--5-4-5-level.tex
+%%%%%%%%%% output/500--5-4-5-level.tex
 \begin{page}
 
 \subsection{Dyck paths}
@@ -8755,7 +8903,7 @@ As we know, there are $\binom{2n}{n}$ monotone paths from $(0,0)$ to $(n,n)$.
 
 \end{page}
 
-%%%%%%%%%% output/500--5-4-5-definition.tex
+%%%%%%%%%% output/501--5-4-5-definition.tex
 \begin{page}
 
 \begin{dfn}
@@ -8765,7 +8913,7 @@ The path is allowed to touch the diagonal, but not to cross it.
 
 \end{page}
 
-%%%%%%%%%% output/501--5-4-5-other.tex
+%%%%%%%%%% output/502--5-4-5-other.tex
 \begin{page}
 
 
@@ -8783,7 +8931,7 @@ It is convenient to look at a Dyck path on a rotated grid as shown in Figure \re
 
 \end{page}
 
-%%%%%%%%%% output/502--5-4-5-theorem.tex
+%%%%%%%%%% output/503--5-4-5-theorem.tex
 \begin{page}
 
 \begin{thm}
@@ -8792,7 +8940,7 @@ The number of Dyck paths from $(0,0)$ to $(n,n)$ is equal to the $n$-th Catalan 
 
 \end{page}
 
-%%%%%%%%%% output/503--5-4-5-other.tex
+%%%%%%%%%% output/504--5-4-5-other.tex
 \begin{page}
 
 \begin{proof}
@@ -8829,7 +8977,7 @@ It follows that $d_n = c_n$ for all $n$.
 
 \end{page}
 
-%%%%%%%%%% output/504--5-4-5-corollary.tex
+%%%%%%%%%% output/505--5-4-5-corollary.tex
 \begin{page}
 
 \begin{cor}
@@ -8838,7 +8986,7 @@ The number of balanced bracket sequences of $n$ opening and $n$ closing brackets
 
 \end{page}
 
-%%%%%%%%%% output/505--5-4-5-other.tex
+%%%%%%%%%% output/506--5-4-5-other.tex
 \begin{page}
 
 Balanced bracket sequences are characterized by the property that,
@@ -8849,7 +8997,7 @@ This leads to a natural bijection with Dyck paths: interpret an opening bracket 
 
 \end{page}
 
-%%%%%%%%%% output/506--5-4-6-level.tex
+%%%%%%%%%% output/507--5-4-6-level.tex
 \begin{page}
 
 \subsection{A combinatorial proof of the formula for $c_n$}
@@ -8863,7 +9011,7 @@ We call them non-Dyck paths.
 
 \end{page}
 
-%%%%%%%%%% output/507--5-4-6-lemma.tex
+%%%%%%%%%% output/508--5-4-6-lemma.tex
 \begin{page}
 
 \begin{lem}
@@ -8873,7 +9021,7 @@ Among the monotone paths from $(0,0)$ to $(n,n)$ there are exactly $\binom{2n}{n
 
 \end{page}
 
-%%%%%%%%%% output/508--5-4-6-other.tex
+%%%%%%%%%% output/509--5-4-6-other.tex
 \begin{page}
 
 
@@ -8908,7 +9056,7 @@ and reflect the part of the path after this point.
 
 \end{page}
 
-%%%%%%%%%% output/509--6-1-2-level.tex
+%%%%%%%%%% output/510--6-1-2-level.tex
 \begin{page}
 
 \chapter{Automata theory}
@@ -8974,7 +9122,7 @@ A \emph{finite automaton} is a machine with finitely many states that changes it
 
 \end{page}
 
-%%%%%%%%%% output/510--6-1-2-definition.tex
+%%%%%%%%%% output/511--6-1-2-definition.tex
 \begin{page}
 
 \begin{dfn}
@@ -8996,7 +9144,7 @@ The sets $Q$ and $\Sigma$ are assumed to be finite, and $F$ non-empty.
 
 \end{page}
 
-%%%%%%%%%% output/511--6-1-2-other.tex
+%%%%%%%%%% output/512--6-1-2-other.tex
 \begin{page}
 
 
@@ -9033,7 +9181,7 @@ $\widehat{\delta}(q, wa) = \delta(\widehat{\delta}(q,w), a)$ for every state $q$
 
 \end{page}
 
-%%%%%%%%%% output/512--6-1-2-definition.tex
+%%%%%%%%%% output/513--6-1-2-definition.tex
 \begin{page}
 
 \begin{dfn}
@@ -9047,7 +9195,7 @@ L(M) = \{w \in \Sigma^* \mid \widehat{\delta}(q_0,w) \in F\}.
 
 \end{page}
 
-%%%%%%%%%% output/513--6-1-2-example.tex
+%%%%%%%%%% output/514--6-1-2-example.tex
 \begin{page}
 
 \begin{exl}
@@ -9062,7 +9210,7 @@ One has $\epsilon \in L(M)$ if and only if the initial state $q_0$ of $M$ belong
 
 \end{page}
 
-%%%%%%%%%% output/514--6-1-2-definition.tex
+%%%%%%%%%% output/515--6-1-2-definition.tex
 \begin{page}
 
 \begin{dfn}
@@ -9071,7 +9219,7 @@ A language is called \emph{regular} if it is accepted by some DFA.
 
 \end{page}
 
-%%%%%%%%%% output/515--6-1-2-other.tex
+%%%%%%%%%% output/516--6-1-2-other.tex
 \begin{page}
 
 
@@ -9086,7 +9234,7 @@ For example, is there a DFA with the alphabet of propositional logic, which can 
 
 \end{page}
 
-%%%%%%%%%% output/516--6-1-2-remark.tex
+%%%%%%%%%% output/517--6-1-2-remark.tex
 \begin{page}
 
 \begin{rem}
@@ -9106,7 +9254,7 @@ In addition one should specify the set of final states, $F = \{q_1\}$ in our cas
 
 \end{page}
 
-%%%%%%%%%% output/517--6-1-3-level.tex
+%%%%%%%%%% output/518--6-1-3-level.tex
 \begin{page}
 
 \subsection{Nondeterministic finite automata}
@@ -9127,7 +9275,7 @@ A formal definition is as follows.
 
 \end{page}
 
-%%%%%%%%%% output/518--6-1-3-definition.tex
+%%%%%%%%%% output/519--6-1-3-definition.tex
 \begin{page}
 
 \begin{dfn}
@@ -9142,7 +9290,7 @@ associates to a pair $(q,a)$ not a state, but a set of states $P \subset Q$, whi
 
 \end{page}
 
-%%%%%%%%%% output/519--6-1-3-other.tex
+%%%%%%%%%% output/520--6-1-3-other.tex
 \begin{page}
 
 (Recall that $2^Q$ denotes the set of all subsets of $Q$.)
@@ -9175,7 +9323,7 @@ L(M) = \{w \in \Sigma^* \mid \widehat{\delta}(q_0, w) \cap F \ne \emptyset\}.
 
 \end{page}
 
-%%%%%%%%%% output/520--6-1-3-example.tex
+%%%%%%%%%% output/521--6-1-3-example.tex
 \begin{page}
 
 \begin{exl}
@@ -9194,7 +9342,7 @@ Indeed, it ``breaks down'' only if the input contains two consecutive zeros, and
 
 \end{page}
 
-%%%%%%%%%% output/521--6-1-3-other.tex
+%%%%%%%%%% output/522--6-1-3-other.tex
 \begin{page}
 
 
@@ -9210,7 +9358,7 @@ Indeed, it ``breaks down'' only if the input contains two consecutive zeros, and
 
 \end{page}
 
-%%%%%%%%%% output/522--6-1-3-definition.tex
+%%%%%%%%%% output/523--6-1-3-definition.tex
 \begin{page}
 
 \begin{dfn}
@@ -9219,7 +9367,7 @@ Two finite automata $M$ and $M'$ are called \emph{equivalent} if they accept the
 
 \end{page}
 
-%%%%%%%%%% output/523--6-1-3-theorem.tex
+%%%%%%%%%% output/524--6-1-3-theorem.tex
 \begin{page}
 
 \begin{thm}
@@ -9228,7 +9376,7 @@ For any NFA there is an equivalent DFA.
 
 \end{page}
 
-%%%%%%%%%% output/524--6-1-3-other.tex
+%%%%%%%%%% output/525--6-1-3-other.tex
 \begin{page}
 
 \begin{proof}
@@ -9268,7 +9416,7 @@ Definition of $F'$ and definition \eqref{eqn:NFALanguage} imply that $L(M) = L(M
 
 \end{page}
 
-%%%%%%%%%% output/525--6-1-3-example.tex
+%%%%%%%%%% output/526--6-1-3-example.tex
 \begin{page}
 
 \begin{exl}
@@ -9316,7 +9464,7 @@ The final states are $q'_2$ and $q'_3$ because they correspond to the sets which
 
 \end{page}
 
-%%%%%%%%%% output/526--6-1-3-other.tex
+%%%%%%%%%% output/527--6-1-3-other.tex
 \begin{page}
 
 
@@ -9331,7 +9479,7 @@ The final states are $q'_2$ and $q'_3$ because they correspond to the sets which
 
 \end{page}
 
-%%%%%%%%%% output/527--6-1-3-example.tex
+%%%%%%%%%% output/528--6-1-3-example.tex
 \begin{page}
 
 \begin{exl}
@@ -9341,7 +9489,7 @@ The state $q'_2$ corresponds to the empty set.
 
 \end{page}
 
-%%%%%%%%%% output/528--6-1-3-other.tex
+%%%%%%%%%% output/529--6-1-3-other.tex
 \begin{page}
 
 
@@ -9358,7 +9506,7 @@ The state $q'_2$ corresponds to the empty set.
 
 \end{page}
 
-%%%%%%%%%% output/529--6-1-4-level.tex
+%%%%%%%%%% output/530--6-1-4-level.tex
 \begin{page}
 
 \subsection{Finite automata with epsilon-transitions}
@@ -9372,7 +9520,7 @@ Here is a formal definition.
 
 \end{page}
 
-%%%%%%%%%% output/530--6-1-4-definition.tex
+%%%%%%%%%% output/531--6-1-4-definition.tex
 \begin{page}
 
 \begin{dfn}
@@ -9388,7 +9536,7 @@ but
 
 \end{page}
 
-%%%%%%%%%% output/531--6-1-4-other.tex
+%%%%%%%%%% output/532--6-1-4-other.tex
 \begin{page}
 
 
@@ -9399,7 +9547,7 @@ with any number of $\epsilon$-transitions inbetween.
 
 \end{page}
 
-%%%%%%%%%% output/532--6-1-4-example.tex
+%%%%%%%%%% output/533--6-1-4-example.tex
 \begin{page}
 
 \begin{exl}
@@ -9429,7 +9577,7 @@ $q_3$ & $\emptyset$ & $\emptyset$ & $\emptyset$ & $\emptyset$
 
 \end{page}
 
-%%%%%%%%%% output/533--6-1-4-other.tex
+%%%%%%%%%% output/534--6-1-4-other.tex
 \begin{page}
 
 
@@ -9437,7 +9585,7 @@ In order to proceed we need the following notion.
 
 \end{page}
 
-%%%%%%%%%% output/534--6-1-4-definition.tex
+%%%%%%%%%% output/535--6-1-4-definition.tex
 \begin{page}
 
 \begin{dfn}
@@ -9450,7 +9598,7 @@ We denote the $\epsilon$-closure of $P$ by $\overline{P}$.
 
 \end{page}
 
-%%%%%%%%%% output/535--6-1-4-other.tex
+%%%%%%%%%% output/536--6-1-4-other.tex
 \begin{page}
 
 In other words, $\overline{P}$ is $P$ together with all states that can be reached from $P$ by sequences of $\epsilon$-transitions.
@@ -9477,7 +9625,7 @@ In terms of the extended transition function the language accepted by an $\epsil
 
 \end{page}
 
-%%%%%%%%%% output/536--6-1-4-definition.tex
+%%%%%%%%%% output/537--6-1-4-definition.tex
 \begin{page}
 
 \begin{dfn}
@@ -9489,7 +9637,7 @@ L(M) = \{w \in \Sigma^* \mid \widehat{\delta}(q_0, w) \cap F \ne \emptyset\}.
 
 \end{page}
 
-%%%%%%%%%% output/537--6-1-4-other.tex
+%%%%%%%%%% output/538--6-1-4-other.tex
 \begin{page}
 
 
@@ -9498,7 +9646,7 @@ We will now show that $\epsilon$-NFAs are not more powerful than DFA: any langua
 
 \end{page}
 
-%%%%%%%%%% output/538--6-1-4-theorem.tex
+%%%%%%%%%% output/539--6-1-4-theorem.tex
 \begin{page}
 
 \begin{thm}
@@ -9507,7 +9655,7 @@ For every $\epsilon$-NFA there is an equivalent DFA.
 
 \end{page}
 
-%%%%%%%%%% output/539--6-1-4-other.tex
+%%%%%%%%%% output/540--6-1-4-other.tex
 \begin{page}
 
 \begin{proof}
@@ -9550,7 +9698,7 @@ which implies $L(M) = L(M')$ due to \eqref{eqn:DeltaD=DeltaE}.
 
 \end{page}
 
-%%%%%%%%%% output/540--6-1-4-example.tex
+%%%%%%%%%% output/541--6-1-4-example.tex
 \begin{page}
 
 \begin{exl}
@@ -9588,7 +9736,7 @@ The diagram of this automaton is shown in Figure \ref{fig:DFAFromENFA}.
 
 \end{page}
 
-%%%%%%%%%% output/541--6-2-1-level.tex
+%%%%%%%%%% output/542--6-2-1-level.tex
 \begin{page}
 
 \section{Regular expressions}
@@ -9629,7 +9777,7 @@ $r^*$ is a regular expression and denotes the language $R^* = \cup_{i=0}^\infty 
 
 \end{page}
 
-%%%%%%%%%% output/542--6-2-1-example.tex
+%%%%%%%%%% output/543--6-2-1-example.tex
 \begin{page}
 
 \begin{exl}
@@ -9638,7 +9786,7 @@ The language of all binary words can be represented by the expression $(0+1)^*$.
 
 \end{page}
 
-%%%%%%%%%% output/543--6-2-1-other.tex
+%%%%%%%%%% output/544--6-2-1-other.tex
 \begin{page}
 
 
@@ -9669,7 +9817,7 @@ The main theorem is the following.
 
 \end{page}
 
-%%%%%%%%%% output/544--6-2-1-theorem.tex
+%%%%%%%%%% output/545--6-2-1-theorem.tex
 \begin{page}
 
 \begin{thm}
@@ -9679,7 +9827,7 @@ A language is regular if and only if it can be represented by a regular expressi
 
 \end{page}
 
-%%%%%%%%%% output/545--6-2-1-other.tex
+%%%%%%%%%% output/546--6-2-1-other.tex
 \begin{page}
 
 
@@ -9689,7 +9837,7 @@ Now let us give some examples of regular expressions and languages corresponding
 
 \end{page}
 
-%%%%%%%%%% output/546--6-2-1-example.tex
+%%%%%%%%%% output/547--6-2-1-example.tex
 \begin{page}
 
 \begin{exl}
@@ -9706,7 +9854,7 @@ The same language can be described by the expression
 
 \end{page}
 
-%%%%%%%%%% output/547--6-2-1-example.tex
+%%%%%%%%%% output/548--6-2-1-example.tex
 \begin{page}
 
 \begin{exl}
@@ -9716,7 +9864,7 @@ where $(0+1)^9$ denotes $\underbrace{(0+1)\cdots (0+1)}_{9}$.
 
 \end{page}
 
-%%%%%%%%%% output/548--6-2-1-example.tex
+%%%%%%%%%% output/549--6-2-1-example.tex
 \begin{page}
 
 \begin{exl}
@@ -9729,7 +9877,7 @@ can be represented by
 
 \end{page}
 
-%%%%%%%%%% output/549--6-2-2-level.tex
+%%%%%%%%%% output/550--6-2-2-level.tex
 \begin{page}
 
 \subsection{Equivalence of regular expressions and regular languages}
@@ -9739,7 +9887,7 @@ It splits in two parts.
 
 \end{page}
 
-%%%%%%%%%% output/550--6-2-2-lemma.tex
+%%%%%%%%%% output/551--6-2-2-lemma.tex
 \begin{page}
 
 \begin{lem}
@@ -9748,7 +9896,7 @@ The language described by a regular expression is regular.
 
 \end{page}
 
-%%%%%%%%%% output/551--6-2-2-other.tex
+%%%%%%%%%% output/552--6-2-2-other.tex
 \begin{page}
 
 \begin{proof}
@@ -9810,7 +9958,7 @@ The arguments proving this are rather straightforward, and we omit them.
 
 \end{page}
 
-%%%%%%%%%% output/552--6-2-2-example.tex
+%%%%%%%%%% output/553--6-2-2-example.tex
 \begin{page}
 
 \begin{exl}
@@ -9823,7 +9971,7 @@ The above algorithm aims not for the smallest number of states, but for the simp
 
 \end{page}
 
-%%%%%%%%%% output/553--6-2-2-other.tex
+%%%%%%%%%% output/554--6-2-2-other.tex
 \begin{page}
 
 
@@ -9832,7 +9980,7 @@ Now we proceed to the second part of Theorem \ref{thm:RegLangExpr}.
 
 \end{page}
 
-%%%%%%%%%% output/554--6-2-2-definition.tex
+%%%%%%%%%% output/555--6-2-2-definition.tex
 \begin{page}
 
 \begin{dfn}
@@ -9843,7 +9991,7 @@ A \emph{proper prefix} of $w$ is a prefix distinct from $\epsilon$ and $w$.
 
 \end{page}
 
-%%%%%%%%%% output/555--6-2-2-lemma.tex
+%%%%%%%%%% output/556--6-2-2-lemma.tex
 \begin{page}
 
 \begin{lem}
@@ -9852,7 +10000,7 @@ Every regular language can be described by a regular expression.
 
 \end{page}
 
-%%%%%%%%%% output/556--6-2-2-other.tex
+%%%%%%%%%% output/557--6-2-2-other.tex
 \begin{page}
 
 \begin{proof}
@@ -9935,7 +10083,7 @@ where $F = \{q_{m+1}, \ldots, q_n\}$.
 
 \end{page}
 
-%%%%%%%%%% output/557--6-2-2-example.tex
+%%%%%%%%%% output/558--6-2-2-example.tex
 \begin{page}
 
 \begin{exl}
@@ -10002,7 +10150,7 @@ It should be noted that one does not need all of the table \ref{fig:TableRegExp}
 
 \end{page}
 
-%%%%%%%%%% output/558--6-3-1-level.tex
+%%%%%%%%%% output/559--6-3-1-level.tex
 \begin{page}
 
 \section{Properties of regular languages}
@@ -10010,7 +10158,7 @@ It should be noted that one does not need all of the table \ref{fig:TableRegExp}
 
 \end{page}
 
-%%%%%%%%%% output/559--6-3-1-theorem.tex
+%%%%%%%%%% output/560--6-3-1-theorem.tex
 \begin{page}
 
 \begin{thm}
@@ -10021,7 +10169,7 @@ Then the languages $R_1 \cup R_2, R_1 \cap R_2, \Sigma^* \setminus R$ are also r
 
 \end{page}
 
-%%%%%%%%%% output/560--6-3-1-other.tex
+%%%%%%%%%% output/561--6-3-1-other.tex
 \begin{page}
 
 \begin{proof}
@@ -10053,7 +10201,7 @@ Since the operations applied on the right hand side preserve regularity, the int
 
 \end{page}
 
-%%%%%%%%%% output/561--6-3-1-theorem.tex
+%%%%%%%%%% output/562--6-3-1-theorem.tex
 \begin{page}
 
 \begin{thm}
@@ -10063,7 +10211,7 @@ The equivalence of finite automata and the equivalence of regular expressions is
 
 \end{page}
 
-%%%%%%%%%% output/562--6-3-1-other.tex
+%%%%%%%%%% output/563--6-3-1-other.tex
 \begin{page}
 
 \begin{proof}
@@ -10092,7 +10240,7 @@ This is easy to check algorithmically.
 
 \end{page}
 
-%%%%%%%%%% output/563--6-3-2-level.tex
+%%%%%%%%%% output/564--6-3-2-level.tex
 \begin{page}
 
 \subsection{The pumping lemma}
@@ -10132,7 +10280,7 @@ The existence of a cycle can be stated as follows.
 
 \end{page}
 
-%%%%%%%%%% output/564--6-3-2-lemma.tex
+%%%%%%%%%% output/565--6-3-2-lemma.tex
 \begin{page}
 
 \begin{lem}
@@ -10143,7 +10291,7 @@ Besides, there is a cycle within the first $n$ edges of this path.
 
 \end{page}
 
-%%%%%%%%%% output/565--6-3-2-other.tex
+%%%%%%%%%% output/566--6-3-2-other.tex
 \begin{page}
 
 
@@ -10152,7 +10300,7 @@ We are now ready to state and prove the pumping lemma.
 
 \end{page}
 
-%%%%%%%%%% output/566--6-3-2-theorem.tex
+%%%%%%%%%% output/567--6-3-2-theorem.tex
 \begin{page}
 
 \begin{thm}[Pumping lemma for regular languages]
@@ -10165,7 +10313,7 @@ Then there is an integer $n$ such that for any word $z \in L$ of length $|z| \ge
 
 \end{page}
 
-%%%%%%%%%% output/567--6-3-2-other.tex
+%%%%%%%%%% output/568--6-3-2-other.tex
 \begin{page}
 
 \begin{proof}
@@ -10182,7 +10330,7 @@ Thus $uv^kw \in L$ for all $k \ge 0$.
 
 \end{page}
 
-%%%%%%%%%% output/568--6-3-2-example.tex
+%%%%%%%%%% output/569--6-3-2-example.tex
 \begin{page}
 
 \begin{exl}
@@ -10197,7 +10345,7 @@ This contradiction shows that our assumption was false, and $L$ is not regular.
 
 \end{page}
 
-%%%%%%%%%% output/569--6-3-2-other.tex
+%%%%%%%%%% output/570--6-3-2-other.tex
 \begin{page}
 
 
@@ -10209,7 +10357,7 @@ Later we will be able to show that the only regular languages of the form $\{0^{
 
 \end{page}
 
-%%%%%%%%%% output/570--6-3-2-example.tex
+%%%%%%%%%% output/571--6-3-2-example.tex
 \begin{page}
 
 \begin{exl}
@@ -10224,7 +10372,7 @@ This contradiction shows that our assumption was false.
 
 \end{page}
 
-%%%%%%%%%% output/571--6-3-2-other.tex
+%%%%%%%%%% output/572--6-3-2-other.tex
 \begin{page}
 
 
@@ -10234,7 +10382,7 @@ The pumping lemma can be used to prove the following theorem.
 
 \end{page}
 
-%%%%%%%%%% output/572--6-3-2-theorem.tex
+%%%%%%%%%% output/573--6-3-2-theorem.tex
 \begin{page}
 
 \begin{thm}
@@ -10249,7 +10397,7 @@ infinite if and only if the automaton accepts some word of length $\ell$, where 
 
 \end{page}
 
-%%%%%%%%%% output/573--6-3-2-other.tex
+%%%%%%%%%% output/574--6-3-2-other.tex
 \begin{page}
 
 \begin{proof}
@@ -10272,7 +10420,7 @@ Thus we can apply the same case distiction to the word $uw$ and proceed until we
 
 \end{page}
 
-%%%%%%%%%% output/574--6-3-3-level.tex
+%%%%%%%%%% output/575--6-3-3-level.tex
 \begin{page}
 
 \subsection{Closure under homomorphisms}
@@ -10281,7 +10429,7 @@ Let $\Sigma$ and $\Delta$ be two finite alphabets.
 
 \end{page}
 
-%%%%%%%%%% output/575--6-3-3-definition.tex
+%%%%%%%%%% output/576--6-3-3-definition.tex
 \begin{page}
 
 \begin{dfn}
@@ -10293,7 +10441,7 @@ h(xy) = h(x)h(y) \text{ for all }x, y \in \Sigma^*.
 
 \end{page}
 
-%%%%%%%%%% output/576--6-3-3-lemma.tex
+%%%%%%%%%% output/577--6-3-3-lemma.tex
 \begin{page}
 
 \begin{lem}
@@ -10303,7 +10451,7 @@ That is, any $h \colon \Sigma \to \Delta^*$ extends to a unique homomorphism.
 
 \end{page}
 
-%%%%%%%%%% output/577--6-3-3-other.tex
+%%%%%%%%%% output/578--6-3-3-other.tex
 \begin{page}
 
 \begin{proof}
@@ -10326,7 +10474,7 @@ so the extension exists and is unique.
 
 \end{page}
 
-%%%%%%%%%% output/578--6-3-3-definition.tex
+%%%%%%%%%% output/579--6-3-3-definition.tex
 \begin{page}
 
 \begin{dfn}
@@ -10339,7 +10487,7 @@ where $h \colon \Sigma^* \to \Delta^*$ is some homomorphism.
 
 \end{page}
 
-%%%%%%%%%% output/579--6-3-3-example.tex
+%%%%%%%%%% output/580--6-3-3-example.tex
 \begin{page}
 
 \begin{exl}
@@ -10354,7 +10502,7 @@ The language $h(L)$ consists of all words without two consecutive $1$'s and not 
 
 \end{page}
 
-%%%%%%%%%% output/580--6-3-3-theorem.tex
+%%%%%%%%%% output/581--6-3-3-theorem.tex
 \begin{page}
 
 \begin{thm}
@@ -10363,7 +10511,7 @@ A homomorphic image of a regular language is regular.
 
 \end{page}
 
-%%%%%%%%%% output/581--6-3-3-other.tex
+%%%%%%%%%% output/582--6-3-3-other.tex
 \begin{page}
 
 \begin{proof}
@@ -10387,7 +10535,7 @@ The next example shows that a homomorphic image of a non-regular language can be
 
 \end{page}
 
-%%%%%%%%%% output/582--6-3-3-example.tex
+%%%%%%%%%% output/583--6-3-3-example.tex
 \begin{page}
 
 \begin{exl}
@@ -10397,7 +10545,7 @@ But under the homomorphism $h(0) = 0, h(1) = 0$ it goes to the language $\{0^{2k
 
 \end{page}
 
-%%%%%%%%%% output/583--6-3-3-lemma.tex
+%%%%%%%%%% output/584--6-3-3-lemma.tex
 \begin{page}
 
 \begin{lem}
@@ -10406,7 +10554,7 @@ The language of all propositional formulas is not regular.
 
 \end{page}
 
-%%%%%%%%%% output/584--6-3-3-other.tex
+%%%%%%%%%% output/585--6-3-3-other.tex
 \begin{page}
 
 \begin{proof}
@@ -10427,14 +10575,14 @@ But it is not, by the pumping lemma: if $n$ is the number from the lemma, then $
 
 \end{page}
 
-%%%%%%%%%% output/585--6-3-4-level.tex
+%%%%%%%%%% output/586--6-3-4-level.tex
 \begin{page}
 
 \subsection{Closure under inverse homomorphism}
 
 \end{page}
 
-%%%%%%%%%% output/586--6-3-4-definition.tex
+%%%%%%%%%% output/587--6-3-4-definition.tex
 \begin{page}
 
 \begin{dfn}
@@ -10447,7 +10595,7 @@ h^{-1}(L) = \{x \in \Sigma^* \mid h(x) \in L\}.
 
 \end{page}
 
-%%%%%%%%%% output/587--6-3-4-example.tex
+%%%%%%%%%% output/588--6-3-4-example.tex
 \begin{page}
 
 \begin{exl}
@@ -10462,7 +10610,7 @@ One has $h(h^{-1}(L)) = (1001)^* \ne L$.
 
 \end{page}
 
-%%%%%%%%%% output/588--6-3-4-other.tex
+%%%%%%%%%% output/589--6-3-4-other.tex
 \begin{page}
 
 
@@ -10475,7 +10623,7 @@ and the inclusions can be strict.
 
 \end{page}
 
-%%%%%%%%%% output/589--6-3-4-theorem.tex
+%%%%%%%%%% output/590--6-3-4-theorem.tex
 \begin{page}
 
 \begin{thm}
@@ -10484,7 +10632,7 @@ An inverse homomorphic image of a regular language is regular.
 
 \end{page}
 
-%%%%%%%%%% output/590--6-3-4-other.tex
+%%%%%%%%%% output/591--6-3-4-other.tex
 \begin{page}
 
 \begin{proof}
@@ -10513,7 +10661,7 @@ which means $L(M') = h^{-1}(L)$.
 
 \end{page}
 
-%%%%%%%%%% output/591--6-4-1-level.tex
+%%%%%%%%%% output/592--6-4-1-level.tex
 \begin{page}
 
 \section{The Myhill-Nerode theorem}
@@ -10521,7 +10669,7 @@ which means $L(M') = h^{-1}(L)$.
 
 \end{page}
 
-%%%%%%%%%% output/592--6-4-1-definition.tex
+%%%%%%%%%% output/593--6-4-1-definition.tex
 \begin{page}
 
 \begin{dfn}
@@ -10534,7 +10682,7 @@ Two words $u, v \in \Sigma^*$ are called \emph{$L$-equivalent} (written as $u \s
 
 \end{page}
 
-%%%%%%%%%% output/593--6-4-1-other.tex
+%%%%%%%%%% output/594--6-4-1-other.tex
 \begin{page}
 
 
@@ -10544,7 +10692,7 @@ a word $x \in \Sigma^*$ such that one of the words $ux$, $vx$ is in $L$, and the
 
 \end{page}
 
-%%%%%%%%%% output/594--6-4-1-example.tex
+%%%%%%%%%% output/595--6-4-1-example.tex
 \begin{page}
 
 \begin{exl}
@@ -10555,7 +10703,7 @@ Indeed, $\epsilon$ is a distinguishing extension for $u$ and $v$.
 
 \end{page}
 
-%%%%%%%%%% output/595--6-4-1-lemma.tex
+%%%%%%%%%% output/596--6-4-1-lemma.tex
 \begin{page}
 
 \begin{lem}
@@ -10564,7 +10712,7 @@ The relation $\sim_L$ is an equivalence relation.
 
 \end{page}
 
-%%%%%%%%%% output/596--6-4-1-other.tex
+%%%%%%%%%% output/597--6-4-1-other.tex
 \begin{page}
 
 \begin{proof}
@@ -10587,7 +10735,7 @@ It follows that every class $S_i$ is either contained in $L$ or disjoint from $L
 
 \end{page}
 
-%%%%%%%%%% output/597--6-4-1-example.tex
+%%%%%%%%%% output/598--6-4-1-example.tex
 \begin{page}
 
 \begin{exl}
@@ -10601,7 +10749,7 @@ One has $L = S_1 \cup S_2$.
 
 \end{page}
 
-%%%%%%%%%% output/598--6-4-1-example.tex
+%%%%%%%%%% output/599--6-4-1-example.tex
 \begin{page}
 
 \begin{exl}
@@ -10615,7 +10763,7 @@ One has $L = S_0$.
 
 \end{page}
 
-%%%%%%%%%% output/599--6-4-1-lemma.tex
+%%%%%%%%%% output/600--6-4-1-lemma.tex
 \begin{page}
 
 \begin{lem}
@@ -10625,7 +10773,7 @@ If $u \sim_L v$, then $ux \sim_L vx$ for all $x \in \Sigma^*$.
 
 \end{page}
 
-%%%%%%%%%% output/600--6-4-1-other.tex
+%%%%%%%%%% output/601--6-4-1-other.tex
 \begin{page}
 
 \begin{proof}
@@ -10638,14 +10786,14 @@ Then $xy$ is a distinguishing extension for $u$ and $v$.
 
 \end{page}
 
-%%%%%%%%%% output/601--6-4-2-level.tex
+%%%%%%%%%% output/602--6-4-2-level.tex
 \begin{page}
 
 \subsection{The theorem}
 
 \end{page}
 
-%%%%%%%%%% output/602--6-4-2-theorem.tex
+%%%%%%%%%% output/603--6-4-2-theorem.tex
 \begin{page}
 
 \begin{thm}
@@ -10654,7 +10802,7 @@ A language $L$ is regular if and only if the number of $L$-equivalence classes i
 
 \end{page}
 
-%%%%%%%%%% output/603--6-4-2-other.tex
+%%%%%%%%%% output/604--6-4-2-other.tex
 \begin{page}
 
 \begin{proof}
@@ -10698,7 +10846,7 @@ It is easy to see that the language accepted by this automaton is $L$.
 
 \end{page}
 
-%%%%%%%%%% output/604--6-4-3-level.tex
+%%%%%%%%%% output/605--6-4-3-level.tex
 \begin{page}
 
 \subsection{Minimization of a DFA}
@@ -10707,7 +10855,7 @@ Myhill-Nerode theorem implies
 
 \end{page}
 
-%%%%%%%%%% output/605--6-4-3-corollary.tex
+%%%%%%%%%% output/606--6-4-3-corollary.tex
 \begin{page}
 
 \begin{cor}
@@ -10717,7 +10865,7 @@ The minimal DFA is unique up to renaming the states.
 
 \end{page}
 
-%%%%%%%%%% output/606--6-4-3-other.tex
+%%%%%%%%%% output/607--6-4-3-other.tex
 \begin{page}
 
 
@@ -10744,7 +10892,7 @@ All pairs of states which are unmarked are merged into a single state
 
 \end{page}
 
-%%%%%%%%%% output/607--6-4-3-example.tex
+%%%%%%%%%% output/608--6-4-3-example.tex
 \begin{page}
 
 \begin{exl}
@@ -10801,7 +10949,7 @@ merging $q_0$ with $q_4$ and merging $q_1$ with $q_7$. See Figure \ref{fig:DFAMi
 
 \end{page}
 
-%%%%%%%%%% output/608--6-4-3-other.tex
+%%%%%%%%%% output/609--6-4-3-other.tex
 \begin{page}
 
 
@@ -10813,7 +10961,7 @@ merging $q_0$ with $q_4$ and merging $q_1$ with $q_7$. See Figure \ref{fig:DFAMi
 
 \end{page}
 
-%%%%%%%%%% output/609--6-5-1-level.tex
+%%%%%%%%%% output/610--6-5-1-level.tex
 \begin{page}
 
 \section{Context-free grammars and languages}
@@ -10845,7 +10993,7 @@ The result is a syntactically correct (but mostly meaningless) sentence.
 A production can be represented linearly:
 \begin{multline*}
 S \to NV \to AdjNV \to AdjAdjNV \to \text{colorless }AdjNV\\
-\to \text{colorless }AdjNVAdv \to \cdots 
+\to \text{colorless }AdjNVAdv \to \cdots
 \end{multline*}
 or by a \emph{derivation tree} or \emph{parse tree}, see Figure \ref{fig:Chomsky}.
 
@@ -10867,7 +11015,7 @@ Let us now give an exact definition.
 
 \end{page}
 
-%%%%%%%%%% output/610--6-5-1-definition.tex
+%%%%%%%%%% output/611--6-5-1-definition.tex
 \begin{page}
 
 \begin{dfn}
@@ -10886,7 +11034,7 @@ $S$ is a special variable ($S \in V$) called the \emph{start symbol}.
 
 \end{page}
 
-%%%%%%%%%% output/611--6-5-1-example.tex
+%%%%%%%%%% output/612--6-5-1-example.tex
 \begin{page}
 
 \begin{exl}
@@ -10895,7 +11043,7 @@ In our introductory example $V = \{S, N, V, Adj, Adv\}$, $T$ is the set of words
 
 \end{page}
 
-%%%%%%%%%% output/612--6-5-1-other.tex
+%%%%%%%%%% output/613--6-5-1-other.tex
 \begin{page}
 
 
@@ -10917,7 +11065,7 @@ The letters $\alpha, \beta, \gamma$ are used to denote strings of variables and 
 
 \end{page}
 
-%%%%%%%%%% output/613--6-5-1-definition.tex
+%%%%%%%%%% output/614--6-5-1-definition.tex
 \begin{page}
 
 \begin{dfn}
@@ -10927,7 +11075,7 @@ according to the production rules.
 
 \end{page}
 
-%%%%%%%%%% output/614--6-5-1-other.tex
+%%%%%%%%%% output/615--6-5-1-other.tex
 \begin{page}
 
 
@@ -10951,7 +11099,7 @@ A language is called a \emph{context-free language} (CFL) if it is generated by 
 
 \end{page}
 
-%%%%%%%%%% output/615--6-5-1-example.tex
+%%%%%%%%%% output/616--6-5-1-example.tex
 \begin{page}
 
 \begin{exl}
@@ -10966,7 +11114,7 @@ we see that $L(G) = \{0^n1^n \mid n \ge 0\}$.
 
 \end{page}
 
-%%%%%%%%%% output/616--6-5-1-other.tex
+%%%%%%%%%% output/617--6-5-1-other.tex
 \begin{page}
 
 
@@ -10976,7 +11124,7 @@ We will later see that every regular language is context-free.
 
 \end{page}
 
-%%%%%%%%%% output/617--6-5-1-example.tex
+%%%%%%%%%% output/618--6-5-1-example.tex
 \begin{page}
 
 \begin{exl}
@@ -10986,7 +11134,7 @@ However, the generating grammar is more complicated, see \cite[Example 4.3]{HU79
 
 \end{page}
 
-%%%%%%%%%% output/618--6-5-2-level.tex
+%%%%%%%%%% output/619--6-5-2-level.tex
 \begin{page}
 
 \subsection{Grammars in Chomsky form}
@@ -10997,7 +11145,7 @@ Note that the ``English grammar'' from the beginning of Section \ref{sec:LangGra
 
 \end{page}
 
-%%%%%%%%%% output/619--6-5-2-theorem.tex
+%%%%%%%%%% output/620--6-5-2-theorem.tex
 \begin{page}
 
 \begin{thm}
@@ -11007,7 +11155,7 @@ Any context-free language without $\epsilon$ is generated by a grammar in Chomsk
 
 \end{page}
 
-%%%%%%%%%% output/620--6-5-2-other.tex
+%%%%%%%%%% output/621--6-5-2-other.tex
 \begin{page}
 
 
@@ -11018,7 +11166,7 @@ Thus the above theorem can also be stated as
 
 \end{page}
 
-%%%%%%%%%% output/621--6-5-2-definition.tex
+%%%%%%%%%% output/622--6-5-2-definition.tex
 \begin{page}
 
 \begin{dfn}
@@ -11028,7 +11176,7 @@ A \emph{unit production} is a production of the form $A \to B$.
 
 \end{page}
 
-%%%%%%%%%% output/622--6-5-2-other.tex
+%%%%%%%%%% output/623--6-5-2-other.tex
 \begin{page}
 
 
@@ -11047,7 +11195,7 @@ is a simple grammar generating the language $(0^* \cup 1^*) \setminus \{\epsilon
 
 \end{page}
 
-%%%%%%%%%% output/623--6-5-2-lemma.tex
+%%%%%%%%%% output/624--6-5-2-lemma.tex
 \begin{page}
 
 \begin{lem}
@@ -11057,7 +11205,7 @@ Any context-free language without $\epsilon$ is generated by a grammar without $
 
 \end{page}
 
-%%%%%%%%%% output/624--6-5-2-other.tex
+%%%%%%%%%% output/625--6-5-2-other.tex
 \begin{page}
 
 \begin{proof}
@@ -11103,7 +11251,7 @@ If first the unit, and then $\epsilon$-productions are removed, then the result 
 
 \end{page}
 
-%%%%%%%%%% output/625--6-5-2-example.tex
+%%%%%%%%%% output/626--6-5-2-example.tex
 \begin{page}
 
 \begin{exl}
@@ -11126,7 +11274,7 @@ B &\to bB \mid b.
 
 \end{page}
 
-%%%%%%%%%% output/626--6-5-2-example.tex
+%%%%%%%%%% output/627--6-5-2-example.tex
 \begin{page}
 
 \begin{exl}
@@ -11147,7 +11295,7 @@ B &\to BB \mid 1.
 
 \end{page}
 
-%%%%%%%%%% output/627--6-5-2-other.tex
+%%%%%%%%%% output/628--6-5-2-other.tex
 \begin{page}
 
 
@@ -11179,7 +11327,7 @@ Again, it is not hard to convince yourself that the new grammar generates the sa
 
 \end{page}
 
-%%%%%%%%%% output/628--6-5-2-example.tex
+%%%%%%%%%% output/629--6-5-2-example.tex
 \begin{page}
 
 \begin{exl}
@@ -11212,7 +11360,7 @@ D_2 &\to BB
 
 \end{page}
 
-%%%%%%%%%% output/629--6-6-1-level.tex
+%%%%%%%%%% output/630--6-6-1-level.tex
 \begin{page}
 
 \section{Pushdown automata}
@@ -11227,7 +11375,7 @@ We proceed to a formal definition.
 
 \end{page}
 
-%%%%%%%%%% output/630--6-6-1-definition.tex
+%%%%%%%%%% output/631--6-6-1-definition.tex
 \begin{page}
 
 \begin{dfn}
@@ -11244,7 +11392,7 @@ $\delta$ is a map from $Q \times (\Sigma \cup \{\epsilon\}) \times \Gamma$ to fi
 
 \end{page}
 
-%%%%%%%%%% output/631--6-6-1-other.tex
+%%%%%%%%%% output/632--6-6-1-other.tex
 \begin{page}
 
 At the beginning, the automaton is in the state $q_0$, and the stack contains the symbol $Z_0$.
@@ -11262,7 +11410,7 @@ then, for a random $i$, it enters the state $p_i$ and replaces the symbol $Z$ by
 
 \end{page}
 
-%%%%%%%%%% output/632--6-6-1-example.tex
+%%%%%%%%%% output/633--6-6-1-example.tex
 \begin{page}
 
 \begin{exl}
@@ -11272,7 +11420,7 @@ or go to state $p_2$ and take $Z$ out of the stack.
 
 \end{page}
 
-%%%%%%%%%% output/633--6-6-1-other.tex
+%%%%%%%%%% output/634--6-6-1-other.tex
 \begin{page}
 
 
@@ -11286,7 +11434,7 @@ to a state $p_i$ and replace $Z$ with $\gamma_i$.
 
 \end{page}
 
-%%%%%%%%%% output/634--6-6-1-example.tex
+%%%%%%%%%% output/635--6-6-1-example.tex
 \begin{page}
 
 \begin{exl}
@@ -11295,7 +11443,7 @@ The rule $\delta(q, \epsilon, Z) = \emptyset$ means that no spontaneous transiti
 
 \end{page}
 
-%%%%%%%%%% output/635--6-6-1-other.tex
+%%%%%%%%%% output/636--6-6-1-other.tex
 \begin{page}
 
 
@@ -11314,7 +11462,7 @@ the input symbol $a$ is rejected (or ``breaks'' the automaton).
 
 \end{page}
 
-%%%%%%%%%% output/636--6-6-1-example.tex
+%%%%%%%%%% output/637--6-6-1-example.tex
 \begin{page}
 
 \begin{exl}
@@ -11347,7 +11495,7 @@ Finally, when the automaton sees the start symbol at the bottom of the stack, th
 
 \end{page}
 
-%%%%%%%%%% output/637--6-6-1-other.tex
+%%%%%%%%%% output/638--6-6-1-other.tex
 \begin{page}
 
 
@@ -11358,7 +11506,7 @@ but is accepted by a non-deterministic one as the next example shows.
 
 \end{page}
 
-%%%%%%%%%% output/638--6-6-1-example.tex
+%%%%%%%%%% output/639--6-6-1-example.tex
 \begin{page}
 
 \begin{exl}
@@ -11390,7 +11538,7 @@ because this can happen only in the case if the input word was a palindrome (inc
 
 \end{page}
 
-%%%%%%%%%% output/639--6-6-1-other.tex
+%%%%%%%%%% output/640--6-6-1-other.tex
 \begin{page}
 
 
@@ -11400,7 +11548,7 @@ Note that when the stack is empty, a PDA stops and does not accept any more inpu
 
 \end{page}
 
-%%%%%%%%%% output/640--6-6-2-level.tex
+%%%%%%%%%% output/641--6-6-2-level.tex
 \begin{page}
 
 \subsection{Instantaneous description}
@@ -11409,7 +11557,7 @@ The configuration of a PDA at any given moment can be represented as follows.
 
 \end{page}
 
-%%%%%%%%%% output/641--6-6-2-definition.tex
+%%%%%%%%%% output/642--6-6-2-definition.tex
 \begin{page}
 
 \begin{dfn}
@@ -11420,7 +11568,7 @@ and $\gamma \in \Gamma^*$ is the content of the stack.
 
 \end{page}
 
-%%%%%%%%%% output/642--6-6-2-other.tex
+%%%%%%%%%% output/643--6-6-2-other.tex
 \begin{page}
 
 
@@ -11441,7 +11589,7 @@ In these terms, the acceptance criteria by final state and by empty stack are fo
 
 \end{page}
 
-%%%%%%%%%% output/643--6-6-2-definition.tex
+%%%%%%%%%% output/644--6-6-2-definition.tex
 \begin{page}
 
 \begin{dfn}
@@ -11457,14 +11605,14 @@ N(M) = \{w \mid (q_0, w, Z_0) \specialvdash{M}{*} (p, \epsilon, \epsilon) \text{
 
 \end{page}
 
-%%%%%%%%%% output/644--6-6-3-level.tex
+%%%%%%%%%% output/645--6-6-3-level.tex
 \begin{page}
 
 \subsection{Equivalence of acceptance by final state and empty stack}
 
 \end{page}
 
-%%%%%%%%%% output/645--6-6-3-theorem.tex
+%%%%%%%%%% output/646--6-6-3-theorem.tex
 \begin{page}
 
 \begin{thm}
@@ -11473,7 +11621,7 @@ If $L = L(M)$ for some PDA $M$, then there is a PDA $M'$ such that $L = N(M')$.
 
 \end{page}
 
-%%%%%%%%%% output/646--6-6-3-other.tex
+%%%%%%%%%% output/647--6-6-3-other.tex
 \begin{page}
 
 \begin{proof}[Idea of the proof]
@@ -11485,7 +11633,7 @@ and while in the erasure state delete the top stack symbols spontaneously.
 
 \end{page}
 
-%%%%%%%%%% output/647--6-6-3-theorem.tex
+%%%%%%%%%% output/648--6-6-3-theorem.tex
 \begin{page}
 
 \begin{thm}
@@ -11494,7 +11642,7 @@ If $L = N(M)$ for some PDA $M$, then there is a PDA $M'$ such that $L = L(M')$.
 
 \end{page}
 
-%%%%%%%%%% output/648--6-6-3-other.tex
+%%%%%%%%%% output/649--6-6-3-other.tex
 \begin{page}
 
 \begin{proof}[Idea of the proof]
@@ -11515,7 +11663,7 @@ One then goes to the final state:
 
 \end{page}
 
-%%%%%%%%%% output/649--6-6-4-level.tex
+%%%%%%%%%% output/650--6-6-4-level.tex
 \begin{page}
 
 \subsection{Equivalence of PDA's and CFL's}
@@ -11525,7 +11673,7 @@ This can be compared to the fact that the languages accepted by DFAs are those d
 
 \end{page}
 
-%%%%%%%%%% output/650--6-6-4-theorem.tex
+%%%%%%%%%% output/651--6-6-4-theorem.tex
 \begin{page}
 
 \begin{thm}
@@ -11535,7 +11683,7 @@ For every context-free language $L$ there is a PDA $M$ such that $N(M) = L$.
 
 \end{page}
 
-%%%%%%%%%% output/651--6-6-4-other.tex
+%%%%%%%%%% output/652--6-6-4-other.tex
 \begin{page}
 
 
@@ -11594,7 +11742,7 @@ can be interpreted as a derivation of a word in the grammar $G$.
 
 \end{page}
 
-%%%%%%%%%% output/652--6-6-4-theorem.tex
+%%%%%%%%%% output/653--6-6-4-theorem.tex
 \begin{page}
 
 \begin{thm}
@@ -11603,7 +11751,7 @@ For every PDA $M$ the language $N(M)$ is context-free.
 
 \end{page}
 
-%%%%%%%%%% output/653--6-6-4-other.tex
+%%%%%%%%%% output/654--6-6-4-other.tex
 \begin{page}
 
 We do not give a proof, but it is a sort of reversal of the above construction.
@@ -11615,7 +11763,7 @@ We do not give a proof, but it is a sort of reversal of the above construction.
 
 \end{page}
 
-%%%%%%%%%% output/654--6-7-1-level.tex
+%%%%%%%%%% output/655--6-7-1-level.tex
 \begin{page}
 
 \section{Properties of context-free languages}
@@ -11623,7 +11771,7 @@ We do not give a proof, but it is a sort of reversal of the above construction.
 
 \end{page}
 
-%%%%%%%%%% output/655--6-7-1-theorem.tex
+%%%%%%%%%% output/656--6-7-1-theorem.tex
 \begin{page}
 
 \begin{thm}
@@ -11633,7 +11781,7 @@ Context-free languages are closed under union, concatenation and Kleene closure.
 
 \end{page}
 
-%%%%%%%%%% output/656--6-7-1-other.tex
+%%%%%%%%%% output/657--6-7-1-other.tex
 \begin{page}
 
 
@@ -11672,7 +11820,7 @@ generate $L_1L_2$.
 
 \end{page}
 
-%%%%%%%%%% output/657--6-7-1-corollary.tex
+%%%%%%%%%% output/658--6-7-1-corollary.tex
 \begin{page}
 
 \begin{cor}
@@ -11681,7 +11829,7 @@ Every regular language is context-free.
 
 \end{page}
 
-%%%%%%%%%% output/658--6-7-1-other.tex
+%%%%%%%%%% output/659--6-7-1-other.tex
 \begin{page}
 
 \begin{proof}[First proof]
@@ -11695,7 +11843,7 @@ P = \emptyset \text{ for }L = \emptyset, \quad P = \{S \to \epsilon\} \text{ for
 \end{proof}
 
 \begin{proof}[Second proof]
-A regular language is accepted by some DFA. 
+A regular language is accepted by some DFA.
 Every DFA can be viewed as a PDA with stack playing no role and word acceptance by final states.
 \end{proof}
 
@@ -11703,7 +11851,7 @@ Every DFA can be viewed as a PDA with stack playing no role and word acceptance 
 
 \end{page}
 
-%%%%%%%%%% output/659--6-7-2-level.tex
+%%%%%%%%%% output/660--6-7-2-level.tex
 \begin{page}
 
 \subsection{The pumping lemma for CFLs}
@@ -11718,7 +11866,7 @@ The following theorem provides a tool to prove non-context-freeness of some lang
 
 \end{page}
 
-%%%%%%%%%% output/660--6-7-2-theorem.tex
+%%%%%%%%%% output/661--6-7-2-theorem.tex
 \begin{page}
 
 \begin{thm}
@@ -11737,7 +11885,7 @@ for all $i \ge 0$ we have $uv^iwx^iy \in L$.
 
 \end{page}
 
-%%%%%%%%%% output/661--6-7-2-other.tex
+%%%%%%%%%% output/662--6-7-2-other.tex
 \begin{page}
 
 That is to say, every sufficiently long word contains two subwords within a bounded region
@@ -11747,7 +11895,7 @@ that can be removed or repeated several times.
 
 \end{page}
 
-%%%%%%%%%% output/662--6-7-2-example.tex
+%%%%%%%%%% output/663--6-7-2-example.tex
 \begin{page}
 
 \begin{exl}
@@ -11762,7 +11910,7 @@ Similarly, in the second case $z'$ has $n$ $a$'s, but not enough $b$'s and $c$'s
 
 \end{page}
 
-%%%%%%%%%% output/663--6-7-2-other.tex
+%%%%%%%%%% output/664--6-7-2-other.tex
 \begin{page}
 
 
@@ -11777,7 +11925,7 @@ The language of the next example does not look much different, but it is not con
 
 \end{page}
 
-%%%%%%%%%% output/664--6-7-2-example.tex
+%%%%%%%%%% output/665--6-7-2-example.tex
 \begin{page}
 
 \begin{exl}
@@ -11796,7 +11944,7 @@ Similarly, for the other situations of $vwx$ the depumped word has the form $0^n
 
 \end{page}
 
-%%%%%%%%%% output/665--6-7-2-other.tex
+%%%%%%%%%% output/666--6-7-2-other.tex
 \begin{page}
 
 
@@ -11812,7 +11960,7 @@ together with an additional edge hanging down from every leaf (terminal nodes).
 
 \end{page}
 
-%%%%%%%%%% output/666--6-7-2-lemma.tex
+%%%%%%%%%% output/667--6-7-2-lemma.tex
 \begin{page}
 
 \begin{lem}
@@ -11823,7 +11971,7 @@ If $T$ contains no path of length greater than $i$, then $|z| \le 2^{i-1}$.
 
 \end{page}
 
-%%%%%%%%%% output/667--6-7-2-other.tex
+%%%%%%%%%% output/668--6-7-2-other.tex
 \begin{page}
 
 \begin{proof}
@@ -11896,7 +12044,7 @@ A derivation tree for $uv^iwx^iy$ can be obtained from the tree $T$ by cut, copy
 
 \end{page}
 
-%%%%%%%%%% output/668--6-7-3-level.tex
+%%%%%%%%%% output/669--6-7-3-level.tex
 \begin{page}
 
 \subsection{Non-closure properties of CFLs}
@@ -11905,7 +12053,7 @@ We have already proved that context-free languages are closed under union, conca
 
 \end{page}
 
-%%%%%%%%%% output/669--6-7-3-theorem.tex
+%%%%%%%%%% output/670--6-7-3-theorem.tex
 \begin{page}
 
 \begin{thm}
@@ -11915,7 +12063,7 @@ The set of context-free languages is not closed under intersection.
 
 \end{page}
 
-%%%%%%%%%% output/670--6-7-3-other.tex
+%%%%%%%%%% output/671--6-7-3-other.tex
 \begin{page}
 
 \begin{proof}
@@ -11938,7 +12086,7 @@ Thus $L_1$ and $L_2$ are context-free languages whose intersection is not contex
 
 \end{page}
 
-%%%%%%%%%% output/671--6-7-3-theorem.tex
+%%%%%%%%%% output/672--6-7-3-theorem.tex
 \begin{page}
 
 \begin{thm}
@@ -11947,7 +12095,7 @@ The set of context-free languages is not closed under complementation.
 
 \end{page}
 
-%%%%%%%%%% output/672--6-7-3-other.tex
+%%%%%%%%%% output/673--6-7-3-other.tex
 \begin{page}
 
 \begin{proof}
@@ -11970,7 +12118,7 @@ Applied to the languages $L_1$, $L_2$, $L$ from the proof of Theorem \ref{thm:CF
 
 \end{page}
 
-%%%%%%%%%% output/673--6-7-3-remark.tex
+%%%%%%%%%% output/674--6-7-3-remark.tex
 \begin{page}
 
 \begin{rem}
@@ -11985,7 +12133,7 @@ If $\sqrt{2}^{\sqrt{2}}$ is irrational, then one may take $\alpha = \sqrt{2}^{\s
 
 \end{page}
 
-%%%%%%%%%% output/674--6-7-3-other.tex
+%%%%%%%%%% output/675--6-7-3-other.tex
 \begin{page}
 
 
@@ -12006,7 +12154,7 @@ is not context-free. Its complement is context-free (exercise).
 
 \end{page}
 
-%%%%%%%%%% output/675--6-8-1-level.tex
+%%%%%%%%%% output/676--6-8-1-level.tex
 \begin{page}
 
 \section{Turing machines}
@@ -12031,7 +12179,7 @@ everything which ``can be computed'' can be done with some Turing machine.
 
 \end{page}
 
-%%%%%%%%%% output/676--6-8-1-definition.tex
+%%%%%%%%%% output/677--6-8-1-definition.tex
 \begin{page}
 
 \begin{dfn}
@@ -12054,7 +12202,7 @@ is a partial map (that is, it can be undefined for some arguments), called the \
 
 \end{page}
 
-%%%%%%%%%% output/677--6-8-1-other.tex
+%%%%%%%%%% output/678--6-8-1-other.tex
 \begin{page}
 
 At each moment of time, the machine is situated opposite to some cell of the input tape.
@@ -12088,7 +12236,7 @@ If the input word is not accepted, then the machine either halts in a non-final 
 
 \end{page}
 
-%%%%%%%%%% output/678--6-8-1-example.tex
+%%%%%%%%%% output/679--6-8-1-example.tex
 \begin{page}
 
 \begin{exl}
@@ -12116,7 +12264,7 @@ $q_4$ & $-$ & $-$ & $-$ & $-$ & $-$
 
 \end{page}
 
-%%%%%%%%%% output/679--6-8-1-other.tex
+%%%%%%%%%% output/680--6-8-1-other.tex
 \begin{page}
 
 
@@ -12127,7 +12275,7 @@ In a similar way one can construct a machine accepting the language $\{0^n 1^n 2
 
 \end{page}
 
-%%%%%%%%%% output/680--6-8-1-definition.tex
+%%%%%%%%%% output/681--6-8-1-definition.tex
 \begin{page}
 
 \begin{dfn}
@@ -12137,7 +12285,7 @@ A language is called \emph{recursive} if it is accepted by a Turing machine whic
 
 \end{page}
 
-%%%%%%%%%% output/681--6-8-1-other.tex
+%%%%%%%%%% output/682--6-8-1-other.tex
 \begin{page}
 
 All context-free languages are recursively enumerable because every pushdown automaton can be simulated by a Turing machine.
@@ -12150,7 +12298,7 @@ Later we will give an example of such a language.
 
 \end{page}
 
-%%%%%%%%%% output/682--6-8-1-lemma.tex
+%%%%%%%%%% output/683--6-8-1-lemma.tex
 \begin{page}
 
 \begin{lem}
@@ -12159,7 +12307,7 @@ A language $L$ is recursive if and only if both $L$ and its complement are recur
 
 \end{page}
 
-%%%%%%%%%% output/683--6-8-1-other.tex
+%%%%%%%%%% output/684--6-8-1-other.tex
 \begin{page}
 
 \begin{proof}
@@ -12178,7 +12326,7 @@ but this can be done with the techniques similar to those we used to design new 
 
 \end{page}
 
-%%%%%%%%%% output/684--6-8-3-level.tex
+%%%%%%%%%% output/685--6-8-3-level.tex
 \begin{page}
 
 \subsection{Modifications of Turing machines}
@@ -12206,7 +12354,7 @@ encode the parameter values by words, and consider the set of all words for whic
 
 \end{page}
 
-%%%%%%%%%% output/685--6-8-3-definition.tex
+%%%%%%%%%% output/686--6-8-3-definition.tex
 \begin{page}
 
 \begin{dfn}
@@ -12219,14 +12367,14 @@ A problem is called \emph{semi-decidable} if the corresponding language is recur
 
 \end{page}
 
-%%%%%%%%%% output/686--6-8-4-level.tex
+%%%%%%%%%% output/687--6-8-4-level.tex
 \begin{page}
 
 \subsection{The universal language}
 
 \end{page}
 
-%%%%%%%%%% output/687--6-8-4-definition.tex
+%%%%%%%%%% output/688--6-8-4-definition.tex
 \begin{page}
 
 \begin{dfn}
@@ -12238,7 +12386,7 @@ L_u = \{(M,w) \mid \text{Turing machine }M \text{ accepts word }w\}.
 
 \end{page}
 
-%%%%%%%%%% output/688--6-8-4-other.tex
+%%%%%%%%%% output/689--6-8-4-other.tex
 \begin{page}
 
 A Turing machine can be encoded with a binary word (once an encoding convention is chosen).
@@ -12248,7 +12396,7 @@ Therefore the universal language can be viewed as a language over a binary alpha
 
 \end{page}
 
-%%%%%%%%%% output/689--6-8-4-lemma.tex
+%%%%%%%%%% output/690--6-8-4-lemma.tex
 \begin{page}
 
 \begin{lem}
@@ -12258,7 +12406,7 @@ The universal language is recursively enumerable.
 
 \end{page}
 
-%%%%%%%%%% output/690--6-8-4-other.tex
+%%%%%%%%%% output/691--6-8-4-other.tex
 \begin{page}
 
 \begin{proof}
@@ -12276,7 +12424,7 @@ the fourth tape stores the position in the tape of $M$.
 
 \end{page}
 
-%%%%%%%%%% output/691--6-8-5-level.tex
+%%%%%%%%%% output/692--6-8-5-level.tex
 \begin{page}
 
 \subsection{Undecidability of the halting problem}
@@ -12286,7 +12434,7 @@ The corresponding language is the universal language $L_u$.
 
 \end{page}
 
-%%%%%%%%%% output/692--6-8-5-theorem.tex
+%%%%%%%%%% output/693--6-8-5-theorem.tex
 \begin{page}
 
 \begin{thm}
@@ -12296,7 +12444,7 @@ The halting problem is undecidable, that is, the universal language is not recur
 
 \end{page}
 
-%%%%%%%%%% output/693--6-8-5-other.tex
+%%%%%%%%%% output/694--6-8-5-other.tex
 \begin{page}
 
 
@@ -12308,7 +12456,7 @@ L_d = \{w_i \mid w_i \text{ is not accepted by }M_i\}.
 
 \end{page}
 
-%%%%%%%%%% output/694--6-8-5-lemma.tex
+%%%%%%%%%% output/695--6-8-5-lemma.tex
 \begin{page}
 
 \begin{lem}
@@ -12318,7 +12466,7 @@ The language $L_d$ is not recursively enumerable.
 
 \end{page}
 
-%%%%%%%%%% output/695--6-8-5-other.tex
+%%%%%%%%%% output/696--6-8-5-other.tex
 \begin{page}
 
 \begin{proof}
@@ -12346,7 +12494,7 @@ This gives an algorithm which always stops and recognizes the language $L_d$.
 
 \end{page}
 
-%%%%%%%%%% output/696--6-8-5-remark.tex
+%%%%%%%%%% output/697--6-8-5-remark.tex
 \begin{page}
 
 \begin{rem}

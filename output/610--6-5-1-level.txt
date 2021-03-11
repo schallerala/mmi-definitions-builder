@@ -33,8 +33,7 @@ A production can be represented linearly:
 multline*
 S NV AdjNV AdjAdjNV colorless AdjNV
 
-colorless AdjNVAdv 
-multline*
+colorless AdjNVAdv multline*
 or by a derivation tree or parse tree, see Figure fig:Chomsky.
 
 figure[ht]

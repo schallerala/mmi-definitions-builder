@@ -1,0 +1,130 @@
+Own summary
+
+
+Equivalences between propositional formulas
+
+There are several simple and useful equivalences between propositional formulas.
+itemize
+Associativity laws
+
+(A B) C A (B C) (A B) C A (B C)
+
+Commutativity laws
+
+A B B A A B B A
+
+Distributivity laws
+
+A (B C) (A B) (A C) A (B C) (A B) (A C)
+
+De Morgan's laws
+
+(A B) A B (A B) A B
+
+Idempotency laws
+
+A A A A A A
+
+Double negation law
+
+A A
+
+itemize
+
+The associativity laws allow us to omit parentheses in conjunctions or disjunctions.
+Due to it we can allow abuse of notation and write strings like this one:
+
+p q r s.
+
+This is against the syntax rules.
+In order to conform the rules, we must put some parentheses.
+This leads to several different propositional formulas, like  or .
+Although these formulas are different, they are logically equivalent.
+Thus, the string  stands for a class of equivalent formulas.
+
+The distributivity laws allow us to operate with brackets as if  is the multiplication and  is the addition
+or vice versa.
+For example,
+
+p (p q) (p p) (p q).
+
+
+Let us extend the language  by adding two new symbols  and .
+We define a language  by adding to the point 1. in Definition dfn:PropForm that  and  belong to 
+and leaving the other conditions as they are.
+The symbols  and  are logical constants: when computing the truth value of a proposition 
+we replace each  by  and each  by .
+In  there are the following logical equivalences.
+itemize
+Laws of zero and one.
+gather*
+(A ) (A ) A
+
+(A ) A (A ) 
+
+(A A) (A A) gather*
+itemize
+
+
+All inference rules
+
+align*
+&( left):
+
+
+&&( right):
+
+
+
+
+
+&( left):
+
+
+
+&&( right):
+
+
+
+
+&( left):
+
+
+
+&&( right):
+
+
+
+
+&( left):
+
+
+&&( right):
+
+
+align*
+
+Own comment:
+itemize
+   replace  with a term (reuse term or add a new one)
+   replace  with a new free variable
+itemize
+
+align*
+&( left):
+
+
+&&( right):
+
+
+
+
+&( left):
+
+
+&&( right):
+
+
+align*
+
+

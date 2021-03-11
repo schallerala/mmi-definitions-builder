@@ -1,15 +1,17 @@
 \begin{exl}
-Let us remove the unit productions from the grammar
+Let us remove the $\epsilon$-productions from the grammar
 \begin{align*}
-S &\to A \mid B\\
-A &\to AA \mid 0\\
-B &\to BB \mid 1.
+S &\to ABA\\
+A &\to aA \mid \epsilon\\
+B &\to bB \mid b.
 \end{align*}
-The unit pairs are $(S,A)$ and $(S,B)$.
-Remove the unit productions and introduce all $S \to \alpha$ for which $A \to \alpha$ or $B \to \alpha$:
+Only the variable $A$ is nullable.
+Remove the production $A \to \epsilon$.
+The nullable variable $A$ appears on the right hand side of the productions $S \to ABA$ and $A \to aA$.
+Add new productions by removing any number of $A$'s from the right hand sides of these productions:
 \begin{align*}
-S &\to AA \mid BB \mid 0 \mid 1\\
-A &\to AA \mid 0\\
-B &\to BB \mid 1.
+S &\to ABA \mid AB \mid BA \mid B\\
+A &\to aA \mid a\\
+B &\to bB \mid b.
 \end{align*}
 \end{exl}

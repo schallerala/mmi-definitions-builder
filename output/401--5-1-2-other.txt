@@ -59,7 +59,7 @@ equation
 eqn:FibRoots
 _1 = 1 + 52, _2 = 1 - 52.
 equation
-If we start the Fibonacci sequence from the zeroth term so that the recurrence relation holds between , ,  as well, 
+If we start the Fibonacci sequence from the zeroth term so that the recurrence relation holds between , ,  as well,
 then we must put .
 Thus the coefficients  and  are found from the system
 gather*

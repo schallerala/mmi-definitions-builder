@@ -1,6 +1,5 @@
 More about partitions
 itemize
-
 An infinite (but fast convergent) series that computes  was found by Ramanujan and Hardy and later improved by Rademacher.
 A consequences of the latter is the asymptotics for the number of partitions:
 

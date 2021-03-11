@@ -29,24 +29,30 @@ const args = process.argv.slice(2);
 
     const portionsByChapter = groupByChapter(allPortions);
 
+    const filterOutGodel = ({ title }) => ! title.includes("4.3. Gödel's incompleteness theorems");
     const portionsCombinations = {
         'all': allPortions,
         '1': portionsByChapter.get(1),
         '2': portionsByChapter.get(2),
         '3': portionsByChapter.get(3),
         '4': portionsByChapter.get(4),
+        '4-no-godel': portionsByChapter.get(4).filter(filterOutGodel),
         '3-4': portionsByChapter.get(3).concat(portionsByChapter.get(4)),
+        '3-4-no-godel': portionsByChapter.get(3).concat(portionsByChapter.get(4)).filter(filterOutGodel),
         '1-2-3-4': portionsByChapter.get(1).concat(portionsByChapter.get(2)).concat(portionsByChapter.get(3)).concat(portionsByChapter.get(4)),
         '5': portionsByChapter.get(5),
+        '1-5': portionsByChapter.get(1).concat(portionsByChapter.get(5)),
         '6': portionsByChapter.get(6),
         '5-6': portionsByChapter.get(5).concat(portionsByChapter.get(6)),
     }
 
+    const indexes = {};
     for (const [key, portions] of Object.entries(portionsCombinations)) {
         const tomlFile = createWriteStream(join(outFolder, `mmi-${key}.toml`), writeStreamOptions);
         const storkEntryMap = key.length === 1
             ? portion => portion.shortStorkFileEntry
             : portion => portion.storkFileEntry;
+        const indexFilename = join(outFolder, `mmi-${key}.st`);
         const tomlFileContent = [
             '[input]',
             'title_boost = "Ridiculous"',
@@ -54,11 +60,16 @@ const args = process.argv.slice(2);
             portions.map(storkEntryMap).join(`,${EOL}`),
             ']',
             '[output]',
-            `filename = "${join(outFolder, `mmi-${key}.st`)}"`,
+            `filename = "${indexFilename}"`,
         ].join(EOL);
         tomlFile.write(tomlFileContent);
         tomlFile.end();
+        indexes[key] = indexFilename;
     }
+
+    const tomlFile = createWriteStream(join(outFolder, 'indexes.json'), writeStreamOptions);
+    tomlFile.write(JSON.stringify(indexes));
+    tomlFile.end();
 })();
 
 function groupByChapter (portions: Array<PdfPortion>): Map<number, Array<PdfPortion>> {
